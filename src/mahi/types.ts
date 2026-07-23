@@ -33,6 +33,7 @@ export interface Profile {
   languages: string[];
   availability: string;
   openToWork: boolean;
+  targetRoles?: string[];
   professionalSummary: string;
 }
 
