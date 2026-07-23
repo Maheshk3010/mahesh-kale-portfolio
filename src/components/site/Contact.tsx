@@ -64,7 +64,17 @@ export function Contact() {
                 href={`mailto:${email}`}
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
               >
-                Email Mahesh
+                <Mail className="h-4 w-4" />
+                {email}
+              </a>
+            )}
+            {phone && (
+              <a
+                href={`tel:${phone.replace(/\s+/g, "")}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
+              >
+                <Phone className="h-4 w-4" />
+                {phone}
               </a>
             )}
             {linkedin && (
@@ -75,6 +85,7 @@ export function Contact() {
                 aria-label="Open LinkedIn profile in a new tab"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
               >
+                <Linkedin className="h-4 w-4" />
                 Connect on LinkedIn
                 <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -84,12 +95,6 @@ export function Contact() {
               Or ask MAHI.AI in the bottom-right corner.
             </div>
           </div>
-
-          {(!email || !linkedin) && (
-            <p className="mt-6 text-xs text-muted-foreground">
-              Email and LinkedIn details will appear here once verified.
-            </p>
-          )}
         </div>
       </motion.div>
     </Section>
