@@ -254,7 +254,15 @@ function SkillsCard({ reply, onNavigate }: { reply: string; onNavigate?: () => v
   );
 }
 
-function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => void }) {
+function ProjectsCard({
+  reply,
+  onAsk,
+  onNavigate,
+}: {
+  reply: string;
+  onAsk: (q: string) => void;
+  onNavigate?: () => void;
+}) {
   const projects = knowledgeBase.projects.projects;
   if (!projects.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -302,6 +310,9 @@ function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => v
                 Open GitHub
               </ActionButton>
             )}
+            <NavAction sectionId="projects" onNavigated={onNavigate}>
+              View Project
+            </NavAction>
           </div>
         </CardShell>
       ))}
@@ -309,7 +320,7 @@ function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => v
   );
 }
 
-function ExperienceCard({ reply }: { reply: string }) {
+function ExperienceCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const items = knowledgeBase.experience.experience;
   if (!items.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
