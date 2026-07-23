@@ -231,7 +231,7 @@ export function Projects() {
               >
                 <Sparkles className="h-3.5 w-3.5" /> View Details
               </button>
-              {project.github && (
+              {project.github ? (
                 <a
                   href={project.github}
                   target="_blank"
@@ -240,6 +240,13 @@ export function Projects() {
                 >
                   <Github className="h-3.5 w-3.5" /> GitHub
                 </a>
+              ) : (
+                <span
+                  aria-label="Repository not yet published"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                >
+                  <Github className="h-3.5 w-3.5" /> Repository Coming Soon
+                </span>
               )}
               {project.demo && (
                 <a
