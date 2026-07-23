@@ -286,7 +286,10 @@ export function MahiAI() {
                         <button
                           key={q}
                           type="button"
-                          onClick={() => send(q)}
+                          onClick={() => {
+                            analyticsService.trackAction("quick_question", q);
+                            send(q);
+                          }}
                           className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
                         >
                           {q}
