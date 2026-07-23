@@ -1,12 +1,17 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-import { Bot, Send, X, Sparkles } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Bot, Send, X, Sparkles, Info } from "lucide-react";
 import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
+import { mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
+import type { ChatMessage as EngineMessage } from "@/mahi";
 
 type ChatMessage = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  createdAt: number;
+  suggestions?: string[];
+  unverified?: boolean;
 };
 
 const QUICK_QUESTIONS = [
@@ -19,20 +24,16 @@ const QUICK_QUESTIONS = [
   "Why should I hire Mahesh?",
 ];
 
-const WELCOME: ChatMessage = {
-  id: "welcome",
-  role: "assistant",
-  content:
-    "Hello 👋\n\nI'm MAHI.AI — Mahesh Kale's Professional AI Career Assistant.\n\nI can answer questions about:\n• Skills\n• Projects\n• Experience\n• Resume\n• Certifications\n• Contact Information\n• GitHub\n• LinkedIn",
-};
+const WELCOME_TEXT =
+  "Hello 👋\n\nI'm MAHI.AI — Mahesh Kale's Professional AI Career Assistant.\n\nI can answer questions about:\n• Skills\n• Projects\n• Experience\n• Resume\n• Certifications\n• Contact Information\n• GitHub\n• LinkedIn";
 
 export function MahiAI() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<ChatMessage[]>([WELCOME]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [thinking, setThinking] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -45,36 +46,75 @@ export function MahiAI() {
     if (open) setTimeout(() => inputRef.current?.focus(), 250);
   }, [open]);
 
-  const send = (text: string) => {
+  const engineHistory = useMemo<EngineMessage[]>(
+    () =>
+      messages.map((m) => ({
+        id: m.id,
+        role: m.role,
+        content: m.content,
+        createdAt: m.createdAt,
+      })),
+    [messages],
+  );
+
+  const send = async (text: string) => {
     const value = text.trim();
-    if (!value) return;
+    if (!value || thinking) return;
+    const now = Date.now();
     const userMsg: ChatMessage = {
-      id: `u-${Date.now()}`,
+      id: `u-${now}`,
       role: "user",
       content: value,
+      createdAt: now,
     };
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setThinking(true);
-    // UI-only stub — no AI backend
-    setTimeout(() => {
-      setThinking(false);
+
+    try {
+      const response = await mahiEngine.ask(value, engineHistory);
       setMessages((m) => [
         ...m,
         {
           id: `a-${Date.now()}`,
           role: "assistant",
-          content:
-            "Thanks for your question! MAHI.AI is currently in preview mode — the conversational engine will be wired up soon. In the meantime, explore Mahesh's projects, skills and resume on this page.",
+          content: response.reply,
+          createdAt: Date.now(),
+          suggestions: response.suggestions,
+          unverified:
+            !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
         },
       ]);
-    }, 1100);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        {
+          id: `a-${Date.now()}`,
+          role: "assistant",
+          content: UNVERIFIED_FALLBACK,
+          createdAt: Date.now(),
+          unverified: true,
+        },
+      ]);
+    } finally {
+      setThinking(false);
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     send(input);
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      send(input);
+    }
+  };
+
+  const showWelcome = messages.length === 0;
 
   return (
     <>
@@ -91,7 +131,6 @@ export function MahiAI() {
           whileTap={{ scale: 0.96 }}
           className="group relative flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-3 pl-3 pr-4 backdrop-blur-xl shadow-[0_10px_40px_-10px_var(--primary)]"
         >
-          {/* Pulsing glow ring */}
           <span className="pointer-events-none absolute inset-0 rounded-full">
             <span className="absolute inset-0 rounded-full bg-primary/25 blur-xl animate-[pulse_2.4s_ease-in-out_infinite]" />
           </span>
@@ -125,7 +164,6 @@ export function MahiAI() {
               bottom-24 right-3 left-3 max-h-[78vh]
               md:bottom-24 md:right-6 md:left-auto md:w-[380px] md:max-h-[600px]"
           >
-            {/* Ambient glows */}
             <div className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
 
@@ -172,33 +210,46 @@ export function MahiAI() {
               ref={scrollRef}
               className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3"
             >
-              {messages.map((m) => (
-                <MessageBubble key={m.id} message={m} />
-              ))}
+              {showWelcome ? (
+                <>
+                  <MessageBubble
+                    message={{
+                      id: "welcome",
+                      role: "assistant",
+                      content: WELCOME_TEXT,
+                      createdAt: 0,
+                    }}
+                  />
+                  <div className="pt-1">
+                    <div className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-muted-foreground">
+                      <Sparkles className="h-3 w-3 text-primary" />
+                      Quick questions
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {QUICK_QUESTIONS.map((q) => (
+                        <button
+                          key={q}
+                          type="button"
+                          onClick={() => send(q)}
+                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
+                        >
+                          {q}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                messages.map((m) => (
+                  <MessageBubble
+                    key={m.id}
+                    message={m}
+                    onSuggestion={send}
+                  />
+                ))
+              )}
 
               {thinking && <TypingIndicator />}
-
-              {/* Quick questions — show only when just the welcome is present */}
-              {messages.length === 1 && !thinking && (
-                <div className="pt-1">
-                  <div className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-muted-foreground">
-                    <Sparkles className="h-3 w-3 text-primary" />
-                    Quick questions
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {QUICK_QUESTIONS.map((q) => (
-                      <button
-                        key={q}
-                        type="button"
-                        onClick={() => send(q)}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
-                      >
-                        {q}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Composer */}
@@ -206,13 +257,15 @@ export function MahiAI() {
               onSubmit={handleSubmit}
               className="relative border-t border-white/10 bg-white/[0.03] p-3"
             >
-              <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
-                <input
+              <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
+                <textarea
                   ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  rows={1}
                   placeholder="Ask MAHI.AI anything..."
-                  className="min-w-0 flex-1 bg-transparent py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none"
+                  className="min-w-0 flex-1 resize-none bg-transparent py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none max-h-28"
                 />
                 <button
                   type="submit"
@@ -225,7 +278,7 @@ export function MahiAI() {
               </div>
               <p className="mt-2 flex items-center justify-center gap-1 text-[10px] text-muted-foreground">
                 <Bot className="h-3 w-3 text-primary" />
-                Powered by MAHI.AI · Preview
+                Powered by MAHI.AI · Local Engine
               </p>
             </form>
           </motion.div>
@@ -235,29 +288,73 @@ export function MahiAI() {
   );
 }
 
-function MessageBubble({ message }: { message: ChatMessage }) {
+function MessageBubble({
+  message,
+  onSuggestion,
+}: {
+  message: ChatMessage;
+  onSuggestion?: (q: string) => void;
+}) {
   const isUser = message.role === "user";
+
+  if (!isUser && message.unverified) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25 }}
+        className="flex justify-start"
+      >
+        <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
+          🤖
+        </div>
+        <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-primary/20 bg-primary/[0.06] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90">
+          <div className="flex items-start gap-2">
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            <div className="whitespace-pre-line">{message.content}</div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className={`flex ${isUser ? "justify-end" : "justify-start"}`}
+      className={`flex flex-col ${isUser ? "items-end" : "items-start"}`}
     >
-      {!isUser && (
-        <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
-          🤖
+      <div className={`flex ${isUser ? "justify-end" : "justify-start"} w-full`}>
+        {!isUser && (
+          <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
+            🤖
+          </div>
+        )}
+        <div
+          className={
+            isUser
+              ? "max-w-[80%] rounded-2xl rounded-br-md bg-primary px-3.5 py-2 text-sm text-primary-foreground shadow-[0_6px_20px_-8px_var(--primary)]"
+              : "max-w-[85%] rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90 whitespace-pre-line"
+          }
+        >
+          {message.content}
+        </div>
+      </div>
+      {!isUser && message.suggestions && message.suggestions.length > 0 && onSuggestion && (
+        <div className="mt-2 ml-9 flex flex-wrap gap-1.5">
+          {message.suggestions.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => onSuggestion(s)}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-foreground/80 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+            >
+              {s}
+            </button>
+          ))}
         </div>
       )}
-      <div
-        className={
-          isUser
-            ? "max-w-[80%] rounded-2xl rounded-br-md bg-primary px-3.5 py-2 text-sm text-primary-foreground shadow-[0_6px_20px_-8px_var(--primary)]"
-            : "max-w-[85%] rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90 whitespace-pre-line"
-        }
-      >
-        {message.content}
-      </div>
     </motion.div>
   );
 }
