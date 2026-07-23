@@ -13,7 +13,7 @@ import {
 
 
 } from "lucide-react";
-import { knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
+import { analyticsService, knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
 import {
   ContactCard as ContactActionCard,
@@ -49,6 +49,7 @@ function NavAction({
     <button
       type="button"
       onClick={() => {
+        analyticsService.trackAction("navigate_section", sectionId);
         navigationService.scrollTo(sectionId);
         onNavigated?.();
       }}

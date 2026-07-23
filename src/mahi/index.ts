@@ -7,3 +7,4 @@ export { LocalChatEngine, mahiEngine } from "./chatEngine";
 export { navigationService } from "./navigation";
 export type { NavigationService, SectionRegistration } from "./navigation";
 export { useSectionRegistration } from "./useSectionRegistration";
+export * from "./analytics";

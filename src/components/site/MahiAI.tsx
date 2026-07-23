@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Send, X, Sparkles, Mic, Loader2 } from "lucide-react";
+import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
-import { mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
+import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
 import { useVoiceInput } from "@/mahi/voice";
 import { RichResponse } from "./mahi/RichResponse";
+import { AnalyticsPanel } from "./mahi/AnalyticsPanel";
 
 type ChatMessage = {
   id: string;
@@ -36,6 +37,7 @@ const WELCOME_TEXT =
 
 export function MahiAI() {
   const [open, setOpen] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [thinking, setThinking] = useState(false);
@@ -77,9 +79,11 @@ export function MahiAI() {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setThinking(true);
+    analyticsService.trackQuestion(value);
 
     try {
       const response = await mahiEngine.ask(value, engineHistory);
+      analyticsService.trackResponse(value, response);
       setMessages((m) => [
         ...m,
         {
@@ -120,6 +124,7 @@ export function MahiAI() {
     onPartial: (t) => setInput(t),
     onFinal: (t) => {
       setInput("");
+      analyticsService.trackAction("voice_input");
       sendRef.current(t);
       setTimeout(() => inputRef.current?.focus(), 50);
     },
@@ -232,6 +237,15 @@ export function MahiAI() {
               </div>
               <button
                 type="button"
+                onClick={() => setShowAnalytics(true)}
+                aria-label="Open recruiter analytics"
+                title="Recruiter analytics"
+                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+              >
+                <BarChart3 className="h-3.5 w-3.5" />
+              </button>
+              <button
+                type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close chat"
                 className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
@@ -239,6 +253,13 @@ export function MahiAI() {
                 <X className="h-3.5 w-3.5" />
               </button>
             </div>
+
+            <AnimatePresence>
+              {showAnalytics && (
+                <AnalyticsPanel onClose={() => setShowAnalytics(false)} />
+              )}
+            </AnimatePresence>
+
 
             {/* Messages */}
             <div
@@ -265,7 +286,10 @@ export function MahiAI() {
                         <button
                           key={q}
                           type="button"
-                          onClick={() => send(q)}
+                          onClick={() => {
+                            analyticsService.trackAction("quick_question", q);
+                            send(q);
+                          }}
                           className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
                         >
                           {q}

@@ -13,7 +13,8 @@ import {
   Info,
   Sparkles,
 } from "lucide-react";
-import { knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import { analyticsService, knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import type { AnalyticsActionType } from "@/mahi";
 
 /* ---------------------------- Building blocks ---------------------------- */
 
@@ -25,6 +26,8 @@ export function ActionButton({
   variant = "default",
   download,
   external = true,
+  analyticsAction,
+  analyticsLabel,
 }: {
   href?: string;
   onClick?: () => void;
@@ -33,6 +36,8 @@ export function ActionButton({
   variant?: "default" | "primary";
   download?: boolean | string;
   external?: boolean;
+  analyticsAction?: AnalyticsActionType;
+  analyticsLabel?: string;
 }) {
   const base =
     "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] font-medium transition-all";
@@ -41,6 +46,9 @@ export function ActionButton({
       ? "border border-primary/50 bg-primary/15 text-primary hover:bg-primary/25 hover:shadow-[0_0_18px_-6px_var(--primary)]"
       : "border border-white/10 bg-white/[0.04] text-foreground/90 hover:border-primary/40 hover:bg-primary/10 hover:text-primary";
   const cls = `${base} ${styles}`;
+  const track = () => {
+    if (analyticsAction) analyticsService.trackAction(analyticsAction, analyticsLabel);
+  };
 
   if (href) {
     return (
@@ -48,6 +56,10 @@ export function ActionButton({
         href={href}
         {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
         {...(download !== undefined ? { download } : {})}
+        onClick={() => {
+          track();
+          onClick?.();
+        }}
         className={cls}
       >
         {icon}
@@ -57,7 +69,14 @@ export function ActionButton({
     );
   }
   return (
-    <button type="button" onClick={onClick} className={cls}>
+    <button
+      type="button"
+      onClick={() => {
+        track();
+        onClick?.();
+      }}
+      className={cls}
+    >
       {icon}
       {children}
     </button>
@@ -68,15 +87,18 @@ export function CopyButton({
   value,
   label,
   icon,
+  analyticsAction,
 }: {
   value: string;
   label: string;
   icon?: React.ReactNode;
+  analyticsAction?: AnalyticsActionType;
 }) {
   const [copied, setCopied] = useState(false);
   return (
     <ActionButton
       icon={copied ? <Check className="h-3 w-3 text-primary" /> : (icon ?? <Copy className="h-3 w-3" />)}
+      analyticsAction={analyticsAction}
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(value);
@@ -167,7 +189,12 @@ export function ResumeCard({ reply }: { reply?: string }) {
         </p>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={r.url} icon={<FileText className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={r.url}
+          icon={<FileText className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="resume_view"
+        >
           View Resume
         </ActionButton>
         <ActionButton
@@ -175,6 +202,7 @@ export function ResumeCard({ reply }: { reply?: string }) {
           icon={<Download className="h-3 w-3" />}
           download={r.filename || true}
           external={false}
+          analyticsAction="resume_download"
         >
           Download Resume
         </ActionButton>
@@ -225,12 +253,18 @@ export function GitHubCard({
         </div>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={link.url} icon={<Github className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={link.url}
+          icon={<Github className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="github_open"
+        >
           Open GitHub Profile
         </ActionButton>
         {repoCount > 0 && onAsk && (
           <ActionButton
             icon={<Sparkles className="h-3 w-3" />}
+            analyticsAction="github_view_projects"
             onClick={() => onAsk("Show me Mahesh's projects")}
           >
             View Featured Projects
@@ -272,7 +306,12 @@ export function LinkedInCard({ reply }: { reply?: string }) {
         </p>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={link.url} icon={<Linkedin className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={link.url}
+          icon={<Linkedin className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="linkedin_open"
+        >
           Open LinkedIn
         </ActionButton>
       </div>
@@ -329,10 +368,16 @@ export function ContactCard({ reply }: { reply?: string }) {
               icon={<Mail className="h-3 w-3" />}
               variant="primary"
               external={false}
+              analyticsAction="email_click"
             >
               Email
             </ActionButton>
-            <CopyButton value={c.email} label="Copy Email" icon={<Copy className="h-3 w-3" />} />
+            <CopyButton
+              value={c.email}
+              label="Copy Email"
+              icon={<Copy className="h-3 w-3" />}
+              analyticsAction="copy_email"
+            />
           </>
         )}
         {c.phone && (
@@ -341,14 +386,24 @@ export function ContactCard({ reply }: { reply?: string }) {
               href={`tel:${c.phone}`}
               icon={<Phone className="h-3 w-3" />}
               external={false}
+              analyticsAction="phone_click"
             >
               Call
             </ActionButton>
-            <CopyButton value={c.phone} label="Copy Phone" icon={<Copy className="h-3 w-3" />} />
+            <CopyButton
+              value={c.phone}
+              label="Copy Phone"
+              icon={<Copy className="h-3 w-3" />}
+              analyticsAction="copy_phone"
+            />
           </>
         )}
         {c.linkedin && (
-          <ActionButton href={c.linkedin} icon={<Linkedin className="h-3 w-3" />}>
+          <ActionButton
+            href={c.linkedin}
+            icon={<Linkedin className="h-3 w-3" />}
+            analyticsAction="linkedin_open"
+          >
             LinkedIn
           </ActionButton>
         )}
