@@ -232,13 +232,26 @@ export function Projects() {
             className="glass flex flex-col gap-4 rounded-3xl p-6"
           >
             <div className="flex items-start gap-3">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
+              <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
                 <FolderGit2 className="h-5 w-5" />
+                {isFeatured(project) && (
+                  <span
+                    aria-label="Featured project"
+                    className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full border border-primary/60 bg-background text-primary"
+                  >
+                    <Star className="h-2.5 w-2.5" />
+                  </span>
+                )}
               </span>
               <div className="min-w-0 flex-1">
-                <h3 className="text-lg font-semibold tracking-tight">
-                  {project.title}
-                </h3>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {project.title}
+                  </h3>
+                  {isFeatured(project) && (
+                    <Badge tone="primary">Featured</Badge>
+                  )}
+                </div>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
@@ -246,17 +259,23 @@ export function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-1.5">
-              {cats.slice(0, 2).map((c) => (
-                <Badge key={c} tone="primary">
-                  {c}
-                </Badge>
-              ))}
+              {cats
+                .filter((c) => c !== "Featured")
+                .slice(0, 2)
+                .map((c) => (
+                  <Badge key={c} tone="primary">
+                    {c}
+                  </Badge>
+                ))}
               {roles.slice(0, 2).map((r) => (
                 <Badge key={r} tone="accent">
                   {r}
                 </Badge>
               ))}
               <Badge tone="muted">{difficulty}</Badge>
+              <Badge tone={statusFor(project).tone}>
+                {statusFor(project).label}
+              </Badge>
             </div>
 
             <div className="flex flex-wrap gap-1.5">
