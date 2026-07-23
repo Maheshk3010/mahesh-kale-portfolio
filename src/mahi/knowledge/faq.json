@@ -54,7 +54,27 @@
     },
     {
       "q": "What projects has Mahesh built?",
-      "a": "Three verified projects: **Job Tracker API** (Python, Flask, REST API, MySQL), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), and **Sales Dashboard** (Power BI, Excel, SQL) — covering Python Developer, Data Scientist and Data Analyst / MIS Analyst work."
+      "a": "Four verified projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) — covering Data Scientist, Python Developer, Data Analyst and MIS Analyst work."
+    },
+    {
+      "q": "Explain Apple Stock Price Prediction",
+      "a": "**Apple Stock Price Prediction System** — an end-to-end ML pipeline that forecasts Apple stock prices from historical market data using an LSTM deep-learning model in TensorFlow/Keras, exposed through an interactive Streamlit app. Covers data collection, cleaning, feature engineering, normalization, model training, evaluation and prediction visualization. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+    },
+    {
+      "q": "Explain Product Recommendation System",
+      "a": "**Product Recommendation System** — a Python recommendation prototype built with Pandas, NumPy and Scikit-learn. Cleans interaction data, computes item/user similarity and returns Top-N product suggestions. Repo: https://github.com/Maheshk3010/Product_Recommendation_System"
+    },
+    {
+      "q": "Show GitHub Projects",
+      "a": "Verified GitHub projects: **Apple Stock Price Prediction System** — https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM and **Product Recommendation System** — https://github.com/Maheshk3010/Product_Recommendation_System."
+    },
+    {
+      "q": "Recommend your strongest Data Science project",
+      "a": "**Apple Stock Price Prediction System** — an LSTM-based time-series forecasting pipeline built in Python with TensorFlow/Keras and a Streamlit interface. It's the strongest showcase of the end-to-end Data Scientist workflow."
+    },
+    {
+      "q": "Recommend your strongest Python project",
+      "a": "**Apple Stock Price Prediction System** — a complete Python ML application (TensorFlow, Keras, Pandas, NumPy, Scikit-learn, Streamlit) demonstrating deep-learning, data pipelines and interactive delivery."
     },
     {
       "q": "What experience does Mahesh have?",
