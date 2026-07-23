@@ -189,7 +189,12 @@ export function ResumeCard({ reply }: { reply?: string }) {
         </p>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={r.url} icon={<FileText className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={r.url}
+          icon={<FileText className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="resume_view"
+        >
           View Resume
         </ActionButton>
         <ActionButton
@@ -197,6 +202,7 @@ export function ResumeCard({ reply }: { reply?: string }) {
           icon={<Download className="h-3 w-3" />}
           download={r.filename || true}
           external={false}
+          analyticsAction="resume_download"
         >
           Download Resume
         </ActionButton>
