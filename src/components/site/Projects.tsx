@@ -8,28 +8,45 @@ import {
   X,
   ExternalLink,
   Sparkles,
+  Star,
+  Code2,
 } from "lucide-react";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 import type { Project } from "@/mahi/types";
 
 type Category =
   | "All"
-  | "Data Analytics"
-  | "Machine Learning"
+  | "Featured"
   | "Python"
-  | "Business Intelligence"
+  | "Machine Learning"
   | "Recommendation Systems"
-  | "Time Series";
+  | "Time Series"
+  | "Data Analysis";
 
 const CATEGORIES: Category[] = [
   "All",
-  "Data Analytics",
-  "Machine Learning",
+  "Featured",
   "Python",
-  "Business Intelligence",
+  "Machine Learning",
   "Recommendation Systems",
   "Time Series",
+  "Data Analysis",
 ];
+
+const FEATURED_TITLES = new Set<string>([
+  "Apple Stock Price Prediction System",
+  "Product Recommendation System",
+]);
+
+function isFeatured(p: Project) {
+  return FEATURED_TITLES.has(p.title);
+}
+
+function statusFor(p: Project): { label: string; tone: "primary" | "muted" } {
+  return p.github
+    ? { label: "Live on GitHub", tone: "primary" }
+    : { label: "In Development", tone: "muted" };
+}
 
 const BI_TECH = ["Power BI", "Excel", "Tableau"];
 const DA_TECH = ["SQL", "MySQL", "Power BI", "Excel"];
