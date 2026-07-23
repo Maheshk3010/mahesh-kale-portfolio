@@ -1,22 +1,35 @@
 {
   "projects": [
     {
-      "title": "Job Tracker API",
-      "description": "REST API for tracking job applications end-to-end — create, update, list and delete applications with a clean Flask backend.",
-      "problem": "Job seekers lose track of applications across companies, roles and statuses without a structured system to store and query them.",
-      "solution": "A Flask-based REST API exposing CRUD endpoints for job applications, backed by a MySQL schema for durable storage and querying.",
-      "technologies": ["Python", "Flask", "REST API", "MySQL"],
-      "features": [
-        "CRUD endpoints for job applications",
-        "MySQL-backed relational storage",
-        "Clean REST routing with Flask",
-        "Request validation and error handling"
+      "title": "Apple Stock Price Prediction System",
+      "description": "Machine learning application that forecasts Apple stock prices from historical market data using an LSTM-based deep learning model, served through an interactive Streamlit app.",
+      "problem": "Forecast future Apple stock prices from historical market trends to support data-driven investment analysis.",
+      "solution": "End-to-end ML pipeline covering data collection, cleaning, feature engineering and normalization, followed by LSTM model training, prediction, evaluation and an interactive Streamlit interface for exploring forecasts.",
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "LSTM",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Streamlit",
+        "Machine Learning",
+        "Time Series Forecasting"
       ],
-      "outcome": "A working Python backend project demonstrating REST API design, database integration and end-to-end request handling.",
-      "github": "https://github.com/Maheshk3010",
+      "features": [
+        "Historical stock data analysis",
+        "Time-series forecasting with LSTM",
+        "LSTM neural network model training",
+        "Interactive Streamlit interface",
+        "Data preprocessing and normalization pipeline",
+        "Prediction visualization"
+      ],
+      "outcome": "A completed deep-learning project demonstrating the full time-series forecasting workflow — from raw market data to a deployed Streamlit app — aligned to Data Scientist and Python Developer roles.",
+      "github": "https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM",
       "demo": "",
-      "resumeSummary": "Built a Flask REST API with MySQL for tracking job applications, showcasing CRUD design and backend fundamentals.",
-      "interviewExplanation": "I designed a Flask app around a job-application resource: routes for create/read/update/delete, a MySQL table for persistence, and JSON request/response handling. It's the project I use to explain REST fundamentals — request lifecycle, status codes, and separating routing from data access."
+      "resumeSummary": "Built an LSTM-based Apple stock price prediction system in Python (TensorFlow/Keras) with a Streamlit interface for interactive forecasting.",
+      "interviewExplanation": "I framed this as a time-series forecasting problem: collect historical Apple prices, clean and normalize the series, engineer lag features, then train an LSTM in TensorFlow/Keras. I evaluate the model on held-out data and expose predictions through a Streamlit app so the workflow is interactive end-to-end. It's the project I use to explain deep learning for sequences and the full data-science lifecycle."
     },
     {
       "title": "Product Recommendation System",
@@ -31,10 +44,28 @@
         "Reusable notebook-driven workflow"
       ],
       "outcome": "A working recommendation prototype demonstrating the full data-science workflow from raw data to model output.",
-      "github": "https://github.com/Maheshk3010",
+      "github": "https://github.com/Maheshk3010/Product_Recommendation_System",
       "demo": "",
       "resumeSummary": "Built a product recommendation prototype in Python using Pandas, NumPy and Scikit-learn similarity models.",
       "interviewExplanation": "I framed this as a similarity problem: clean the interaction data with Pandas, vectorise the products, and compute similarity with Scikit-learn to return top-N recommendations. It's my go-to example for explaining how EDA, feature engineering and model choice fit together in a data-science project."
+    },
+    {
+      "title": "Job Tracker API",
+      "description": "REST API for tracking job applications end-to-end — create, update, list and delete applications with a clean Flask backend.",
+      "problem": "Job seekers lose track of applications across companies, roles and statuses without a structured system to store and query them.",
+      "solution": "A Flask-based REST API exposing CRUD endpoints for job applications, backed by a MySQL schema for durable storage and querying.",
+      "technologies": ["Python", "Flask", "REST API", "MySQL"],
+      "features": [
+        "CRUD endpoints for job applications",
+        "MySQL-backed relational storage",
+        "Clean REST routing with Flask",
+        "Request validation and error handling"
+      ],
+      "outcome": "A working Python backend project demonstrating REST API design, database integration and end-to-end request handling.",
+      "github": "",
+      "demo": "",
+      "resumeSummary": "Built a Flask REST API with MySQL for tracking job applications, showcasing CRUD design and backend fundamentals.",
+      "interviewExplanation": "I designed a Flask app around a job-application resource: routes for create/read/update/delete, a MySQL table for persistence, and JSON request/response handling. It's the project I use to explain REST fundamentals — request lifecycle, status codes, and separating routing from data access."
     },
     {
       "title": "Sales Dashboard",
@@ -49,7 +80,7 @@
         "Recruiter-friendly, self-serve exploration"
       ],
       "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Analyst roles.",
-      "github": "https://github.com/Maheshk3010",
+      "github": "",
       "demo": "",
       "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
       "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Analyst workflow end-to-end."
