@@ -122,6 +122,18 @@ export function MahiAI() {
     },
   });
 
+  useEffect(() => {
+    if (!open || !voice.supported) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.altKey && (e.key === "m" || e.key === "M")) {
+        e.preventDefault();
+        voice.toggle();
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open, voice]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     send(input);
