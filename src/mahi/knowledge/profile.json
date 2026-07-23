@@ -1,11 +1,12 @@
 {
   "fullName": "Mahesh Kale",
-  "headline": "Python Developer · Backend Developer · Data Analyst · Machine Learning Enthusiast",
+  "headline": "Data Analyst · Data Scientist · Python Developer · MIS Analyst",
   "currentStatus": "Open to work",
-  "careerObjective": "To contribute as a Python / Backend / Data-focused engineer, building production-grade systems and turning data into decisions.",
+  "careerObjective": "To contribute in Data Analyst, Data Scientist, Python Developer or MIS Analyst roles — turning data into decisions with Python, SQL and Power BI.",
   "location": "Pune, Maharashtra, India",
   "languages": [],
   "availability": "Immediately available",
   "openToWork": true,
-  "professionalSummary": "Mahesh Kale is an entry-level software engineer based in Pune, India. He focuses on Python development, backend engineering, data analysis and machine learning."
+  "targetRoles": ["Data Analyst", "Data Scientist", "Python Developer", "MIS Analyst"],
+  "professionalSummary": "Mahesh Kale is an entry-level professional based in Pune, India, focused exclusively on Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. His verified toolkit spans Python, SQL, Power BI and machine-learning fundamentals."
 }
