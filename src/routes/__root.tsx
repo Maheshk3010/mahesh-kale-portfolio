@@ -145,8 +145,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <MahiAI />
-      <AdminOverlay />
+      <Suspense fallback={null}>
+        <MahiAI />
+        <AdminOverlay />
+      </Suspense>
     </QueryClientProvider>
   );
 }
