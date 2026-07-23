@@ -14,20 +14,20 @@ import {
 } from "./types";
 
 const FOLLOWUPS: Record<Intent, string[]> = {
-  profile: ["What skills does Mahesh have?", "Which role suits Mahesh best?", "Why should I hire Mahesh?"],
-  skills: ["Which role suits Mahesh best?", "Does Mahesh know Flask?", "Does Mahesh know Machine Learning?"],
-  projects: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  experience: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  education: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  certifications: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  resume: ["How can I contact Mahesh?", "What skills does Mahesh have?"],
-  contact: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  github: ["What projects has Mahesh built?", "What skills does Mahesh have?"],
-  linkedin: ["How can I contact Mahesh?", "What skills does Mahesh have?"],
-  roles: ["What skills does Mahesh have?", "Why should I hire Mahesh?"],
-  interview: ["What skills does Mahesh have?", "Which role suits Mahesh best?"],
-  general: ["What skills does Mahesh have?", "Which role suits Mahesh best?", "Why should I hire Mahesh?"],
-  unknown: ["Who is Mahesh?", "What skills does Mahesh have?", "Which role suits Mahesh best?"],
+  profile: ["What skills does Mahesh have?", "Show projects", "View Resume"],
+  skills: ["Show projects", "View Resume", "Contact Mahesh"],
+  projects: ["Open GitHub", "Show Python skills", "Download Resume"],
+  experience: ["Show projects", "View Resume", "Contact Mahesh"],
+  education: ["Show certifications", "What skills does Mahesh have?", "View Resume"],
+  certifications: ["Show projects", "What skills does Mahesh have?", "View Resume"],
+  resume: ["Contact Mahesh", "View LinkedIn", "Show projects"],
+  contact: ["View LinkedIn", "Download Resume", "Open GitHub"],
+  github: ["Show projects", "What skills does Mahesh have?", "Download Resume"],
+  linkedin: ["Contact Mahesh", "Download Resume", "Show projects"],
+  roles: ["What skills does Mahesh have?", "Show projects", "View Resume"],
+  interview: ["Show projects", "What skills does Mahesh have?", "Contact Mahesh"],
+  general: ["What skills does Mahesh have?", "Show projects", "Contact Mahesh"],
+  unknown: ["Who is Mahesh?", "What skills does Mahesh have?", "Show projects"],
 };
 
 const formatters: Record<Intent, (r: SearchResult) => string> = {
