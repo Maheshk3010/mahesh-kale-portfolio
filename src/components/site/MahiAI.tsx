@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Send, X, Sparkles, Info } from "lucide-react";
+import { Bot, Send, X, Sparkles } from "lucide-react";
 import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
 import { mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
-import type { ChatMessage as EngineMessage } from "@/mahi";
+import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
+import { RichResponse } from "./mahi/RichResponse";
 
 type ChatMessage = {
   id: string;
@@ -12,6 +13,8 @@ type ChatMessage = {
   createdAt: number;
   suggestions?: string[];
   unverified?: boolean;
+  intent?: Intent;
+  verified?: boolean;
 };
 
 const QUICK_QUESTIONS = [
@@ -81,6 +84,8 @@ export function MahiAI() {
           content: response.reply,
           createdAt: Date.now(),
           suggestions: response.suggestions,
+          intent: response.intent,
+          verified: response.verified,
           unverified:
             !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
         },
@@ -297,22 +302,16 @@ function MessageBubble({
 }) {
   const isUser = message.role === "user";
 
-  if (!isUser && message.unverified) {
+  if (isUser) {
     return (
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
-        className="flex justify-start"
+        className="flex justify-end"
       >
-        <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
-          🤖
-        </div>
-        <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-primary/20 bg-primary/[0.06] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90">
-          <div className="flex items-start gap-2">
-            <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-            <div className="whitespace-pre-line">{message.content}</div>
-          </div>
+        <div className="max-w-[80%] rounded-2xl rounded-br-md bg-primary px-3.5 py-2 text-sm text-primary-foreground shadow-[0_6px_20px_-8px_var(--primary)]">
+          {message.content}
         </div>
       </motion.div>
     );
@@ -323,25 +322,31 @@ function MessageBubble({
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className={`flex flex-col ${isUser ? "items-end" : "items-start"}`}
+      className="flex flex-col items-start"
     >
-      <div className={`flex ${isUser ? "justify-end" : "justify-start"} w-full`}>
-        {!isUser && (
-          <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
-            🤖
-          </div>
-        )}
-        <div
-          className={
-            isUser
-              ? "max-w-[80%] rounded-2xl rounded-br-md bg-primary px-3.5 py-2 text-sm text-primary-foreground shadow-[0_6px_20px_-8px_var(--primary)]"
-              : "max-w-[85%] rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90 whitespace-pre-line"
-          }
-        >
-          {message.content}
+      <div className="flex w-full justify-start">
+        <div className="mr-2 mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary/15 text-sm">
+          🤖
+        </div>
+        <div className="min-w-0 max-w-[88%] flex-1">
+          {message.intent ? (
+            <RichResponse
+              response={{
+                reply: message.content,
+                intent: message.intent,
+                verified: message.verified ?? true,
+                suggestions: message.suggestions,
+              }}
+              onAsk={(q) => onSuggestion?.(q)}
+            />
+          ) : (
+            <div className="rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm leading-relaxed text-foreground/90 whitespace-pre-line">
+              {message.content}
+            </div>
+          )}
         </div>
       </div>
-      {!isUser && message.suggestions && message.suggestions.length > 0 && onSuggestion && (
+      {message.suggestions && message.suggestions.length > 0 && onSuggestion && (
         <div className="mt-2 ml-9 flex flex-wrap gap-1.5">
           {message.suggestions.map((s) => (
             <button
