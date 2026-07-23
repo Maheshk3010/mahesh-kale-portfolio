@@ -665,6 +665,26 @@ function ProjectDetails({
           </DetailBlock>
         )}
 
+        {TECHNOLOGY_DECISIONS[project.title]?.length > 0 && (
+          <DetailBlock title="Technology Decisions">
+            <ul className="grid gap-3">
+              {TECHNOLOGY_DECISIONS[project.title].map((d, idx) => (
+                <li
+                  key={idx}
+                  className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
+                >
+                  <div className="text-sm font-semibold text-foreground/90">
+                    {d.technology}
+                  </div>
+                  <div className="mt-1 text-sm text-muted-foreground">
+                    {d.reason}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
         {project.features.length > 0 && (
           <DetailBlock title="Key Features">
             <ul className="grid gap-1.5">
