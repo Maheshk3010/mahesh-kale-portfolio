@@ -561,6 +561,19 @@ function ProjectDetails({
           </DetailBlock>
         )}
 
+        {LEARNINGS[project.title]?.length > 0 && (
+          <DetailBlock title="Key Learnings">
+            <ul className="grid gap-1.5">
+              {LEARNINGS[project.title].map((l, idx) => (
+                <li key={idx} className="flex gap-2 text-sm text-muted-foreground">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
+                  {l}
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
         {project.features.length > 0 && (
           <DetailBlock title="Key Features">
             <ul className="grid gap-1.5">
