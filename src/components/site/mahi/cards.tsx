@@ -368,10 +368,16 @@ export function ContactCard({ reply }: { reply?: string }) {
               icon={<Mail className="h-3 w-3" />}
               variant="primary"
               external={false}
+              analyticsAction="email_click"
             >
               Email
             </ActionButton>
-            <CopyButton value={c.email} label="Copy Email" icon={<Copy className="h-3 w-3" />} />
+            <CopyButton
+              value={c.email}
+              label="Copy Email"
+              icon={<Copy className="h-3 w-3" />}
+              analyticsAction="copy_email"
+            />
           </>
         )}
         {c.phone && (
@@ -380,14 +386,24 @@ export function ContactCard({ reply }: { reply?: string }) {
               href={`tel:${c.phone}`}
               icon={<Phone className="h-3 w-3" />}
               external={false}
+              analyticsAction="phone_click"
             >
               Call
             </ActionButton>
-            <CopyButton value={c.phone} label="Copy Phone" icon={<Copy className="h-3 w-3" />} />
+            <CopyButton
+              value={c.phone}
+              label="Copy Phone"
+              icon={<Copy className="h-3 w-3" />}
+              analyticsAction="copy_phone"
+            />
           </>
         )}
         {c.linkedin && (
-          <ActionButton href={c.linkedin} icon={<Linkedin className="h-3 w-3" />}>
+          <ActionButton
+            href={c.linkedin}
+            icon={<Linkedin className="h-3 w-3" />}
+            analyticsAction="linkedin_open"
+          >
             LinkedIn
           </ActionButton>
         )}
