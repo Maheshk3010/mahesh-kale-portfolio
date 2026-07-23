@@ -8,28 +8,45 @@ import {
   X,
   ExternalLink,
   Sparkles,
+  Star,
+  Code2,
 } from "lucide-react";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 import type { Project } from "@/mahi/types";
 
 type Category =
   | "All"
-  | "Data Analytics"
-  | "Machine Learning"
+  | "Featured"
   | "Python"
-  | "Business Intelligence"
+  | "Machine Learning"
   | "Recommendation Systems"
-  | "Time Series";
+  | "Time Series"
+  | "Data Analysis";
 
 const CATEGORIES: Category[] = [
   "All",
-  "Data Analytics",
-  "Machine Learning",
+  "Featured",
   "Python",
-  "Business Intelligence",
+  "Machine Learning",
   "Recommendation Systems",
   "Time Series",
+  "Data Analysis",
 ];
+
+const FEATURED_TITLES = new Set<string>([
+  "Apple Stock Price Prediction System",
+  "Product Recommendation System",
+]);
+
+function isFeatured(p: Project) {
+  return FEATURED_TITLES.has(p.title);
+}
+
+function statusFor(p: Project): { label: string; tone: "primary" | "muted" } {
+  return p.github
+    ? { label: "Live on GitHub", tone: "primary" }
+    : { label: "In Development", tone: "muted" };
+}
 
 const BI_TECH = ["Power BI", "Excel", "Tableau"];
 const DA_TECH = ["SQL", "MySQL", "Power BI", "Excel"];
@@ -42,12 +59,12 @@ function techHas(p: Project, list: string[]) {
 
 function categoriesFor(p: Project): Category[] {
   const cats: Category[] = [];
-  if (techHas(p, BI_TECH)) cats.push("Business Intelligence");
-  if (techHas(p, DA_TECH)) cats.push("Data Analytics");
+  if (isFeatured(p)) cats.push("Featured");
+  if (techHas(p, DA_TECH) || techHas(p, BI_TECH)) cats.push("Data Analysis");
   if (techHas(p, ML_TECH) || /recommendation/i.test(p.title))
     cats.push("Machine Learning");
   if (/recommendation/i.test(p.title)) cats.push("Recommendation Systems");
-  if (/time series|forecast/i.test(p.title + p.description))
+  if (/time series|forecast|stock/i.test(p.title + p.description))
     cats.push("Time Series");
   if (techHas(p, PY_TECH)) cats.push("Python");
   return Array.from(new Set(cats));
@@ -96,7 +113,7 @@ export function Projects() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return enriched.filter(({ project, cats, roles }) => {
+    const list = enriched.filter(({ project, cats, roles }) => {
       const inCat = category === "All" || cats.includes(category);
       if (!inCat) return false;
       if (!q) return true;
@@ -111,7 +128,16 @@ export function Projects() {
         .toLowerCase();
       return hay.includes(q);
     });
+    // Featured first
+    return [...list].sort(
+      (a, b) => Number(isFeatured(b.project)) - Number(isFeatured(a.project)),
+    );
   }, [enriched, category, query]);
+
+  const featured = useMemo(
+    () => enriched.filter(({ project }) => isFeatured(project)),
+    [enriched],
+  );
 
   if (!projects.length) {
     return (
@@ -134,6 +160,27 @@ export function Projects() {
       title="Recruiter-ready project showcase."
       description="Verified projects aligned to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Filter, search and open any project for full context."
     >
+      {/* Featured strip */}
+      {featured.length > 0 && (
+        <div className="mb-6">
+          <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <Star className="h-3.5 w-3.5 text-primary" /> Featured projects
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {featured.map(({ project }) => (
+              <button
+                key={project.title}
+                type="button"
+                onClick={() => setActive(project)}
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary transition-all hover:border-primary/60 hover:bg-primary/15"
+              >
+                <Star className="h-3 w-3" /> {project.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Controls */}
       <div className="mb-6 grid gap-3 md:flex md:items-center md:justify-between">
         <div className="relative w-full md:max-w-xs">
@@ -185,13 +232,26 @@ export function Projects() {
             className="glass flex flex-col gap-4 rounded-3xl p-6"
           >
             <div className="flex items-start gap-3">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
+              <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
                 <FolderGit2 className="h-5 w-5" />
+                {isFeatured(project) && (
+                  <span
+                    aria-label="Featured project"
+                    className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full border border-primary/60 bg-background text-primary"
+                  >
+                    <Star className="h-2.5 w-2.5" />
+                  </span>
+                )}
               </span>
               <div className="min-w-0 flex-1">
-                <h3 className="text-lg font-semibold tracking-tight">
-                  {project.title}
-                </h3>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {project.title}
+                  </h3>
+                  {isFeatured(project) && (
+                    <Badge tone="primary">Featured</Badge>
+                  )}
+                </div>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
@@ -199,17 +259,23 @@ export function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-1.5">
-              {cats.slice(0, 2).map((c) => (
-                <Badge key={c} tone="primary">
-                  {c}
-                </Badge>
-              ))}
+              {cats
+                .filter((c) => c !== "Featured")
+                .slice(0, 2)
+                .map((c) => (
+                  <Badge key={c} tone="primary">
+                    {c}
+                  </Badge>
+                ))}
               {roles.slice(0, 2).map((r) => (
                 <Badge key={r} tone="accent">
                   {r}
                 </Badge>
               ))}
               <Badge tone="muted">{difficulty}</Badge>
+              <Badge tone={statusFor(project).tone}>
+                {statusFor(project).label}
+              </Badge>
             </div>
 
             <div className="flex flex-wrap gap-1.5">
@@ -232,14 +298,24 @@ export function Projects() {
                 <Sparkles className="h-3.5 w-3.5" /> View Details
               </button>
               {project.github ? (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
-                >
-                  <Github className="h-3.5 w-3.5" /> GitHub
-                </a>
+                <>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
+                  >
+                    <Code2 className="h-3.5 w-3.5" /> View Code
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
+                  >
+                    <Github className="h-3.5 w-3.5" /> Open GitHub
+                  </a>
+                </>
               ) : (
                 <span
                   aria-label="Repository not yet published"

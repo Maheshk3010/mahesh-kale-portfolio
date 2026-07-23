@@ -69,6 +69,22 @@
       "a": "Verified GitHub projects: **Apple Stock Price Prediction System** — https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM and **Product Recommendation System** — https://github.com/Maheshk3010/Product_Recommendation_System."
     },
     {
+      "q": "Which project should I look at first?",
+      "a": "Start with the two featured projects: **Apple Stock Price Prediction System** — an end-to-end LSTM time-series forecasting pipeline with a Streamlit interface (best showcase of Data Scientist / Python Developer skills), and **Product Recommendation System** — a Scikit-learn similarity engine (great overview of the core Data Science workflow). Both have verified GitHub repositories."
+    },
+    {
+      "q": "What is Mahesh's strongest project?",
+      "a": "**Apple Stock Price Prediction System** is Mahesh's strongest project — a complete Python + TensorFlow/Keras LSTM pipeline for time-series forecasting, deployed with an interactive Streamlit app. It's the most complete end-to-end demonstration of Data Scientist and Python Developer capability. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+    },
+    {
+      "q": "Show me featured projects",
+      "a": "Two featured projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit) and **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn). Both are verified on GitHub."
+    },
+    {
+      "q": "Show machine learning projects",
+      "a": "Verified ML projects: **Apple Stock Price Prediction System** (LSTM time-series forecasting in TensorFlow/Keras) and **Product Recommendation System** (Scikit-learn similarity-based recommendations)."
+    },
+    {
       "q": "Recommend your strongest Data Science project",
       "a": "**Apple Stock Price Prediction System** — an LSTM-based time-series forecasting pipeline built in Python with TensorFlow/Keras and a Streamlit interface. It's the strongest showcase of the end-to-end Data Scientist workflow."
     },
