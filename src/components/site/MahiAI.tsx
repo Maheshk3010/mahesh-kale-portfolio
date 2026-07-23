@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Send, X, Sparkles, Info } from "lucide-react";
+import { Bot, Send, X, Sparkles } from "lucide-react";
 import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
 import { mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
-import type { ChatMessage as EngineMessage } from "@/mahi";
+import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
+import { RichResponse } from "./mahi/RichResponse";
 
 type ChatMessage = {
   id: string;
@@ -12,6 +13,8 @@ type ChatMessage = {
   createdAt: number;
   suggestions?: string[];
   unverified?: boolean;
+  intent?: Intent;
+  verified?: boolean;
 };
 
 const QUICK_QUESTIONS = [
