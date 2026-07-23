@@ -26,6 +26,8 @@ export function ActionButton({
   variant = "default",
   download,
   external = true,
+  analyticsAction,
+  analyticsLabel,
 }: {
   href?: string;
   onClick?: () => void;
@@ -34,6 +36,8 @@ export function ActionButton({
   variant?: "default" | "primary";
   download?: boolean | string;
   external?: boolean;
+  analyticsAction?: AnalyticsActionType;
+  analyticsLabel?: string;
 }) {
   const base =
     "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] font-medium transition-all";
@@ -42,6 +46,9 @@ export function ActionButton({
       ? "border border-primary/50 bg-primary/15 text-primary hover:bg-primary/25 hover:shadow-[0_0_18px_-6px_var(--primary)]"
       : "border border-white/10 bg-white/[0.04] text-foreground/90 hover:border-primary/40 hover:bg-primary/10 hover:text-primary";
   const cls = `${base} ${styles}`;
+  const track = () => {
+    if (analyticsAction) analyticsService.trackAction(analyticsAction, analyticsLabel);
+  };
 
   if (href) {
     return (
@@ -49,6 +56,10 @@ export function ActionButton({
         href={href}
         {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
         {...(download !== undefined ? { download } : {})}
+        onClick={() => {
+          track();
+          onClick?.();
+        }}
         className={cls}
       >
         {icon}
@@ -58,7 +69,14 @@ export function ActionButton({
     );
   }
   return (
-    <button type="button" onClick={onClick} className={cls}>
+    <button
+      type="button"
+      onClick={() => {
+        track();
+        onClick?.();
+      }}
+      className={cls}
+    >
       {icon}
       {children}
     </button>
