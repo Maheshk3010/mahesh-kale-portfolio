@@ -24,15 +24,22 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="About"
-      title={
+      eyebrow="Executive Profile"
+      title="Turning Data into Insights and Intelligent Solutions."
+      description={
         <>
-          Entry-level, data-focused,
+          I am Mahesh Sakharam Kale, a Computer Science graduate specializing in Artificial Intelligence, Machine Learning, and Virtual Reality. Through internships in Data Science, Data Analytics, and Python Development, I have developed practical experience in building data-driven solutions using Python, SQL, Power BI, Machine Learning, and data visualization techniques.
           <br />
-          <span className="text-muted-foreground">recruiter-ready.</span>
+          <br />
+          My portfolio showcases verified projects including an LSTM-based Apple Stock Price Prediction System and a Product Recommendation System, demonstrating end-to-end capabilities in data preprocessing, predictive modeling, recommendation systems, and application development.
+          <br />
+          <br />
+          I enjoy solving real-world business problems through analytical thinking, clean code, and practical machine learning solutions. I improve my technical skills through hands-on projects, internships, and structured learning while maintaining a strong focus on building reliable and scalable solutions.
+          <br />
+          <br />
+          Currently, I am seeking opportunities as a Data Analyst, Data Scientist, Python Developer, or MIS Analyst where I can contribute technical expertise, analytical problem-solving, and a continuous learning mindset to deliver meaningful business impact.
         </>
       }
-      description="Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles — with a verified toolkit across Python, SQL, Power BI and machine-learning fundamentals."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {pillars.map((p, i) => (
