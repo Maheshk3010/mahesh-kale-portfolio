@@ -361,6 +361,11 @@ function ExperienceCard({ reply, onNavigate }: { reply: string; onNavigate?: () 
           )}
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="experience" onNavigated={onNavigate}>
+          View Experience
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
