@@ -10,6 +10,7 @@ import {
   Sparkles,
   Star,
   Code2,
+  ArrowDown,
 } from "lucide-react";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 import type { Project } from "@/mahi/types";
