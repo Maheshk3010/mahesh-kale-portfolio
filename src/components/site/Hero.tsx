@@ -115,10 +115,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
           >
-            I build production-grade Python applications, resilient backend
-            systems and analytics platforms — dashboards, automation tools and
-            machine-learning projects that turn raw data into decisions.
+            Entry-level IT professional focused on Data Analyst, Data
+            Scientist, Python Developer and MIS Analyst roles — turning data
+            into decisions with Python, SQL, Power BI and machine learning.
           </motion.p>
+
 
           {/* CTAs */}
           <motion.div
