@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Send, X, Sparkles, Mic, Loader2 } from "lucide-react";
+import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
-import { mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
+import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
 import { useVoiceInput } from "@/mahi/voice";
 import { RichResponse } from "./mahi/RichResponse";
+import { AnalyticsPanel } from "./mahi/AnalyticsPanel";
 
 type ChatMessage = {
   id: string;
