@@ -160,7 +160,11 @@ export class AnalyticsService {
 
   trackAction(action: AnalyticsActionType, label?: string): void {
     this.events.push({ type: "action_performed", action, label, at: Date.now() });
-    this.commit({ actions: this.inc(this.snapshot.counts.actions, action) });
+    const nextActions: AnalyticsCounts["actions"] = {
+      ...this.snapshot.counts.actions,
+      [action]: (this.snapshot.counts.actions[action] ?? 0) + 1,
+    };
+    this.commit({ actions: nextActions });
   }
 
   reset(): void {
