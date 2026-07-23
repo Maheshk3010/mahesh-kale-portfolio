@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from "react";
 import {
   Info,
   Mail,
@@ -12,9 +13,59 @@ import {
   Code2,
   Sparkles,
   Target,
+  ArrowDown,
 } from "lucide-react";
-import { knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import { knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
+
+/**
+ * Subscribes to the NavigationService so action buttons appear/hide
+ * reactively as sections mount/unmount.
+ */
+function useSectionAvailable(id: string): boolean {
+  return useSyncExternalStore(
+    (cb) => navigationService.subscribe(cb),
+    () => navigationService.has(id),
+    () => false,
+  );
+}
+
+function NavAction({
+  sectionId,
+  children,
+  onNavigated,
+}: {
+  sectionId: string;
+  children: React.ReactNode;
+  onNavigated?: () => void;
+}) {
+  const available = useSectionAvailable(sectionId);
+  if (!available) return null;
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        navigationService.scrollTo(sectionId);
+        onNavigated?.();
+      }}
+      className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1.5 text-[11px] font-medium text-primary transition-all hover:border-primary/50 hover:bg-primary/15 hover:shadow-[0_0_18px_-6px_var(--primary)]"
+    >
+      <ArrowDown className="h-3 w-3" />
+      {children}
+    </button>
+  );
+}
+
+function ActionsRow({ children }: { children: React.ReactNode }) {
+  // Filter out nulls so the row disappears when no NavActions are available.
+  const items = Array.isArray(children)
+    ? (children as React.ReactNode[]).filter(Boolean)
+    : children
+      ? [children]
+      : [];
+  if (items.length === 0) return null;
+  return <div className="mt-3 flex flex-wrap gap-1.5">{items}</div>;
+}
 
 /**
  * Presentation-only rich response renderer.
@@ -26,9 +77,11 @@ import type { ChatEngineResponse, Intent } from "@/mahi";
 export function RichResponse({
   response,
   onAsk,
+  onNavigate,
 }: {
   response: ChatEngineResponse;
   onAsk: (q: string) => void;
+  onNavigate?: () => void;
 }) {
   const { intent, verified, reply } = response;
 
@@ -36,32 +89,27 @@ export function RichResponse({
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
   }
 
-  const kb = knowledgeBase;
-
   switch (intent) {
     case "skills":
-      return <SkillsCard reply={reply} />;
+      return <SkillsCard reply={reply} onNavigate={onNavigate} />;
     case "projects":
-      return <ProjectsCard reply={reply} onAsk={onAsk} />;
+      return <ProjectsCard reply={reply} onAsk={onAsk} onNavigate={onNavigate} />;
     case "experience":
-      return <ExperienceCard reply={reply} />;
+      return <ExperienceCard reply={reply} onNavigate={onNavigate} />;
     case "education":
       return <EducationCard reply={reply} />;
     case "certifications":
-      return <CertificationsCard reply={reply} />;
+      return <CertificationsCard reply={reply} onNavigate={onNavigate} />;
     case "contact":
     case "github":
     case "linkedin":
     case "resume":
-      return <ContactCard reply={reply} />;
+      return <ContactCard reply={reply} onNavigate={onNavigate} />;
     case "roles":
-      return <RolesCard reply={reply} />;
+      return <RolesCard reply={reply} onNavigate={onNavigate} />;
     default:
       return <PlainReply reply={reply} />;
   }
-
-  // Unreachable, but keeps `kb` referenced for future intents.
-  void kb;
 }
 
 /* -------------------------------- Building blocks -------------------------------- */
@@ -170,7 +218,7 @@ function InfoCard({ title, message }: { title: string; message: string }) {
 
 /* --------------------------------- Intent cards --------------------------------- */
 
-function SkillsCard({ reply }: { reply: string }) {
+function SkillsCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const skills = knowledgeBase.skills.skills.filter((s) => s.confidence === "verified");
   const grouped = skills.reduce<Record<string, typeof skills>>((acc, s) => {
     (acc[s.category] ||= []).push(s);
@@ -197,11 +245,24 @@ function SkillsCard({ reply }: { reply: string }) {
           </div>
         ))}
       </div>
+      <ActionsRow>
+        <NavAction sectionId="skills" onNavigated={onNavigate}>
+          View Skills
+        </NavAction>
+      </ActionsRow>
     </CardShell>
   );
 }
 
-function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => void }) {
+function ProjectsCard({
+  reply,
+  onAsk,
+  onNavigate,
+}: {
+  reply: string;
+  onAsk: (q: string) => void;
+  onNavigate?: () => void;
+}) {
   const projects = knowledgeBase.projects.projects;
   if (!projects.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -249,6 +310,9 @@ function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => v
                 Open GitHub
               </ActionButton>
             )}
+            <NavAction sectionId="projects" onNavigated={onNavigate}>
+              View Project
+            </NavAction>
           </div>
         </CardShell>
       ))}
@@ -256,7 +320,7 @@ function ProjectsCard({ reply, onAsk }: { reply: string; onAsk: (q: string) => v
   );
 }
 
-function ExperienceCard({ reply }: { reply: string }) {
+function ExperienceCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const items = knowledgeBase.experience.experience;
   if (!items.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -297,6 +361,11 @@ function ExperienceCard({ reply }: { reply: string }) {
           )}
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="experience" onNavigated={onNavigate}>
+          View Experience
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
@@ -330,7 +399,7 @@ function EducationCard({ reply }: { reply: string }) {
   );
 }
 
-function CertificationsCard({ reply }: { reply: string }) {
+function CertificationsCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const items = knowledgeBase.certifications.certifications;
   if (!items.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -354,11 +423,16 @@ function CertificationsCard({ reply }: { reply: string }) {
           </div>
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="certifications" onNavigated={onNavigate}>
+          View Certifications
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
 
-function ContactCard({ reply }: { reply: string }) {
+function ContactCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const c = knowledgeBase.contact;
   const hasAny = c.email || c.phone || c.linkedin || c.github || c.resume;
   if (!hasAny) {
@@ -398,11 +472,16 @@ function ContactCard({ reply }: { reply: string }) {
           </ActionButton>
         )}
       </div>
+      <ActionsRow>
+        <NavAction sectionId="contact" onNavigated={onNavigate}>
+          Jump to Contact
+        </NavAction>
+      </ActionsRow>
     </CardShell>
   );
 }
 
-function RolesCard({ reply }: { reply: string }) {
+function RolesCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const roles = knowledgeBase.roles.roles;
   if (!roles.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -434,6 +513,14 @@ function RolesCard({ reply }: { reply: string }) {
           )}
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="skills" onNavigated={onNavigate}>
+          View Skills
+        </NavAction>
+        <NavAction sectionId="experience" onNavigated={onNavigate}>
+          View Experience
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
