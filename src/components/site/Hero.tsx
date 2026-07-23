@@ -233,9 +233,9 @@ function IdentityCard() {
             value="Pune, Maharashtra, India"
           />
           <MetaRow
-            icon={<span className="text-[10px] font-black text-primary">L1</span>}
+            icon={<span className="text-[10px] font-black text-primary">EL</span>}
             label="Level"
-            value="Entry Level Software Engineer"
+            value="Entry-Level IT Professional"
           />
         </div>
 
@@ -245,7 +245,7 @@ function IdentityCard() {
             Current focus
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {["Python", "Backend", "SQL", "Machine Learning"].map((t) => (
+            {["Python", "SQL", "Power BI", "Machine Learning"].map((t) => (
               <span
                 key={t}
                 className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-foreground/90"
@@ -255,6 +255,7 @@ function IdentityCard() {
             ))}
           </div>
         </div>
+
       </div>
     </motion.div>
   );
