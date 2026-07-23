@@ -1,9 +1,8 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, Download, MapPin, Mail, FolderGit2 } from "lucide-react";
 import { useEffect, useState } from "react";
-import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
 
-const maheshPhoto = maheshPhotoAsset.url;
+const maheshPhoto = "/maheshkale_pic.jpeg";
 
 const ROLES = [
   "Data Analyst",
