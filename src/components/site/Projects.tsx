@@ -160,6 +160,27 @@ export function Projects() {
       title="Recruiter-ready project showcase."
       description="Verified projects aligned to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Filter, search and open any project for full context."
     >
+      {/* Featured strip */}
+      {featured.length > 0 && (
+        <div className="mb-6">
+          <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <Star className="h-3.5 w-3.5 text-primary" /> Featured projects
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {featured.map(({ project }) => (
+              <button
+                key={project.title}
+                type="button"
+                onClick={() => setActive(project)}
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary transition-all hover:border-primary/60 hover:bg-primary/15"
+              >
+                <Star className="h-3 w-3" /> {project.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Controls */}
       <div className="mb-6 grid gap-3 md:flex md:items-center md:justify-between">
         <div className="relative w-full md:max-w-xs">
