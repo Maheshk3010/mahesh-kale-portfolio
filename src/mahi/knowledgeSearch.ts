@@ -1,5 +1,5 @@
 import { knowledgeBase } from "./knowledgeBase";
-import type { Intent, Project, SearchResult, FaqItem } from "./types";
+import type { Intent, SearchResult, FaqItem, Skill } from "./types";
 
 function tokens(text: string): string[] {
   return text
@@ -14,86 +14,117 @@ function scoreOverlap(haystack: string, needleTokens: string[]): number {
   return needleTokens.reduce((acc, t) => (h.includes(t) ? acc + 1 : acc), 0);
 }
 
+function has<T>(list: T[] | undefined | null): list is T[] {
+  return Array.isArray(list) && list.length > 0;
+}
+
 /** Route to the right slice of the knowledge base for an intent. */
 export function searchKnowledge(intent: Intent, query: string): SearchResult {
   const qTokens = tokens(query);
+  const kb = knowledgeBase;
 
   const routes: Partial<Record<Intent, () => SearchResult>> = {
-    profile: () => ({ intent, data: knowledgeBase.profile }),
+    profile: () => ({ intent, data: kb.profile, verified: true }),
+
     skills: () => {
-      const cats = knowledgeBase.skills.categories;
-      const matched = cats
-        .map((c) => ({
-          category: c,
+      const all = kb.skills.skills;
+      const matched = all
+        .map((s) => ({
+          skill: s,
           score:
-            scoreOverlap(c.name, qTokens) +
-            c.items.reduce((s, i) => s + scoreOverlap(i, qTokens), 0),
+            scoreOverlap(s.name, qTokens) +
+            scoreOverlap(s.category, qTokens) +
+            scoreOverlap(s.description, qTokens),
         }))
-        .filter((c) => c.score > 0);
-      return {
-        intent,
-        data: knowledgeBase.skills,
-        matchedItems: matched.length ? matched.map((m) => m.category) : cats,
-      };
-    },
-    projects: () => {
-      const all = knowledgeBase.projects.projects;
-      const scored = all
-        .map((p) => ({
-          project: p,
-          score:
-            scoreOverlap(p.name, qTokens) +
-            scoreOverlap(p.description, qTokens) +
-            p.tags.reduce((s, t) => s + scoreOverlap(t, qTokens), 0),
-        }))
+        .filter((m) => m.score > 0)
         .sort((a, b) => b.score - a.score);
-      const top = scored.filter((s) => s.score > 0).map((s) => s.project);
       return {
         intent,
-        data: knowledgeBase.projects,
-        matchedItems: top.length ? top : (all as Project[]),
+        data: kb.skills,
+        matchedItems: matched.length ? matched.map((m) => m.skill) : (all as Skill[]),
+        verified: has(all),
       };
     },
+
+    projects: () => ({
+      intent,
+      data: kb.projects,
+      matchedItems: kb.projects.projects,
+      verified: has(kb.projects.projects),
+    }),
+
     experience: () => ({
       intent,
-      data: knowledgeBase.experience,
-      matchedItems: knowledgeBase.experience.experience,
+      data: kb.experience,
+      matchedItems: kb.experience.experience,
+      verified: has(kb.experience.experience),
     }),
+
     education: () => ({
       intent,
-      data: knowledgeBase.education,
-      matchedItems: knowledgeBase.education.education,
+      data: kb.education,
+      matchedItems: kb.education.education,
+      verified: has(kb.education.education),
     }),
+
     certifications: () => ({
       intent,
-      data: knowledgeBase.certifications,
-      matchedItems: knowledgeBase.certifications.certifications,
+      data: kb.certifications,
+      matchedItems: kb.certifications.certifications,
+      verified: has(kb.certifications.certifications),
     }),
-    resume: () => ({ intent, data: knowledgeBase.resume }),
-    contact: () => ({ intent, data: knowledgeBase.contact }),
-    github: () => ({
+
+    resume: () => ({
       intent,
-      data: knowledgeBase.social.links.find((l) => l.platform === "GitHub"),
+      data: kb.resume,
+      verified: Boolean(kb.resume.url),
     }),
-    linkedin: () => ({
+
+    contact: () => ({
       intent,
-      data: knowledgeBase.social.links.find((l) => l.platform === "LinkedIn"),
+      data: kb.contact,
+      verified: Boolean(kb.contact.email || kb.contact.phone || kb.contact.linkedin || kb.contact.github),
     }),
+
+    github: () => {
+      const link = kb.social.links.find((l) => l.platform === "GitHub");
+      return { intent, data: link, verified: Boolean(link?.url) };
+    },
+
+    linkedin: () => {
+      const link = kb.social.links.find((l) => l.platform === "LinkedIn");
+      return { intent, data: link, verified: Boolean(link?.url) };
+    },
+
+    roles: () => ({
+      intent,
+      data: kb.roles,
+      matchedItems: kb.roles.roles,
+      verified: has(kb.roles.roles),
+    }),
+
+    interview: () => ({
+      intent,
+      data: kb.interview,
+      matchedItems: kb.interview.interviews,
+      verified: has(kb.interview.interviews),
+    }),
+
     general: () => {
-      // FAQ fuzzy lookup
-      const scored = knowledgeBase.faq.faqs
+      const scored = kb.faq.faqs
         .map((f) => ({ faq: f, score: scoreOverlap(f.q, qTokens) }))
         .sort((a, b) => b.score - a.score);
       const top = scored[0]?.score ? (scored[0].faq as FaqItem) : null;
       return {
         intent,
-        data: top ?? knowledgeBase.profile,
+        data: top ?? kb.profile,
         matchedItems: top ? [top] : [],
+        verified: true,
       };
     },
   };
 
   const runner = routes[intent];
-  if (!runner) return { intent: "unknown", data: null };
+  if (!runner) return { intent: "unknown", data: null, verified: false };
   return runner();
 }

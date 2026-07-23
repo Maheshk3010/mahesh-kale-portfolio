@@ -8,6 +8,8 @@ import contact from "./knowledge/contact.json";
 import social from "./knowledge/social.json";
 import resume from "./knowledge/resume.json";
 import faq from "./knowledge/faq.json";
+import roles from "./knowledge/roles.json";
+import interview from "./knowledge/interview.json";
 import type {
   KnowledgeBase,
   Profile,
@@ -20,6 +22,8 @@ import type {
   SocialData,
   Resume,
   FaqData,
+  RolesData,
+  InterviewData,
 } from "./types";
 
 export const knowledgeBase: KnowledgeBase = {
@@ -33,4 +37,6 @@ export const knowledgeBase: KnowledgeBase = {
   social: social as SocialData,
   resume: resume as Resume,
   faq: faq as FaqData,
+  roles: roles as RolesData,
+  interview: interview as InterviewData,
 };

@@ -1,6 +1,6 @@
 // Shared types for the MAHI.AI local engine.
-// Designed so an OpenAI-backed engine can replace the local one behind the
-// same ChatEngine interface without touching the UI.
+// The schema is stable so a future OpenAI / RAG backend can consume the same
+// JSON knowledge base without reshaping.
 
 export type Intent =
   | "profile"
@@ -13,52 +13,65 @@ export type Intent =
   | "contact"
   | "github"
   | "linkedin"
+  | "roles"
+  | "interview"
   | "general"
   | "unknown";
 
 export interface IntentMatch {
   intent: Intent;
-  confidence: number; // 0..1
+  confidence: number;
   keywords: string[];
 }
 
 export interface Profile {
-  name: string;
-  title: string;
+  fullName: string;
+  headline: string;
+  currentStatus: string;
+  careerObjective: string;
   location: string;
-  level: string;
+  languages: string[];
+  availability: string;
   openToWork: boolean;
-  summary: string;
-  highlights: string[];
+  professionalSummary: string;
 }
 
-export interface SkillCategory {
+export interface Skill {
   name: string;
-  items: string[];
+  category: string;
+  confidence: "verified" | "unverified";
+  projectsUsed: string[];
+  years: number | null;
+  description: string;
 }
 export interface SkillsData {
-  categories: SkillCategory[];
+  skills: Skill[];
 }
 
 export interface Project {
-  id: string;
-  name: string;
-  tags: string[];
+  title: string;
   description: string;
-  highlights: string[];
-  url?: string;
+  problem: string;
+  solution: string;
+  technologies: string[];
+  features: string[];
+  outcome: string;
+  github: string;
+  demo: string;
+  resumeSummary: string;
+  interviewExplanation: string;
 }
 export interface ProjectsData {
   projects: Project[];
 }
 
 export interface ExperienceItem {
-  role: string;
   company: string;
-  location: string;
-  start: string;
-  end: string;
-  highlights: string[];
+  role: string;
+  duration: string;
+  responsibilities: string[];
+  technologies: string[];
+  achievements: string[];
 }
 export interface ExperienceData {
   experience: ExperienceItem[];
@@ -66,11 +79,9 @@ export interface ExperienceData {
 
 export interface EducationItem {
   degree: string;
-  field: string;
-  institution: string;
-  location: string;
-  start: string;
-  end: string;
+  university: string;
+  graduationYear: string;
+  grade: string;
 }
 export interface EducationData {
   education: EducationItem[];
@@ -78,17 +89,20 @@ export interface EducationData {
 
 export interface Certification {
   name: string;
-  issuer: string;
+  organization: string;
   year: string;
-  url?: string;
+  verification: string;
 }
 export interface CertificationsData {
   certifications: Certification[];
 }
 
 export interface Contact {
-  email: string;
   phone: string;
+  email: string;
+  linkedin: string;
+  github: string;
+  resume: string;
   location: string;
   availability: string;
   preferredChannels: string[];
@@ -118,6 +132,26 @@ export interface FaqData {
   faqs: FaqItem[];
 }
 
+export interface RoleRecommendation {
+  title: string;
+  supportedBy: string[];
+}
+export interface RolesData {
+  roles: RoleRecommendation[];
+}
+
+export interface InterviewNote {
+  projectTitle: string;
+  overview: string;
+  businessProblem: string;
+  technicalSolution: string;
+  keyChallenges: string[];
+  result: string;
+}
+export interface InterviewData {
+  interviews: InterviewNote[];
+}
+
 export interface KnowledgeBase {
   profile: Profile;
   skills: SkillsData;
@@ -129,12 +163,15 @@ export interface KnowledgeBase {
   social: SocialData;
   resume: Resume;
   faq: FaqData;
+  roles: RolesData;
+  interview: InterviewData;
 }
 
 export interface SearchResult {
   intent: Intent;
   data: unknown;
   matchedItems?: unknown[];
+  verified: boolean;
 }
 
 export interface ChatMessage {
@@ -149,12 +186,16 @@ export interface ChatEngineResponse {
   reply: string;
   intent: Intent;
   suggestions?: string[];
+  verified: boolean;
 }
 
 /**
- * ChatEngine is the swappable boundary. A future OpenAI-backed engine simply
- * implements `ask` with the same signature.
+ * ChatEngine is the swappable boundary. A future OpenAI/gateway/RAG engine
+ * simply implements `ask` with the same signature.
  */
 export interface ChatEngine {
   ask(question: string, history?: ChatMessage[]): Promise<ChatEngineResponse>;
 }
+
+export const UNVERIFIED_FALLBACK =
+  "I don't have verified information regarding that topic.";
