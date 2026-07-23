@@ -2,8 +2,8 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const links = [
+  { href: "#why-hire", label: "Why Hire" },
   { href: "#about", label: "About" },
-  { href: "#dashboard", label: "Focus" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },

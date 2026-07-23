@@ -131,6 +131,46 @@
     {
       "q": "What is Mahesh's phone number?",
       "a": "+91 9307190535"
+    },
+    {
+      "q": "Why should I hire Mahesh?",
+      "a": "Mahesh pairs a verified Python + SQL + Power BI toolkit with hands-on machine-learning work (LSTM time-series forecasting, similarity-based recommendations) and three completed internships across Data Science, Data Analytics and Python Development. He is entry-level, open to work, immediately available, and focused only on Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+    },
+    {
+      "q": "What makes Mahesh different?",
+      "a": "Two shipped, GitHub-verified ML projects (Apple Stock Prediction with LSTM and a Scikit-learn Product Recommendation System), reinforced by internships at ExcelR, Sysslan and Codveda. Everything on this portfolio is verified — no invented metrics, no fabricated outcomes."
+    },
+    {
+      "q": "Which project best represents Mahesh?",
+      "a": "**Apple Stock Price Prediction System** — an end-to-end LSTM time-series pipeline in Python (TensorFlow/Keras) with a Streamlit interface. It best represents his Data Scientist and Python Developer skills. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+    },
+    {
+      "q": "Which technologies has Mahesh used professionally?",
+      "a": "During internships at ExcelR, Sysslan and Codveda he worked with Python, Pandas, NumPy, Scikit-learn, TensorFlow, SQL, MySQL, Power BI, Advanced Excel, Flask, REST APIs, Git and GitHub."
+    },
+    {
+      "q": "What should I look at first?",
+      "a": "Start with the **60-second overview** at the top of the portfolio, then the two featured projects: **Apple Stock Price Prediction System** and **Product Recommendation System**. Both have verified GitHub repositories."
+    },
+    {
+      "q": "What are Mahesh's soft skills?",
+      "a": "Analytical thinking, problem solving, continuous learning, clear communication and team collaboration — demonstrated across three internships and self-driven projects."
+    },
+    {
+      "q": "What is Mahesh currently learning?",
+      "a": "Mahesh is completing the Data Science Certification Program at ExcelR Solutions, Pune (July 2025 – January 2026), deepening machine learning, time-series forecasting and Power BI."
+    },
+    {
+      "q": "What is Mahesh's preferred location?",
+      "a": "Pune, Maharashtra, India."
+    },
+    {
+      "q": "Is Mahesh open to relocation?",
+      "a": "I don't have verified information regarding that topic."
+    },
+    {
+      "q": "What is Mahesh's notice period?",
+      "a": "I don't have verified information regarding that topic."
     }
   ]
 }
