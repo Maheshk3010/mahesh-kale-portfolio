@@ -1,8 +1,21 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Github, MessageSquare } from "lucide-react";
+import social from "@/mahi/knowledge/social.json";
+import contact from "@/mahi/knowledge/contact.json";
+
+function findLink(platform: string) {
+  const entry = social.links.find(
+    (l) => l.platform.toLowerCase() === platform.toLowerCase(),
+  );
+  return entry?.url?.trim() ? entry.url : "";
+}
 
 export function Contact() {
+  const github = findLink("GitHub");
+  const linkedin = findLink("LinkedIn");
+  const email = (contact.email ?? "").trim();
+
   return (
     <Section id="contact" className="pb-32">
       <motion.div
@@ -10,7 +23,7 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="glass relative overflow-hidden rounded-[2rem] p-10 md:p-16"
+        className="glass relative overflow-hidden rounded-[2rem] p-8 sm:p-10 md:p-16"
       >
         <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/25 blur-[120px]" />
         <div className="pointer-events-none absolute -left-32 -bottom-40 h-96 w-96 rounded-full bg-accent/20 blur-[140px]" />
@@ -21,33 +34,61 @@ export function Contact() {
             Open to new opportunities
           </div>
           <h2 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-            Let&apos;s build something
+            Let&apos;s turn data into
             <br />
-            <span className="text-gradient">worth shipping.</span>
+            <span className="text-gradient">decisions together.</span>
           </h2>
           <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            Whether you&apos;re a recruiter, founder or teammate — reach out. I
-            reply within 24 hours.
+            Recruiters and hiring managers — reach out for Data Analyst, Data
+            Scientist, Python Developer or MIS Analyst roles. Mahesh replies
+            within 24 hours.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="mailto:hello@maheshkale.dev"
-              className="glow-primary group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
-            >
-              <Mail className="h-4 w-4" />
-              hello@maheshkale.dev
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <a
-              href="https://linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
-            >
-              Connect on LinkedIn
-            </a>
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open GitHub profile in a new tab"
+                className="glow-primary group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+              >
+                <Github className="h-4 w-4" />
+                View GitHub
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
+            {email && (
+              <a
+                href={`mailto:${email}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
+              >
+                Email Mahesh
+              </a>
+            )}
+            {linkedin && (
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open LinkedIn profile in a new tab"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
+              >
+                Connect on LinkedIn
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+            <div className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-muted-foreground">
+              <MessageSquare className="h-3.5 w-3.5 text-primary" />
+              Or ask MAHI.AI in the bottom-right corner.
+            </div>
           </div>
+
+          {(!email || !linkedin) && (
+            <p className="mt-6 text-xs text-muted-foreground">
+              Email and LinkedIn details will appear here once verified.
+            </p>
+          )}
         </div>
       </motion.div>
     </Section>

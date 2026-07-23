@@ -129,12 +129,11 @@ export function Hero() {
             className="mt-9 flex flex-wrap items-center gap-3"
           >
             <a
-              href="/resume.pdf"
-              download
+              href="#contact"
               className="glow-primary group inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.03] hover:brightness-110"
             >
               <Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-              Download Resume
+              Request Resume
             </a>
             <a
               href="#projects"

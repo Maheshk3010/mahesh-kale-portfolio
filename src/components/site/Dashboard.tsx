@@ -1,49 +1,49 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { Activity, GitCommit, Cpu, Zap } from "lucide-react";
+import { Target, Wrench, MapPin, Clock } from "lucide-react";
+import rolesData from "@/mahi/knowledge/roles.json";
+import skillsData from "@/mahi/knowledge/skills.json";
+import profile from "@/mahi/knowledge/profile.json";
+
+const roles = rolesData.roles;
+const skillCount = (skillsData as { skills: Array<unknown> }).skills.length;
 
 const stats = [
-  { icon: GitCommit, label: "Commits (365d)", value: "1,842", trend: "+12%" },
-  { icon: Activity, label: "Deploys shipped", value: "312", trend: "+8%" },
-  { icon: Cpu, label: "Models in prod", value: "12", trend: "+3" },
-  { icon: Zap, label: "Avg. p95 latency", value: "184ms", trend: "-22%" },
+  { icon: Target, label: "Target roles", value: String(roles.length) },
+  { icon: Wrench, label: "Verified skills", value: String(skillCount) },
+  { icon: Clock, label: "Availability", value: profile.availability },
+  { icon: MapPin, label: "Based in", value: "Pune, India" },
 ];
-
-const bars = [42, 61, 55, 78, 66, 82, 71, 90, 74, 88, 96, 84];
-const months = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
 export function Dashboard() {
   return (
     <Section
       id="dashboard"
-      eyebrow="Career dashboard"
-      title="A quantified year of building."
-      description="A live-feel snapshot of what I've been shipping — output, reliability and the systems that keep improving."
+      eyebrow="Career focus"
+      title="Aligned to four data-focused roles."
+      description="A verified snapshot of where Mahesh is focused today — target roles, core toolset and availability. No inflated metrics, just the facts."
     >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="glass overflow-hidden rounded-3xl p-6 md:p-8"
       >
-        <div className="grid gap-4 md:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.label}
               className="rounded-2xl border border-white/5 bg-white/[0.02] p-4"
             >
-              <div className="flex items-center justify-between text-muted-foreground">
-                <s.icon className="h-4 w-4" />
-                <span className="rounded-full bg-[color:var(--success)]/15 px-2 py-0.5 text-[10px] font-semibold text-[color:var(--success)]">
-                  {s.trend}
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <s.icon className="h-4 w-4 text-primary" />
+                <span className="text-[10px] uppercase tracking-widest">
+                  {s.label}
                 </span>
               </div>
-              <div className="mt-3 text-2xl font-semibold tracking-tight">
+              <div className="mt-3 truncate text-lg font-semibold tracking-tight md:text-xl">
                 {s.value}
-              </div>
-              <div className="mt-0.5 text-xs uppercase tracking-widest text-muted-foreground">
-                {s.label}
               </div>
             </div>
           ))}
@@ -52,40 +52,47 @@ export function Dashboard() {
         <div className="mt-8 rounded-2xl border border-white/5 bg-white/[0.02] p-5">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <div className="text-sm font-medium">Shipping cadence</div>
+              <div className="text-sm font-medium">Target roles</div>
               <div className="text-xs text-muted-foreground">
-                Merges to main, last 12 months
+                Four data-focused positions Mahesh is actively pursuing
               </div>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              volume
-            </div>
+            <span className="hidden text-xs text-muted-foreground sm:inline">
+              Verified
+            </span>
           </div>
 
-          <div className="flex h-40 items-end gap-2">
-            {bars.map((h, i) => (
-              <motion.div
-                key={i}
-                initial={{ height: 0 }}
-                whileInView={{ height: `${h}%` }}
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {roles.map((r, i) => (
+              <motion.li
+                key={r.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative flex-1 rounded-t-md bg-gradient-to-t from-primary/70 to-accent/90"
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="group rounded-xl border border-white/5 bg-white/[0.03] p-4 transition-colors hover:border-primary/40"
               >
-                <span className="pointer-events-none absolute inset-x-0 -top-6 text-center text-[10px] font-semibold text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100">
-                  {h}
-                </span>
-              </motion.div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-sm font-semibold tracking-tight">
+                    {r.title}
+                  </div>
+                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Role 0{i + 1}
+                  </span>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {r.supportedBy.map((s) => (
+                    <span
+                      key={s}
+                      className="rounded-lg border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[11px] text-foreground/90"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </motion.li>
             ))}
-          </div>
-          <div className="mt-2 flex gap-2">
-            {months.map((m, i) => (
-              <div key={i} className="flex-1 text-center text-[10px] text-muted-foreground">
-                {m}
-              </div>
-            ))}
-          </div>
+          </ul>
         </div>
       </motion.div>
     </Section>
