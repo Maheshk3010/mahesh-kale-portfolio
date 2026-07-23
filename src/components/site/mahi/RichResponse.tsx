@@ -66,9 +66,11 @@ function NavAction({
 export function RichResponse({
   response,
   onAsk,
+  onNavigate,
 }: {
   response: ChatEngineResponse;
   onAsk: (q: string) => void;
+  onNavigate?: () => void;
 }) {
   const { intent, verified, reply } = response;
 
@@ -76,32 +78,27 @@ export function RichResponse({
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
   }
 
-  const kb = knowledgeBase;
-
   switch (intent) {
     case "skills":
-      return <SkillsCard reply={reply} />;
+      return <SkillsCard reply={reply} onNavigate={onNavigate} />;
     case "projects":
-      return <ProjectsCard reply={reply} onAsk={onAsk} />;
+      return <ProjectsCard reply={reply} onAsk={onAsk} onNavigate={onNavigate} />;
     case "experience":
-      return <ExperienceCard reply={reply} />;
+      return <ExperienceCard reply={reply} onNavigate={onNavigate} />;
     case "education":
       return <EducationCard reply={reply} />;
     case "certifications":
-      return <CertificationsCard reply={reply} />;
+      return <CertificationsCard reply={reply} onNavigate={onNavigate} />;
     case "contact":
     case "github":
     case "linkedin":
     case "resume":
-      return <ContactCard reply={reply} />;
+      return <ContactCard reply={reply} onNavigate={onNavigate} />;
     case "roles":
-      return <RolesCard reply={reply} />;
+      return <RolesCard reply={reply} onNavigate={onNavigate} />;
     default:
       return <PlainReply reply={reply} />;
   }
-
-  // Unreachable, but keeps `kb` referenced for future intents.
-  void kb;
 }
 
 /* -------------------------------- Building blocks -------------------------------- */
