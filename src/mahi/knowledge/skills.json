@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "items": ["Python", "SQL", "JavaScript", "TypeScript"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Flask", "REST APIs", "FastAPI", "Node.js"]
+    },
+    {
+      "name": "Data & Analytics",
+      "items": ["Pandas", "NumPy", "Power BI", "Excel", "PostgreSQL", "MySQL"]
+    },
+    {
+      "name": "Machine Learning",
+      "items": ["scikit-learn", "Regression", "Classification", "Model Evaluation"]
+    },
+    {
+      "name": "Tools & DevOps",
+      "items": ["Git", "GitHub", "Docker", "Postman", "VS Code"]
+    }
+  ]
+}

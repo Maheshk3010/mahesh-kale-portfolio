@@ -1,0 +1,14 @@
+{
+  "name": "Mahesh Kale",
+  "title": "Python & Backend Developer",
+  "location": "Pune, Maharashtra, India",
+  "level": "Entry Level Software Engineer",
+  "openToWork": true,
+  "summary": "Python developer focused on backend systems, data analytics, and machine learning. I build production-grade APIs, dashboards and automation tools that turn raw data into decisions.",
+  "highlights": [
+    "Production-grade Python applications",
+    "Backend APIs with Flask and REST",
+    "Analytics dashboards with Power BI & SQL",
+    "Machine learning experimentation"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "experience": [
+    {
+      "role": "Python Developer Intern",
+      "company": "Independent / Freelance",
+      "location": "Remote",
+      "start": "2024",
+      "end": "Present",
+      "highlights": [
+        "Built REST APIs with Flask for small business clients",
+        "Designed SQL schemas and analytics dashboards",
+        "Shipped automation scripts saving manual effort"
+      ]
+    },
+    {
+      "role": "Data Analytics Projects",
+      "company": "Academic & Personal",
+      "location": "Pune, India",
+      "start": "2023",
+      "end": "2024",
+      "highlights": [
+        "Delivered Power BI dashboards for sales & operations",
+        "Cleaned and modeled datasets with Python",
+        "Presented insights to non-technical stakeholders"
+      ]
+    }
+  ]
+}

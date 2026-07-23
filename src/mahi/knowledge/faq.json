@@ -1,0 +1,20 @@
+{
+  "faqs": [
+    {
+      "q": "Why should I hire Mahesh?",
+      "a": "Mahesh combines backend engineering with data analytics — he ships production-grade Python code, designs clean APIs, and turns messy data into clear dashboards. He learns fast, communicates clearly with non-technical stakeholders, and takes ownership from problem to shipped solution."
+    },
+    {
+      "q": "Is Mahesh open to relocation?",
+      "a": "Yes — Mahesh is based in Pune, India and is open to relocation and remote roles for the right opportunity."
+    },
+    {
+      "q": "What roles is Mahesh targeting?",
+      "a": "Python Developer, Backend Developer, Data Analyst, and Junior ML Engineer roles."
+    },
+    {
+      "q": "What is Mahesh's notice period?",
+      "a": "Immediately available — Mahesh can start on short notice."
+    }
+  ]
+}
