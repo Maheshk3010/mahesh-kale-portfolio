@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Entry-level IT professional focused on Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Python, SQL, Power BI and machine-learning fundamentals.",
+          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles.",
+          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],

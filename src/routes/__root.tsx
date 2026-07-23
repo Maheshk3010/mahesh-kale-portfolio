@@ -86,23 +86,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MAHI Portfolio — Mahesh Kale" },
+      { title: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
       {
         name: "description",
         content:
-          "MAHI Portfolio — Mahesh Kale, entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles.",
+          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
       },
       { name: "author", content: "Mahesh Kale" },
-      { property: "og:title", content: "MAHI Portfolio — Mahesh Kale" },
+      { property: "og:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
       {
         property: "og:description",
         content:
-          "Data Analyst · Data Scientist · Python Developer · MIS Analyst.",
+          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
       },
       { property: "og:site_name", content: "MAHI Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
+      { name: "twitter:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
+      { name: "twitter:description", content: "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
     ],
     links: [
       {
