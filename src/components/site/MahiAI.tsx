@@ -84,6 +84,8 @@ export function MahiAI() {
           content: response.reply,
           createdAt: Date.now(),
           suggestions: response.suggestions,
+          intent: response.intent,
+          verified: response.verified,
           unverified:
             !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
         },
