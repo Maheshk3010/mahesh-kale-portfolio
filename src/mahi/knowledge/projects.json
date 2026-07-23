@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "sales-analytics",
+      "name": "Sales Analytics Dashboard",
+      "tags": ["Python", "SQL", "Power BI"],
+      "description": "Interactive dashboard tracking revenue, region and product performance with drill-through views.",
+      "highlights": [
+        "Automated ETL from CSV/SQL into Power BI",
+        "KPI cards, trends and cohort views",
+        "Reduced weekly reporting time by ~70%"
+      ],
+      "url": ""
+    },
+    {
+      "id": "flask-rest-api",
+      "name": "Flask REST API Platform",
+      "tags": ["Python", "Flask", "REST API", "PostgreSQL"],
+      "description": "Modular Flask backend with JWT auth, role-based access and PostgreSQL persistence.",
+      "highlights": [
+        "Clean layered architecture",
+        "OpenAPI documented endpoints",
+        "Unit + integration tests"
+      ],
+      "url": ""
+    },
+    {
+      "id": "ml-churn",
+      "name": "Customer Churn Prediction",
+      "tags": ["Python", "Machine Learning", "scikit-learn"],
+      "description": "End-to-end ML pipeline predicting churn with feature engineering and evaluation reports.",
+      "highlights": [
+        "Logistic Regression & Random Forest",
+        "ROC-AUC and confusion matrix reporting",
+        "Reusable preprocessing pipeline"
+      ],
+      "url": ""
+    },
+    {
+      "id": "automation-suite",
+      "name": "Python Automation Suite",
+      "tags": ["Python", "Automation"],
+      "description": "Scripts for report generation, file processing and email delivery.",
+      "highlights": [
+        "Saves manual effort each week",
+        "Configurable via YAML",
+        "Robust logging and retries"
+      ],
+      "url": ""
+    }
+  ]
+}

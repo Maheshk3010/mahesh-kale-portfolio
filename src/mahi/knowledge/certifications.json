@@ -1,0 +1,28 @@
+{
+  "certifications": [
+    {
+      "name": "Python for Data Science",
+      "issuer": "Coursera",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "name": "SQL for Data Analysis",
+      "issuer": "Udemy",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "name": "Machine Learning Foundations",
+      "issuer": "Coursera",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "name": "Power BI Essentials",
+      "issuer": "Microsoft Learn",
+      "year": "2024",
+      "url": ""
+    }
+  ]
+}
