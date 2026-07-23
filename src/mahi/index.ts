@@ -4,6 +4,7 @@ export { detectIntent } from "./intentDetector";
 export { searchKnowledge } from "./knowledgeSearch";
 export { generateResponse } from "./responseGenerator";
 export { LocalChatEngine, mahiEngine } from "./chatEngine";
+export { ConversationService, conversationService } from "./conversationService";
 export { navigationService } from "./navigation";
 export type { NavigationService, SectionRegistration } from "./navigation";
 export { useSectionRegistration } from "./useSectionRegistration";
