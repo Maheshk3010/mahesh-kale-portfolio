@@ -195,6 +195,34 @@
     {
       "q": "What challenges did you face in the Sales Dashboard?",
       "a": "Consolidating scattered SQL and Excel sources into one trustworthy model, and making the report self-serve for non-technical stakeholders. Solved by cleaning and modelling data in Power BI with consistent KPIs, then designing KPI cards and interactive slicers by product, region and period."
+    },
+    {
+      "q": "What did you learn from the Apple Stock Price Prediction project?",
+      "a": "He learned the end-to-end time-series forecasting workflow, how to build and train LSTM models in TensorFlow/Keras, the importance of normalization and sequence generation, regression evaluation with RMSE/MAE, and how to deploy an ML application with Streamlit."
+    },
+    {
+      "q": "What did you learn from the Product Recommendation System project?",
+      "a": "He learned collaborative filtering and similarity-based recommendation techniques, how to evaluate recommendation quality, data preprocessing and feature engineering with Pandas/NumPy, and how recommendation systems improve user experience in real-world applications."
+    },
+    {
+      "q": "What did you learn from the Job Tracker API project?",
+      "a": "He learned how to design RESTful CRUD endpoints with Flask, separate routing from data access, model relational data in MySQL, validate JSON requests and return consistent error responses, and manage the full API request lifecycle."
+    },
+    {
+      "q": "What did you learn from the Sales Dashboard project?",
+      "a": "He learned how to import, clean and model SQL/Excel data in Power BI, define business KPIs and calculated measures, build interactive slicers for self-service analysis, and design visuals that communicate insights to non-technical stakeholders."
+    },
+    {
+      "q": "What did you learn from your projects?",
+      "a": "Across projects, he learned end-to-end machine learning pipelines (LSTM time-series forecasting and Scikit-learn recommendation systems), REST API design with Flask and MySQL, and business intelligence reporting with Power BI, SQL and Excel."
+    },
+    {
+      "q": "What skills did this project help you develop?",
+      "a": "Each project strengthened specific skills: the Apple Stock project developed deep-learning and time-series modelling; the Recommendation System developed collaborative filtering and feature engineering; the Job Tracker API developed Flask, REST design and MySQL; and the Sales Dashboard developed Power BI, KPI design and data storytelling."
+    },
+    {
+      "q": "Explain your learning experience.",
+      "a": "Mahesh's learning has been project-driven: he built ML models in Python (LSTM, recommendation systems), developed backend APIs with Flask and MySQL, and created business dashboards with Power BI and SQL. Every project focused on practical, recruiter-relevant skills for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
     }
   ]
 }
