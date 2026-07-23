@@ -2,42 +2,57 @@
   "projects": [
     {
       "title": "Job Tracker API",
-      "description": "",
-      "problem": "",
-      "solution": "",
+      "description": "REST API for tracking job applications end-to-end — create, update, list and delete applications with a clean Flask backend.",
+      "problem": "Job seekers lose track of applications across companies, roles and statuses without a structured system to store and query them.",
+      "solution": "A Flask-based REST API exposing CRUD endpoints for job applications, backed by a MySQL schema for durable storage and querying.",
       "technologies": ["Python", "Flask", "REST API", "MySQL"],
-      "features": [],
-      "outcome": "",
+      "features": [
+        "CRUD endpoints for job applications",
+        "MySQL-backed relational storage",
+        "Clean REST routing with Flask",
+        "Request validation and error handling"
+      ],
+      "outcome": "A working Python backend project demonstrating REST API design, database integration and end-to-end request handling.",
       "github": "https://github.com/Maheshk3010",
       "demo": "",
-      "resumeSummary": "",
-      "interviewExplanation": ""
+      "resumeSummary": "Built a Flask REST API with MySQL for tracking job applications, showcasing CRUD design and backend fundamentals.",
+      "interviewExplanation": "I designed a Flask app around a job-application resource: routes for create/read/update/delete, a MySQL table for persistence, and JSON request/response handling. It's the project I use to explain REST fundamentals — request lifecycle, status codes, and separating routing from data access."
     },
     {
       "title": "Product Recommendation System",
-      "description": "",
-      "problem": "",
-      "solution": "",
+      "description": "Recommendation engine that suggests relevant products from historical purchase and rating data using classical ML techniques.",
+      "problem": "Users on product catalogs struggle to discover items relevant to their preferences when catalogs are large and unfiltered.",
+      "solution": "A Python pipeline that cleans and prepares product/user data with Pandas and NumPy, then generates recommendations using Scikit-learn similarity models.",
       "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn"],
-      "features": [],
-      "outcome": "",
+      "features": [
+        "Data cleaning and preprocessing pipeline",
+        "Similarity-based recommendation logic",
+        "Top-N product suggestions per user",
+        "Reusable notebook-driven workflow"
+      ],
+      "outcome": "A working recommendation prototype demonstrating the full data-science workflow from raw data to model output.",
       "github": "https://github.com/Maheshk3010",
       "demo": "",
-      "resumeSummary": "",
-      "interviewExplanation": ""
+      "resumeSummary": "Built a product recommendation prototype in Python using Pandas, NumPy and Scikit-learn similarity models.",
+      "interviewExplanation": "I framed this as a similarity problem: clean the interaction data with Pandas, vectorise the products, and compute similarity with Scikit-learn to return top-N recommendations. It's my go-to example for explaining how EDA, feature engineering and model choice fit together in a data-science project."
     },
     {
       "title": "Sales Dashboard",
-      "description": "",
-      "problem": "",
-      "solution": "",
+      "description": "Interactive Power BI dashboard summarising sales performance across products, regions and time periods for business decision-making.",
+      "problem": "Business stakeholders need a single, trustworthy view of sales KPIs instead of scattered Excel files and manual reports.",
+      "solution": "A Power BI report modelled from SQL/Excel sources, with cleaned data, calculated KPIs and interactive visuals for slicing by product, region and period.",
       "technologies": ["Power BI", "Excel", "SQL"],
-      "features": [],
-      "outcome": "",
+      "features": [
+        "KPI cards for revenue, orders and growth",
+        "Interactive slicers by region, product and period",
+        "SQL-sourced data model with cleaned inputs",
+        "Recruiter-friendly, self-serve exploration"
+      ],
+      "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Analyst roles.",
       "github": "https://github.com/Maheshk3010",
       "demo": "",
-      "resumeSummary": "",
-      "interviewExplanation": ""
+      "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
+      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Analyst workflow end-to-end."
     }
   ]
 }
