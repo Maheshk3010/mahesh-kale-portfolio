@@ -306,7 +306,12 @@ export function LinkedInCard({ reply }: { reply?: string }) {
         </p>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={link.url} icon={<Linkedin className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={link.url}
+          icon={<Linkedin className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="linkedin_open"
+        >
           Open LinkedIn
         </ActionButton>
       </div>
