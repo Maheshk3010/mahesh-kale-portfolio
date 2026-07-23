@@ -108,6 +108,20 @@ export function MahiAI() {
     }
   };
 
+  const sendRef = useRef(send);
+  useEffect(() => {
+    sendRef.current = send;
+  }, [send]);
+
+  const voice = useVoiceInput({
+    onPartial: (t) => setInput(t),
+    onFinal: (t) => {
+      setInput("");
+      sendRef.current(t);
+      setTimeout(() => inputRef.current?.focus(), 50);
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     send(input);
