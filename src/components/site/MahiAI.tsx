@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
-import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
+const maheshPhotoUrl = "/maheshkale_pic.jpeg";
 import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
 import { useVoiceInput } from "@/mahi/voice";
@@ -211,7 +211,7 @@ export function MahiAI() {
             <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
               <div className="relative shrink-0">
                 <img
-                  src={maheshPhotoAsset.url}
+                  src={maheshPhotoUrl}
                   alt="Mahesh Kale"
                   className="h-11 w-11 rounded-full border border-white/15 object-cover shadow-[0_0_20px_-4px_var(--primary)]"
                 />
