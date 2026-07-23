@@ -4,7 +4,7 @@
       "name": "Python",
       "category": "Programming",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System", "Job Tracker API"],
       "years": null,
       "description": "Primary programming language used across data analysis, data science and Python development work."
     },
@@ -12,7 +12,7 @@
       "name": "SQL",
       "category": "Programming",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Sales Dashboard"],
       "years": null,
       "description": "Querying and modelling relational data for Data Analyst and MIS Analyst work."
     },
@@ -20,7 +20,7 @@
       "name": "Pandas",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
       "description": "Data wrangling and analysis in Python."
     },
@@ -28,7 +28,7 @@
       "name": "NumPy",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
       "description": "Numerical computing foundation for data science work."
     },
@@ -36,15 +36,47 @@
       "name": "Scikit-learn",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
       "description": "Entry-level machine-learning models and evaluation."
+    },
+    {
+      "name": "TensorFlow",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": ["Apple Stock Price Prediction System"],
+      "years": null,
+      "description": "Deep-learning framework used for LSTM time-series forecasting."
+    },
+    {
+      "name": "Keras",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": ["Apple Stock Price Prediction System"],
+      "years": null,
+      "description": "High-level neural network API used with TensorFlow for LSTM models."
+    },
+    {
+      "name": "LSTM",
+      "category": "Machine Learning",
+      "confidence": "verified",
+      "projectsUsed": ["Apple Stock Price Prediction System"],
+      "years": null,
+      "description": "Long Short-Term Memory networks for time-series forecasting."
+    },
+    {
+      "name": "Streamlit",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": ["Apple Stock Price Prediction System"],
+      "years": null,
+      "description": "Interactive Python app framework for data-science demos."
     },
     {
       "name": "Flask",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Job Tracker API"],
       "years": null,
       "description": "Lightweight Python framework for building REST APIs — used for Python Developer work."
     },
@@ -52,7 +84,7 @@
       "name": "Power BI",
       "category": "Data Visualization",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Sales Dashboard"],
       "years": null,
       "description": "Interactive analytics dashboards and reports for Data Analyst and MIS Analyst roles."
     },
@@ -60,7 +92,7 @@
       "name": "Advanced Excel",
       "category": "Data Visualization",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Sales Dashboard"],
       "years": null,
       "description": "Formulas, pivots and reporting for MIS and analytics workflows."
     },
@@ -68,15 +100,31 @@
       "name": "Machine Learning",
       "category": "Machine Learning",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
       "description": "Entry-level machine-learning fundamentals for Data Scientist roles."
+    },
+    {
+      "name": "Time Series Forecasting",
+      "category": "Machine Learning",
+      "confidence": "verified",
+      "projectsUsed": ["Apple Stock Price Prediction System"],
+      "years": null,
+      "description": "Sequence modelling for forecasting problems using LSTM networks."
+    },
+    {
+      "name": "Recommendation Systems",
+      "category": "Machine Learning",
+      "confidence": "verified",
+      "projectsUsed": ["Product Recommendation System"],
+      "years": null,
+      "description": "Similarity-based product recommendation using Scikit-learn."
     },
     {
       "name": "MySQL",
       "category": "Databases",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Job Tracker API"],
       "years": null,
       "description": "Relational database for MIS reporting and Python-backed apps."
     },
@@ -84,7 +132,7 @@
       "name": "REST API",
       "category": "Automation",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Job Tracker API"],
       "years": null,
       "description": "Designing and consuming RESTful HTTP APIs — Python Developer skill."
     },
@@ -100,10 +148,9 @@
       "name": "GitHub",
       "category": "Version Control",
       "confidence": "verified",
-      "projectsUsed": [],
+      "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
       "description": "Hosting and collaboration on GitHub."
     }
   ]
 }
-
