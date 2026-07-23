@@ -79,9 +79,11 @@ export function MahiAI() {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setThinking(true);
+    analyticsService.trackQuestion(value);
 
     try {
       const response = await mahiEngine.ask(value, engineHistory);
+      analyticsService.trackResponse(value, response);
       setMessages((m) => [
         ...m,
         {
