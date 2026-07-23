@@ -207,7 +207,7 @@ function InfoCard({ title, message }: { title: string; message: string }) {
 
 /* --------------------------------- Intent cards --------------------------------- */
 
-function SkillsCard({ reply }: { reply: string }) {
+function SkillsCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const skills = knowledgeBase.skills.skills.filter((s) => s.confidence === "verified");
   const grouped = skills.reduce<Record<string, typeof skills>>((acc, s) => {
     (acc[s.category] ||= []).push(s);
@@ -234,6 +234,11 @@ function SkillsCard({ reply }: { reply: string }) {
           </div>
         ))}
       </div>
+      <ActionsRow>
+        <NavAction sectionId="skills" onNavigated={onNavigate}>
+          View Skills
+        </NavAction>
+      </ActionsRow>
     </CardShell>
   );
 }
