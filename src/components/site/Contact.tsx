@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { ArrowUpRight, Github, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
 import social from "@/mahi/knowledge/social.json";
 import contact from "@/mahi/knowledge/contact.json";
 
@@ -15,6 +15,7 @@ export function Contact() {
   const github = findLink("GitHub");
   const linkedin = findLink("LinkedIn");
   const email = (contact.email ?? "").trim();
+  const phone = (contact.phone ?? "").trim();
 
   return (
     <Section id="contact" className="pb-32">
