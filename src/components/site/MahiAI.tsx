@@ -237,6 +237,15 @@ export function MahiAI() {
               </div>
               <button
                 type="button"
+                onClick={() => setShowAnalytics(true)}
+                aria-label="Open recruiter analytics"
+                title="Recruiter analytics"
+                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+              >
+                <BarChart3 className="h-3.5 w-3.5" />
+              </button>
+              <button
+                type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close chat"
                 className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
@@ -244,6 +253,13 @@ export function MahiAI() {
                 <X className="h-3.5 w-3.5" />
               </button>
             </div>
+
+            <AnimatePresence>
+              {showAnalytics && (
+                <AnalyticsPanel onClose={() => setShowAnalytics(false)} />
+              )}
+            </AnimatePresence>
+
 
             {/* Messages */}
             <div
