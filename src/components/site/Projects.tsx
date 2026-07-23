@@ -113,6 +113,37 @@ const CHALLENGES: Record<string, ChallengeItem[]> = {
   ],
 };
 
+const LEARNINGS: Record<string, string[]> = {
+  "Apple Stock Price Prediction System": [
+    "Understood the complete workflow of time-series forecasting using historical stock market data.",
+    "Gained practical experience in building and training LSTM-based deep learning models.",
+    "Learned the importance of data preprocessing, normalization, and sequence generation for predictive modeling.",
+    "Improved understanding of regression model evaluation using RMSE and MAE.",
+    "Developed experience in deploying machine learning applications using Streamlit.",
+  ],
+  "Product Recommendation System": [
+    "Learned collaborative filtering techniques for personalized recommendations.",
+    "Improved understanding of recommendation system evaluation and similarity-based algorithms.",
+    "Strengthened skills in data preprocessing and feature engineering.",
+    "Built experience integrating recommendation logic into an interactive application.",
+    "Learned how recommendation systems can improve user experience in real-world applications.",
+  ],
+  "Job Tracker API": [
+    "Learned how to design RESTful CRUD endpoints using Flask and clear URL conventions.",
+    "Gained experience in separating route handling from data access logic for maintainability.",
+    "Understood how to model relational data in MySQL and write SQL queries for persistent storage.",
+    "Practiced validating incoming JSON requests and returning consistent error responses.",
+    "Built familiarity with the full API request lifecycle, from client call to database response.",
+  ],
+  "Sales Dashboard": [
+    "Learned how to import, clean and model data from SQL and Excel sources in Power BI.",
+    "Gained experience defining business KPIs and calculated measures for sales reporting.",
+    "Understood the value of interactive slicers and filters for self-service analysis.",
+    "Improved data storytelling skills by designing visuals for non-technical stakeholders.",
+    "Strengthened knowledge of Power Query transformations and relationship modelling.",
+  ],
+};
+
 function techHas(p: Project, list: string[]) {
   return p.technologies.some((t) => list.includes(t));
 }
