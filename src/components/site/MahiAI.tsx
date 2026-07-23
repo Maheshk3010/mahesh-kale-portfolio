@@ -211,7 +211,7 @@ export function MahiAI() {
             <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
               <div className="relative shrink-0">
                 <img
-                  src={maheshPhotoAsset.url}
+                  src={maheshPhotoUrl}
                   alt="Mahesh Kale"
                   className="h-11 w-11 rounded-full border border-white/15 object-cover shadow-[0_0_20px_-4px_var(--primary)]"
                 />
