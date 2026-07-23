@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
+import { useSectionRegistration } from "@/mahi/useSectionRegistration";
 
 export function Section({
   id,
@@ -8,6 +9,7 @@ export function Section({
   description,
   children,
   className = "",
+  navTitle,
 }: {
   id?: string;
   eyebrow?: string;
@@ -15,9 +17,18 @@ export function Section({
   description?: ReactNode;
   children: ReactNode;
   className?: string;
+  navTitle?: string;
 }) {
+  const registrationTitle =
+    navTitle ?? (typeof title === "string" ? title : eyebrow ?? id ?? "");
+  const ref = useSectionRegistration<HTMLElement>(id, registrationTitle);
+
   return (
-    <section id={id} className={`relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32 ${className}`}>
+    <section
+      ref={ref}
+      id={id}
+      className={`relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32 ${className}`}
+    >
       {(eyebrow || title || description) && (
         <motion.header
           initial={{ opacity: 0, y: 20 }}
