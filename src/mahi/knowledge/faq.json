@@ -2,7 +2,7 @@
   "faqs": [
     {
       "q": "Who is Mahesh?",
-      "a": "Mahesh Kale is an entry-level software engineer based in Pune, India, focused on Python development, backend engineering, data analysis and machine learning. He is currently open to work."
+      "a": "Mahesh Kale is an entry-level professional based in Pune, India, targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. He is currently open to work."
     },
     {
       "q": "Where is Mahesh based?",
@@ -10,43 +10,47 @@
     },
     {
       "q": "What is Mahesh's current status?",
-      "a": "Open to work and immediately available."
+      "a": "Open to work and immediately available for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
     },
     {
       "q": "What skills does Mahesh have?",
-      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub."
+      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub — aligned to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
     },
     {
       "q": "Does Mahesh know Python?",
-      "a": "Yes — Python is Mahesh's primary programming language."
+      "a": "Yes — Python is Mahesh's primary programming language, used across data analysis, data science and Python development work."
     },
     {
       "q": "Does Mahesh know SQL?",
-      "a": "Yes — SQL is listed as one of Mahesh's core skills."
+      "a": "Yes — SQL is a core skill, central to his Data Analyst and MIS Analyst focus."
     },
     {
       "q": "Does Mahesh know Flask?",
-      "a": "Yes — Flask is listed as one of Mahesh's core skills."
+      "a": "Yes — Flask is listed as one of Mahesh's core skills for Python Developer work."
     },
     {
       "q": "Does Mahesh know REST APIs?",
-      "a": "Yes — REST API is listed as one of Mahesh's core skills."
+      "a": "Yes — REST API design is a verified skill supporting Python Developer roles."
     },
     {
       "q": "Does Mahesh know Power BI?",
-      "a": "Yes — Power BI is listed as one of Mahesh's core skills."
+      "a": "Yes — Power BI is a verified skill supporting Data Analyst and MIS Analyst roles."
     },
     {
       "q": "Does Mahesh know Machine Learning?",
-      "a": "Yes — Machine Learning is listed as one of Mahesh's core skills."
+      "a": "Yes — Machine Learning fundamentals are verified, supporting entry-level Data Scientist roles."
     },
     {
       "q": "Which roles suit Mahesh best?",
-      "a": "Based on verified skills, Mahesh is a strong fit for Python Developer, Backend Developer, Data Analyst and entry-level Machine Learning Engineer roles."
+      "a": "Based on verified skills, Mahesh is targeting four roles only: Data Analyst, Data Scientist, Python Developer and MIS Analyst."
+    },
+    {
+      "q": "What kind of positions is Mahesh looking for?",
+      "a": "Mahesh is looking exclusively for Data Analyst, Data Scientist, Python Developer or MIS Analyst positions."
     },
     {
       "q": "Why should we hire Mahesh?",
-      "a": "Mahesh brings a combination of Python backend development and data analytics skills, which lets him move across API work, SQL, dashboards and machine-learning basics. He is entry-level, immediately available and open to work."
+      "a": "Mahesh combines Python, SQL and Power BI with machine-learning fundamentals — a toolkit tailored to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. He is entry-level, immediately available and open to work."
     },
     {
       "q": "What projects has Mahesh built?",
