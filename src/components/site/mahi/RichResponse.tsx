@@ -9,7 +9,7 @@ import {
   Sparkles,
   Target,
   ArrowDown,
-  Github,
+
 } from "lucide-react";
 import { knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
