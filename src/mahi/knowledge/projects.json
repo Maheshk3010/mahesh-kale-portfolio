@@ -1,3 +1,43 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "title": "Job Tracker API",
+      "description": "",
+      "problem": "",
+      "solution": "",
+      "technologies": ["Python", "Flask", "REST API", "MySQL"],
+      "features": [],
+      "outcome": "",
+      "github": "https://github.com/Maheshk3010",
+      "demo": "",
+      "resumeSummary": "",
+      "interviewExplanation": ""
+    },
+    {
+      "title": "Product Recommendation System",
+      "description": "",
+      "problem": "",
+      "solution": "",
+      "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn"],
+      "features": [],
+      "outcome": "",
+      "github": "https://github.com/Maheshk3010",
+      "demo": "",
+      "resumeSummary": "",
+      "interviewExplanation": ""
+    },
+    {
+      "title": "Sales Dashboard",
+      "description": "",
+      "problem": "",
+      "solution": "",
+      "technologies": ["Power BI", "Excel", "SQL"],
+      "features": [],
+      "outcome": "",
+      "github": "https://github.com/Maheshk3010",
+      "demo": "",
+      "resumeSummary": "",
+      "interviewExplanation": ""
+    }
+  ]
 }
