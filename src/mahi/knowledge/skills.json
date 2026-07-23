@@ -2,59 +2,108 @@
   "skills": [
     {
       "name": "Python",
-      "category": "Language",
+      "category": "Programming",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "Primary programming language used across backend, data and ML work."
+      "description": "Primary programming language used across data analysis, data science and Python development work."
     },
     {
       "name": "SQL",
-      "category": "Data",
+      "category": "Programming",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "Querying and modelling relational data."
+      "description": "Querying and modelling relational data for Data Analyst and MIS Analyst work."
+    },
+    {
+      "name": "Pandas",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Data wrangling and analysis in Python."
+    },
+    {
+      "name": "NumPy",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Numerical computing foundation for data science work."
+    },
+    {
+      "name": "Scikit-learn",
+      "category": "Libraries",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Entry-level machine-learning models and evaluation."
     },
     {
       "name": "Flask",
-      "category": "Backend",
+      "category": "Libraries",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "Python web framework for building REST APIs and backend services."
-    },
-    {
-      "name": "REST API",
-      "category": "Backend",
-      "confidence": "verified",
-      "projectsUsed": [],
-      "years": null,
-      "description": "Designing and consuming RESTful HTTP APIs."
+      "description": "Lightweight Python framework for building REST APIs — used for Python Developer work."
     },
     {
       "name": "Power BI",
-      "category": "Data / Analytics",
+      "category": "Data Visualization",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "Building interactive analytics dashboards and reports."
+      "description": "Interactive analytics dashboards and reports for Data Analyst and MIS Analyst roles."
+    },
+    {
+      "name": "Advanced Excel",
+      "category": "Data Visualization",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Formulas, pivots and reporting for MIS and analytics workflows."
     },
     {
       "name": "Machine Learning",
-      "category": "ML",
+      "category": "Machine Learning",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "General machine-learning fundamentals and experimentation."
+      "description": "Entry-level machine-learning fundamentals for Data Scientist roles."
+    },
+    {
+      "name": "MySQL",
+      "category": "Databases",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Relational database for MIS reporting and Python-backed apps."
+    },
+    {
+      "name": "REST API",
+      "category": "Automation",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Designing and consuming RESTful HTTP APIs — Python Developer skill."
+    },
+    {
+      "name": "Git",
+      "category": "Version Control",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Source control for day-to-day development."
     },
     {
       "name": "GitHub",
-      "category": "Tools",
+      "category": "Version Control",
       "confidence": "verified",
       "projectsUsed": [],
       "years": null,
-      "description": "Source control and collaboration on GitHub."
+      "description": "Hosting and collaboration on GitHub."
     }
   ]
 }
+

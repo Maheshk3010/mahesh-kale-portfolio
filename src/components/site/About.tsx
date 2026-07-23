@@ -1,22 +1,22 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { Brain, Rocket, Shield } from "lucide-react";
+import { BarChart3, Database, Brain } from "lucide-react";
 
 const pillars = [
   {
+    icon: BarChart3,
+    title: "Data-driven decisions",
+    body: "SQL, Power BI and Advanced Excel to turn raw business data into dashboards, reports and clear next steps for stakeholders.",
+  },
+  {
     icon: Brain,
-    title: "AI first",
-    body: "LLM pipelines, RAG systems, evaluations and fine-tuning — grounded in real product outcomes, not demos.",
+    title: "Python for data & ML",
+    body: "Python with Pandas, NumPy and Scikit-learn for analysis, automation and entry-level machine-learning experiments.",
   },
   {
-    icon: Rocket,
-    title: "Shipping mindset",
-    body: "Weekly releases, tight feedback loops, and measurable impact. Design, backend, infra — end to end.",
-  },
-  {
-    icon: Shield,
-    title: "Production quality",
-    body: "Type-safe systems, observability, tests that matter, and interfaces that hold up under real usage.",
+    icon: Database,
+    title: "MIS & reporting focus",
+    body: "Structured MySQL queries, repeatable reports and lightweight Flask/REST tooling to support MIS and operations teams.",
   },
 ];
 
@@ -27,12 +27,12 @@ export function About() {
       eyebrow="About"
       title={
         <>
-          Engineer, designer,
+          Entry-level, data-focused,
           <br />
-          <span className="text-muted-foreground">and quiet perfectionist.</span>
+          <span className="text-muted-foreground">recruiter-ready.</span>
         </>
       }
-      description="I build AI-powered products end to end — from research and data pipelines to typed backends and interfaces that recruiters, users and teammates actually love."
+      description="Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles — with a verified toolkit across Python, SQL, Power BI and machine-learning fundamentals."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {pillars.map((p, i) => (

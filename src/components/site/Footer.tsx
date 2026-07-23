@@ -9,8 +9,9 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold">MAHI Portfolio</div>
             <div className="text-xs text-muted-foreground">
-              Building AI-powered software &amp; data-driven solutions.
+              Data Analyst · Data Scientist · Python Developer · MIS Analyst.
             </div>
+
           </div>
         </div>
         <div className="text-xs text-muted-foreground">

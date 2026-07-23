@@ -3,28 +3,32 @@ import { Section } from "./Section";
 
 const groups = [
   {
-    title: "Languages",
-    items: ["TypeScript", "Python", "Go", "SQL", "Rust"],
+    title: "Programming",
+    items: ["Python", "SQL"],
   },
   {
-    title: "AI / ML",
-    items: ["PyTorch", "LangGraph", "OpenAI", "RAG", "Evals", "Fine-tuning"],
+    title: "Libraries",
+    items: ["Pandas", "NumPy", "Scikit-learn", "Flask"],
   },
   {
-    title: "Backend",
-    items: ["Node.js", "FastAPI", "Postgres", "Redis", "Kafka", "gRPC"],
+    title: "Data Visualization",
+    items: ["Power BI", "Advanced Excel"],
   },
   {
-    title: "Frontend",
-    items: ["React", "Next.js", "TanStack", "Tailwind", "Motion"],
+    title: "Machine Learning",
+    items: ["Scikit-learn", "Model Evaluation", "Supervised Learning"],
   },
   {
-    title: "Data",
-    items: ["dbt", "Snowflake", "Airflow", "Spark", "pgvector"],
+    title: "Databases",
+    items: ["MySQL"],
   },
   {
-    title: "Cloud & DevOps",
-    items: ["AWS", "GCP", "Docker", "Kubernetes", "Terraform"],
+    title: "Automation & APIs",
+    items: ["REST API", "Python Scripting"],
+  },
+  {
+    title: "Version Control",
+    items: ["Git", "GitHub"],
   },
 ];
 
@@ -33,8 +37,8 @@ export function Skills() {
     <Section
       id="skills"
       eyebrow="Toolbelt"
-      title="Skills sharpened in production."
-      description="I pick tools for the problem, not the resume — but here's what I reach for most."
+      title="Skills for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+      description="Verified skills mapped to the four target roles — Python, SQL, Power BI and machine-learning fundamentals."
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {groups.map((g, i) => (

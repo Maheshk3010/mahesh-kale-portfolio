@@ -20,13 +20,16 @@ type ChatMessage = {
 
 const QUICK_QUESTIONS = [
   "What skills does Mahesh have?",
-  "Show Python Projects",
-  "Download Resume",
-  "Contact Mahesh",
-  "Open GitHub",
+  "Does Mahesh know Python?",
+  "Does Mahesh know SQL?",
+  "Does Mahesh know Power BI?",
+  "Which roles suit Mahesh best?",
+  "What machine learning has Mahesh worked with?",
   "Show Certifications",
-  "Why should I hire Mahesh?",
+  "Download Resume",
+  "How can I contact Mahesh?",
 ];
+
 
 const WELCOME_TEXT =
   "Hello 👋\n\nI'm MAHI.AI — Mahesh Kale's Professional AI Career Assistant.\n\nI can answer questions about:\n• Skills\n• Projects\n• Experience\n• Resume\n• Certifications\n• Contact Information\n• GitHub\n• LinkedIn";

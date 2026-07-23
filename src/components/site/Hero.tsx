@@ -6,11 +6,12 @@ import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
 const maheshPhoto = maheshPhotoAsset.url;
 
 const ROLES = [
-  "Python Developer",
-  "Backend Developer",
   "Data Analyst",
-  "Machine Learning Enthusiast",
+  "Data Scientist",
+  "Python Developer",
+  "MIS Analyst",
 ];
+
 
 const CHIPS = [
   { label: "Python", x: "6%", y: "8%", d: 0 },
@@ -114,10 +115,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
           >
-            I build production-grade Python applications, resilient backend
-            systems and analytics platforms — dashboards, automation tools and
-            machine-learning projects that turn raw data into decisions.
+            Entry-level IT professional focused on Data Analyst, Data
+            Scientist, Python Developer and MIS Analyst roles — turning data
+            into decisions with Python, SQL, Power BI and machine learning.
           </motion.p>
+
 
           {/* CTAs */}
           <motion.div
@@ -206,11 +208,12 @@ function IdentityCard() {
           <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-accent/20 mix-blend-overlay" />
           <img
             src={maheshPhoto}
-            alt="Mahesh Kale — Python & Backend Developer"
+            alt="Mahesh Kale — Data Analyst, Data Scientist, Python Developer and MIS Analyst"
             width={480}
             height={480}
             className="h-full w-full object-cover"
           />
+
         </div>
 
         {/* Name + status */}
@@ -230,9 +233,9 @@ function IdentityCard() {
             value="Pune, Maharashtra, India"
           />
           <MetaRow
-            icon={<span className="text-[10px] font-black text-primary">L1</span>}
+            icon={<span className="text-[10px] font-black text-primary">EL</span>}
             label="Level"
-            value="Entry Level Software Engineer"
+            value="Entry-Level IT Professional"
           />
         </div>
 
@@ -242,7 +245,7 @@ function IdentityCard() {
             Current focus
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {["Python", "Backend", "SQL", "Machine Learning"].map((t) => (
+            {["Python", "SQL", "Power BI", "Machine Learning"].map((t) => (
               <span
                 key={t}
                 className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-foreground/90"
@@ -252,6 +255,7 @@ function IdentityCard() {
             ))}
           </div>
         </div>
+
       </div>
     </motion.div>
   );
