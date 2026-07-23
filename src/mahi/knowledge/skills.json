@@ -1,24 +1,60 @@
 {
-  "categories": [
+  "skills": [
     {
-      "name": "Languages",
-      "items": ["Python", "SQL", "JavaScript", "TypeScript"]
+      "name": "Python",
+      "category": "Language",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Primary programming language used across backend, data and ML work."
     },
     {
-      "name": "Backend",
-      "items": ["Flask", "REST APIs", "FastAPI", "Node.js"]
+      "name": "SQL",
+      "category": "Data",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Querying and modelling relational data."
     },
     {
-      "name": "Data & Analytics",
-      "items": ["Pandas", "NumPy", "Power BI", "Excel", "PostgreSQL", "MySQL"]
+      "name": "Flask",
+      "category": "Backend",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Python web framework for building REST APIs and backend services."
+    },
+    {
+      "name": "REST API",
+      "category": "Backend",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Designing and consuming RESTful HTTP APIs."
+    },
+    {
+      "name": "Power BI",
+      "category": "Data / Analytics",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Building interactive analytics dashboards and reports."
     },
     {
       "name": "Machine Learning",
-      "items": ["scikit-learn", "Regression", "Classification", "Model Evaluation"]
+      "category": "ML",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "General machine-learning fundamentals and experimentation."
     },
     {
-      "name": "Tools & DevOps",
-      "items": ["Git", "GitHub", "Docker", "Postman", "VS Code"]
+      "name": "GitHub",
+      "category": "Tools",
+      "confidence": "verified",
+      "projectsUsed": [],
+      "years": null,
+      "description": "Source control and collaboration on GitHub."
     }
   ]
 }

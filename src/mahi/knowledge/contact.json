@@ -1,7 +1,10 @@
 {
-  "email": "mahesh.kale@example.com",
   "phone": "",
+  "email": "",
+  "linkedin": "",
+  "github": "",
+  "resume": "",
   "location": "Pune, Maharashtra, India",
-  "availability": "Open to full-time and internship opportunities",
+  "availability": "Immediately available",
   "preferredChannels": ["Email", "LinkedIn"]
 }
