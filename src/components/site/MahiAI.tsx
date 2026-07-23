@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
-import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
+const maheshPhotoUrl = "/maheshkale_pic.jpeg";
 import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatMessage as EngineMessage, Intent } from "@/mahi";
 import { useVoiceInput } from "@/mahi/voice";
