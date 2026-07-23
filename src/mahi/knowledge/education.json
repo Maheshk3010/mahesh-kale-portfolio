@@ -1,3 +1,16 @@
 {
-  "education": []
+  "education": [
+    {
+      "degree": "Bachelor of Science (B.Sc.) — Computer Science (AI, ML & VR)",
+      "university": "Sandip University, Nashik, Maharashtra",
+      "graduationYear": "2022 – 2025",
+      "grade": "7.94 CGPA"
+    },
+    {
+      "degree": "Data Science Certification Program (Professional Training)",
+      "university": "ExcelR Solutions, Pune",
+      "graduationYear": "July 2025 – January 2026",
+      "grade": ""
+    }
+  ]
 }
