@@ -399,7 +399,7 @@ function EducationCard({ reply }: { reply: string }) {
   );
 }
 
-function CertificationsCard({ reply }: { reply: string }) {
+function CertificationsCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const items = knowledgeBase.certifications.certifications;
   if (!items.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -423,11 +423,16 @@ function CertificationsCard({ reply }: { reply: string }) {
           </div>
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="certifications" onNavigated={onNavigate}>
+          View Certifications
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
 
-function ContactCard({ reply }: { reply: string }) {
+function ContactCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const c = knowledgeBase.contact;
   const hasAny = c.email || c.phone || c.linkedin || c.github || c.resume;
   if (!hasAny) {
@@ -467,11 +472,16 @@ function ContactCard({ reply }: { reply: string }) {
           </ActionButton>
         )}
       </div>
+      <ActionsRow>
+        <NavAction sectionId="contact" onNavigated={onNavigate}>
+          Jump to Contact
+        </NavAction>
+      </ActionsRow>
     </CardShell>
   );
 }
 
-function RolesCard({ reply }: { reply: string }) {
+function RolesCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const roles = knowledgeBase.roles.roles;
   if (!roles.length) {
     return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
@@ -503,6 +513,14 @@ function RolesCard({ reply }: { reply: string }) {
           )}
         </CardShell>
       ))}
+      <ActionsRow>
+        <NavAction sectionId="skills" onNavigated={onNavigate}>
+          View Skills
+        </NavAction>
+        <NavAction sectionId="experience" onNavigated={onNavigate}>
+          View Experience
+        </NavAction>
+      </ActionsRow>
     </div>
   );
 }
