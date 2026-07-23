@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, Download, MapPin, Mail, FolderGit2 } from "lucide-react";
 import { useEffect, useState } from "react";
-import maheshPhoto from "@/assets/mahesh.jpg";
+import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
+
+const maheshPhoto = maheshPhotoAsset.url;
 
 const ROLES = [
   "Python Developer",
