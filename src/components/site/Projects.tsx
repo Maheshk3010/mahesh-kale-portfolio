@@ -113,7 +113,7 @@ export function Projects() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return enriched.filter(({ project, cats, roles }) => {
+    const list = enriched.filter(({ project, cats, roles }) => {
       const inCat = category === "All" || cats.includes(category);
       if (!inCat) return false;
       if (!q) return true;
@@ -128,7 +128,16 @@ export function Projects() {
         .toLowerCase();
       return hay.includes(q);
     });
+    // Featured first
+    return [...list].sort(
+      (a, b) => Number(isFeatured(b.project)) - Number(isFeatured(a.project)),
+    );
   }, [enriched, category, query]);
+
+  const featured = useMemo(
+    () => enriched.filter(({ project }) => isFeatured(project)),
+    [enriched],
+  );
 
   if (!projects.length) {
     return (
