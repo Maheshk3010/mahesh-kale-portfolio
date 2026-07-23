@@ -49,6 +49,7 @@ function NavAction({
     <button
       type="button"
       onClick={() => {
+        analyticsService.trackAction("navigate_section", sectionId);
         navigationService.scrollTo(sectionId);
         onNavigated?.();
       }}
