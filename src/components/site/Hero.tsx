@@ -6,11 +6,12 @@ import maheshPhotoAsset from "@/assets/mahesh.jpg.asset.json";
 const maheshPhoto = maheshPhotoAsset.url;
 
 const ROLES = [
-  "Python Developer",
-  "Backend Developer",
   "Data Analyst",
-  "Machine Learning Enthusiast",
+  "Data Scientist",
+  "Python Developer",
+  "MIS Analyst",
 ];
+
 
 const CHIPS = [
   { label: "Python", x: "6%", y: "8%", d: 0 },
