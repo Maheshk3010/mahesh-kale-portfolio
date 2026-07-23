@@ -1,0 +1,20 @@
+{
+  "roles": [
+    {
+      "title": "Python Developer",
+      "supportedBy": ["Python", "Flask", "REST API"]
+    },
+    {
+      "title": "Backend Developer",
+      "supportedBy": ["Python", "Flask", "REST API", "SQL"]
+    },
+    {
+      "title": "Data Analyst",
+      "supportedBy": ["SQL", "Power BI", "Python"]
+    },
+    {
+      "title": "Machine Learning Engineer (Entry Level)",
+      "supportedBy": ["Python", "Machine Learning"]
+    }
+  ]
+}
