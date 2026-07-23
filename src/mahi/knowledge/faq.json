@@ -279,6 +279,42 @@
     {
       "q": "What technology decisions did Mahesh make in his projects?",
       "a": "Every project has documented technology decisions: Apple Stock uses Python, Pandas, TensorFlow/Keras, LSTM and Streamlit; Product Recommendation uses Python, Pandas, recommendation algorithms and Streamlit; Job Tracker API uses Python, Flask, REST API and MySQL; Sales Dashboard uses Power BI, SQL and Excel. Each choice is tied to a verified technical reason."
+    },
+    {
+      "q": "Walk me through your project.",
+      "a": "Mahesh's projects follow a clear workflow. For example, the Apple Stock Price Prediction pipeline is: collect historical data, clean and prepare it, normalize features, generate time-series sequences, train an LSTM model, predict future prices, evaluate with RMSE/MAE and display results in Streamlit. Each project has a step-by-step workflow available in its details modal."
+    },
+    {
+      "q": "Explain the workflow.",
+      "a": "Every verified project has a documented workflow. Apple Stock Prediction moves from data collection → cleaning → normalization → sequence generation → LSTM training → prediction → evaluation → Streamlit deployment. The Product Recommendation System flows from loading data → cleaning → user-item matrix → similarity computation → recommendations → ranking → Streamlit display."
+    },
+    {
+      "q": "How does the recommendation system work?",
+      "a": "The Product Recommendation System workflow is: load user and product data, clean the dataset, build a user-item matrix, compute similarity using Scikit-learn, generate top-N recommendations, rank results by relevance and display them in a Streamlit app. It uses collaborative filtering to suggest products based on user behavior patterns."
+    },
+    {
+      "q": "Explain the stock prediction pipeline.",
+      "a": "The Apple Stock Price Prediction pipeline has eight steps: collect historical Apple stock data, clean and prepare the dataset, normalize features, generate time-series sequences, train an LSTM model in TensorFlow/Keras, predict future prices, evaluate model performance with RMSE/MAE and display predictions through a Streamlit interface."
+    },
+    {
+      "q": "How is data processed?",
+      "a": "Data processing depends on the project. Apple Stock uses Pandas for cleaning, Scikit-learn for normalization and NumPy for sequence generation. Product Recommendation uses Pandas/NumPy for cleaning and matrix creation. Sales Dashboard uses Power Query to clean SQL and Excel sources. Job Tracker API validates JSON inputs before storing them in MySQL."
+    },
+    {
+      "q": "Explain the workflow of the Apple Stock project.",
+      "a": "Apple Stock Price Prediction workflow: 1) Collect historical Apple stock data, 2) Clean & prepare dataset, 3) Normalize features, 4) Generate time-series sequences, 5) Train LSTM model, 6) Predict future prices, 7) Evaluate model performance, 8) Display predictions using Streamlit."
+    },
+    {
+      "q": "Explain the workflow of the Product Recommendation System.",
+      "a": "Product Recommendation System workflow: 1) Load user & product data, 2) Clean dataset, 3) Generate user-item matrix, 4) Compute similarity, 5) Generate recommendations, 6) Rank results, 7) Display recommendations in Streamlit."
+    },
+    {
+      "q": "Explain the workflow of the Job Tracker API.",
+      "a": "Job Tracker API workflow: 1) Define API requirements and endpoints, 2) Set up the Flask application, 3) Design the MySQL schema, 4) Implement CRUD routes, 5) Add request validation, 6) Test API endpoints, 7) Document the API."
+    },
+    {
+      "q": "Explain the workflow of the Sales Dashboard.",
+      "a": "Sales Dashboard workflow: 1) Gather SQL & Excel data sources, 2) Clean & transform data in Power Query, 3) Model relationships & define KPIs, 4) Build visuals & charts, 5) Add slicers & filters, 6) Publish & share dashboard."
     }
   ]
 }
