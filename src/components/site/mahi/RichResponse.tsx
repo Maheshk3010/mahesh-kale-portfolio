@@ -181,7 +181,7 @@ function ActionButton({
     "inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary";
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noreferrer" className={cls}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
         {icon}
         {children}
         <ExternalLink className="h-3 w-3 opacity-70" />

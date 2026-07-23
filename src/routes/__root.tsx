@@ -7,12 +7,19 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { MahiAI } from "../components/site/MahiAI";
-import { AdminOverlay } from "../components/site/mahi/AdminOverlay";
+
+const MahiAI = lazy(() =>
+  import("../components/site/MahiAI").then((m) => ({ default: m.MahiAI })),
+);
+const AdminOverlay = lazy(() =>
+  import("../components/site/mahi/AdminOverlay").then((m) => ({
+    default: m.AdminOverlay,
+  })),
+);
 
 function NotFoundComponent() {
   return (
@@ -138,8 +145,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <MahiAI />
-      <AdminOverlay />
+      <Suspense fallback={null}>
+        <MahiAI />
+        <AdminOverlay />
+      </Suspense>
     </QueryClientProvider>
   );
 }
