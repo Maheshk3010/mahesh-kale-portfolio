@@ -5,18 +5,18 @@ import { BarChart3, Database, Brain } from "lucide-react";
 const pillars = [
   {
     icon: BarChart3,
-    title: "Data-driven decisions",
-    body: "SQL, Power BI and Advanced Excel to turn raw business data into dashboards, reports and clear next steps for stakeholders.",
+    title: "Data analysis & visualization",
+    body: "SQL, Power BI and Advanced Excel to clean, model and present data so stakeholders can act on it quickly.",
   },
   {
     icon: Brain,
-    title: "Python for data & ML",
-    body: "Python with Pandas, NumPy and Scikit-learn for analysis, automation and entry-level machine-learning experiments.",
+    title: "Python & machine learning",
+    body: "Pandas, NumPy and Scikit-learn for analysis, automation and predictive modeling — from stock forecasts to recommendation systems.",
   },
   {
     icon: Database,
-    title: "MIS & reporting focus",
-    body: "Structured MySQL queries, repeatable reports and lightweight Flask/REST tooling to support MIS and operations teams.",
+    title: "MIS & reporting",
+    body: "MySQL, Flask and REST APIs to build repeatable reports and lightweight tools that support operations and MIS teams.",
   },
 ];
 
