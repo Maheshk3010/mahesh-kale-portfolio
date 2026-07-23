@@ -364,7 +364,7 @@ export function MahiAI() {
                     aria-pressed={voice.state === "listening"}
                     title="Voice input (Alt+M)"
                     whileTap={{ scale: 0.92 }}
-                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                    className={`relative grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
                       voice.state === "listening"
                         ? "border-primary/60 bg-primary/20 text-primary shadow-[0_0_16px_-2px_var(--primary)]"
                         : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary"
