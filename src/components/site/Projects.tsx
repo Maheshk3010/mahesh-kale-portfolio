@@ -298,14 +298,24 @@ export function Projects() {
                 <Sparkles className="h-3.5 w-3.5" /> View Details
               </button>
               {project.github ? (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
-                >
-                  <Github className="h-3.5 w-3.5" /> GitHub
-                </a>
+                <>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
+                  >
+                    <Code2 className="h-3.5 w-3.5" /> View Code
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
+                  >
+                    <Github className="h-3.5 w-3.5" /> Open GitHub
+                  </a>
+                </>
               ) : (
                 <span
                   aria-label="Repository not yet published"
