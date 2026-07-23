@@ -1,11 +1,6 @@
 import { useSyncExternalStore } from "react";
 import {
   Info,
-  Mail,
-  Phone,
-  Linkedin,
-  Github,
-  FileText,
   ExternalLink,
   Briefcase,
   GraduationCap,
@@ -14,9 +9,16 @@ import {
   Sparkles,
   Target,
   ArrowDown,
+  Github,
 } from "lucide-react";
 import { knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
+import {
+  ContactCard as ContactActionCard,
+  GitHubCard,
+  LinkedInCard,
+  ResumeCard,
+} from "./cards";
 
 /**
  * Subscribes to the NavigationService so action buttons appear/hide
