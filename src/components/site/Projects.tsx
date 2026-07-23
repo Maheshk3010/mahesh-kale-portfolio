@@ -504,6 +504,32 @@ function ProjectDetails({
           {project.solution}
         </DetailBlock>
 
+        {CHALLENGES[project.title]?.length > 0 && (
+          <DetailBlock title="Challenges & Solutions">
+            <ul className="grid gap-3">
+              {CHALLENGES[project.title].map((c, idx) => (
+                <li
+                  key={idx}
+                  className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
+                >
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    Challenge {idx + 1}
+                  </div>
+                  <div className="mt-1 text-sm text-foreground/90">
+                    {c.challenge}
+                  </div>
+                  <div className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                    Solution
+                  </div>
+                  <div className="mt-1 text-sm text-muted-foreground">
+                    {c.solution}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
         {project.features.length > 0 && (
           <DetailBlock title="Key Features">
             <ul className="grid gap-1.5">
