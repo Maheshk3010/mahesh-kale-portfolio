@@ -13,22 +13,47 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mahesh Kale — AI & Full-Stack Engineer" },
+      {
+        title:
+          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+      },
       {
         name: "description",
         content:
-          "MAHI Portfolio — Mahesh Kale builds AI-powered software and data-driven solutions. Selected work, experience and skills.",
+          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
       },
-      { property: "og:title", content: "Mahesh Kale — AI & Full-Stack Engineer" },
+      {
+        name: "keywords",
+        content:
+          "Mahesh Kale, Data Analyst, Data Scientist, Python Developer, MIS Analyst, Python, SQL, Power BI, Pandas, NumPy, Scikit-learn, Machine Learning, MySQL, Flask, REST API, Pune",
+      },
+      {
+        property: "og:title",
+        content:
+          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+      },
       {
         property: "og:description",
         content:
-          "Building AI-powered software & data-driven solutions. Selected work, experience and skills.",
+          "Entry-level IT professional focused on Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Python, SQL, Power BI and machine-learning fundamentals.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content:
+          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles.",
+      },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
+
   component: Index,
 });
 

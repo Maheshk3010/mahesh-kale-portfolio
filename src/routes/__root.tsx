@@ -78,14 +78,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MAHI Portfolio — Mahesh Kale" },
+      {
+        name: "description",
+        content:
+          "MAHI Portfolio — Mahesh Kale, entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles.",
+      },
+      { name: "author", content: "Mahesh Kale" },
+      { property: "og:title", content: "MAHI Portfolio — Mahesh Kale" },
+      {
+        property: "og:description",
+        content:
+          "Data Analyst · Data Scientist · Python Developer · MIS Analyst.",
+      },
+      { property: "og:site_name", content: "MAHI Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+
     ],
     links: [
       {
