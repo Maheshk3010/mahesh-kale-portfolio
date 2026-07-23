@@ -78,15 +78,23 @@
     },
     {
       "q": "How can I contact Mahesh?",
-      "a": "I don't have verified contact information regarding that topic yet. Preferred channels are Email and LinkedIn once shared."
+      "a": "You can reach Mahesh via Email at maheshkale1030@gmail.com, Phone at +91 9307190535, or LinkedIn at https://www.linkedin.com/in/maheshkale3010/."
     },
     {
       "q": "What is Mahesh's GitHub?",
-      "a": "I don't have verified information regarding that topic."
+      "a": "Mahesh's GitHub profile: https://github.com/Maheshk3010"
     },
     {
       "q": "What is Mahesh's LinkedIn?",
-      "a": "I don't have verified information regarding that topic."
+      "a": "Mahesh's LinkedIn profile: https://www.linkedin.com/in/maheshkale3010/"
+    },
+    {
+      "q": "What is Mahesh's email?",
+      "a": "maheshkale1030@gmail.com"
+    },
+    {
+      "q": "What is Mahesh's phone number?",
+      "a": "+91 9307190535"
     }
   ]
 }
