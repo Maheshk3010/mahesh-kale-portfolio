@@ -1,3 +1,88 @@
 {
-  "experience": []
+  "experience": [
+    {
+      "company": "ExcelR Solutions, Pune",
+      "role": "Data Science Intern",
+      "duration": "Internship",
+      "responsibilities": [
+        "Data Cleaning",
+        "Data Preprocessing",
+        "Exploratory Data Analysis (EDA)",
+        "Feature Engineering",
+        "Machine Learning",
+        "Recommendation Systems",
+        "Time Series Forecasting",
+        "SQL",
+        "Power BI Dashboards"
+      ],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "TensorFlow",
+        "SQL",
+        "MySQL",
+        "Power BI",
+        "Git",
+        "GitHub",
+        "Jupyter Notebook",
+        "VS Code",
+        "Streamlit"
+      ],
+      "achievements": []
+    },
+    {
+      "company": "Sysslan IT Solutions",
+      "role": "Data Analyst Intern",
+      "duration": "Internship",
+      "responsibilities": [
+        "SQL Queries",
+        "Data Validation",
+        "Data Cleaning",
+        "KPI Reporting",
+        "Dashboard Preparation",
+        "Business Reporting",
+        "Power BI",
+        "Advanced Excel",
+        "Python-based Data Analysis"
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Advanced Excel",
+        "MySQL"
+      ],
+      "achievements": []
+    },
+    {
+      "company": "Codveda Technologies",
+      "role": "Python Development Intern",
+      "duration": "Internship",
+      "responsibilities": [
+        "Python Programming",
+        "Flask",
+        "REST APIs",
+        "CRUD Operations",
+        "SQLite",
+        "MySQL",
+        "Git",
+        "GitHub",
+        "Backend Development",
+        "Debugging",
+        "Testing"
+      ],
+      "technologies": [
+        "Python",
+        "Flask",
+        "REST API",
+        "SQLite",
+        "MySQL",
+        "Git",
+        "GitHub"
+      ],
+      "achievements": []
+    }
+  ]
 }
