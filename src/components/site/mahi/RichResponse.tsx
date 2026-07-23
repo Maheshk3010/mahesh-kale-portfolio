@@ -103,10 +103,13 @@ export function RichResponse({
     case "certifications":
       return <CertificationsCard reply={reply} onNavigate={onNavigate} />;
     case "contact":
+      return <ContactActionCard reply={reply} />;
     case "github":
+      return <GitHubCard reply={reply} onAsk={onAsk} />;
     case "linkedin":
+      return <LinkedInCard reply={reply} />;
     case "resume":
-      return <ContactCard reply={reply} onNavigate={onNavigate} />;
+      return <ResumeCard reply={reply} />;
     case "roles":
       return <RolesCard reply={reply} onNavigate={onNavigate} />;
     default:
