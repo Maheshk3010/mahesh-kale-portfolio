@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from "react";
 import {
   Info,
   Mail,
@@ -12,9 +13,48 @@ import {
   Code2,
   Sparkles,
   Target,
+  ArrowDown,
 } from "lucide-react";
-import { knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import { knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
+
+/**
+ * Subscribes to the NavigationService so action buttons appear/hide
+ * reactively as sections mount/unmount.
+ */
+function useSectionAvailable(id: string): boolean {
+  return useSyncExternalStore(
+    (cb) => navigationService.subscribe(cb),
+    () => navigationService.has(id),
+    () => false,
+  );
+}
+
+function NavAction({
+  sectionId,
+  children,
+  onNavigated,
+}: {
+  sectionId: string;
+  children: React.ReactNode;
+  onNavigated?: () => void;
+}) {
+  const available = useSectionAvailable(sectionId);
+  if (!available) return null;
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        navigationService.scrollTo(sectionId);
+        onNavigated?.();
+      }}
+      className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1.5 text-[11px] font-medium text-primary transition-all hover:border-primary/50 hover:bg-primary/15 hover:shadow-[0_0_18px_-6px_var(--primary)]"
+    >
+      <ArrowDown className="h-3 w-3" />
+      {children}
+    </button>
+  );
+}
 
 /**
  * Presentation-only rich response renderer.
