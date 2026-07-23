@@ -5,18 +5,18 @@ import { BarChart3, Database, Brain } from "lucide-react";
 const pillars = [
   {
     icon: BarChart3,
-    title: "Data-driven decisions",
-    body: "SQL, Power BI and Advanced Excel to turn raw business data into dashboards, reports and clear next steps for stakeholders.",
+    title: "Data analysis & visualization",
+    body: "SQL, Power BI and Advanced Excel to clean, model and present data so stakeholders can act on it quickly.",
   },
   {
     icon: Brain,
-    title: "Python for data & ML",
-    body: "Python with Pandas, NumPy and Scikit-learn for analysis, automation and entry-level machine-learning experiments.",
+    title: "Python & machine learning",
+    body: "Pandas, NumPy and Scikit-learn for analysis, automation and predictive modeling — from stock forecasts to recommendation systems.",
   },
   {
     icon: Database,
-    title: "MIS & reporting focus",
-    body: "Structured MySQL queries, repeatable reports and lightweight Flask/REST tooling to support MIS and operations teams.",
+    title: "MIS & reporting",
+    body: "MySQL, Flask and REST APIs to build repeatable reports and lightweight tools that support operations and MIS teams.",
   },
 ];
 
@@ -24,15 +24,22 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="About"
-      title={
+      eyebrow="Executive Profile"
+      title="Turning Data into Insights and Intelligent Solutions."
+      description={
         <>
-          Entry-level, data-focused,
+          I am Mahesh Sakharam Kale, a Computer Science graduate specializing in Artificial Intelligence, Machine Learning, and Virtual Reality. Through internships in Data Science, Data Analytics, and Python Development, I have developed practical experience in building data-driven solutions using Python, SQL, Power BI, Machine Learning, and data visualization techniques.
           <br />
-          <span className="text-muted-foreground">recruiter-ready.</span>
+          <br />
+          My portfolio showcases verified projects including an LSTM-based Apple Stock Price Prediction System and a Product Recommendation System, demonstrating end-to-end capabilities in data preprocessing, predictive modeling, recommendation systems, and application development.
+          <br />
+          <br />
+          I enjoy solving real-world business problems through analytical thinking, clean code, and practical machine learning solutions. I improve my technical skills through hands-on projects, internships, and structured learning while maintaining a strong focus on building reliable and scalable solutions.
+          <br />
+          <br />
+          Currently, I am seeking opportunities as a Data Analyst, Data Scientist, Python Developer, or MIS Analyst where I can contribute technical expertise, analytical problem-solving, and a continuous learning mindset to deliver meaningful business impact.
         </>
       }
-      description="Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles — with a verified toolkit across Python, SQL, Power BI and machine-learning fundamentals."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {pillars.map((p, i) => (
