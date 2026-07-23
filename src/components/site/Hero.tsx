@@ -208,11 +208,12 @@ function IdentityCard() {
           <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-accent/20 mix-blend-overlay" />
           <img
             src={maheshPhoto}
-            alt="Mahesh Kale — Python & Backend Developer"
+            alt="Mahesh Kale — Data Analyst, Data Scientist, Python Developer and MIS Analyst"
             width={480}
             height={480}
             className="h-full w-full object-cover"
           />
+
         </div>
 
         {/* Name + status */}
