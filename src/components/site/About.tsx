@@ -28,18 +28,19 @@ export function About() {
       title="Turning Data into Insights and Intelligent Solutions."
       description={
         <>
-          I am Mahesh Sakharam Kale, a Computer Science graduate specializing in Artificial Intelligence, Machine Learning, and Virtual Reality. Through internships in Data Science, Data Analytics, and Python Development, I have developed practical experience in building data-driven solutions using Python, SQL, Power BI, Machine Learning, and data visualization techniques.
+          Mahesh Sakharam Kale — a Computer Science graduate (B.Sc. in AI, ML & VR, Sandip University, 2022–2025) currently completing an advanced Data Science program at ExcelR Solutions.
           <br />
           <br />
-          My portfolio showcases verified projects including an LSTM-based Apple Stock Price Prediction System and a Product Recommendation System, demonstrating end-to-end capabilities in data preprocessing, predictive modeling, recommendation systems, and application development.
+          Three verified internships across Data Science (ExcelR), Data Analytics (Sysslan IT Solutions) and Python Development (Codveda Technologies) — working on real datasets, dashboards, and production-style Python workflows.
           <br />
           <br />
-          I enjoy solving real-world business problems through analytical thinking, clean code, and practical machine learning solutions. I improve my technical skills through hands-on projects, internships, and structured learning while maintaining a strong focus on building reliable and scalable solutions.
+          Core stack: <strong>Python, SQL, Pandas, NumPy, Scikit-learn, Power BI, Advanced Excel, MySQL, Flask and REST APIs</strong>. Verified projects include an LSTM-based Apple Stock Price Prediction system, a Product Recommendation System, a Sales Dashboard and a Job Tracker API — covering the full flow from data preprocessing to modeling, reporting and delivery.
           <br />
           <br />
-          Currently, I am seeking opportunities as a Data Analyst, Data Scientist, Python Developer, or MIS Analyst where I can contribute technical expertise, analytical problem-solving, and a continuous learning mindset to deliver meaningful business impact.
+          Approach: understand the business problem first, choose the simplest technique that solves it, and ship a clean, reproducible result. Open to <strong>Data Analyst, Data Scientist, Python Developer and MIS Analyst</strong> roles.
         </>
       }
+
     >
       <div className="grid gap-4 md:grid-cols-3">
         {pillars.map((p, i) => (
