@@ -37,6 +37,7 @@ const WELCOME_TEXT =
 
 export function MahiAI() {
   const [open, setOpen] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [thinking, setThinking] = useState(false);
