@@ -726,6 +726,41 @@ function ProjectDetails({
           </DetailBlock>
         )}
 
+        {WORKFLOWS[project.title]?.length > 0 && (
+          <DetailBlock title="Project Workflow">
+            <ol className="relative grid gap-0 pl-1">
+              {WORKFLOWS[project.title].map((step, idx) => {
+                const isLast = idx === WORKFLOWS[project.title].length - 1;
+                return (
+                  <li key={idx} className="relative pb-4 pl-7 last:pb-0">
+                    {!isLast && (
+                      <div className="absolute left-[13px] top-7 h-[calc(100%-24px)] w-px bg-gradient-to-b from-primary/40 to-transparent" />
+                    )}
+                    <div className="absolute left-0 top-0 grid h-7 w-7 place-items-center rounded-full border border-primary/40 bg-primary/10 text-[11px] font-bold text-primary">
+                      {step.step}
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="text-sm font-semibold text-foreground/90">
+                          {step.title}
+                        </div>
+                        {step.tech && (
+                          <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-foreground/70">
+                            {step.tech}
+                          </span>
+                        )}
+                      </div>
+                      <div className="mt-1 text-sm text-muted-foreground">
+                        {step.description}
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </DetailBlock>
+        )}
+
         {project.features.length > 0 && (
           <DetailBlock title="Key Features">
             <ul className="grid gap-1.5">
