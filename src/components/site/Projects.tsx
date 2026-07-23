@@ -53,6 +53,66 @@ const DA_TECH = ["SQL", "MySQL", "Power BI", "Excel"];
 const ML_TECH = ["Scikit-learn", "TensorFlow", "PyTorch"];
 const PY_TECH = ["Python", "Flask", "REST API", "Pandas", "NumPy"];
 
+type ChallengeItem = { challenge: string; solution: string };
+const CHALLENGES: Record<string, ChallengeItem[]> = {
+  "Apple Stock Price Prediction System": [
+    {
+      challenge:
+        "Handling sequential time-series data and preparing it correctly for LSTM model training.",
+      solution:
+        "Applied data preprocessing, normalization and sliding-window sequence generation to shape inputs suitable for the LSTM network.",
+    },
+    {
+      challenge:
+        "Avoiding unstable predictions caused by noisy stock market fluctuations.",
+      solution:
+        "Used proper train-test splitting, feature scaling and evaluated performance with regression metrics before visualising forecasts in Streamlit.",
+    },
+  ],
+  "Product Recommendation System": [
+    {
+      challenge:
+        "Generating meaningful recommendations for users with limited interaction history.",
+      solution:
+        "Implemented similarity-based collaborative filtering with Scikit-learn and tuned the similarity computation to improve top-N recommendation quality.",
+    },
+    {
+      challenge:
+        "Balancing recommendation accuracy with response performance.",
+      solution:
+        "Optimised the Pandas/NumPy preprocessing pipeline and vectorised similarity logic so recommendations are returned efficiently at query time.",
+    },
+  ],
+  "Job Tracker API": [
+    {
+      challenge:
+        "Designing a clean REST contract for job-application CRUD across create, update, list and delete flows.",
+      solution:
+        "Structured Flask routes around a single resource with clear status codes and JSON payloads, keeping routing separate from data access.",
+    },
+    {
+      challenge:
+        "Persisting application data reliably and validating incoming requests.",
+      solution:
+        "Backed the API with a MySQL schema and added request validation plus error handling so invalid inputs fail predictably.",
+    },
+  ],
+  "Sales Dashboard": [
+    {
+      challenge:
+        "Consolidating scattered SQL and Excel sources into a single trustworthy data model.",
+      solution:
+        "Cleaned and shaped the sources in Power BI, defined consistent KPIs and modelled relationships so every visual reads from one source of truth.",
+    },
+    {
+      challenge:
+        "Making the report self-serve for non-technical stakeholders.",
+      solution:
+        "Designed KPI cards and interactive slicers by product, region and period so users can answer their own questions without extra reports.",
+    },
+  ],
+};
+
 function techHas(p: Project, list: string[]) {
   return p.technologies.some((t) => list.includes(t));
 }
