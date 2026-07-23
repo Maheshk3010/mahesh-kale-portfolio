@@ -66,6 +66,7 @@ function Index() {
       <Hero />
       <WhyHire />
       <About />
+      <ValueProposition />
       <Dashboard />
       <Projects />
       <Skills />
