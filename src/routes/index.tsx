@@ -1,24 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Dashboard } from "@/components/site/Dashboard";
+import { Projects } from "@/components/site/Projects";
+import { Skills } from "@/components/site/Skills";
+import { Experience } from "@/components/site/Experience";
+import { Certifications } from "@/components/site/Certifications";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Mahesh Kale — AI & Full-Stack Engineer" },
+      {
+        name: "description",
+        content:
+          "MAHI Portfolio — Mahesh Kale builds AI-powered software and data-driven solutions. Selected work, experience and skills.",
+      },
+      { property: "og:title", content: "Mahesh Kale — AI & Full-Stack Engineer" },
+      {
+        property: "og:description",
+        content:
+          "Building AI-powered software & data-driven solutions. Selected work, experience and skills.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen text-foreground">
+      <Nav />
+      <Hero />
+      <About />
+      <Dashboard />
+      <Projects />
+      <Skills />
+      <Experience />
+      <Certifications />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
