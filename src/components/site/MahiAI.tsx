@@ -277,6 +277,58 @@ export function MahiAI() {
               onSubmit={handleSubmit}
               className="relative border-t border-white/10 bg-white/[0.03] p-3"
             >
+              <AnimatePresence>
+                {(voice.state !== "idle" || voice.error) && (
+                  <motion.div
+                    key="voice-status"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
+                  >
+                    {voice.error ? (
+                      <span className="text-destructive-foreground/90">
+                        {voice.error}
+                      </span>
+                    ) : voice.state === "listening" ? (
+                      <span className="flex items-center gap-2">
+                        <span className="flex items-end gap-0.5">
+                          {[0, 1, 2, 3, 4].map((i) => (
+                            <motion.span
+                              key={i}
+                              className="w-0.5 rounded-full bg-primary"
+                              animate={{ height: [4, 12, 4] }}
+                              transition={{
+                                duration: 0.8,
+                                repeat: Infinity,
+                                delay: i * 0.1,
+                                ease: "easeInOut",
+                              }}
+                            />
+                          ))}
+                        </span>
+                        <span className="font-medium text-primary">
+                          Listening…
+                        </span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2 text-muted-foreground">
+                        <Loader2 className="h-3 w-3 animate-spin text-primary" />
+                        Processing…
+                      </span>
+                    )}
+                    {voice.state === "listening" && (
+                      <button
+                        type="button"
+                        onClick={voice.stop}
+                        className="text-[10px] font-medium text-primary hover:underline"
+                      >
+                        Stop
+                      </button>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
                 <textarea
                   ref={inputRef}
@@ -287,6 +339,35 @@ export function MahiAI() {
                   placeholder="Ask MAHI.AI anything..."
                   className="min-w-0 flex-1 resize-none bg-transparent py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none max-h-28"
                 />
+                {voice.supported && (
+                  <motion.button
+                    type="button"
+                    onClick={voice.toggle}
+                    disabled={thinking}
+                    aria-label={
+                      voice.state === "listening"
+                        ? "Stop voice input"
+                        : "Start voice input"
+                    }
+                    aria-pressed={voice.state === "listening"}
+                    title="Voice input (Alt+M)"
+                    whileTap={{ scale: 0.92 }}
+                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                      voice.state === "listening"
+                        ? "border-primary/60 bg-primary/20 text-primary shadow-[0_0_16px_-2px_var(--primary)]"
+                        : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary"
+                    }`}
+                  >
+                    {voice.state === "processing" ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    ) : (
+                      <Mic className="h-3.5 w-3.5" />
+                    )}
+                    {voice.state === "listening" && (
+                      <span className="pointer-events-none absolute inline-flex h-8 w-8 rounded-xl bg-primary/40 opacity-60 animate-ping" />
+                    )}
+                  </motion.button>
+                )}
                 <button
                   type="submit"
                   disabled={!input.trim() || thinking}
@@ -299,6 +380,12 @@ export function MahiAI() {
               <p className="mt-2 flex items-center justify-center gap-1 text-[10px] text-muted-foreground">
                 <Bot className="h-3 w-3 text-primary" />
                 Powered by MAHI.AI · Local Engine
+                {voice.supported && (
+                  <>
+                    <span className="mx-1 opacity-40">·</span>
+                    <span>Alt+M to speak</span>
+                  </>
+                )}
               </p>
             </form>
           </motion.div>
