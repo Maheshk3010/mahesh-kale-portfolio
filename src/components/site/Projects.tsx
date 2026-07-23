@@ -235,6 +235,46 @@ const TECHNOLOGY_DECISIONS: Record<string, TechDecisionItem[]> = {
   ],
 };
 
+type WorkflowStep = { step: number; title: string; description: string; tech?: string };
+const WORKFLOWS: Record<string, WorkflowStep[]> = {
+  "Apple Stock Price Prediction System": [
+    { step: 1, title: "Collect Historical Apple Stock Data", description: "Load historical market data into the pipeline for analysis.", tech: "Pandas" },
+    { step: 2, title: "Clean & Prepare Dataset", description: "Handle missing values, format dates and remove inconsistencies.", tech: "Pandas, NumPy" },
+    { step: 3, title: "Normalize Features", description: "Scale price values so the model learns patterns instead of magnitudes.", tech: "Scikit-learn" },
+    { step: 4, title: "Generate Time-Series Sequences", description: "Create sliding windows of past prices to feed the LSTM.", tech: "NumPy" },
+    { step: 5, title: "Train LSTM Model", description: "Build and fit a deep-learning model to learn sequential dependencies.", tech: "TensorFlow, Keras" },
+    { step: 6, title: "Predict Future Prices", description: "Use the trained model to forecast upcoming stock prices.", tech: "TensorFlow" },
+    { step: 7, title: "Evaluate Model Performance", description: "Measure prediction quality with regression metrics.", tech: "RMSE, MAE" },
+    { step: 8, title: "Display Predictions using Streamlit", description: "Expose results through an interactive web interface.", tech: "Streamlit" },
+  ],
+  "Product Recommendation System": [
+    { step: 1, title: "Load User & Product Data", description: "Import interaction or rating data into the workspace.", tech: "Pandas" },
+    { step: 2, title: "Clean Dataset", description: "Remove duplicates, handle missing ratings and normalize entries.", tech: "Pandas, NumPy" },
+    { step: 3, title: "Generate User-Item Matrix", description: "Reshape data into a matrix of users against products.", tech: "Pandas" },
+    { step: 4, title: "Compute Similarity", description: "Calculate similarity between users or items for recommendations.", tech: "Scikit-learn" },
+    { step: 5, title: "Generate Recommendations", description: "Produce a list of top-N product suggestions.", tech: "Recommendation Algorithms" },
+    { step: 6, title: "Rank Results", description: "Order recommendations by relevance score.", tech: "Pandas" },
+    { step: 7, title: "Display Recommendations in Streamlit", description: "Present recommendations through an interactive app.", tech: "Streamlit" },
+  ],
+  "Job Tracker API": [
+    { step: 1, title: "Define API Requirements & Endpoints", description: "Map out the CRUD operations needed for job applications.", tech: "REST API" },
+    { step: 2, title: "Set Up Flask Application", description: "Initialize the Python backend and route structure.", tech: "Flask" },
+    { step: 3, title: "Design MySQL Schema", description: "Create tables to store job applications reliably.", tech: "MySQL" },
+    { step: 4, title: "Implement CRUD Routes", description: "Build create, read, update and delete endpoints.", tech: "Flask, SQL" },
+    { step: 5, title: "Add Request Validation", description: "Validate incoming JSON and return consistent errors.", tech: "Python" },
+    { step: 6, title: "Test API Endpoints", description: "Verify each endpoint responds correctly with sample requests.", tech: "Postman/cURL" },
+    { step: 7, title: "Document the API", description: "Record endpoint URLs, payloads and responses for users.", tech: "Markdown" },
+  ],
+  "Sales Dashboard": [
+    { step: 1, title: "Gather SQL & Excel Data Sources", description: "Collect raw sales data from existing files and databases.", tech: "SQL, Excel" },
+    { step: 2, title: "Clean & Transform Data in Power Query", description: "Standardize formats, remove errors and shape the dataset.", tech: "Power Query" },
+    { step: 3, title: "Model Relationships & Define KPIs", description: "Link tables and create calculated measures for reporting.", tech: "Power BI" },
+    { step: 4, title: "Build Visuals & Charts", description: "Create KPI cards, trend lines and breakdown charts.", tech: "Power BI" },
+    { step: 5, title: "Add Slicers & Filters", description: "Enable self-service filtering by product, region and period.", tech: "Power BI" },
+    { step: 6, title: "Publish & Share Dashboard", description: "Finalize the report for stakeholder review.", tech: "Power BI" },
+  ],
+};
+
 function techHas(p: Project, list: string[]) {
   return p.technologies.some((t) => list.includes(t));
 }
