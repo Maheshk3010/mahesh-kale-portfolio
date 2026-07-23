@@ -437,54 +437,6 @@ function CertificationsCard({ reply, onNavigate }: { reply: string; onNavigate?:
   );
 }
 
-function ContactCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
-  const c = knowledgeBase.contact;
-  const hasAny = c.email || c.phone || c.linkedin || c.github || c.resume;
-  if (!hasAny) {
-    return <InfoCard title="Verified Information Only" message={UNVERIFIED_FALLBACK} />;
-  }
-  return (
-    <CardShell icon={<Mail className="h-3.5 w-3.5" />} title="Get in touch">
-      {reply && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">
-          {firstLine(reply)}
-        </p>
-      )}
-      <div className="flex flex-wrap gap-1.5">
-        {c.email && (
-          <ActionButton href={`mailto:${c.email}`} icon={<Mail className="h-3 w-3" />}>
-            Email
-          </ActionButton>
-        )}
-        {c.phone && (
-          <ActionButton href={`tel:${c.phone}`} icon={<Phone className="h-3 w-3" />}>
-            Phone
-          </ActionButton>
-        )}
-        {c.linkedin && (
-          <ActionButton href={c.linkedin} icon={<Linkedin className="h-3 w-3" />}>
-            LinkedIn
-          </ActionButton>
-        )}
-        {c.github && (
-          <ActionButton href={c.github} icon={<Github className="h-3 w-3" />}>
-            GitHub
-          </ActionButton>
-        )}
-        {c.resume && (
-          <ActionButton href={c.resume} icon={<FileText className="h-3 w-3" />}>
-            Resume
-          </ActionButton>
-        )}
-      </div>
-      <ActionsRow>
-        <NavAction sectionId="contact" onNavigated={onNavigate}>
-          Jump to Contact
-        </NavAction>
-      </ActionsRow>
-    </CardShell>
-  );
-}
 
 function RolesCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const roles = knowledgeBase.roles.roles;
