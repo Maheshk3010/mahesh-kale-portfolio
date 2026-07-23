@@ -302,7 +302,7 @@ export function Projects() {
                   <a
                     href={project.github}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
                   >
                     <Code2 className="h-3.5 w-3.5" /> View Code
@@ -310,7 +310,7 @@ export function Projects() {
                   <a
                     href={project.github}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
                   >
                     <Github className="h-3.5 w-3.5" /> Open GitHub
@@ -328,7 +328,7 @@ export function Projects() {
                 <a
                   href={project.demo}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
                 >
                   <ExternalLink className="h-3.5 w-3.5" /> Demo
@@ -487,7 +487,7 @@ function ProjectDetails({
             <a
               href={project.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
             >
               <Github className="h-3.5 w-3.5" /> GitHub
@@ -497,7 +497,7 @@ function ProjectDetails({
             <a
               href={project.demo}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
             >
               <ExternalLink className="h-3.5 w-3.5" /> Demo

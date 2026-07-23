@@ -30,12 +30,12 @@ export function Footer() {
             </a>
           )}
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noreferrer" className="hover:text-foreground">
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
               LinkedIn
             </a>
           )}
           {github && (
-            <a href={github} target="_blank" rel="noreferrer" className="hover:text-foreground">
+            <a href={github} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
               GitHub
             </a>
           )}
