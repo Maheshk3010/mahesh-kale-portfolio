@@ -124,6 +124,7 @@ export function MahiAI() {
     onPartial: (t) => setInput(t),
     onFinal: (t) => {
       setInput("");
+      analyticsService.trackAction("voice_input");
       sendRef.current(t);
       setTimeout(() => inputRef.current?.focus(), 50);
     },
