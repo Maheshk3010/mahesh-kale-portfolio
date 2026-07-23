@@ -56,6 +56,17 @@ function NavAction({
   );
 }
 
+function ActionsRow({ children }: { children: React.ReactNode }) {
+  // Filter out nulls so the row disappears when no NavActions are available.
+  const items = Array.isArray(children)
+    ? (children as React.ReactNode[]).filter(Boolean)
+    : children
+      ? [children]
+      : [];
+  if (items.length === 0) return null;
+  return <div className="mt-3 flex flex-wrap gap-1.5">{items}</div>;
+}
+
 /**
  * Presentation-only rich response renderer.
  * Consumes the ChatEngineResponse (intent + verified + reply) and reads the
