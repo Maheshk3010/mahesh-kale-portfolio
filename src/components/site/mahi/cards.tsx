@@ -87,15 +87,18 @@ export function CopyButton({
   value,
   label,
   icon,
+  analyticsAction,
 }: {
   value: string;
   label: string;
   icon?: React.ReactNode;
+  analyticsAction?: AnalyticsActionType;
 }) {
   const [copied, setCopied] = useState(false);
   return (
     <ActionButton
       icon={copied ? <Check className="h-3 w-3 text-primary" /> : (icon ?? <Copy className="h-3 w-3" />)}
+      analyticsAction={analyticsAction}
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(value);
