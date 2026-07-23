@@ -144,6 +144,97 @@ const LEARNINGS: Record<string, string[]> = {
   ],
 };
 
+type TechDecisionItem = { technology: string; reason: string };
+const TECHNOLOGY_DECISIONS: Record<string, TechDecisionItem[]> = {
+  "Apple Stock Price Prediction System": [
+    {
+      technology: "Python",
+      reason:
+        "Used because of its rich ecosystem for data analysis, machine learning, and rapid application development.",
+    },
+    {
+      technology: "Pandas",
+      reason:
+        "Selected for efficient preprocessing and manipulation of historical stock market data.",
+    },
+    {
+      technology: "TensorFlow & Keras",
+      reason:
+        "Chosen to build and train deep learning models with a simple and scalable API.",
+    },
+    {
+      technology: "LSTM",
+      reason:
+        "Selected because LSTM networks are designed to learn long-term dependencies in sequential time-series data.",
+    },
+    {
+      technology: "Streamlit",
+      reason:
+        "Used to quickly build an interactive web interface for visualizing predictions.",
+    },
+  ],
+  "Product Recommendation System": [
+    {
+      technology: "Python",
+      reason:
+        "Provides powerful libraries for recommendation algorithms and data processing.",
+    },
+    {
+      technology: "Pandas",
+      reason:
+        "Used for cleaning, transforming, and organizing user-product interaction data.",
+    },
+    {
+      technology: "Recommendation Algorithms",
+      reason:
+        "Selected to generate personalized product suggestions based on user behavior.",
+    },
+    {
+      technology: "Streamlit",
+      reason: "Used to create an interactive recommendation interface.",
+    },
+  ],
+  "Job Tracker API": [
+    {
+      technology: "Python",
+      reason:
+        "Chosen for its readable syntax and strong ecosystem for backend development and API prototyping.",
+    },
+    {
+      technology: "Flask",
+      reason:
+        "Selected as a lightweight micro-framework that keeps the API focused and easy to extend.",
+    },
+    {
+      technology: "REST API",
+      reason:
+        "Used to define a standard, stateless contract for job-application CRUD operations.",
+    },
+    {
+      technology: "MySQL",
+      reason:
+        "Chosen for reliable, structured storage of relational job-application data.",
+    },
+  ],
+  "Sales Dashboard": [
+    {
+      technology: "Power BI",
+      reason:
+        "Selected as the primary BI platform for building interactive, self-service sales visuals.",
+    },
+    {
+      technology: "SQL",
+      reason:
+        "Used to query and structure relational sales data before loading it into the dashboard.",
+    },
+    {
+      technology: "Excel",
+      reason:
+        "Used as a familiar source format for raw sales data and quick ad-hoc transformations.",
+    },
+  ],
+};
+
 function techHas(p: Project, list: string[]) {
   return p.technologies.some((t) => list.includes(t));
 }
@@ -568,6 +659,26 @@ function ProjectDetails({
                 <li key={idx} className="flex gap-2 text-sm text-muted-foreground">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
                   {l}
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
+        {TECHNOLOGY_DECISIONS[project.title]?.length > 0 && (
+          <DetailBlock title="Technology Decisions">
+            <ul className="grid gap-3">
+              {TECHNOLOGY_DECISIONS[project.title].map((d, idx) => (
+                <li
+                  key={idx}
+                  className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
+                >
+                  <div className="text-sm font-semibold text-foreground/90">
+                    {d.technology}
+                  </div>
+                  <div className="mt-1 text-sm text-muted-foreground">
+                    {d.reason}
+                  </div>
                 </li>
               ))}
             </ul>
