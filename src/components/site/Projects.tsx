@@ -59,12 +59,12 @@ function techHas(p: Project, list: string[]) {
 
 function categoriesFor(p: Project): Category[] {
   const cats: Category[] = [];
-  if (techHas(p, BI_TECH)) cats.push("Business Intelligence");
-  if (techHas(p, DA_TECH)) cats.push("Data Analytics");
+  if (isFeatured(p)) cats.push("Featured");
+  if (techHas(p, DA_TECH) || techHas(p, BI_TECH)) cats.push("Data Analysis");
   if (techHas(p, ML_TECH) || /recommendation/i.test(p.title))
     cats.push("Machine Learning");
   if (/recommendation/i.test(p.title)) cats.push("Recommendation Systems");
-  if (/time series|forecast/i.test(p.title + p.description))
+  if (/time series|forecast|stock/i.test(p.title + p.description))
     cats.push("Time Series");
   if (techHas(p, PY_TECH)) cats.push("Python");
   return Array.from(new Set(cats));
