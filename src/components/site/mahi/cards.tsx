@@ -13,7 +13,8 @@ import {
   Info,
   Sparkles,
 } from "lucide-react";
-import { knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import { analyticsService, knowledgeBase, UNVERIFIED_FALLBACK } from "@/mahi";
+import type { AnalyticsActionType } from "@/mahi";
 
 /* ---------------------------- Building blocks ---------------------------- */
 
