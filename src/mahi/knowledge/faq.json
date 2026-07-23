@@ -223,6 +223,62 @@
     {
       "q": "Explain your learning experience.",
       "a": "Mahesh's learning has been project-driven: he built ML models in Python (LSTM, recommendation systems), developed backend APIs with Flask and MySQL, and created business dashboards with Power BI and SQL. Every project focused on practical, recruiter-relevant skills for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+    },
+    {
+      "q": "Why did Mahesh use LSTM?",
+      "a": "LSTM was selected for the Apple Stock Price Prediction System because LSTM networks are designed to learn long-term dependencies in sequential time-series data, which is essential for forecasting stock prices from historical market data."
+    },
+    {
+      "q": "Why TensorFlow?",
+      "a": "TensorFlow and Keras were chosen to build and train the LSTM deep-learning model in the Apple Stock project because they provide a simple, scalable API for prototyping and productionizing neural networks."
+    },
+    {
+      "q": "Why Streamlit?",
+      "a": "Streamlit was used in both the Apple Stock Price Prediction System and the Product Recommendation System to quickly build interactive web interfaces for visualizing predictions and recommendations without building a full frontend stack."
+    },
+    {
+      "q": "Why collaborative filtering?",
+      "a": "Collaborative filtering was used in the Product Recommendation System to generate personalized product suggestions based on user behavior and similarity patterns in the interaction data."
+    },
+    {
+      "q": "Why Python?",
+      "a": "Python was selected across all projects because of its rich ecosystem for data analysis, machine learning, recommendation algorithms, backend API development and rapid prototyping."
+    },
+    {
+      "q": "Why Pandas?",
+      "a": "Pandas was used in the Apple Stock and Product Recommendation projects for efficient cleaning, transformation, preprocessing and manipulation of structured datasets."
+    },
+    {
+      "q": "Why Flask?",
+      "a": "Flask was chosen for the Job Tracker API because it is a lightweight Python micro-framework that keeps the API focused, extensible and easy to maintain."
+    },
+    {
+      "q": "Why MySQL?",
+      "a": "MySQL was selected for the Job Tracker API to provide reliable, structured relational storage for job-application records and to support consistent SQL querying."
+    },
+    {
+      "q": "Why Power BI?",
+      "a": "Power BI was selected for the Sales Dashboard because it is an industry-standard BI platform for building interactive, self-service sales visuals and KPI reporting."
+    },
+    {
+      "q": "Explain the technology choices in the Apple Stock project.",
+      "a": "Python was chosen for its data/ML ecosystem; Pandas for preprocessing historical stock data; TensorFlow/Keras for building the LSTM model; LSTM for learning long-term time-series dependencies; and Streamlit for delivering an interactive prediction interface."
+    },
+    {
+      "q": "Explain the technology choices in the Product Recommendation System.",
+      "a": "Python was chosen for its recommendation and data libraries; Pandas for cleaning user-product interaction data; collaborative filtering/recommendation algorithms for personalized suggestions; and Streamlit for the interactive recommendation interface."
+    },
+    {
+      "q": "Explain the technology choices in the Job Tracker API.",
+      "a": "Python was chosen for backend development; Flask for a lightweight, focused API framework; REST API for a standard stateless CRUD contract; and MySQL for structured, reliable relational storage."
+    },
+    {
+      "q": "Explain the technology choices in the Sales Dashboard.",
+      "a": "Power BI was chosen as the primary BI and visualization platform; SQL for querying and structuring relational sales data; and Excel as a familiar source format for raw sales data and quick transformations."
+    },
+    {
+      "q": "What technology decisions did Mahesh make in his projects?",
+      "a": "Every project has documented technology decisions: Apple Stock uses Python, Pandas, TensorFlow/Keras, LSTM and Streamlit; Product Recommendation uses Python, Pandas, recommendation algorithms and Streamlit; Job Tracker API uses Python, Flask, REST API and MySQL; Sales Dashboard uses Power BI, SQL and Excel. Each choice is tied to a verified technical reason."
     }
   ]
 }
