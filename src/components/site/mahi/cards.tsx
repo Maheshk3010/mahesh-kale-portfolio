@@ -253,12 +253,18 @@ export function GitHubCard({
         </div>
       )}
       <div className="flex flex-wrap gap-1.5">
-        <ActionButton href={link.url} icon={<Github className="h-3 w-3" />} variant="primary">
+        <ActionButton
+          href={link.url}
+          icon={<Github className="h-3 w-3" />}
+          variant="primary"
+          analyticsAction="github_open"
+        >
           Open GitHub Profile
         </ActionButton>
         {repoCount > 0 && onAsk && (
           <ActionButton
             icon={<Sparkles className="h-3 w-3" />}
+            analyticsAction="github_view_projects"
             onClick={() => onAsk("Show me Mahesh's projects")}
           >
             View Featured Projects
