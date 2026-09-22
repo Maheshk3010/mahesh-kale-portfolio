@@ -16,3 +16,9 @@
 - [ ] Add active navigation state and refine professional micro-interactions.
 - [ ] Create a quieter cinematic closing frame without changing factual content.
 - [ ] Verify reduced motion, keyboard behavior, performance, and all four target viewports.
+
+## Section location audit — audit only
+
+- [ ] Inspect the exact current public section order, navigation, floating assistant, and footer.
+- [ ] Evaluate every section and adjacent transition against the recruiter first-scan journey.
+- [ ] Deliver one evidence-based recommended information architecture without changing the app.

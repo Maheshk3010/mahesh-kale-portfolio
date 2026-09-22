@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, ImageOff, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
+import { inView, revealLeft, revealScale, revealUp, stagger } from "@/lib/motion";
 
 const primaryProjects = [
   {
@@ -49,35 +50,42 @@ export function Projects() {
         {primaryProjects.map((project, index) => (
           <motion.article
             key={project.title}
-            initial={{ opacity: 0, y: 36 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-70px" }}
-            transition={{ duration: 0.7 }}
-            className="border-t border-border pt-5"
+            initial="hidden"
+            whileInView="visible"
+            viewport={inView}
+            variants={stagger(0.04, 0.09)}
+            className="project-case border-t border-border pt-5"
           >
             <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-              <div className={index % 2 ? "lg:order-2" : ""}>
+              <motion.div variants={revealLeft} className={index % 2 ? "lg:order-2" : ""}>
                 <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]">
                   <span className="text-primary">Project / {project.number}</span>
                   <span className="text-muted-foreground">{project.type}</span>
                 </div>
-                <h3 className="mt-8 max-w-lg font-display text-4xl font-bold uppercase leading-[.95] sm:text-5xl">
+                <motion.h3
+                  variants={revealUp}
+                  className="mt-8 max-w-lg font-display text-4xl font-bold uppercase leading-[.95] sm:text-5xl"
+                >
                   {project.title}
-                </h3>
+                </motion.h3>
                 <ProjectField label="Business question" value={project.question} />
                 <ProjectField label="Data" value={project.data} />
                 <ProjectField label="Analysis" value={project.process} />
-                <div className="mt-6 flex flex-wrap gap-2">
+                <motion.div variants={stagger(0, 0.04)} className="mt-6 flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="control-tag">
+                    <motion.span key={tool} variants={revealUp} className="control-tag">
                       {tool}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
-              </div>
-              <div className={index % 2 ? "lg:order-1" : ""}>
-                <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border border-border bg-panel">
+                </motion.div>
+              </motion.div>
+              <motion.div variants={revealScale} className={index % 2 ? "lg:order-1" : ""}>
+                <div className="evidence-frame relative flex aspect-[16/10] items-center justify-center overflow-hidden border border-border bg-panel">
                   <div className="control-grid absolute inset-0 opacity-50" />
+                  <div
+                    className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary"
+                    aria-hidden="true"
+                  />
                   <div className="relative max-w-xs text-center">
                     <ImageOff className="mx-auto h-7 w-7 text-primary" />
                     <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[.16em]">
@@ -111,7 +119,7 @@ export function Projects() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.article>
         ))}
@@ -193,10 +201,13 @@ function ProjectField({
   compact?: boolean;
 }) {
   return (
-    <div className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}>
+    <motion.div
+      variants={revealUp}
+      className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}
+    >
       <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">{label}</p>
       <p className="mt-2 text-sm leading-6 text-foreground/85">{value}</p>
-    </div>
+    </motion.div>
   );
 }
 
