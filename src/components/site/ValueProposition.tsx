@@ -41,10 +41,9 @@ export function ValueProposition() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="glass group relative overflow-hidden rounded-3xl p-6 transition-transform hover:-translate-y-1"
+            className="glass-panel group relative overflow-hidden rounded-lg p-6 transition-transform hover:-translate-y-1"
           >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/20 blur-3xl transition-opacity group-hover:opacity-100 opacity-60" />
-            <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
+            <div className="mb-5 grid h-11 w-11 place-items-center rounded-md bg-primary/10 text-primary">
               <v.icon className="h-5 w-5" />
             </div>
             <h3 className="text-lg font-semibold tracking-tight">{v.title}</h3>

@@ -90,21 +90,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
+          "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning.",
       },
       { name: "author", content: "Mahesh Kale" },
       { property: "og:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
       {
         property: "og:description",
         content:
-          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
+          "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning.",
       },
       { property: "og:site_name", content: "MAHI Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
       { name: "twitter:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
-      { name: "twitter:description", content: "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning." },
+      { name: "twitter:description", content: "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
     ],
@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],

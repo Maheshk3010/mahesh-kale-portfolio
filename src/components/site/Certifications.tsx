@@ -27,7 +27,7 @@ export function Certifications() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.45, delay: i * 0.06 }}
-                  className="glass flex items-start gap-4 rounded-2xl p-5"
+                  className="glass-panel flex items-start gap-4 rounded-lg p-5"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
                     <GraduationCap className="h-5 w-5" />
@@ -63,7 +63,7 @@ export function Certifications() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.45, delay: i * 0.05 }}
-                  className="glass flex items-start gap-4 rounded-2xl p-5"
+                  className="glass-panel flex items-start gap-4 rounded-lg p-5"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
                     <Award className="h-5 w-5" />

@@ -1,110 +1,29 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import {
-  BadgeCheck,
-  Briefcase,
-  GraduationCap,
-  Github,
-  Rocket,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, Check, DatabaseZap, Gauge, Presentation, Workflow } from "lucide-react";
 
-const highlights = [
-  {
-    icon: Rocket,
-    label: "Target roles",
-    value: "Data Analyst · Data Scientist · Python Developer · MIS Analyst",
-  },
-  {
-    icon: BadgeCheck,
-    label: "Core toolkit",
-    value: "Python · SQL · Pandas · Scikit-learn · TensorFlow · Power BI",
-  },
-  {
-    icon: Briefcase,
-    label: "Internships",
-    value: "ExcelR Solutions · Sysslan IT Solutions · Codveda Technologies",
-  },
-  {
-    icon: Github,
-    label: "Verified GitHub projects",
-    value: "Apple Stock Price Prediction (LSTM) · Product Recommendation System",
-  },
-  {
-    icon: GraduationCap,
-    label: "Education",
-    value: "B.Sc. Computer Science (AI, ML & VR) — Sandip University · 7.94 CGPA",
-  },
-  {
-    icon: MapPin,
-    label: "Location & status",
-    value: "Pune, India · Open to work · Immediately available",
-  },
+const reasons = [
+  { icon: DatabaseZap, title: "Clean, reliable data", points: ["Profile and validate raw datasets", "Resolve missing values and inconsistencies"] },
+  { icon: Workflow, title: "Repeatable ETL", points: ["Transform source data into analysis-ready models", "Build structured Python and SQL workflows"] },
+  { icon: Gauge, title: "Reporting automation", points: ["Replace repetitive reporting with reusable logic", "Create DAX measures and KPI-ready datasets"] },
+  { icon: Presentation, title: "Stakeholder clarity", points: ["Translate analysis into concise business findings", "Design self-serve dashboards for faster decisions"] },
 ];
 
 export function WhyHire() {
   return (
-    <Section
-      id="why-hire"
-      eyebrow="60-Second Overview"
-      title={
-        <>
-          Why hire Mahesh?
-          <br />
-          <span className="text-muted-foreground">Verified at a glance.</span>
-        </>
-      }
-      description="Everything below is verified from Mahesh's portfolio, internships and public GitHub — no inflated metrics, no invented outcomes."
-    >
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {highlights.map((h, i) => (
-          <motion.div
-            key={h.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="glass group relative overflow-hidden rounded-2xl p-5"
-          >
-            <div className="flex items-start gap-3">
-              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
-                <h.icon className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  {h.label}
-                  <BadgeCheck className="h-3 w-3 text-primary" aria-label="Verified" />
-                </div>
-                <p className="mt-1 text-sm leading-relaxed text-foreground/90">
-                  {h.value}
-                </p>
-              </div>
-            </div>
-          </motion.div>
+    <Section id="why-hire" eyebrow="Value at a glance" title="Built to execute. Trained to explain." description="A practical analytics approach from raw data to a decision-ready answer.">
+      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+        {reasons.map((reason, index) => (
+          <motion.article key={reason.title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-70px" }} transition={{ duration: 0.5, delay: index * 0.07 }} className="glass-panel rounded-lg p-5">
+            <reason.icon className="h-5 w-5 text-primary" />
+            <h3 className="mt-6 font-display text-lg font-bold">{reason.title}</h3>
+            <ul className="mt-4 space-y-3">
+              {reason.points.map((point) => <li key={point} className="flex gap-2 text-sm leading-6 text-muted-foreground"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />{point}</li>)}
+            </ul>
+          </motion.article>
         ))}
       </div>
-
-      <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
-        <a
-          href="#projects"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-primary/40 bg-primary/10 px-3 py-2 font-semibold text-primary transition-all hover:border-primary/60 hover:bg-primary/15"
-        >
-          See featured projects <ArrowRight className="h-3.5 w-3.5" />
-        </a>
-        <a
-          href="#experience"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-2 font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
-        >
-          Internship experience
-        </a>
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-2 font-semibold text-foreground/80 transition-all hover:border-white/25 hover:text-foreground"
-        >
-          Contact & resume
-        </a>
-      </div>
+      <a href="#projects" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary">Review project evidence <ArrowRight className="h-4 w-4" /></a>
     </Section>
   );
 }

@@ -271,7 +271,7 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="glass rounded-2xl p-5"
+            className="glass-panel rounded-lg p-5"
           >
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-sm font-semibold tracking-tight">{g.title}</h3>
@@ -280,15 +280,19 @@ export function Skills() {
               </span>
             </div>
             <div className="flex flex-wrap gap-1.5">
-              {g.items.map((it) => (
-                <button
+              {g.items.map((it, badgeIndex) => (
+                <motion.button
                   key={it.name}
                   type="button"
                   onClick={() => setActive(it)}
-                  className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-foreground/90 transition-colors hover:border-primary/40 hover:text-primary"
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.04 + badgeIndex * 0.035 }}
+                  className="tech-badge transition-colors hover:border-primary hover:text-primary"
                 >
                   {it.name}
-                </button>
+                </motion.button>
               ))}
             </div>
           </motion.div>

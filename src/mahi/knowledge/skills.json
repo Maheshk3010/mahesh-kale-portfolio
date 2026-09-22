@@ -38,7 +38,7 @@
       "confidence": "verified",
       "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
-      "description": "Entry-level machine-learning models and evaluation."
+      "description": "Machine-learning models, classification workflows, and evaluation."
     },
     {
       "name": "TensorFlow",
@@ -102,7 +102,7 @@
       "confidence": "verified",
       "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System"],
       "years": null,
-      "description": "Entry-level machine-learning fundamentals for Data Scientist roles."
+      "description": "Machine-learning workflows for classification, recommendation, and forecasting problems."
     },
     {
       "name": "Time Series Forecasting",
