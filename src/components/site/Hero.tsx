@@ -2,9 +2,15 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import social from "@/mahi/knowledge/social.json";
+import { CountUp } from "./CountUp";
 
-const pipeline = ["Raw data", "Validate", "Analyze", "Visualize", "Report"];
-const metrics = [["50K+", "Retail records"], ["30+", "SQL queries"], ["7K+", "Customer records"], ["03", "Internships"]];
+const pipeline = ["Raw data", "Analyze", "KPI", "Dashboard", "Report"];
+const metrics = [
+  { value: 50, suffix: "K+", label: "Retail records" },
+  { value: 30, suffix: "+", label: "SQL queries" },
+  { value: 7, suffix: "K+", label: "Customer records" },
+  { value: 3, suffix: "", label: "Internships" },
+];
 const queryRows = ["SELECT revenue, region", "FROM sales_records", "WHERE quality_flag = 'valid'", "GROUP BY region;"];
 
 export function Hero() {
@@ -25,11 +31,11 @@ export function Hero() {
             Data<br/><span className="text-primary">Analyst</span>
           </motion.h1>
           <motion.p {...enter(0.32)} className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">MIS <span className="mx-2 text-primary">•</span> Reporting <span className="mx-2 text-primary">•</span> BI</motion.p>
-          <motion.p {...enter(0.4)} className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">SQL, Power BI, Excel and Python for analysis, reporting, dashboards and business performance insights.</motion.p>
+           <motion.p {...enter(0.4)} className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">SQL, Power BI, Advanced Excel and Python for data analysis, reporting, dashboards and business performance insights.</motion.p>
 
           <motion.div {...enter(0.5)} className="mt-8 flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="h-12 uppercase"><a href="#projects">View my work <ArrowDown /></a></Button>
-            <Button variant="outline" size="lg" disabled title="Resume file awaiting verification" className="h-12 uppercase"><Download /> Resume pending</Button>
+             <Button variant="outline" size="lg" disabled title="Resume file awaiting verification" className="h-12 uppercase"><Download /> Download resume</Button>
             <div className="flex gap-3">
               {github && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={github} target="_blank" rel="noopener noreferrer" aria-label="Open GitHub"><Github /></a></Button>}
               {linkedin && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn"><Linkedin /></a></Button>}
@@ -37,7 +43,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div {...enter(0.58)} className="mt-12 grid grid-cols-2 border-y border-border sm:grid-cols-4">
-            {metrics.map(([value, label]) => <div key={label} className="border-r border-border px-3 py-4 first:pl-0 last:border-r-0"><div className="font-mono text-2xl font-bold text-foreground">{value}</div><div className="mt-1 font-mono text-[8px] uppercase tracking-[0.16em] text-muted-foreground">{label}</div></div>)}
+             {metrics.map(({ value, suffix, label }) => <div key={label} className="border-r border-border px-3 py-4 first:pl-0 last:border-r-0"><div className="font-mono text-2xl font-bold text-foreground"><CountUp value={value} suffix={suffix} /></div><div className="mt-1 font-mono text-[8px] uppercase tracking-[0.16em] text-muted-foreground">{label}</div></div>)}
           </motion.div>
         </div>
 
@@ -47,7 +53,7 @@ export function Hero() {
             <div className="border border-border bg-panel p-4"><span className="font-mono text-[8px] uppercase text-muted-foreground">Query / Sales validation</span><div className="mt-5 space-y-3 font-mono text-[10px] text-foreground/80">{queryRows.map((row, i) => <motion.div key={row} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .7 + i * .13 }}><span className="mr-3 text-primary">{String(i + 1).padStart(2, "0")}</span>{row}</motion.div>)}</div></div>
             <div className="grid gap-3"><div className="border border-primary/30 bg-primary/5 p-4"><div className="font-mono text-[8px] uppercase text-muted-foreground">Data quality</div><div className="mt-3 font-display text-3xl font-bold">VALID</div></div><div className="border border-border bg-panel p-4"><div className="font-mono text-[8px] uppercase text-muted-foreground">Report state</div><div className="mt-3 font-display text-xl font-bold text-primary">READY</div></div></div>
           </div>
-          <div className="mt-3 border border-border bg-panel p-4"><div className="flex items-center justify-between font-mono text-[8px] uppercase text-muted-foreground"><span>Pipeline activation</span><span>5 / 5</span></div><div className="mt-5 grid grid-cols-5 gap-1">{[32,56,44,78,92,66,88,48,74,98,62,82,54,90,70].map((h,i)=><motion.span key={i} initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ delay: .75 + i*.04 }} className="origin-bottom bg-primary/60" style={{height:`${h/2}px`}} />)}</div></div>
+           <div className="mt-3 border border-border bg-panel p-4"><div className="flex items-center justify-between font-mono text-[8px] uppercase text-muted-foreground"><span>Validation sequence</span><span>Checks / 04</span></div><div className="mt-4 grid gap-px bg-border sm:grid-cols-4">{["Schema", "Nulls", "Duplicates", "Types"].map((check,i)=><motion.div key={check} initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.75+i*.08}} className="bg-background px-3 py-3 font-mono text-[8px] uppercase text-foreground"><span className="mr-2 text-success">✓</span>{check}</motion.div>)}</div></div>
           <div className="mt-3 overflow-hidden border-y border-border py-5"><motion.div initial={{ x: "0%" }} animate={{ x: "-50%" }} transition={{ duration: 18, repeat: Infinity, ease: "linear" }} className="flex w-max items-center">{[...pipeline,...pipeline].map((step,i)=><div key={`${step}-${i}`} className="flex items-center"><span className="px-4 font-mono text-[9px] font-bold uppercase tracking-[0.14em]">{step}</span><ArrowUpRight className="h-3 w-3 text-primary" /></div>)}</motion.div></div>
           <div className="mt-5 grid grid-cols-2 gap-3 font-mono text-[9px] uppercase"><div className="border-l-2 border-primary pl-3"><span className="text-muted-foreground">Tools</span><p className="mt-1 text-foreground">SQL · Power BI · Excel · Python</p></div><div className="border-l-2 border-accent pl-3"><span className="text-muted-foreground">Output</span><p className="mt-1 text-foreground">KPI · Dashboard · Report</p></div></div>
         </motion.div>

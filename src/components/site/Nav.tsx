@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
-import { Menu, Radio } from "lucide-react";
+import { Download, Menu, Radio } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const links = [
-  ["#top", "Home"], ["#projects", "Work"], ["#mis", "MIS"], ["#skills", "Skills"],
+  ["#top", "Home"], ["#projects", "Work"], ["#mis", "MIS"], ["#stack", "Stack"],
   ["#experience", "Experience"], ["#education", "Education"], ["#about", "About"], ["#contact", "Contact"],
 ] as const;
 
@@ -29,7 +29,7 @@ export function Nav() {
           {links.map(([href, label], i) => <li key={href}><a href={href} className="group font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"><span className="mr-1 text-border-strong">0{i + 1}</span>{label}</a></li>)}
         </ul>
         <div className="flex items-center gap-3">
-          <span className="hidden items-center gap-2 font-mono text-[9px] uppercase tracking-[0.15em] text-success sm:flex"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />Open to work</span>
+          <Button variant="outline" size="sm" disabled title="Resume file awaiting verification" className="hidden xl:inline-flex"><Download />Resume</Button>
           <Sheet>
             <SheetTrigger asChild><Button variant="outline" size="icon" className="lg:hidden" aria-label="Open navigation menu"><Menu /></Button></SheetTrigger>
             <SheetContent className="border-border bg-background/98 p-8">

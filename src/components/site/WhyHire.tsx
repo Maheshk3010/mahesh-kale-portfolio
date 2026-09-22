@@ -12,7 +12,7 @@ const stages = [
 
 export function WhyHire() {
   return (
-    <Section id="workflow" eyebrow="Section 02 / Operating model" title="The analytics workflow" description="A controlled path from source records to a decision-ready report.">
+    <Section id="workflow" eyebrow="Section 02 / Operating model" title="How I work with data" description="A controlled path from source records to a decision-ready report.">
       <div className="relative grid border-t border-border lg:grid-cols-6">
         <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="absolute left-0 right-0 top-0 h-px origin-left bg-primary" />
         {stages.map((stage, index) => (
