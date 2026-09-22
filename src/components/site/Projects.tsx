@@ -18,6 +18,18 @@ const primaryProjects = [
     output: "Structured business-query analysis across retail transactions.",
     finding: "Awaiting verified project findings.",
     evidence: "No matching repository, screenshot or case-study file is stored in the current portfolio.",
+    slots: {
+      Screenshot: "Pending",
+      Gallery: "Pending",
+      GitHub: "Requires verification",
+      Demo: "Pending",
+      "Dataset source": "Pending",
+      "SQL artifact": "Pending",
+      "Power BI artifact": "Not applicable",
+      "Excel artifact": "Pending",
+      "Project date": "Pending",
+      Ownership: "Pending",
+    },
   },
   {
     title: "Sales Dashboard",
@@ -31,6 +43,18 @@ const primaryProjects = [
     output: "Interactive sales dashboard architecture with KPI cards and slicers.",
     finding: "Awaiting verified project findings.",
     evidence: "No matching repository or dashboard screenshot is stored in the current portfolio.",
+    slots: {
+      Screenshot: "Pending",
+      Gallery: "Pending",
+      GitHub: "Requires verification",
+      Demo: "Pending",
+      "Dataset source": "Pending",
+      "SQL artifact": "Pending",
+      "Power BI artifact": "Pending",
+      "Excel artifact": "Pending",
+      "Project date": "Pending",
+      Ownership: "Pending",
+    },
   },
   {
     title: "Customer Churn Analysis",
@@ -44,6 +68,18 @@ const primaryProjects = [
     output: "An evaluated customer-churn classification workflow.",
     finding: "Awaiting verified project findings.",
     evidence: "The current portfolio has no verified matching repository, screenshot or live demo.",
+    slots: {
+      Screenshot: "Pending",
+      Gallery: "Pending",
+      GitHub: "Requires verification",
+      Demo: "Pending",
+      "Dataset source": "Pending",
+      "SQL artifact": "Not applicable",
+      "Power BI artifact": "Not applicable",
+      "Excel artifact": "Pending",
+      "Project date": "Pending",
+      Ownership: "Pending",
+    },
   },
 ];
 
@@ -130,6 +166,19 @@ export function Projects() {
                     </p>
                     <span className="mt-4 inline-flex font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">GitHub / Case study / Demo unavailable until verified</span>
                   </div>
+                  <details className="evidence-slots border-t border-border p-5 sm:col-span-2">
+                    <summary className="cursor-pointer font-mono text-[8px] font-bold uppercase tracking-[.16em] text-primary">
+                      Evidence register
+                    </summary>
+                    <div className="mt-4 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
+                      {Object.entries(project.slots).map(([label, status]) => (
+                        <div key={label} className="bg-background p-3">
+                          <span className="block font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">{label}</span>
+                          <span className="mt-2 block text-xs text-foreground">{status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
                 </div>
               </motion.div>
             </div>

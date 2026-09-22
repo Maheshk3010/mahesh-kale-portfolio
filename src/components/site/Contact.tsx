@@ -54,6 +54,17 @@ export function Contact() {
             className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
           >
             <motion.div variants={revealUp} className="[&>*]:w-full">
+              <Button
+                variant="outline"
+                size="lg"
+                disabled
+                title="Resume file awaiting verification"
+              >
+                <Download />
+                Download resume
+              </Button>
+            </motion.div>
+            <motion.div variants={revealUp} className="[&>*]:w-full">
               <Button asChild size="lg">
                 <a href={`mailto:${contact.email}`}>
                   <Mail />
@@ -92,17 +103,6 @@ export function Contact() {
                 </Button>
               </motion.div>
             )}
-            <motion.div variants={revealUp} className="[&>*]:w-full">
-              <Button
-                variant="outline"
-                size="lg"
-                disabled
-                title="Resume file awaiting verification"
-              >
-                <Download />
-                Download resume
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
       </motion.div>

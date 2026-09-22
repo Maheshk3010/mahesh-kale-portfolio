@@ -349,6 +349,16 @@
 .case-workflow {
   background-image: linear-gradient(90deg, color-mix(in oklab, var(--primary) 4%, transparent), transparent);
 }
+.evidence-slots summary::marker {
+  color: var(--primary);
+}
+.mis-proof-slot {
+  min-height: 7.5rem;
+  transition: background-color var(--motion-micro) ease;
+}
+.mis-proof-slot:hover {
+  background: color-mix(in oklab, var(--primary) 4%, var(--background));
+}
 .mis-console {
   background-image:
     linear-gradient(to right, color-mix(in oklab, var(--primary) 4%, transparent) 1px, transparent 1px),

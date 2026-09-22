@@ -116,7 +116,7 @@ export function Hero() {
           >
             <Button asChild size="lg" className="h-12 uppercase">
               <a href="#projects">
-                View case studies <ArrowDown />
+                View my work <ArrowDown />
               </a>
             </Button>
             <Button
