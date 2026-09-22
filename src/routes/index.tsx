@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MotionConfig } from "motion/react";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { WhyHire } from "@/components/site/WhyHire";
+import { AnalyticsSnapshot } from "@/components/site/AnalyticsSnapshot";
 import { About } from "@/components/site/About";
 import { Dashboard } from "@/components/site/Dashboard";
 import { Projects } from "@/components/site/Projects";
@@ -103,11 +103,11 @@ function Index() {
         <ScrollSignal />
         <Nav />
         <Hero />
-        <WhyHire />
+        <AnalyticsSnapshot />
         <Projects />
         <Dashboard />
-        <Skills />
         <Experience />
+        <Skills />
         <Certifications />
         <About />
         <Contact />

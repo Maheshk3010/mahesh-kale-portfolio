@@ -9,7 +9,7 @@ export function Certifications() {
   return (
     <Section
       id="education"
-      eyebrow="Section 07 / Qualification record"
+      eyebrow="07 / Qualification record"
       title="Education & credentials"
     >
       <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr]">

@@ -2,17 +2,10 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import social from "@/mahi/knowledge/social.json";
-import { CountUp } from "./CountUp";
 import { heroEnter, motionEase, stagger } from "@/lib/motion";
 
 const pipeline = ["Raw data", "Validate", "Analyze", "KPI", "Dashboard", "Report"];
 const stack = ["SQL", "Power BI", "Advanced Excel", "Python"];
-const metrics = [
-  { value: 50, suffix: "K+", label: "Retail records" },
-  { value: 30, suffix: "+", label: "SQL queries" },
-  { value: 7, suffix: "K+", label: "Customer records" },
-  { value: 3, suffix: "", label: "Internships" },
-];
 const queryRows = [
   "SELECT revenue, region",
   "FROM sales_records",
@@ -26,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[96svh] overflow-hidden border-b border-border pt-16"
+      className="relative min-h-[92svh] overflow-hidden border-b border-border pt-16"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -40,7 +33,7 @@ export function Hero() {
         <span className="hero-data-path hero-data-path-b" />
         <span className="hero-data-path hero-data-path-c" />
       </div>
-      <div className="mx-auto grid min-h-[calc(96svh-4rem)] min-w-0 max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,.95fr)] lg:py-16">
+      <div className="mx-auto grid min-h-[calc(92svh-4rem)] min-w-0 max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(400px,.92fr)] lg:py-16">
         <div className="relative z-10 min-w-0">
           <motion.div
             variants={heroEnter(0.04)}
@@ -49,7 +42,7 @@ export function Hero() {
             className="mb-8 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground"
           >
             <span className="h-px w-10 bg-primary" />
-            System 01 / Profile loaded
+            Profile / Analytics operations
           </motion.div>
           <motion.p
             variants={heroEnter(0.09)}
@@ -123,7 +116,7 @@ export function Hero() {
           >
             <Button asChild size="lg" className="h-12 uppercase">
               <a href="#projects">
-                View my work <ArrowDown />
+                View case studies <ArrowDown />
               </a>
             </Button>
             <Button
@@ -163,25 +156,9 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={heroEnter(0.5)}
-            initial="hidden"
-            animate="visible"
-            className="mt-12 grid grid-cols-2 border-y border-border sm:grid-cols-4"
-          >
-            {metrics.map(({ value, suffix, label }) => (
-              <div
-                key={label}
-                className="border-r border-border px-3 py-4 first:pl-0 last:border-r-0"
-              >
-                <div className="font-mono text-2xl font-bold text-foreground">
-                  <CountUp value={value} suffix={suffix} />
-                </div>
-                <div className="mt-1 font-mono text-[8px] uppercase tracking-[0.16em] text-muted-foreground">
-                  {label}
-                </div>
-              </div>
-            ))}
+          <motion.div variants={heroEnter(0.5)} initial="hidden" animate="visible" className="mt-10 flex items-center gap-4 border-t border-border pt-4">
+            <span className="font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">Work focus</span>
+            <span className="font-mono text-[9px] font-bold uppercase tracking-[.12em] text-foreground">Analytics · MIS · Reporting · Dashboards</span>
           </motion.div>
         </div>
 

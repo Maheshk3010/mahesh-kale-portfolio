@@ -8,7 +8,7 @@ export function Experience() {
   return (
     <Section
       id="experience"
-      eyebrow="Section 06 / Work log"
+      eyebrow="05 / Work log"
       title="Field experience"
       description="Three internship chapters. Responsibilities are shown as recorded; missing dates and outcomes remain unclaimed."
     >

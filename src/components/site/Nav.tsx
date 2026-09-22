@@ -13,12 +13,11 @@ import {
 
 const links = [
   ["#top", "Home"],
-  ["#projects", "Work"],
-  ["#mis", "MIS"],
-  ["#stack", "Stack"],
+  ["#projects", "Cases"],
+  ["#mis", "MIS & Reporting"],
   ["#experience", "Experience"],
-  ["#education", "Education"],
-  ["#about", "About"],
+  ["#stack", "Capabilities"],
+  ["#education", "Credentials"],
   ["#contact", "Contact"],
 ] as const;
 
@@ -76,7 +75,7 @@ export function Nav() {
             </span>
           </span>
         </a>
-        <ul className="hidden items-center gap-5 lg:flex">
+        <ul className="hidden items-center gap-4 lg:flex">
           {links.map(([href, label], i) => (
             <li key={href}>
               <a

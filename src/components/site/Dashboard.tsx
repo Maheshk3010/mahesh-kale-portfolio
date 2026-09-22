@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Calculator, Database, FileCheck2, RefreshCcw, Scale } from "lucide-react";
+import { Calculator, Database, FileCheck2, RefreshCcw } from "lucide-react";
 import { Section } from "./Section";
 import { PipelineFlow } from "./PipelineFlow";
 import { inView, revealUp, stagger } from "@/lib/motion";
@@ -28,13 +28,6 @@ const capabilities = [
   },
   {
     number: "04",
-    title: "Data Reconciliation",
-    copy: "Compare reporting inputs and outputs for consistency before review.",
-    tools: "Excel · SQL · Validation",
-    icon: Scale,
-  },
-  {
-    number: "05",
     title: "Reporting Automation",
     copy: "Use repeatable transformations to reduce manual reporting steps.",
     tools: "Python · Power Query",
@@ -45,17 +38,18 @@ const capabilities = [
 const flow = [
   "Source data",
   "Excel / SQL",
-  "Validation",
+  "Data validation",
+  "Reconciliation",
   "KPI calculation",
-  "Power BI / Excel",
-  "Management insight",
+  "Power BI / Report",
+  "Management view",
 ];
 
 export function Dashboard() {
   return (
     <Section
       id="mis"
-      eyebrow="Section 04 / Reporting operations"
+      eyebrow="04 / Reporting operations"
       title="MIS & reporting"
       description="Accuracy first: a reporting chain designed around validated inputs, consistent KPIs and clear management output."
     >
@@ -65,7 +59,7 @@ export function Dashboard() {
           initial="hidden"
           whileInView="visible"
           viewport={inView}
-          className="grid border-b border-border md:grid-cols-2 xl:grid-cols-5"
+          className="grid border-b border-border md:grid-cols-2 xl:grid-cols-4"
         >
           {capabilities.map(({ number, title, copy, tools, icon: Icon }) => (
             <motion.article
@@ -88,10 +82,10 @@ export function Dashboard() {
             </motion.article>
           ))}
         </motion.div>
-        <div className="p-6 sm:p-8">
+        <div className="mis-console p-6 sm:p-8">
           <div className="mb-5 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]">
             <span className="text-muted-foreground">Reporting pipeline</span>
-            <span className="text-success">Controlled flow</span>
+            <span className="text-success">Validated before reporting</span>
           </div>
           <PipelineFlow
             compact
