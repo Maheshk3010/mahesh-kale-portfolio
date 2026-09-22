@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MotionConfig } from "motion/react";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { WhyHire } from "@/components/site/WhyHire";
@@ -60,18 +61,20 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative min-h-screen text-foreground">
-      <Nav />
-      <Hero />
-      <WhyHire />
-      <Projects />
-      <Dashboard />
-      <Skills />
-      <Experience />
-      <Certifications />
-      <About />
-      <Contact />
-      <Footer />
-    </main>
+    <MotionConfig reducedMotion="user">
+      <main className="relative min-h-screen text-foreground">
+        <Nav />
+        <Hero />
+        <WhyHire />
+        <Projects />
+        <Dashboard />
+        <Skills />
+        <Experience />
+        <Certifications />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
+    </MotionConfig>
   );
 }
