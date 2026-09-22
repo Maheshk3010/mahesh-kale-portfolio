@@ -6,7 +6,10 @@ export function ScrollSignal() {
   const markerPosition = useTransform(progress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="pointer-events-none fixed inset-y-0 left-5 z-40 hidden w-px bg-border xl:block" aria-hidden="true">
+    <div
+      className="pointer-events-none fixed inset-y-0 left-5 z-40 hidden w-px bg-border xl:block"
+      aria-hidden="true"
+    >
       <motion.div
         className="absolute inset-x-0 top-0 h-full origin-top bg-primary"
         style={{ scaleY: progress }}

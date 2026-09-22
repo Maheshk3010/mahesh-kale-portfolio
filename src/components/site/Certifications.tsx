@@ -38,12 +38,22 @@ export function Certifications() {
             </motion.article>
           ))}
         </div>
-        <motion.div variants={stagger()} initial="hidden" whileInView="visible" viewport={inView} className="border-t border-border">
+        <motion.div
+          variants={stagger()}
+          initial="hidden"
+          whileInView="visible"
+          viewport={inView}
+          className="border-t border-border"
+        >
           <div className="py-5 font-mono text-[9px] uppercase tracking-[.16em] text-primary">
             Credentials
           </div>
           {certs.map((cert, i) => (
-            <motion.div variants={revealUp} key={cert.name} className="credential-row grid grid-cols-[28px_1fr] border-t border-border py-4">
+            <motion.div
+              variants={revealUp}
+              key={cert.name}
+              className="credential-row grid grid-cols-[28px_1fr] border-t border-border py-4"
+            >
               <span className="font-mono text-[8px] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </span>

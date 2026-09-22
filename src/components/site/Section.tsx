@@ -20,7 +20,7 @@ export function Section({
   className?: string;
   navTitle?: string;
 }) {
-  const registrationTitle = navTitle ?? (typeof title === "string" ? title : eyebrow ?? id ?? "");
+  const registrationTitle = navTitle ?? (typeof title === "string" ? title : (eyebrow ?? id ?? ""));
   const ref = useSectionRegistration<HTMLElement>(id, registrationTitle);
   return (
     <motion.section
@@ -33,11 +33,24 @@ export function Section({
       className={`control-section relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 md:py-28 ${className}`}
     >
       {(eyebrow || title || description) && (
-        <motion.header variants={revealUp} className="mb-12 grid gap-5 border-t border-border pt-5 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-12">
-          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{eyebrow}</div>
+        <motion.header
+          variants={revealUp}
+          className="mb-12 grid gap-5 border-t border-border pt-5 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-12"
+        >
+          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+            {eyebrow}
+          </div>
           <div className="max-w-4xl">
-            {title && <h2 className="font-display text-4xl font-bold leading-[1.02] sm:text-5xl md:text-6xl">{title}</h2>}
-            {description && <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">{description}</p>}
+            {title && (
+              <h2 className="font-display text-4xl font-bold leading-[1.02] sm:text-5xl md:text-6xl">
+                {title}
+              </h2>
+            )}
+            {description && (
+              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+                {description}
+              </p>
+            )}
           </div>
         </motion.header>
       )}

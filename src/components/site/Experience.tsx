@@ -30,7 +30,10 @@ export function Experience() {
               viewport={inView}
               className="relative grid gap-5 pl-12 sm:grid-cols-[64px_1fr] sm:pl-0"
             >
-              <motion.div variants={revealUp} className="timeline-marker absolute left-3 top-1 h-3 w-3 border border-primary bg-background sm:left-[85px]" />
+              <motion.div
+                variants={revealUp}
+                className="timeline-marker absolute left-3 top-1 h-3 w-3 border border-primary bg-background sm:left-[85px]"
+              />
               <span className="hidden font-mono text-[9px] text-primary sm:block">
                 CH / 0{i + 1}
               </span>
@@ -55,7 +58,10 @@ export function Experience() {
                     </div>
                   </div>
                 </div>
-                <motion.div variants={stagger(0.05, 0.08)} className="grid gap-8 py-6 md:grid-cols-[1.4fr_.6fr]">
+                <motion.div
+                  variants={stagger(0.05, 0.08)}
+                  className="grid gap-8 py-6 md:grid-cols-[1.4fr_.6fr]"
+                >
                   <ExperienceColumn
                     label="What I worked on"
                     items={exp.responsibilities.slice(0, 4)}

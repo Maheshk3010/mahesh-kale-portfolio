@@ -47,7 +47,10 @@ export function PipelineFlow({
                 {String(index + 1).padStart(2, "0")}
               </span>
               {index < steps.length - 1 && (
-                <ArrowRight className="pipeline-arrow h-3 w-3 text-border-strong" aria-hidden="true" />
+                <ArrowRight
+                  className="pipeline-arrow h-3 w-3 text-border-strong"
+                  aria-hidden="true"
+                />
               )}
             </div>
             <h3 className="mt-5 font-display text-lg font-bold uppercase">{step.label}</h3>

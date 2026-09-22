@@ -52,7 +52,13 @@ export function About() {
             <Fact label="Field exposure" value="3 internships" />
             <Fact label="Primary roles" value="Data Analyst · MIS Executive" />
           </div>
-          <motion.div variants={stagger(0.08, 0.07)} initial="hidden" whileInView="visible" viewport={inView} className="analysis-sequence mt-8 grid grid-cols-2 gap-px bg-border sm:grid-cols-3 xl:grid-cols-6">
+          <motion.div
+            variants={stagger(0.08, 0.07)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={inView}
+            className="analysis-sequence mt-8 grid grid-cols-2 gap-px bg-border sm:grid-cols-3 xl:grid-cols-6"
+          >
             {process.map((step, i) => (
               <motion.div key={step} variants={revealUp} className="bg-background p-3">
                 <span className="font-mono text-[8px] text-primary">0{i + 1}</span>

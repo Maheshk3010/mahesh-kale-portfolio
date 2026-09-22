@@ -62,7 +62,10 @@ export function Projects() {
                   <span className="text-primary">Project / {project.number}</span>
                   <span className="text-muted-foreground">{project.type}</span>
                 </div>
-                <motion.h3 variants={revealUp} className="mt-8 max-w-lg font-display text-4xl font-bold uppercase leading-[.95] sm:text-5xl">
+                <motion.h3
+                  variants={revealUp}
+                  className="mt-8 max-w-lg font-display text-4xl font-bold uppercase leading-[.95] sm:text-5xl"
+                >
                   {project.title}
                 </motion.h3>
                 <ProjectField label="Business question" value={project.question} />
@@ -79,7 +82,10 @@ export function Projects() {
               <motion.div variants={revealScale} className={index % 2 ? "lg:order-1" : ""}>
                 <div className="evidence-frame relative flex aspect-[16/10] items-center justify-center overflow-hidden border border-border bg-panel">
                   <div className="control-grid absolute inset-0 opacity-50" />
-                  <div className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary" aria-hidden="true" />
+                  <div
+                    className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary"
+                    aria-hidden="true"
+                  />
                   <div className="relative max-w-xs text-center">
                     <ImageOff className="mx-auto h-7 w-7 text-primary" />
                     <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[.16em]">
@@ -195,7 +201,10 @@ function ProjectField({
   compact?: boolean;
 }) {
   return (
-    <motion.div variants={revealUp} className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}>
+    <motion.div
+      variants={revealUp}
+      className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}
+    >
       <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">{label}</p>
       <p className="mt-2 text-sm leading-6 text-foreground/85">{value}</p>
     </motion.div>

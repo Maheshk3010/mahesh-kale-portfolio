@@ -37,7 +37,13 @@ export function Skills() {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div variants={stagger()} initial="hidden" whileInView="visible" viewport={inView} className="border-t border-border">
+      <motion.div
+        variants={stagger()}
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        className="border-t border-border"
+      >
         {stack.map(([verb, tools], i) => (
           <motion.div
             key={verb}
