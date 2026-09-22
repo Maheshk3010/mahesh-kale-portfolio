@@ -89,6 +89,9 @@ const primaryProjects = [
 
 export function Projects() {
   const apple = knowledgeBase.projects.projects.find((p) => p.title.includes("Apple Stock"));
+  const recommendation = knowledgeBase.projects.projects.find((p) =>
+    p.title.includes("Product Recommendation"),
+  );
   return (
     <Section
       id="projects"
@@ -211,7 +214,7 @@ export function Projects() {
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">
-            {[apple].filter(Boolean).map(
+            {[apple, recommendation].filter(Boolean).map(
               (project, index) =>
                 project && (
                   <div
