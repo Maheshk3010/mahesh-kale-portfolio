@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import type { CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import { inView, motionEase, revealUp, stagger } from "@/lib/motion";
 
@@ -36,7 +37,7 @@ export function PipelineFlow({
       />
       <div
         className="grid gap-px bg-border md:grid-cols-[repeat(var(--pipeline-columns),minmax(0,1fr))]"
-        style={{ "--pipeline-columns": steps.length } as React.CSSProperties}
+        style={{ "--pipeline-columns": steps.length } as CSSProperties}
       >
         {steps.map((step, index) => (
           <motion.div

@@ -30,3 +30,5 @@
 - [x] Reframe projects as three editorial case studies with explicit evidence states.
 - [x] Strengthen MIS reporting, field experience, capability relationships, credentials, profile, and closing CTA.
 - [ ] Validate recruiter tests, responsive layouts, accessibility, reduced motion, links, and preview health.
+- [ ] Add structured project, MIS, experience, credential, and resume proof slots for missing evidence.
+- [ ] Deliver the detailed final information/proof report and publication-readiness checklist.
