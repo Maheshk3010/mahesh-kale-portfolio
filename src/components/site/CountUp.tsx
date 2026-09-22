@@ -15,7 +15,7 @@ export function CountUp({ value, suffix = "" }: { value: number; suffix?: string
       return;
     }
     const controls = animate(count, value, { duration: 0.9, ease: "easeOut" });
-    return controls.stop;
+    return () => controls.stop();
   }, [count, inView, reducedMotion, value]);
 
   return <motion.span ref={ref}>{rounded}</motion.span>;

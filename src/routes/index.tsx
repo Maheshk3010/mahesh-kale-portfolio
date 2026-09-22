@@ -41,7 +41,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://mahesh-kale-portfolio.vercel.app/" },
+      { property: "og:image", content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg" },
       {
         name: "twitter:title",
         content:
@@ -60,9 +62,32 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Mahesh Sakharam Kale",
+    url: "https://mahesh-kale-portfolio.vercel.app/",
+    image: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
+    jobTitle: ["Data Analyst", "MIS Executive"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://github.com/Maheshk3010",
+      "https://www.linkedin.com/in/maheshkale3010/",
+    ],
+    knowsAbout: [
+      "SQL", "Power BI", "Advanced Excel", "Python", "MIS Reporting",
+      "KPI Reporting", "Data Validation", "Business Reporting",
+    ],
+  };
   return (
     <MotionConfig reducedMotion="user">
-      <main className="relative min-h-screen text-foreground">
+      <a href="#main-content" className="sr-only z-[100] bg-primary px-4 py-3 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
+      <main id="main-content" className="relative min-h-screen text-foreground">
         <Nav />
         <Hero />
         <WhyHire />
@@ -75,6 +100,7 @@ function Index() {
         <Contact />
         <Footer />
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     </MotionConfig>
   );
 }

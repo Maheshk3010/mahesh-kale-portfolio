@@ -116,6 +116,14 @@
 .control-section::after { content:""; position:absolute; inset:auto 1.25rem 0; height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); }
 .mahi-highlight { outline:1px solid var(--primary); outline-offset:6px; }
 
+#workflow { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--surface) 46%,transparent); }
+#projects { padding-top:8rem; padding-bottom:8rem; }
+#mis { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--primary) 2.5%,var(--background)); }
+#stack h3 { transition:color .2s ease,transform .2s ease; }
+#stack .group:hover h3 { transform:translateX(.3rem); }
+#experience { background-image:linear-gradient(to right,transparent 49.95%,color-mix(in oklab,var(--primary) 4%,transparent) 50%,transparent 50.05%); }
+#contact { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--surface) 34%,transparent); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
