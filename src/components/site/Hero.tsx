@@ -1,145 +1,56 @@
 import { motion } from "motion/react";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  BarChart3,
-  Database,
-  Download,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import social from "@/mahi/knowledge/social.json";
 
-const maheshPhoto = "/maheshkale_pic.jpeg";
-
-const metrics = [
-  { value: "50K+", label: "Records analyzed" },
-  { value: "30+", label: "SQL queries" },
-  { value: "7K+", label: "ML records" },
-];
-
-const stack = ["Python", "SQL", "Power BI", "Scikit-learn", "Flask"];
+const pipeline = ["Raw data", "Validate", "Analyze", "Visualize", "Report"];
+const metrics = [["50K+", "Retail records"], ["30+", "SQL queries"], ["7K+", "Customer records"], ["03", "Internships"]];
+const queryRows = ["SELECT revenue, region", "FROM sales_records", "WHERE quality_flag = 'valid'", "GROUP BY region;"];
 
 export function Hero() {
+  const github = social.links.find((item) => item.platform === "GitHub")?.url ?? "";
+  const linkedin = social.links.find((item) => item.platform === "LinkedIn")?.url ?? "";
+  const enter = (delay: number) => ({ initial: { opacity: 0, y: 22 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const } });
+
   return (
-    <section id="top" className="relative min-h-[92vh] overflow-hidden border-b border-border pt-28">
-      <div className="grid-bg pointer-events-none absolute inset-0 opacity-70" />
-      <div className="mx-auto grid min-h-[calc(92vh-7rem)] max-w-6xl items-center gap-12 px-6 pb-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,.65fr)] lg:gap-16">
+    <section id="top" className="relative min-h-[96svh] overflow-hidden border-b border-border pt-16">
+      <div className="control-grid pointer-events-none absolute inset-0" />
+      <div className="data-stream pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div className="mx-auto grid min-h-[calc(96svh-4rem)] max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,.95fr)] lg:py-16">
         <div className="relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-success shadow-[0_0_10px_var(--success)]" />
-            Available for data opportunities
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"
-          >
-            Mahesh Sakharam Kale
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl text-balance font-display text-5xl font-bold leading-[1.03] md:text-7xl lg:text-[5rem]"
-          >
-            Data Analyst <span className="text-primary">&amp; Machine Learning</span> Practitioner
+          <motion.div {...enter(0.05)} className="mb-8 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground"><span className="h-px w-10 bg-primary" />System 01 / Profile loaded</motion.div>
+          <motion.p {...enter(0.12)} className="font-display text-xl font-bold uppercase tracking-normal text-foreground sm:text-2xl">Mahesh Kale</motion.p>
+          <motion.p {...enter(0.18)} className="mt-2 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Data Analyst <span className="text-muted-foreground">|</span> MIS Executive</motion.p>
+          <motion.h1 {...enter(0.22)} className="mt-4 max-w-4xl font-display text-[clamp(3.25rem,8vw,7rem)] font-bold uppercase leading-[0.84] tracking-normal">
+            Data<br/><span className="text-primary">Analyst</span>
           </motion.h1>
+          <motion.p {...enter(0.32)} className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">MIS <span className="mx-2 text-primary">•</span> Reporting <span className="mx-2 text-primary">•</span> BI</motion.p>
+          <motion.p {...enter(0.4)} className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">SQL, Power BI, Excel and Python for analysis, reporting, dashboards and business performance insights.</motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-7 max-w-3xl text-base leading-8 text-muted-foreground md:text-lg"
-          >
-            Data Analyst &amp; Machine Learning Practitioner with hands-on experience in transforming 50,000+ data records into actionable business insights using Python, SQL, Power BI, and Machine Learning.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.3 }}
-            className="mt-9 grid gap-3 sm:flex sm:flex-wrap"
-          >
-            <a href="#projects" className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5">
-              Explore Projects
-              <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-            </a>
-            <a href="#contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50">
-              <Download className="h-4 w-4 text-primary" /> Request Resume
-            </a>
-            <a href="#contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-border bg-transparent px-5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground">
-              <Mail className="h-4 w-4" /> Contact Me
-            </a>
+          <motion.div {...enter(0.5)} className="mt-8 flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
+            <Button asChild size="lg" className="h-12 uppercase"><a href="#projects">View my work <ArrowDown /></a></Button>
+            <Button variant="outline" size="lg" disabled title="Resume file awaiting verification" className="h-12 uppercase"><Download /> Resume pending</Button>
+            <div className="flex gap-3">
+              {github && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={github} target="_blank" rel="noopener noreferrer" aria-label="Open GitHub"><Github /></a></Button>}
+              {linkedin && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn"><Linkedin /></a></Button>}
+            </div>
           </motion.div>
 
-          <motion.dl
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.42 }}
-            className="mt-12 grid max-w-2xl grid-cols-3 border-y border-border"
-          >
-            {metrics.map((metric) => (
-              <div key={metric.label} className="border-r border-border px-3 py-5 first:pl-0 last:border-r-0 sm:px-6">
-                <dt className="font-mono text-xl font-bold text-foreground sm:text-2xl">{metric.value}</dt>
-                <dd className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">{metric.label}</dd>
-              </div>
-            ))}
-          </motion.dl>
+          <motion.div {...enter(0.58)} className="mt-12 grid grid-cols-2 border-y border-border sm:grid-cols-4">
+            {metrics.map(([value, label]) => <div key={label} className="border-r border-border px-3 py-4 first:pl-0 last:border-r-0"><div className="font-mono text-2xl font-bold text-foreground">{value}</div><div className="mt-1 font-mono text-[8px] uppercase tracking-[0.16em] text-muted-foreground">{label}</div></div>)}
+          </motion.div>
         </div>
 
-        <motion.aside
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-md"
-        >
-          <div className="glass-panel relative overflow-hidden rounded-lg p-4">
-            <div className="mb-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border pb-4">
-              <div className="min-w-0">
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Analyst profile</p>
-                <p className="mt-1 truncate text-sm font-semibold">Business insight workspace</p>
-              </div>
-              <BarChart3 className="h-5 w-5 shrink-0 text-primary" />
-            </div>
-
-            <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border-strong bg-surface">
-              <img src={maheshPhoto} alt="Mahesh Kale, Data Analyst and Machine Learning Practitioner" width={640} height={480} fetchPriority="high" className="h-full w-full object-cover object-top" />
-              <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background/95 to-transparent p-4 pt-16">
-                <p className="font-display text-xl font-bold">Mahesh Kale</p>
-                <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground"><MapPin className="h-3.5 w-3.5 text-primary" /> Pune, Maharashtra, India</p>
-              </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <div className="rounded-md border border-border bg-panel p-3">
-                <Database className="h-4 w-4 text-primary" />
-                <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Focus</p>
-                <p className="mt-1 text-sm font-semibold">Analytics + ML</p>
-              </div>
-              <div className="rounded-md border border-border bg-panel p-3">
-                <ArrowUpRight className="h-4 w-4 text-primary" />
-                <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Status</p>
-                <p className="mt-1 text-sm font-semibold">Open to work</p>
-              </div>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {stack.map((item, index) => (
-                <motion.span key={item} initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.42 + index * 0.06 }} className="tech-badge">
-                  {item}
-                </motion.span>
-              ))}
-            </div>
+        <motion.div {...enter(0.35)} className="relative min-h-[510px] border-l border-t border-border bg-surface/70 p-4 sm:p-6">
+          <div className="flex items-center justify-between border-b border-border pb-3 font-mono text-[9px] uppercase tracking-[0.16em]"><span className="text-primary">Analytics workstation</span><span className="text-success">● Active</span></div>
+          <div className="mt-5 grid grid-cols-[1.2fr_.8fr] gap-3">
+            <div className="border border-border bg-panel p-4"><span className="font-mono text-[8px] uppercase text-muted-foreground">Query / Sales validation</span><div className="mt-5 space-y-3 font-mono text-[10px] text-foreground/80">{queryRows.map((row, i) => <motion.div key={row} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .7 + i * .13 }}><span className="mr-3 text-primary">{String(i + 1).padStart(2, "0")}</span>{row}</motion.div>)}</div></div>
+            <div className="grid gap-3"><div className="border border-primary/30 bg-primary/5 p-4"><div className="font-mono text-[8px] uppercase text-muted-foreground">Data quality</div><div className="mt-3 font-display text-3xl font-bold">VALID</div></div><div className="border border-border bg-panel p-4"><div className="font-mono text-[8px] uppercase text-muted-foreground">Report state</div><div className="mt-3 font-display text-xl font-bold text-primary">READY</div></div></div>
           </div>
-        </motion.aside>
+          <div className="mt-3 border border-border bg-panel p-4"><div className="flex items-center justify-between font-mono text-[8px] uppercase text-muted-foreground"><span>Pipeline activation</span><span>5 / 5</span></div><div className="mt-5 grid grid-cols-5 gap-1">{[32,56,44,78,92,66,88,48,74,98,62,82,54,90,70].map((h,i)=><motion.span key={i} initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ delay: .75 + i*.04 }} className="origin-bottom bg-primary/60" style={{height:`${h/2}px`}} />)}</div></div>
+          <div className="mt-3 overflow-hidden border-y border-border py-5"><motion.div initial={{ x: "0%" }} animate={{ x: "-50%" }} transition={{ duration: 18, repeat: Infinity, ease: "linear" }} className="flex w-max items-center">{[...pipeline,...pipeline].map((step,i)=><div key={`${step}-${i}`} className="flex items-center"><span className="px-4 font-mono text-[9px] font-bold uppercase tracking-[0.14em]">{step}</span><ArrowUpRight className="h-3 w-3 text-primary" /></div>)}</motion.div></div>
+          <div className="mt-5 grid grid-cols-2 gap-3 font-mono text-[9px] uppercase"><div className="border-l-2 border-primary pl-3"><span className="text-muted-foreground">Tools</span><p className="mt-1 text-foreground">SQL · Power BI · Excel · Python</p></div><div className="border-l-2 border-accent pl-3"><span className="text-muted-foreground">Output</span><p className="mt-1 text-foreground">KPI · Dashboard · Report</p></div></div>
+        </motion.div>
       </div>
     </section>
   );

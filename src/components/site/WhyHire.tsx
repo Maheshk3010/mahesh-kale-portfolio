@@ -1,29 +1,29 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { ArrowRight, Check, DatabaseZap, Gauge, Presentation, Workflow } from "lucide-react";
 
-const reasons = [
-  { icon: DatabaseZap, title: "Clean, reliable data", points: ["Profile and validate raw datasets", "Resolve missing values and inconsistencies"] },
-  { icon: Workflow, title: "Repeatable ETL", points: ["Transform source data into analysis-ready models", "Build structured Python and SQL workflows"] },
-  { icon: Gauge, title: "Reporting automation", points: ["Replace repetitive reporting with reusable logic", "Create DAX measures and KPI-ready datasets"] },
-  { icon: Presentation, title: "Stakeholder clarity", points: ["Translate analysis into concise business findings", "Design self-serve dashboards for faster decisions"] },
+const stages = [
+  { step: "01", title: "Collect", copy: "Bring structured source records into one analysis path.", tools: "Excel · SQL · CSV" },
+  { step: "02", title: "Clean", copy: "Standardize fields, formats, missing values and duplicates.", tools: "Power Query · Pandas" },
+  { step: "03", title: "Validate", copy: "Check completeness, consistency and reconciliation rules.", tools: "Excel · SQL" },
+  { step: "04", title: "Analyze", copy: "Query patterns, segments, trends and performance drivers.", tools: "SQL · Python" },
+  { step: "05", title: "Visualize", copy: "Translate measures into readable KPI and trend views.", tools: "Power BI · Excel" },
+  { step: "06", title: "Report", copy: "Deliver repeatable reporting for business review.", tools: "MIS · Dashboards" },
 ];
 
 export function WhyHire() {
   return (
-    <Section id="why-hire" eyebrow="Value at a glance" title="Built to execute. Trained to explain." description="A practical analytics approach from raw data to a decision-ready answer.">
-      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-        {reasons.map((reason, index) => (
-          <motion.article key={reason.title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-70px" }} transition={{ duration: 0.5, delay: index * 0.07 }} className="glass-panel rounded-lg p-5">
-            <reason.icon className="h-5 w-5 text-primary" />
-            <h3 className="mt-6 font-display text-lg font-bold">{reason.title}</h3>
-            <ul className="mt-4 space-y-3">
-              {reason.points.map((point) => <li key={point} className="flex gap-2 text-sm leading-6 text-muted-foreground"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />{point}</li>)}
-            </ul>
+    <Section id="workflow" eyebrow="Section 02 / Operating model" title="The analytics workflow" description="A controlled path from source records to a decision-ready report.">
+      <div className="relative grid border-t border-border lg:grid-cols-6">
+        <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="absolute left-0 right-0 top-0 h-px origin-left bg-primary" />
+        {stages.map((stage, index) => (
+          <motion.article key={stage.step} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="group relative border-b border-border px-4 py-7 lg:border-b-0 lg:border-r">
+            <div className="font-mono text-4xl font-bold text-border-strong transition-colors group-hover:text-primary">{stage.step}</div>
+            <h3 className="mt-8 font-display text-lg font-bold uppercase">{stage.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">{stage.copy}</p>
+            <p className="mt-6 font-mono text-[9px] uppercase tracking-[0.14em] text-primary">{stage.tools}</p>
           </motion.article>
         ))}
       </div>
-      <a href="#projects" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary">Review project evidence <ArrowRight className="h-4 w-4" /></a>
     </Section>
   );
 }

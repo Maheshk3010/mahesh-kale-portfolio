@@ -1,63 +1,46 @@
 import { motion } from "motion/react";
+import { Menu, Radio } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const links = [
-  { href: "#why-hire", label: "Why Hire" },
-  { href: "#about", label: "Executive Profile" },
-  { href: "#value-proposition", label: "Value" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
-];
+  ["#top", "Home"], ["#projects", "Work"], ["#mis", "MIS"], ["#skills", "Skills"],
+  ["#experience", "Experience"], ["#education", "Education"], ["#about", "About"], ["#contact", "Contact"],
+] as const;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 18);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
-    >
-      <nav
-        className={`glass flex w-full max-w-5xl items-center justify-between rounded-lg px-4 py-3 transition-all duration-500 ${
-          scrolled ? "shadow-2xl" : ""
-        }`}
-      >
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-primary text-primary-foreground font-black">
-            M
-          </span>
-          <span className="text-sm font-semibold tracking-tight">
-            MAHI<span className="text-muted-foreground"> / portfolio</span>
-          </span>
+    <motion.header initial={{ y: -24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.55 }} className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+      <nav className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-5 transition-all sm:px-8 ${scrolled ? "shadow-[0_15px_40px_-30px_var(--primary)]" : ""}`} aria-label="Primary navigation">
+        <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="Mahesh Kale Analytics Control Room home">
+          <span className="relative grid h-8 w-8 place-items-center border border-primary/50 bg-primary/10 font-mono text-xs font-bold text-primary"><Radio className="h-4 w-4" /></span>
+          <span className="min-w-0"><span className="block truncate font-display text-sm font-bold uppercase">Mahesh Kale</span><span className="block font-mono text-[8px] uppercase tracking-[0.18em] text-muted-foreground">Analytics Control Room</span></span>
         </a>
-        <ul className="hidden items-center gap-1 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
+        <ul className="hidden items-center gap-5 lg:flex">
+          {links.map(([href, label], i) => <li key={href}><a href={href} className="group font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"><span className="mr-1 text-border-strong">0{i + 1}</span>{label}</a></li>)}
         </ul>
-        <a
-          href="#contact"
-          className="glow-primary inline-flex items-center gap-1.5 rounded-md bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-        >
-          Hire me
-        </a>
+        <div className="flex items-center gap-3">
+          <span className="hidden items-center gap-2 font-mono text-[9px] uppercase tracking-[0.15em] text-success sm:flex"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />Open to work</span>
+          <Sheet>
+            <SheetTrigger asChild><Button variant="outline" size="icon" className="lg:hidden" aria-label="Open navigation menu"><Menu /></Button></SheetTrigger>
+            <SheetContent className="border-border bg-background/98 p-8">
+              <SheetTitle className="font-display uppercase">Control Room</SheetTitle>
+              <SheetDescription>Navigate Mahesh Kale&apos;s analytics workspace.</SheetDescription>
+              <div className="mt-12 grid gap-1">
+                {links.map(([href, label], i) => <SheetClose key={href} asChild><a href={href} className="grid grid-cols-[36px_1fr] items-center border-b border-border py-4 font-display text-xl font-bold uppercase"><span className="font-mono text-[10px] text-primary">0{i + 1}</span>{label}</a></SheetClose>)}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </nav>
     </motion.header>
   );

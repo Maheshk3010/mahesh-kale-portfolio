@@ -86,27 +86,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
+      { title: "Mahesh Kale — Data Analyst & MIS Executive" },
       {
         name: "description",
         content:
-          "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning.",
+          "Mahesh Kale uses SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
       },
       { name: "author", content: "Mahesh Kale" },
-      { property: "og:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
+      { property: "og:title", content: "Mahesh Kale — Data Analyst & MIS Executive" },
       {
         property: "og:description",
         content:
-          "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning.",
+          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
       },
       { property: "og:site_name", content: "MAHI Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
-      { name: "twitter:title", content: "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst" },
-      { name: "twitter:description", content: "Mahesh Kale is a Data Analyst and Machine Learning Practitioner transforming complex datasets into actionable business insights with Python, SQL, Power BI, and Machine Learning." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fffb68ed-e474-4378-b94b-56027570d2ab/id-preview-4c920da4--26ecdde1-1cb9-49da-b5ca-02f5975843ea.lovable.app-1784801900810.png" },
+      { name: "twitter:title", content: "Mahesh Kale — Data Analyst & MIS Executive" },
+      { name: "twitter:description", content: "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation." },
     ],
     links: [
       {

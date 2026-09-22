@@ -1,97 +1,24 @@
 import { motion } from "motion/react";
+import { ArrowUpRight, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
-import { ArrowUpRight, Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
 import social from "@/mahi/knowledge/social.json";
 import contact from "@/mahi/knowledge/contact.json";
 
-function findLink(platform: string) {
-  const entry = social.links.find(
-    (l) => l.platform.toLowerCase() === platform.toLowerCase(),
-  );
-  return entry?.url?.trim() ? entry.url : "";
-}
-
 export function Contact() {
-  const github = findLink("GitHub");
-  const linkedin = findLink("LinkedIn");
-  const email = (contact.email ?? "").trim();
-  const phone = (contact.phone ?? "").trim();
-
+  const github = social.links.find((l) => l.platform === "GitHub")?.url ?? "";
+  const linkedin = social.links.find((l) => l.platform === "LinkedIn")?.url ?? "";
   return (
-    <Section id="contact" className="pb-32">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="glass-panel relative overflow-hidden rounded-lg p-8 sm:p-10 md:p-16"
-      >
-
-        <div className="relative max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-widest text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--success)] shadow-[0_0_12px_var(--success)]" />
-            Open to new opportunities
-          </div>
-          <h2 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-            Let&apos;s turn data into
-            <br />
-            <span className="text-gradient">decisions together.</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            Recruiters and hiring managers — reach out for Data Analyst, Data
-            Scientist, Python Developer or MIS Analyst roles. Mahesh replies
-            within 24 hours.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {github && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open GitHub profile in a new tab"
-                className="glow-primary group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
-              >
-                <Github className="h-4 w-4" />
-                View GitHub
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            )}
-            {email && (
-              <a
-                href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
-              >
-                <Mail className="h-4 w-4" />
-                {email}
-              </a>
-            )}
-            {phone && (
-              <a
-                href={`tel:${phone.replace(/\s+/g, "")}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
-              >
-                <Phone className="h-4 w-4" />
-                {phone}
-              </a>
-            )}
-            {linkedin && (
-              <a
-                href={linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open LinkedIn profile in a new tab"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/10"
-              >
-                <Linkedin className="h-4 w-4" />
-                Connect on LinkedIn
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-            )}
-            <div className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-muted-foreground">
-              <MessageSquare className="h-3.5 w-3.5 text-primary" />
-              Or ask MAHI.AI in the bottom-right corner.
-            </div>
+    <Section id="contact" className="pb-32" navTitle="Contact">
+      <motion.div initial={{opacity:0,y:28}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="relative overflow-hidden border border-primary/35 bg-surface p-7 sm:p-10 md:p-14">
+        <div className="control-grid pointer-events-none absolute inset-0 opacity-40"/>
+        <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div><p className="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-primary">Final report / Available</p><h2 className="mt-6 max-w-4xl font-display text-4xl font-bold uppercase leading-[.95] sm:text-6xl">Ready for the next<br/><span className="text-primary">reporting challenge.</span></h2><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Open to Data Analyst and MIS Executive opportunities involving SQL, Excel, Power BI, KPI reporting and reporting automation.</p></div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            <Button asChild size="lg"><a href={`mailto:${contact.email}`}><Mail/>Email Mahesh<ArrowUpRight/></a></Button>
+            <Button asChild variant="outline" size="lg"><a href={`tel:${contact.phone.replace(/\s+/g,"")}`}><Phone/>{contact.phone}</a></Button>
+            {linkedin && <Button asChild variant="outline" size="lg"><a href={linkedin} target="_blank" rel="noopener noreferrer"><Linkedin/>LinkedIn<ArrowUpRight/></a></Button>}
+            {github && <Button asChild variant="outline" size="lg"><a href={github} target="_blank" rel="noopener noreferrer"><Github/>GitHub<ArrowUpRight/></a></Button>}
           </div>
         </div>
       </motion.div>
