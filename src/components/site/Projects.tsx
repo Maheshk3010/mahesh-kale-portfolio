@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, Github, ImageOff, ShieldAlert } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, ImageOff, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
@@ -7,44 +7,54 @@ import { inView, revealLeft, revealScale, revealUp, stagger } from "@/lib/motion
 
 const primaryProjects = [
   {
-    title: "Sales Dashboard (Power BI)",
+    title: "Sales Performance Analysis",
     number: "01",
-    type: "BI / Reporting",
-    question:
-      "How can sales stakeholders review revenue, orders and growth from one reporting view?",
-    data: "SQL / Excel source structure documented; screenshot and source dataset await verification.",
-    process: "Power Query transformation → relational model → KPI measures → interactive report.",
-    tools: ["Power BI", "Excel", "SQL", "DAX", "Power Query"],
-    output: "Interactive sales dashboard architecture.",
+    type: "SQL / Business analysis",
+    question: "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
+    data: "50,000+ retail transaction records.",
+    workflow: ["Clean", "Validate", "Query", "Compare", "Report"],
+    process: "30+ business queries using joins, CTEs, aggregations and window functions.",
+    tools: ["SQL", "CTEs", "Window Functions", "Data Analysis"],
+    output: "Structured business-query analysis across retail transactions.",
     finding: "Awaiting verified project findings.",
-    result: "Awaiting verified business outcome.",
-    evidence: "Repository currently does not verify the displayed Power BI project.",
+    evidence: "No matching repository, screenshot or case-study file is stored in the current portfolio.",
   },
   {
-    title: "Sales Performance Analysis (SQL)",
+    title: "Sales Dashboard",
     number: "02",
-    type: "SQL / Analysis",
-    question:
-      "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
-    data: "50,000+ retail transaction records.",
-    process: "30+ queries using joins, CTEs, aggregations and window functions.",
-    tools: ["SQL", "CTEs", "Window Functions", "Data Analysis"],
-    output: "Structured business-query analysis.",
+    type: "Power BI / Reporting",
+    question: "How can sales stakeholders review revenue, orders and growth from one reporting view?",
+    data: "SQL / Excel source structure documented; source dataset size is not verified.",
+    workflow: ["Prepare", "Model", "Calculate", "Visualize", "Review"],
+    process: "Power Query transformation → relational model → KPI measures → interactive report.",
+    tools: ["Power BI", "Excel", "SQL", "DAX", "Power Query"],
+    output: "Interactive sales dashboard architecture with KPI cards and slicers.",
     finding: "Awaiting verified project findings.",
-    result: "Awaiting verified business outcome.",
-    evidence: "Repository currently does not verify the displayed SQL project.",
+    evidence: "No matching repository or dashboard screenshot is stored in the current portfolio.",
+  },
+  {
+    title: "Customer Churn Analysis",
+    number: "03",
+    type: "Customer analytics / Supporting ML",
+    question: "Which customer records show patterns associated with churn?",
+    data: "7,000+ customer records.",
+    workflow: ["Clean", "Prepare", "Compare", "Evaluate", "Explain"],
+    process: "Python classification workflow covering cleaning, feature preparation, model comparison and evaluation.",
+    tools: ["Python", "Pandas", "Scikit-learn", "Classification"],
+    output: "An evaluated customer-churn classification workflow.",
+    finding: "Awaiting verified project findings.",
+    evidence: "The current portfolio has no verified matching repository, screenshot or live demo.",
   },
 ];
 
 export function Projects() {
   const apple = knowledgeBase.projects.projects.find((p) => p.title.includes("Apple Stock"));
-  const churn = knowledgeBase.projects.projects.find((p) => p.title.includes("Churn"));
   return (
     <Section
       id="projects"
-      eyebrow="Section 03 / Evidence register"
-      title="Selected analytics work"
-      description="Selected projects demonstrating data analysis, SQL, BI, reporting and business-focused problem solving."
+      eyebrow="03 / Evidence register"
+      title="Selected case studies"
+      description="Three analytical workstreams, structured around the question, data, method, output and current evidence state."
     >
       <div className="space-y-20">
         {primaryProjects.map((project, index) => (
@@ -59,7 +69,7 @@ export function Projects() {
             <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
               <motion.div variants={revealLeft} className={index % 2 ? "lg:order-2" : ""}>
                 <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]">
-                  <span className="text-primary">Project / {project.number}</span>
+                  <span className="text-primary">Case / {project.number}</span>
                   <span className="text-muted-foreground">{project.type}</span>
                 </div>
                 <motion.h3
@@ -70,7 +80,7 @@ export function Projects() {
                 </motion.h3>
                 <ProjectField label="Business question" value={project.question} />
                 <ProjectField label="Data" value={project.data} />
-                <ProjectField label="Analysis" value={project.process} />
+                <ProjectField label="Technical approach" value={project.process} />
                 <motion.div variants={stagger(0, 0.04)} className="mt-6 flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
                     <motion.span key={tool} variants={revealUp} className="control-tag">
@@ -80,7 +90,18 @@ export function Projects() {
                 </motion.div>
               </motion.div>
               <motion.div variants={revealScale} className={index % 2 ? "lg:order-1" : ""}>
-                <div className="evidence-frame relative flex aspect-[16/10] items-center justify-center overflow-hidden border border-border bg-panel">
+                <div className="case-workflow border-x border-t border-border bg-surface px-5 py-4">
+                  <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">Workflow</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
+                    {project.workflow.map((step, stepIndex) => (
+                      <div key={step} className="flex items-center gap-2">
+                        <span className="font-mono text-[9px] font-bold uppercase">{step}</span>
+                        {stepIndex < project.workflow.length - 1 && <ArrowDown className="h-3 w-3 -rotate-90 text-primary" />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="evidence-frame relative flex aspect-[16/9] items-center justify-center overflow-hidden border border-border bg-panel">
                   <div className="control-grid absolute inset-0 opacity-50" />
                   <div
                     className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary"
@@ -89,19 +110,17 @@ export function Projects() {
                   <div className="relative max-w-xs text-center">
                     <ImageOff className="mx-auto h-7 w-7 text-primary" />
                     <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[.16em]">
-                      Real project screenshot required
+                      Evidence frame reserved
                     </p>
                     <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                      No dashboard image is stored in the current project. This frame is reserved
-                      for verified evidence.
+                      No verified visual output is stored for this case study. This area will only display real project evidence.
                     </p>
                   </div>
                 </div>
                 <div className="grid border-x border-b border-border sm:grid-cols-2">
-                  <ProjectField label="Output" value={project.output} compact />
+                  <ProjectField label="Business output" value={project.output} compact />
                   <ProjectField label="Key findings" value={project.finding} compact />
-                  <ProjectField label="Result" value={project.result} compact />
-                  <div className="border-t border-border p-5 sm:border-l">
+                  <div className="border-t border-border p-5 sm:col-span-2">
                     <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">
                       Evidence
                     </p>
@@ -109,39 +128,13 @@ export function Projects() {
                       <ShieldAlert className="mt-1 h-4 w-4 shrink-0 text-primary" />
                       {project.evidence}
                     </p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      <Button size="sm" variant="outline" disabled>
-                        Case study pending
-                      </Button>
-                      <Button size="sm" variant="outline" disabled>
-                        GitHub pending
-                      </Button>
-                    </div>
+                    <span className="mt-4 inline-flex font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">GitHub / Case study / Demo unavailable until verified</span>
                   </div>
                 </div>
               </motion.div>
             </div>
           </motion.article>
         ))}
-      </div>
-
-      <div className="mt-20 grid border-y border-border lg:grid-cols-[.55fr_1.45fr]">
-        <div className="border-b border-border py-6 lg:border-b-0 lg:border-r lg:pr-8">
-          <p className="font-mono text-[10px] uppercase tracking-[.18em] text-primary">
-            Portfolio gap / Reserved
-          </p>
-          <h3 className="mt-5 font-display text-3xl font-bold uppercase">ETL & MIS evidence</h3>
-        </div>
-        <div className="grid sm:grid-cols-2">
-          <EvidenceSlot
-            title="SQL data warehouse / ETL"
-            note="No verified project record, repository, or output exists in the current portfolio."
-          />
-          <EvidenceSlot
-            title="MIS reporting project"
-            note="No verified project record, report, or screenshot exists in the current portfolio."
-          />
-        </div>
       </div>
 
       <div className="mt-24 border-t border-border pt-5">
@@ -156,7 +149,7 @@ export function Projects() {
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">
-            {[apple, churn].filter(Boolean).map(
+            {[apple].filter(Boolean).map(
               (project, index) =>
                 project && (
                   <div
@@ -168,7 +161,7 @@ export function Projects() {
                       <h4 className="font-display text-xl font-bold">{project.title}</h4>
                       <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
                     </div>
-                    {index === 0 && project.github ? (
+                    {project.github ? (
                       <Button asChild variant="outline" size="sm">
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github />
@@ -211,14 +204,3 @@ function ProjectField({
   );
 }
 
-function EvidenceSlot({ title, note }: { title: string; note: string }) {
-  return (
-    <div className="border-b border-border p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
-      <p className="font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">
-        Awaiting verified entry
-      </p>
-      <h4 className="mt-4 font-display text-xl font-bold uppercase">{title}</h4>
-      <p className="mt-3 text-sm leading-6 text-muted-foreground">{note}</p>
-    </div>
-  );
-}

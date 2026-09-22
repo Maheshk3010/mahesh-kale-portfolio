@@ -22,3 +22,11 @@
 - [ ] Inspect the exact current public section order, navigation, floating assistant, and footer.
 - [ ] Evaluate every section and adjacent transition against the recruiter first-scan journey.
 - [ ] Deliver one evidence-based recommended information architecture without changing the app.
+
+## Premium data product redesign
+
+- [x] Establish the approved evidence-first information architecture.
+- [x] Separate the cinematic hero from the analytics proof snapshot.
+- [x] Reframe projects as three editorial case studies with explicit evidence states.
+- [x] Strengthen MIS reporting, field experience, capability relationships, credentials, profile, and closing CTA.
+- [ ] Validate recruiter tests, responsive layouts, accessibility, reduced motion, links, and preview health.

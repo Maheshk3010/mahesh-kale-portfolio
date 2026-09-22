@@ -34,7 +34,10 @@ export function PipelineFlow({
         className="pipeline-rail absolute left-0 right-0 top-0 h-px origin-left bg-primary"
         aria-hidden="true"
       />
-      <div className={`grid gap-px bg-border ${compact ? "md:grid-cols-6" : "lg:grid-cols-6"}`}>
+      <div
+        className="grid gap-px bg-border md:grid-cols-[repeat(var(--pipeline-columns),minmax(0,1fr))]"
+        style={{ "--pipeline-columns": steps.length } as React.CSSProperties}
+      >
         {steps.map((step, index) => (
           <motion.div
             key={step.label}
