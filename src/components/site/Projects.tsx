@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowUpRight, Github, ImageOff, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
@@ -26,13 +26,12 @@ const primaryProjects = [
 ];
 
 export function Projects() {
-  const reduced = useReducedMotion();
   const apple = knowledgeBase.projects.projects.find((p) => p.title.includes("Apple Stock"));
   const churn = knowledgeBase.projects.projects.find((p) => p.title.includes("Churn"));
   return (
     <Section id="projects" eyebrow="Section 03 / Evidence register" title="Selected analytics work" description="Large-format project records organized around the business question, analytical process and verifiable evidence.">
       <div className="space-y-20">
-        {primaryProjects.map((project,index)=><motion.article key={project.title} initial={reduced ? false : {opacity:0,y:36}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-70px"}} transition={{duration:.7}} className="border-t border-border pt-5">
+        {primaryProjects.map((project,index)=><motion.article key={project.title} initial={{opacity:0,y:36}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-70px"}} transition={{duration:.7}} className="border-t border-border pt-5">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
             <div className={index % 2 ? "lg:order-2" : ""}>
               <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]"><span className="text-primary">Project / {project.number}</span><span className="text-muted-foreground">{project.type}</span></div>

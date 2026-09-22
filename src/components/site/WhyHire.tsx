@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { Section } from "./Section";
 
 const stages = [
@@ -11,13 +11,12 @@ const stages = [
 ];
 
 export function WhyHire() {
-  const reduced = useReducedMotion();
   return (
     <Section id="workflow" eyebrow="Section 02 / Operating model" title="The analytics workflow" description="A controlled path from source records to a decision-ready report.">
       <div className="relative grid border-t border-border lg:grid-cols-6">
-        <motion.div initial={reduced ? false : { scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="absolute left-0 right-0 top-0 h-px origin-left bg-primary" />
+        <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="absolute left-0 right-0 top-0 h-px origin-left bg-primary" />
         {stages.map((stage, index) => (
-          <motion.article key={stage.step} initial={reduced ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="group relative border-b border-border px-4 py-7 lg:border-b-0 lg:border-r">
+          <motion.article key={stage.step} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="group relative border-b border-border px-4 py-7 lg:border-b-0 lg:border-r">
             <div className="font-mono text-4xl font-bold text-border-strong transition-colors group-hover:text-primary">{stage.step}</div>
             <h3 className="mt-8 font-display text-lg font-bold uppercase">{stage.title}</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">{stage.copy}</p>
