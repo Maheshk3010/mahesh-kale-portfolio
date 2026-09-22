@@ -60,6 +60,10 @@
   --success: oklch(0.76 0.17 155);
   --surface: oklch(0.135 0.013 245 / 96%);
   --panel: oklch(0.165 0.016 245 / 90%);
+  --motion-micro: 180ms;
+  --motion-reveal: 580ms;
+  --motion-cinematic: 820ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -159,8 +163,12 @@
     );
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+  animation: grid-activate 0.9s var(--motion-ease) both;
 }
 
+.data-stream {
+  opacity: 0.72;
+}
 .data-stream::before,
 .data-stream::after {
   content: "";
@@ -168,17 +176,17 @@
   width: 3px;
   height: 3px;
   background: var(--primary);
-  box-shadow:
-    15vw 17vh 0 color-mix(in oklab, var(--primary) 45%, transparent),
-    34vw 51vh 0 color-mix(in oklab, var(--primary) 35%, transparent),
-    61vw 26vh 0 color-mix(in oklab, var(--primary) 45%, transparent),
-    82vw 62vh 0 color-mix(in oklab, var(--primary) 30%, transparent),
-    93vw 35vh 0 color-mix(in oklab, var(--primary) 45%, transparent);
-  animation: drift 16s linear infinite;
+  box-shadow: 22vw 19vh 0 color-mix(in oklab, var(--primary) 42%, transparent);
+  animation: drift 13s linear infinite;
 }
 .data-stream::after {
-  animation-delay: -8s;
-  opacity: 0.45;
+  left: 52%;
+  animation-delay: -6s;
+  opacity: 0.35;
+}
+@keyframes grid-activate {
+  from { opacity: 0; transform: scale(1.015); }
+  to { opacity: 1; transform: scale(1); }
 }
 @keyframes drift {
   from {
@@ -187,6 +195,131 @@
   to {
     transform: translateY(96vh);
   }
+}
+
+.hero-data-path {
+  position: absolute;
+  height: 1px;
+  width: min(42vw, 34rem);
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--primary) 20%, transparent), transparent);
+  transform: rotate(-8deg);
+}
+.hero-data-path::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: signal-pass 5.5s ease-in-out infinite;
+}
+.hero-data-path-a { right: 3%; top: 26%; }
+.hero-data-path-b { right: 9%; top: 55%; transform: rotate(5deg); }
+.hero-data-path-c { left: 6%; bottom: 14%; width: min(28vw, 24rem); transform: rotate(2deg); }
+@keyframes signal-pass {
+  0%, 18% { transform: translate3d(-120%, 0, 0); opacity: 0; }
+  34%, 66% { opacity: 0.65; }
+  82%, 100% { transform: translate3d(620%, 0, 0); opacity: 0; }
+}
+
+.workstation-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--primary), transparent);
+  animation: panel-scan 3.4s var(--motion-ease) 0.6s both;
+}
+@keyframes panel-scan {
+  from { transform: translateY(-100%); opacity: 0; }
+  30% { opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
+
+.pipeline-flow { isolation: isolate; }
+.pipeline-node {
+  transition: background-color var(--motion-micro) ease, transform var(--motion-micro) ease;
+}
+.pipeline-node:hover { background: var(--panel); transform: translateY(-2px); }
+.pipeline-node:hover .pipeline-arrow { color: var(--primary); transform: translateX(3px); }
+.pipeline-arrow { transition: color var(--motion-micro) ease, transform var(--motion-micro) ease; }
+.pipeline-marker { box-shadow: 0 0 0 4px var(--background); }
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--motion-micro) var(--motion-ease);
+}
+.nav-link:hover::after,
+.nav-link.is-active::after { transform: scaleX(1); transform-origin: left; }
+
+.project-case { transition: border-color var(--motion-reveal) ease; }
+.project-case:hover { border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); }
+.evidence-frame { transition: transform var(--motion-reveal) var(--motion-ease), border-color var(--motion-reveal) ease, box-shadow var(--motion-reveal) ease; }
+.project-case:hover .evidence-frame {
+  transform: translateY(-4px) scale(1.006);
+  border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+  box-shadow: 0 22px 60px -38px var(--primary);
+}
+.evidence-scan { opacity: 0; transform: translateY(-1px); }
+.project-case:hover .evidence-scan { animation: evidence-scan 1.5s ease-out; }
+@keyframes evidence-scan {
+  0% { opacity: 0; transform: translateY(0); }
+  20% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(38rem); }
+}
+
+.mis-capability {
+  transition: background-color var(--motion-micro) ease, box-shadow var(--motion-micro) ease;
+}
+.mis-capability:hover {
+  background: color-mix(in oklab, var(--primary) 4%, var(--background));
+  box-shadow: inset 0 2px 0 color-mix(in oklab, var(--primary) 55%, transparent);
+}
+.stack-sequence > div::after,
+.analysis-sequence > div::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-reveal) var(--motion-ease);
+}
+.stack-sequence > div { position: relative; }
+.stack-sequence:hover > div::after,
+.analysis-sequence:hover > div::after { transform: scaleX(1); }
+.stack-row {
+  transition: background-color var(--motion-micro) ease, padding-inline var(--motion-micro) var(--motion-ease);
+}
+.stack-row:hover,
+.stack-row:focus-visible {
+  padding-inline: 0.75rem;
+  background: color-mix(in oklab, var(--primary) 3%, transparent);
+}
+.stack-row:hover p,
+.stack-row:focus-visible p { color: var(--foreground); }
+.timeline-marker { transition: background-color var(--motion-micro) ease, box-shadow var(--motion-micro) ease; }
+article:hover > .timeline-marker { background: var(--primary); box-shadow: 0 0 18px var(--primary); }
+.credential-row { transition: background-color var(--motion-micro) ease, padding-inline var(--motion-micro) ease; }
+.credential-row:hover { padding-inline: 0.5rem; background: color-mix(in oklab, var(--primary) 3%, transparent); }
+.contact-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 20%, color-mix(in oklab, var(--primary) 4%, transparent) 50%, transparent 80%);
+  animation: contact-settle 8s ease-in-out infinite;
+}
+@keyframes contact-settle {
+  0%, 100% { opacity: 0.2; transform: translateX(-15%); }
+  50% { opacity: 0.55; transform: translateX(15%); }
 }
 
 .control-section::after {
@@ -246,4 +379,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .hero-data-path,
+  .data-stream,
+  .evidence-scan,
+  .contact-frame::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .data-stream::after,
+  .hero-data-path-b,
+  .hero-data-path-c { display: none; }
+  .hero-data-path { width: 62vw; opacity: 0.5; }
+  .pipeline-node:hover,
+  .project-case:hover .evidence-frame { transform: none; }
 }
