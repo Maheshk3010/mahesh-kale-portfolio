@@ -2,170 +2,82 @@
   "faqs": [
     {
       "q": "Who is Mahesh?",
-      "a": "Mahesh Kale is a data professional based in Pune, India, targeting Data Analyst and MIS Executive roles. He is currently open to work."
+      "a": "Mahesh Sakharam Kale is a data professional based in Pune, India, targeting Data Analyst and MIS Executive roles. He is open to work and immediately available."
     },
     {
-      "q": "Where is Mahesh based?",
-      "a": "Pune, Maharashtra, India."
+      "q": "Which roles is Mahesh targeting?",
+      "a": "Data Analyst and MIS Executive only."
     },
     {
-      "q": "What is Mahesh's current status?",
-      "a": "Open to work and immediately available for Data Analyst and MIS Executive roles."
+      "q": "What is Mahesh's primary stack?",
+      "a": "SQL, Power BI, Advanced Excel and Python."
     },
     {
-      "q": "What skills does Mahesh have?",
-      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub \u2014 aligned to Data Analyst and MIS Executive roles."
+      "q": "What reporting capabilities does Mahesh document?",
+      "a": "MIS reporting, KPI reporting, dashboard development, data analysis, data cleaning, data validation, data reconciliation, reporting automation, business reporting, data visualization and data transformation."
     },
     {
-      "q": "Does Mahesh know Python?",
-      "a": "Yes \u2014 Python is Mahesh's primary programming language, used across data analysis, data science and Python development work."
+      "q": "What verified scale is shown?",
+      "a": "The portfolio documents 50,000+ retail transaction records, 30+ SQL business queries, 7,000+ customer records and three internships."
     },
     {
-      "q": "Does Mahesh know SQL?",
-      "a": "Yes \u2014 SQL is a core skill, central to his Data Analyst and MIS Executive focus."
+      "q": "What case studies are featured?",
+      "a": "Sales Performance Analysis, Sales Dashboard and Customer Churn Analysis are the three primary case studies. Apple Stock Price Prediction and Product Recommendation are supporting technical work."
     },
     {
-      "q": "Does Mahesh know Flask?",
-      "a": "Yes \u2014 Flask is listed as one of Mahesh's core skills as supporting technical work."
+      "q": "Tell me about Sales Performance Analysis",
+      "a": "It documents analysis across 50,000+ retail transaction records using 30+ SQL business queries. Repository, screenshots, dataset source, findings, date and ownership evidence are still pending."
     },
     {
-      "q": "Does Mahesh know REST APIs?",
-      "a": "Yes \u2014 REST API design is a verified skill supporting reporting automation work."
+      "q": "Tell me about the Sales Dashboard",
+      "a": "It documents a Power BI reporting workflow using SQL, Excel, DAX and Power Query. Dashboard screenshots, source files, repository, findings, date and ownership evidence are still pending."
     },
     {
-      "q": "Does Mahesh know Power BI?",
-      "a": "Yes \u2014 Power BI is a verified skill supporting Data Analyst and MIS Executive roles."
+      "q": "Tell me about Customer Churn Analysis",
+      "a": "It documents a Python classification workflow across 7,000+ customer records. A matching repository, screenshots, dataset source, findings, date and ownership evidence are still pending."
     },
     {
-      "q": "Does Mahesh know Machine Learning?",
-      "a": "Yes \u2014 Machine Learning fundamentals are verified, as supporting technical work."
-    },
-    {
-      "q": "Which roles suit Mahesh best?",
-      "a": "Based on verified skills, Mahesh is targeting two roles: Data Analyst and MIS Executive."
-    },
-    {
-      "q": "What kind of positions is Mahesh looking for?",
-      "a": "Mahesh is looking exclusively for Data Analyst or MIS Executive positions."
-    },
-    {
-      "q": "Why should we hire Mahesh?",
-      "a": "Mahesh combines Python, SQL and Power BI with machine-learning fundamentals \u2014 a toolkit tailored to Data Analyst and MIS Executive roles. He is immediately available and open to work."
-    },
-    {
-      "q": "What projects has Mahesh built?",
-      "a": "Four documented projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering reporting, analytics, APIs, and supporting technical work."
-    },
-    {
-      "q": "Explain Apple Stock Price Prediction",
-      "a": "**Apple Stock Price Prediction System** \u2014 an end-to-end ML pipeline that forecasts Apple stock prices from historical market data using an LSTM deep-learning model in TensorFlow/Keras, exposed through an interactive Streamlit app. Covers data collection, cleaning, feature engineering, normalization, model training, evaluation and prediction visualization. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
-    },
-    {
-      "q": "Explain Product Recommendation System",
-      "a": "**Product Recommendation System** \u2014 a Python recommendation prototype built with Pandas, NumPy and Scikit-learn. Cleans interaction data, computes item/user similarity and returns Top-N product suggestions. Repo: https://github.com/Maheshk3010/Product_Recommendation_System"
-    },
-    {
-      "q": "Show GitHub Projects",
-      "a": "Verified GitHub projects: **Apple Stock Price Prediction System** \u2014 https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM and **Product Recommendation System** \u2014 https://github.com/Maheshk3010/Product_Recommendation_System."
+      "q": "Show GitHub projects",
+      "a": "Verified repository links stored in the portfolio: Apple Stock Price Prediction \u2014 https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM and Product Recommendation System \u2014 https://github.com/Maheshk3010/Product_Recommendation_System."
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with the two featured projects: **Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series forecasting pipeline with a Streamlit interface (supporting technical analytics work), and **Product Recommendation System** \u2014 a Scikit-learn similarity engine (great overview of the core Data Science workflow). Both have verified GitHub repositories."
+      "a": "Start with Sales Performance Analysis for its documented scale, then review the Sales Dashboard and MIS & Reporting sections. Evidence gaps are clearly marked."
     },
     {
-      "q": "What is Mahesh's strongest project?",
-      "a": "**Apple Stock Price Prediction System** is Mahesh's strongest project \u2014 a complete Python + TensorFlow/Keras LSTM pipeline for time-series forecasting, deployed with an interactive Streamlit app. It's the most complete supporting demonstration of Python-based analytical capability. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
-    },
-    {
-      "q": "Show me featured projects",
-      "a": "Two featured projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit) and **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn). Both are verified on GitHub."
-    },
-    {
-      "q": "Show machine learning projects",
-      "a": "Verified ML projects: **Apple Stock Price Prediction System** (LSTM time-series forecasting in TensorFlow/Keras) and **Product Recommendation System** (Scikit-learn similarity-based recommendations)."
-    },
-    {
-      "q": "Recommend your strongest Data Science project",
-      "a": "**Apple Stock Price Prediction System** \u2014 an LSTM-based time-series forecasting pipeline built in Python with TensorFlow/Keras and a Streamlit interface. It's the supporting showcase of a technical analytics workflow."
-    },
-    {
-      "q": "Recommend your strongest Python project",
-      "a": "**Apple Stock Price Prediction System** \u2014 a complete Python ML application (TensorFlow, Keras, Pandas, NumPy, Scikit-learn, Streamlit) demonstrating deep-learning, data pipelines and interactive delivery."
+      "q": "What MIS experience is shown?",
+      "a": "The portfolio documents MIS reporting, KPI reporting, data validation and reporting automation capabilities, plus a source-to-management reporting pipeline. Actual MIS files and output screenshots are still pending."
     },
     {
       "q": "What experience does Mahesh have?",
-      "a": "Mahesh has completed three verified internships: Data Science Intern at ExcelR Solutions, Pune (Python, ML, Power BI, SQL, Time Series, Recommendation Systems); Data Analyst Intern at Sysslan IT Solutions (SQL, Power BI, Advanced Excel, KPI reporting); and Python Development Intern at Codveda Technologies (Flask, REST APIs, MySQL/SQLite, Git)."
-    },
-    {
-      "q": "What internships has Mahesh completed?",
-      "a": "Three internships: ExcelR Solutions, Pune (Data Science Intern), Sysslan IT Solutions (Data Analyst Intern), and Codveda Technologies (Python Development Intern)."
-    },
-    {
-      "q": "What certifications does Mahesh have?",
-      "a": "Verified certifications: Oracle SQL Foundations, Microsoft Data Fundamentals, ExcelR Data Science Program \u2013 Certificate of Excellence, IBM Data Science Professional Certificate, and Infosys Springboard \u2013 Machine Learning."
+      "a": "Three internships are documented: Data Science Intern at ExcelR Solutions, Data Analyst Intern at Sysslan IT Solutions and Python Development Intern at Codveda Technologies. Dates, outcomes and proof links are still pending."
     },
     {
       "q": "What is Mahesh's education?",
-      "a": "B.Sc. in Computer Science (AI, ML & VR) from Sandip University, Nashik (2022 \u2013 2025, 7.94 CGPA). Currently completing the Data Science Certification Program at ExcelR Solutions, Pune (July 2025 \u2013 January 2026)."
+      "a": "B.Sc. Computer Science (AI, ML & VR) from Sandip University, Nashik, 2022\u20132025, with a 7.94 CGPA. The portfolio also lists an ExcelR Data Science Certification Program from July 2025 to January 2026 as professional training."
     },
     {
-      "q": "Can I download his resume?",
+      "q": "What certifications are listed?",
+      "a": "Oracle SQL Foundations, Microsoft Data Fundamentals, ExcelR Data Science Program \u2014 Certificate of Excellence, IBM Data Science Professional Certificate, and Infosys Springboard \u2014 Machine Learning. Completion years, credential IDs and verification links are not yet stored."
+    },
+    {
+      "q": "Can I download the resume?",
       "a": "I don't have verified information regarding that topic."
     },
     {
       "q": "How can I contact Mahesh?",
-      "a": "You can reach Mahesh via Email at maheshkale1030@gmail.com, Phone at +91 9307190535, or LinkedIn at https://www.linkedin.com/in/maheshkale3010/."
+      "a": "Email maheshkale1030@gmail.com, phone +91 9307190535, or LinkedIn at https://www.linkedin.com/in/maheshkale3010/."
     },
     {
       "q": "What is Mahesh's GitHub?",
-      "a": "Mahesh's GitHub profile: https://github.com/Maheshk3010"
+      "a": "https://github.com/Maheshk3010"
     },
     {
       "q": "What is Mahesh's LinkedIn?",
-      "a": "Mahesh's LinkedIn profile: https://www.linkedin.com/in/maheshkale3010/"
+      "a": "https://www.linkedin.com/in/maheshkale3010/"
     },
     {
-      "q": "What is Mahesh's email?",
-      "a": "maheshkale1030@gmail.com"
-    },
-    {
-      "q": "What is Mahesh's phone number?",
-      "a": "+91 9307190535"
-    },
-    {
-      "q": "Why should I hire Mahesh?",
-      "a": "Mahesh brings four verified strengths: **Data-Driven Problem Solving** \u2014 turns raw data into actionable insights with Python, SQL, ML and BI tools; **Hands-on Technical Experience** \u2014 built end-to-end ML and analytics projects plus three internships in Data Science, Data Analytics and Python Development; **Continuous Learning** \u2014 keeps skills current through real-world projects, verified certifications and the ExcelR Data Science program; and a **Business-Oriented Mindset** \u2014 ships practical, scalable solutions that solve real business problems. He is open to work, immediately available, and focused only on Data Analyst and MIS Executive roles."
-    },
-    {
-      "q": "What value does Mahesh bring?",
-      "a": "Mahesh's professional value proposition is built on four pillars: **Data-Driven Problem Solving** \u2014 analytical thinking that converts raw data into business decisions; **Hands-on Technical Experience** \u2014 end-to-end project delivery and three verified internships; **Continuous Learning** \u2014 ongoing skill growth through certifications, projects and structured training; and **Business-Oriented Mindset** \u2014 solutions designed for real users and real outcomes, not just academic exercises."
-    },
-    {
-      "q": "What makes Mahesh different?",
-      "a": "Mahesh combines a verified Python + SQL + Power BI toolkit with two shipped, GitHub-verified ML projects (Apple Stock Prediction with LSTM and a Scikit-learn Product Recommendation System), reinforced by internships at ExcelR, Sysslan and Codveda. His value proposition centers on data-driven problem solving, hands-on technical experience, continuous learning and a business-oriented mindset. Everything on this portfolio is verified \u2014 no invented metrics, no fabricated outcomes."
-    },
-    {
-      "q": "Which project best represents Mahesh?",
-      "a": "**Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series pipeline in Python (TensorFlow/Keras) with a Streamlit interface. It represents supporting Python-based analytical work. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
-    },
-    {
-      "q": "Which technologies has Mahesh used professionally?",
-      "a": "During internships at ExcelR, Sysslan and Codveda he worked with Python, Pandas, NumPy, Scikit-learn, TensorFlow, SQL, MySQL, Power BI, Advanced Excel, Flask, REST APIs, Git and GitHub."
-    },
-    {
-      "q": "What should I look at first?",
-      "a": "Start with the **60-second overview** at the top of the portfolio, then the two featured projects: **Apple Stock Price Prediction System** and **Product Recommendation System**. Both have verified GitHub repositories."
-    },
-    {
-      "q": "What are Mahesh's soft skills?",
-      "a": "Analytical thinking, problem solving, continuous learning, clear communication and team collaboration \u2014 demonstrated across three internships and self-driven projects."
-    },
-    {
-      "q": "What is Mahesh currently learning?",
-      "a": "Mahesh is completing the Data Science Certification Program at ExcelR Solutions, Pune (July 2025 \u2013 January 2026), deepening machine learning, time-series forecasting and Power BI."
-    },
-    {
-      "q": "What is Mahesh's preferred location?",
+      "q": "Where is Mahesh based?",
       "a": "Pune, Maharashtra, India."
     },
     {
@@ -174,147 +86,19 @@
     },
     {
       "q": "What is Mahesh's notice period?",
+      "a": "Mahesh is listed as immediately available."
+    },
+    {
+      "q": "What findings did the projects produce?",
       "a": "I don't have verified information regarding that topic."
     },
     {
-      "q": "What challenges did you face in your projects?",
-      "a": "Across projects, the key challenges were: shaping time-series data for the LSTM in the Apple Stock Prediction system, generating meaningful recommendations with limited history in the Product Recommendation System, designing clean REST/CRUD flows for the Job Tracker API, and consolidating scattered SQL/Excel sources for the Sales Dashboard. Each was solved with verified, project-specific techniques described in the project details."
+      "q": "What business outcomes did the projects produce?",
+      "a": "I don't have verified information regarding that topic."
     },
     {
-      "q": "Explain the toughest part of the Apple Stock project.",
-      "a": "The hardest part was preparing sequential market data for LSTM training and keeping predictions stable against noisy fluctuations. It was solved with preprocessing, normalization, sliding-window sequence generation, proper train-test splitting, feature scaling and regression-metric evaluation before visualising forecasts in Streamlit."
-    },
-    {
-      "q": "Explain challenges in the Recommendation System.",
-      "a": "Two main challenges: generating meaningful recommendations for users with limited interaction history, and balancing accuracy with response performance. Solved by implementing similarity-based collaborative filtering with Scikit-learn and optimising the Pandas/NumPy preprocessing and vectorised similarity logic for efficient top-N results."
-    },
-    {
-      "q": "What challenges did you face in the Job Tracker API?",
-      "a": "Designing a clean REST contract for job-application CRUD and persisting data reliably. Solved by structuring Flask routes around a single resource with clear status codes, a MySQL schema for storage and request validation with predictable error handling."
-    },
-    {
-      "q": "What challenges did you face in the Sales Dashboard?",
-      "a": "Consolidating scattered SQL and Excel sources into one trustworthy model, and making the report self-serve for non-technical stakeholders. Solved by cleaning and modelling data in Power BI with consistent KPIs, then designing KPI cards and interactive slicers by product, region and period."
-    },
-    {
-      "q": "What did you learn from the Apple Stock Price Prediction project?",
-      "a": "He learned the end-to-end time-series forecasting workflow, how to build and train LSTM models in TensorFlow/Keras, the importance of normalization and sequence generation, regression evaluation with RMSE/MAE, and how to deploy an ML application with Streamlit."
-    },
-    {
-      "q": "What did you learn from the Product Recommendation System project?",
-      "a": "He learned collaborative filtering and similarity-based recommendation techniques, how to evaluate recommendation quality, data preprocessing and feature engineering with Pandas/NumPy, and how recommendation systems improve user experience in real-world applications."
-    },
-    {
-      "q": "What did you learn from the Job Tracker API project?",
-      "a": "He learned how to design RESTful CRUD endpoints with Flask, separate routing from data access, model relational data in MySQL, validate JSON requests and return consistent error responses, and manage the full API request lifecycle."
-    },
-    {
-      "q": "What did you learn from the Sales Dashboard project?",
-      "a": "He learned how to import, clean and model SQL/Excel data in Power BI, define business KPIs and calculated measures, build interactive slicers for self-service analysis, and design visuals that communicate insights to non-technical stakeholders."
-    },
-    {
-      "q": "What did you learn from your projects?",
-      "a": "Across projects, he learned end-to-end machine learning pipelines (LSTM time-series forecasting and Scikit-learn recommendation systems), REST API design with Flask and MySQL, and business intelligence reporting with Power BI, SQL and Excel."
-    },
-    {
-      "q": "What skills did this project help you develop?",
-      "a": "Each project strengthened specific skills: the Apple Stock project developed deep-learning and time-series modelling; the Recommendation System developed collaborative filtering and feature engineering; the Job Tracker API developed Flask, REST design and MySQL; and the Sales Dashboard developed Power BI, KPI design and data storytelling."
-    },
-    {
-      "q": "Explain your learning experience.",
-      "a": "Mahesh's learning has been project-driven: he built ML models in Python (LSTM, recommendation systems), developed backend APIs with Flask and MySQL, and created business dashboards with Power BI and SQL. Every project focused on practical, recruiter-relevant skills for Data Analyst and MIS Executive roles."
-    },
-    {
-      "q": "Why did Mahesh use LSTM?",
-      "a": "LSTM was selected for the Apple Stock Price Prediction System because LSTM networks are designed to learn long-term dependencies in sequential time-series data, which is essential for forecasting stock prices from historical market data."
-    },
-    {
-      "q": "Why TensorFlow?",
-      "a": "TensorFlow and Keras were chosen to build and train the LSTM deep-learning model in the Apple Stock project because they provide a simple, scalable API for prototyping and productionizing neural networks."
-    },
-    {
-      "q": "Why Streamlit?",
-      "a": "Streamlit was used in both the Apple Stock Price Prediction System and the Product Recommendation System to quickly build interactive web interfaces for visualizing predictions and recommendations without building a full frontend stack."
-    },
-    {
-      "q": "Why collaborative filtering?",
-      "a": "Collaborative filtering was used in the Product Recommendation System to generate personalized product suggestions based on user behavior and similarity patterns in the interaction data."
-    },
-    {
-      "q": "Why Python?",
-      "a": "Python was selected across all projects because of its rich ecosystem for data analysis, machine learning, recommendation algorithms, backend API development and rapid prototyping."
-    },
-    {
-      "q": "Why Pandas?",
-      "a": "Pandas was used in the Apple Stock and Product Recommendation projects for efficient cleaning, transformation, preprocessing and manipulation of structured datasets."
-    },
-    {
-      "q": "Why Flask?",
-      "a": "Flask was chosen for the Job Tracker API because it is a lightweight Python micro-framework that keeps the API focused, extensible and easy to maintain."
-    },
-    {
-      "q": "Why MySQL?",
-      "a": "MySQL was selected for the Job Tracker API to provide reliable, structured relational storage for job-application records and to support consistent SQL querying."
-    },
-    {
-      "q": "Why Power BI?",
-      "a": "Power BI was selected for the Sales Dashboard because it is an industry-standard BI platform for building interactive, self-service sales visuals and KPI reporting."
-    },
-    {
-      "q": "Explain the technology choices in the Apple Stock project.",
-      "a": "Python was chosen for its data/ML ecosystem; Pandas for preprocessing historical stock data; TensorFlow/Keras for building the LSTM model; LSTM for learning long-term time-series dependencies; and Streamlit for delivering an interactive prediction interface."
-    },
-    {
-      "q": "Explain the technology choices in the Product Recommendation System.",
-      "a": "Python was chosen for its recommendation and data libraries; Pandas for cleaning user-product interaction data; collaborative filtering/recommendation algorithms for personalized suggestions; and Streamlit for the interactive recommendation interface."
-    },
-    {
-      "q": "Explain the technology choices in the Job Tracker API.",
-      "a": "Python was chosen for backend development; Flask for a lightweight, focused API framework; REST API for a standard stateless CRUD contract; and MySQL for structured, reliable relational storage."
-    },
-    {
-      "q": "Explain the technology choices in the Sales Dashboard.",
-      "a": "Power BI was chosen as the primary BI and visualization platform; SQL for querying and structuring relational sales data; and Excel as a familiar source format for raw sales data and quick transformations."
-    },
-    {
-      "q": "What technology decisions did Mahesh make in his projects?",
-      "a": "Every project has documented technology decisions: Apple Stock uses Python, Pandas, TensorFlow/Keras, LSTM and Streamlit; Product Recommendation uses Python, Pandas, recommendation algorithms and Streamlit; Job Tracker API uses Python, Flask, REST API and MySQL; Sales Dashboard uses Power BI, SQL and Excel. Each choice is tied to a verified technical reason."
-    },
-    {
-      "q": "Walk me through your project.",
-      "a": "Mahesh's projects follow a clear workflow. For example, the Apple Stock Price Prediction pipeline is: collect historical data, clean and prepare it, normalize features, generate time-series sequences, train an LSTM model, predict future prices, evaluate with RMSE/MAE and display results in Streamlit. Each project has a step-by-step workflow available in its details modal."
-    },
-    {
-      "q": "Explain the workflow.",
-      "a": "Every verified project has a documented workflow. Apple Stock Prediction moves from data collection \u2192 cleaning \u2192 normalization \u2192 sequence generation \u2192 LSTM training \u2192 prediction \u2192 evaluation \u2192 Streamlit deployment. The Product Recommendation System flows from loading data \u2192 cleaning \u2192 user-item matrix \u2192 similarity computation \u2192 recommendations \u2192 ranking \u2192 Streamlit display."
-    },
-    {
-      "q": "How does the recommendation system work?",
-      "a": "The Product Recommendation System workflow is: load user and product data, clean the dataset, build a user-item matrix, compute similarity using Scikit-learn, generate top-N recommendations, rank results by relevance and display them in a Streamlit app. It uses collaborative filtering to suggest products based on user behavior patterns."
-    },
-    {
-      "q": "Explain the stock prediction pipeline.",
-      "a": "The Apple Stock Price Prediction pipeline has eight steps: collect historical Apple stock data, clean and prepare the dataset, normalize features, generate time-series sequences, train an LSTM model in TensorFlow/Keras, predict future prices, evaluate model performance with RMSE/MAE and display predictions through a Streamlit interface."
-    },
-    {
-      "q": "How is data processed?",
-      "a": "Data processing depends on the project. Apple Stock uses Pandas for cleaning, Scikit-learn for normalization and NumPy for sequence generation. Product Recommendation uses Pandas/NumPy for cleaning and matrix creation. Sales Dashboard uses Power Query to clean SQL and Excel sources. Job Tracker API validates JSON inputs before storing them in MySQL."
-    },
-    {
-      "q": "Explain the workflow of the Apple Stock project.",
-      "a": "Apple Stock Price Prediction workflow: 1) Collect historical Apple stock data, 2) Clean & prepare dataset, 3) Normalize features, 4) Generate time-series sequences, 5) Train LSTM model, 6) Predict future prices, 7) Evaluate model performance, 8) Display predictions using Streamlit."
-    },
-    {
-      "q": "Explain the workflow of the Product Recommendation System.",
-      "a": "Product Recommendation System workflow: 1) Load user & product data, 2) Clean dataset, 3) Generate user-item matrix, 4) Compute similarity, 5) Generate recommendations, 6) Rank results, 7) Display recommendations in Streamlit."
-    },
-    {
-      "q": "Explain the workflow of the Job Tracker API.",
-      "a": "Job Tracker API workflow: 1) Define API requirements and endpoints, 2) Set up the Flask application, 3) Design the MySQL schema, 4) Implement CRUD routes, 5) Add request validation, 6) Test API endpoints, 7) Document the API."
-    },
-    {
-      "q": "Explain the workflow of the Sales Dashboard.",
-      "a": "Sales Dashboard workflow: 1) Gather SQL & Excel data sources, 2) Clean & transform data in Power Query, 3) Model relationships & define KPIs, 4) Build visuals & charts, 5) Add slicers & filters, 6) Publish & share dashboard."
+      "q": "What should a recruiter review first?",
+      "a": "Review the Analytics Snapshot, the three selected case studies, MIS & Reporting, Field Experience and Capability Stack in that order."
     }
   ]
 }

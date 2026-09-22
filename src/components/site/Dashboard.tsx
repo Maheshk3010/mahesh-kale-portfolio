@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Calculator, Database, FileCheck2, RefreshCcw, Scale } from "lucide-react";
+import { Calculator, Database, FileCheck2, RefreshCcw } from "lucide-react";
 import { Section } from "./Section";
 import { PipelineFlow } from "./PipelineFlow";
 import { inView, revealUp, stagger } from "@/lib/motion";
@@ -28,13 +28,6 @@ const capabilities = [
   },
   {
     number: "04",
-    title: "Data Reconciliation",
-    copy: "Compare reporting inputs and outputs for consistency before review.",
-    tools: "Excel · SQL · Validation",
-    icon: Scale,
-  },
-  {
-    number: "05",
     title: "Reporting Automation",
     copy: "Use repeatable transformations to reduce manual reporting steps.",
     tools: "Python · Power Query",
@@ -45,17 +38,29 @@ const capabilities = [
 const flow = [
   "Source data",
   "Excel / SQL",
-  "Validation",
+  "Data validation",
+  "Reconciliation",
   "KPI calculation",
-  "Power BI / Excel",
-  "Management insight",
+  "Power BI / Report",
+  "Management view",
+];
+
+const evidenceSlots = [
+  "Daily / weekly / monthly MIS",
+  "KPI tracker",
+  "Excel report",
+  "Power BI dashboard",
+  "Reconciliation output",
+  "Validation workflow",
+  "Target vs actual",
+  "Performance report",
 ];
 
 export function Dashboard() {
   return (
     <Section
       id="mis"
-      eyebrow="Section 04 / Reporting operations"
+      eyebrow="04 / Reporting operations"
       title="MIS & reporting"
       description="Accuracy first: a reporting chain designed around validated inputs, consistent KPIs and clear management output."
     >
@@ -65,7 +70,7 @@ export function Dashboard() {
           initial="hidden"
           whileInView="visible"
           viewport={inView}
-          className="grid border-b border-border md:grid-cols-2 xl:grid-cols-5"
+          className="grid border-b border-border md:grid-cols-2 xl:grid-cols-4"
         >
           {capabilities.map(({ number, title, copy, tools, icon: Icon }) => (
             <motion.article
@@ -88,16 +93,35 @@ export function Dashboard() {
             </motion.article>
           ))}
         </motion.div>
-        <div className="p-6 sm:p-8">
+        <div className="mis-console p-6 sm:p-8">
           <div className="mb-5 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]">
             <span className="text-muted-foreground">Reporting pipeline</span>
-            <span className="text-success">Controlled flow</span>
+            <span className="text-success">Validated before reporting</span>
           </div>
           <PipelineFlow
             compact
             label="MIS reporting pipeline"
             steps={flow.map((item) => ({ label: item }))}
           />
+        </div>
+        <div className="border-t border-border p-6 sm:p-8">
+          <div className="mb-5 flex items-center justify-between gap-4 font-mono text-[9px] uppercase tracking-[.16em]">
+            <span className="text-muted-foreground">MIS evidence register</span>
+            <span className="text-primary">Awaiting verified outputs</span>
+          </div>
+          <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {evidenceSlots.map((item, index) => (
+              <div key={item} className="mis-proof-slot bg-background p-4">
+                <span className="font-mono text-[8px] text-primary">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 text-sm font-semibold">{item}</p>
+                <p className="mt-2 font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">
+                  Evidence pending
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>

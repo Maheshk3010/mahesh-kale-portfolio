@@ -10,15 +10,25 @@
 
 ## Phase 2 — Cinematic experience
 
-- [ ] Centralize the motion language and section-transition system.
-- [ ] Upgrade the hero into a fast staged analytics-control-room sequence.
-- [ ] Animate the workflow, project evidence, MIS pipeline, stack relationships, and timeline with purpose.
-- [ ] Add active navigation state and refine professional micro-interactions.
-- [ ] Create a quieter cinematic closing frame without changing factual content.
-- [ ] Verify reduced motion, keyboard behavior, performance, and all four target viewports.
+- [x] Centralize the motion language and section-transition system.
+- [x] Upgrade the hero into a fast staged analytics-control-room sequence.
+- [x] Animate the workflow, project evidence, MIS pipeline, stack relationships, and timeline with purpose.
+- [x] Add active navigation state and refine professional micro-interactions.
+- [x] Create a quieter cinematic closing frame without changing factual content.
+- [x] Verify reduced motion, keyboard behavior, performance, and all four target viewports.
 
 ## Section location audit — audit only
 
-- [ ] Inspect the exact current public section order, navigation, floating assistant, and footer.
-- [ ] Evaluate every section and adjacent transition against the recruiter first-scan journey.
-- [ ] Deliver one evidence-based recommended information architecture without changing the app.
+- [x] Inspect the exact current public section order, navigation, floating assistant, and footer.
+- [x] Evaluate every section and adjacent transition against the recruiter first-scan journey.
+- [x] Deliver one evidence-based recommended information architecture without changing the app.
+
+## Premium data product redesign
+
+- [x] Establish the approved evidence-first information architecture.
+- [x] Separate the cinematic hero from the analytics proof snapshot.
+- [x] Reframe projects as three editorial case studies with explicit evidence states.
+- [x] Strengthen MIS reporting, field experience, capability relationships, credentials, profile, and closing CTA.
+- [x] Validate recruiter tests, responsive layouts, accessibility, reduced motion, links, and preview health.
+- [x] Add structured project, MIS, experience, credential, and resume proof slots for missing evidence.
+- [x] Deliver the detailed final information/proof report and publication-readiness checklist.

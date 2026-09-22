@@ -25,11 +25,26 @@
         "Data preprocessing and normalization pipeline",
         "Prediction visualization"
       ],
-      "outcome": "A completed deep-learning project demonstrating the full time-series forecasting workflow — from raw market data to a deployed Streamlit app as supporting technical analytics work.",
+      "outcome": "A completed deep-learning project demonstrating the full time-series forecasting workflow \u2014 from raw market data to a deployed Streamlit app as supporting technical analytics work.",
       "github": "https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM",
       "demo": "",
       "resumeSummary": "Built an LSTM-based Apple stock price prediction system in Python (TensorFlow/Keras) with a Streamlit interface for interactive forecasting.",
-      "interviewExplanation": "I framed this as a time-series forecasting problem: collect historical Apple prices, clean and normalize the series, engineer lag features, then train an LSTM in TensorFlow/Keras. I evaluate the model on held-out data and expose predictions through a Streamlit app so the workflow is interactive end-to-end. It's the project I use to explain deep learning for sequences and the full data-science lifecycle."
+      "interviewExplanation": "I framed this as a time-series forecasting problem: collect historical Apple prices, clean and normalize the series, engineer lag features, then train an LSTM in TensorFlow/Keras. I evaluate the model on held-out data and expose predictions through a Streamlit app so the workflow is interactive end-to-end. It's the project I use to explain deep learning for sequences and the full data-science lifecycle.",
+      "evidence": {
+        "screenshot": "",
+        "gallery": [],
+        "github": "https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM",
+        "demo": "",
+        "datasetSource": "",
+        "sqlArtifact": "",
+        "powerBIArtifact": "",
+        "excelArtifact": "",
+        "keyFindings": [],
+        "businessOutcome": "",
+        "projectDate": "",
+        "ownership": "Repository linked in current portfolio",
+        "scale": ""
+      }
     },
     {
       "title": "Customer Churn Prediction",
@@ -47,7 +62,22 @@
       "github": "",
       "demo": "",
       "resumeSummary": "Built a customer churn classification workflow in Python and Scikit-learn across 7,000+ customer records.",
-      "interviewExplanation": "I framed this as a classification problem: clean the customer data, prepare model features, compare classification approaches, and evaluate how reliably the model identifies churn patterns."
+      "interviewExplanation": "I framed this as a classification problem: clean the customer data, prepare model features, compare classification approaches, and evaluate how reliably the model identifies churn patterns.",
+      "evidence": {
+        "screenshot": "",
+        "gallery": [],
+        "github": "",
+        "demo": "",
+        "datasetSource": "",
+        "sqlArtifact": "",
+        "powerBIArtifact": "",
+        "excelArtifact": "",
+        "keyFindings": [],
+        "businessOutcome": "",
+        "projectDate": "",
+        "ownership": "",
+        "scale": "7,000+ customer records"
+      }
     },
     {
       "title": "Sales Performance Analysis (SQL)",
@@ -65,7 +95,22 @@
       "github": "",
       "demo": "",
       "resumeSummary": "Analyzed 50,000+ retail transaction records with 30+ optimized SQL queries using JOINs, CTEs, and window functions.",
-      "interviewExplanation": "I organized the analysis around business questions, then used JOINs, CTEs, aggregations, and window functions to convert transaction-level retail data into clear performance findings."
+      "interviewExplanation": "I organized the analysis around business questions, then used JOINs, CTEs, aggregations, and window functions to convert transaction-level retail data into clear performance findings.",
+      "evidence": {
+        "screenshot": "",
+        "gallery": [],
+        "github": "",
+        "demo": "",
+        "datasetSource": "",
+        "sqlArtifact": "",
+        "powerBIArtifact": "",
+        "excelArtifact": "",
+        "keyFindings": [],
+        "businessOutcome": "",
+        "projectDate": "",
+        "ownership": "",
+        "scale": "50,000+ retail transaction records; 30+ SQL queries"
+      }
     },
     {
       "title": "Sales Dashboard (Power BI)",
@@ -79,11 +124,54 @@
         "SQL-sourced data model with cleaned inputs",
         "Recruiter-friendly, self-serve exploration"
       ],
-      "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Executive roles.",
+      "outcome": "A dashboard that turns raw sales data into a decision-ready view \u2014 the core deliverable expected of Data Analyst and MIS Executive roles.",
       "github": "",
       "demo": "",
       "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
-      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Executive workflow end-to-end."
+      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Executive workflow end-to-end.",
+      "evidence": {
+        "screenshot": "",
+        "gallery": [],
+        "github": "",
+        "demo": "",
+        "datasetSource": "",
+        "sqlArtifact": "",
+        "powerBIArtifact": "",
+        "excelArtifact": "",
+        "keyFindings": [],
+        "businessOutcome": "",
+        "projectDate": "",
+        "ownership": "",
+        "scale": ""
+      }
+    },
+    {
+      "title": "Product Recommendation System",
+      "description": "Python recommendation prototype using Pandas, NumPy and Scikit-learn to generate ranked product suggestions.",
+      "problem": "Explore product recommendations from user and product interaction patterns.",
+      "solution": "Clean interaction data, create a user-item structure, compute similarity and rank Top-N suggestions.",
+      "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn"],
+      "features": ["Data cleaning", "User-item matrix", "Similarity computation", "Top-N ranking"],
+      "outcome": "Supporting technical work with a repository link stored in the portfolio.",
+      "github": "https://github.com/Maheshk3010/Product_Recommendation_System",
+      "demo": "",
+      "resumeSummary": "Built a product recommendation prototype using Python, Pandas, NumPy and Scikit-learn.",
+      "interviewExplanation": "A supporting technical project that prepares interaction data, computes similarity and ranks product suggestions.",
+      "evidence": {
+        "screenshot": "",
+        "gallery": [],
+        "github": "https://github.com/Maheshk3010/Product_Recommendation_System",
+        "demo": "",
+        "datasetSource": "",
+        "sqlArtifact": "",
+        "powerBIArtifact": "",
+        "excelArtifact": "",
+        "keyFindings": [],
+        "businessOutcome": "",
+        "projectDate": "",
+        "ownership": "Repository linked in current portfolio",
+        "scale": ""
+      }
     }
   ]
 }

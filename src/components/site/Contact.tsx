@@ -30,19 +30,21 @@ export function Contact() {
               variants={revealUp}
               className="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-primary"
             >
-              Final report / Available
+              09 / Final report
             </motion.p>
             <motion.h2
               variants={revealUp}
               className="mt-6 max-w-4xl font-display text-4xl font-bold uppercase leading-[.95] sm:text-6xl"
             >
-              Let&apos;s talk <span className="text-primary">data.</span>
+              Mahesh <span className="text-primary">Kale.</span>
             </motion.h2>
             <motion.p
               variants={revealUp}
               className="mt-6 max-w-xl text-base leading-7 text-muted-foreground"
             >
-              Open to Data Analyst and MIS Executive opportunities.
+              <span className="font-semibold text-foreground">Data Analyst | MIS Executive</span>
+              <br />
+              Open to opportunities across Data Analytics and MIS Reporting.
             </motion.p>
           </motion.div>
           <motion.div
@@ -52,6 +54,17 @@ export function Contact() {
             viewport={inView}
             className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
           >
+            <motion.div variants={revealUp} className="[&>*]:w-full">
+              <Button
+                variant="outline"
+                size="lg"
+                disabled
+                title="Resume file awaiting verification"
+              >
+                <Download />
+                Download resume
+              </Button>
+            </motion.div>
             <motion.div variants={revealUp} className="[&>*]:w-full">
               <Button asChild size="lg">
                 <a href={`mailto:${contact.email}`}>
@@ -91,17 +104,6 @@ export function Contact() {
                 </Button>
               </motion.div>
             )}
-            <motion.div variants={revealUp} className="[&>*]:w-full">
-              <Button
-                variant="outline"
-                size="lg"
-                disabled
-                title="Resume file awaiting verification"
-              >
-                <Download />
-                Download resume
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
       </motion.div>

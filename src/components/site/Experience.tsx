@@ -8,7 +8,7 @@ export function Experience() {
   return (
     <Section
       id="experience"
-      eyebrow="Section 06 / Work log"
+      eyebrow="05 / Work log"
       title="Field experience"
       description="Three internship chapters. Responsibilities are shown as recorded; missing dates and outcomes remain unclaimed."
     >
@@ -60,7 +60,7 @@ export function Experience() {
                 </div>
                 <motion.div
                   variants={stagger(0.05, 0.08)}
-                  className="grid gap-8 py-6 md:grid-cols-[1.4fr_.6fr]"
+                  className="grid gap-8 py-6 md:grid-cols-3"
                 >
                   <ExperienceColumn
                     label="What I worked on"
@@ -73,6 +73,10 @@ export function Experience() {
                         ? exp.achievements
                         : ["Awaiting verified deliverables"]
                     }
+                  />
+                  <ExperienceColumn
+                    label="Outcomes & proof"
+                    items={["Outcome evidence pending", "Company or credential link pending"]}
                   />
                 </motion.div>
                 <motion.div variants={stagger(0, 0.04)} className="flex flex-wrap gap-2">
