@@ -12,7 +12,7 @@ export function CountUp({ value, suffix = "" }: { value: number; suffix?: string
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reducedMotion = useReducedMotion();
-  const count = useMotionValue(reducedMotion ? value : 0);
+  const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => `${Math.round(latest)}${suffix}`);
 
   useEffect(() => {

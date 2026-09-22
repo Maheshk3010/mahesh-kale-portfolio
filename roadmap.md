@@ -6,4 +6,4 @@
 - [x] Replace generic sections with workflow, editorial work, MIS, stack, timeline, education, about, and contact sections.
 - [x] Preserve missing or mismatched evidence as explicit placeholders; invent nothing.
 - [x] Align metadata and local assistant content with the new role focus.
-- [ ] Verify desktop, tablet, mobile, reduced motion, links, resources, and preview health.
+- [x] Verify desktop, tablet, mobile, reduced motion, links, resources, and preview health.
