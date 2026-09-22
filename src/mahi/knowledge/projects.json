@@ -79,11 +79,11 @@
         "SQL-sourced data model with cleaned inputs",
         "Recruiter-friendly, self-serve exploration"
       ],
-      "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Analyst roles.",
+      "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Executive roles.",
       "github": "",
       "demo": "",
       "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
-      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Analyst workflow end-to-end."
+      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Executive workflow end-to-end."
     }
   ]
 }
