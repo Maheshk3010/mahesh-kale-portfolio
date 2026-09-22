@@ -34,8 +34,8 @@ export function Hero() {
     >
       <div className="control-grid pointer-events-none absolute inset-0" />
       <div className="data-stream pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="mx-auto grid min-h-[calc(96svh-4rem)] max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,.95fr)] lg:py-16">
-        <div className="relative z-10">
+      <div className="mx-auto grid min-h-[calc(96svh-4rem)] min-w-0 max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,.95fr)] lg:py-16">
+        <div className="relative z-10 min-w-0">
           <motion.div
             {...enter(0.05)}
             className="mb-8 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground"
@@ -144,9 +144,9 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
+          <motion.div
           {...enter(0.35)}
-          className="relative min-h-[510px] border-l border-t border-border bg-surface/70 p-4 sm:p-6"
+          className="relative min-w-0 overflow-hidden border-l border-t border-border bg-surface/70 p-4 sm:min-h-[510px] sm:p-6"
         >
           <div className="flex items-center justify-between border-b border-border pb-3 font-mono text-[9px] uppercase tracking-[0.16em]">
             <span className="text-primary">Analytics workstation</span>
