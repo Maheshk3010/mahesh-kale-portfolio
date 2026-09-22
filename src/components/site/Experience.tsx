@@ -21,7 +21,7 @@ export function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="glass flex items-start gap-4 rounded-3xl p-6 md:p-7"
+            className="glass-panel flex items-start gap-4 rounded-lg p-6 md:p-7"
           >
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
               <Briefcase className="h-5 w-5" />

@@ -24,10 +24,8 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="glass relative overflow-hidden rounded-[2rem] p-8 sm:p-10 md:p-16"
+        className="glass-panel relative overflow-hidden rounded-lg p-8 sm:p-10 md:p-16"
       >
-        <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/25 blur-[120px]" />
-        <div className="pointer-events-none absolute -left-32 -bottom-40 h-96 w-96 rounded-full bg-accent/20 blur-[140px]" />
 
         <div className="relative max-w-3xl">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-widest text-muted-foreground">

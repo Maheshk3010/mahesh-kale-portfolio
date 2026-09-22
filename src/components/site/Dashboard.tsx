@@ -28,13 +28,13 @@ export function Dashboard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="glass overflow-hidden rounded-3xl p-6 md:p-8"
+        className="glass-panel overflow-hidden rounded-lg p-6 md:p-8"
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-white/5 bg-white/[0.02] p-4"
+              className="rounded-md border border-border bg-panel p-4"
             >
               <div className="flex items-center gap-2 text-muted-foreground">
                 <s.icon className="h-4 w-4 text-primary" />
@@ -49,7 +49,7 @@ export function Dashboard() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+        <div className="mt-8 rounded-md border border-border bg-panel p-5">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <div className="text-sm font-medium">Target roles</div>

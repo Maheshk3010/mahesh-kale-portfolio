@@ -159,7 +159,7 @@ export function MahiAI() {
   return (
     <>
       {/* Floating trigger */}
-      <div className="fixed bottom-5 right-5 z-[60] md:bottom-6 md:right-6">
+      <div className="fixed bottom-3 right-3 z-[60] md:bottom-6 md:right-6">
         <motion.button
           type="button"
           onClick={() => setOpen((v) => !v)}
