@@ -11,6 +11,7 @@ import { Experience } from "@/components/site/Experience";
 import { Certifications } from "@/components/site/Certifications";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { ScrollSignal } from "@/components/site/ScrollSignal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,6 +100,7 @@ function Index() {
         Skip to main content
       </a>
       <main id="main-content" className="relative min-h-screen text-foreground">
+        <ScrollSignal />
         <Nav />
         <Hero />
         <WhyHire />
