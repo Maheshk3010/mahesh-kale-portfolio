@@ -144,7 +144,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-          <motion.div
+        <motion.div
           {...enter(0.35)}
           className="relative min-w-0 overflow-hidden border-l border-t border-border bg-surface/70 p-4 sm:min-h-[510px] sm:p-6"
         >
