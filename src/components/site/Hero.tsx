@@ -27,7 +27,7 @@ export function Hero() {
           <motion.p {...enter(0.32)} className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">MIS <span className="mx-2 text-primary">•</span> Reporting <span className="mx-2 text-primary">•</span> BI</motion.p>
           <motion.p {...enter(0.4)} className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">SQL, Power BI, Excel and Python for analysis, reporting, dashboards and business performance insights.</motion.p>
 
-          <motion.div {...enter(0.5)} className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+          <motion.div {...enter(0.5)} className="mt-8 flex min-w-0 flex-wrap gap-3">
             <Button asChild size="lg" className="h-12 uppercase"><a href="#projects">View my work <ArrowDown /></a></Button>
             <Button variant="outline" size="lg" disabled title="Resume file awaiting verification" className="h-12 uppercase"><Download /> Resume pending</Button>
             <div className="flex gap-3">
