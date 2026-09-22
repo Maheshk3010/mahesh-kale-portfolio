@@ -52,7 +52,7 @@ export function Contact() {
             viewport={inView}
             className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
           >
-            <motion.div variants={revealUp} className="contents">
+            <motion.div variants={revealUp} className="[&>*]:w-full">
               <Button asChild size="lg">
                 <a href={`mailto:${contact.email}`}>
                   <Mail />
@@ -61,7 +61,7 @@ export function Contact() {
                 </a>
               </Button>
             </motion.div>
-            <motion.div variants={revealUp} className="contents">
+            <motion.div variants={revealUp} className="[&>*]:w-full">
               <Button asChild variant="outline" size="lg">
                 <a href={`tel:${contact.phone.replace(/\s+/g, "")}`}>
                   <Phone />
@@ -70,7 +70,7 @@ export function Contact() {
               </Button>
             </motion.div>
             {linkedin && (
-              <motion.div variants={revealUp} className="contents">
+              <motion.div variants={revealUp} className="[&>*]:w-full">
                 <Button asChild variant="outline" size="lg">
                   <a href={linkedin} target="_blank" rel="noopener noreferrer">
                     <Linkedin />
@@ -81,7 +81,7 @@ export function Contact() {
               </motion.div>
             )}
             {github && (
-              <motion.div variants={revealUp} className="contents">
+              <motion.div variants={revealUp} className="[&>*]:w-full">
                 <Button asChild variant="outline" size="lg">
                   <a href={github} target="_blank" rel="noopener noreferrer">
                     <Github />
@@ -91,7 +91,7 @@ export function Contact() {
                 </Button>
               </motion.div>
             )}
-            <motion.div variants={revealUp} className="contents">
+            <motion.div variants={revealUp} className="[&>*]:w-full">
               <Button
                 variant="outline"
                 size="lg"

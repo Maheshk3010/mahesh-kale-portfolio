@@ -377,7 +377,8 @@
   transform-origin: left;
   transition: transform var(--motion-reveal) var(--motion-ease);
 }
-.stack-sequence > div {
+.stack-sequence > div,
+.analysis-sequence > div {
   position: relative;
 }
 .stack-sequence:hover > div::after,
