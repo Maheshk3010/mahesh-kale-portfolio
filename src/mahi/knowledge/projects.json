@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "title": "Apple Stock Price Prediction System",
-      "description": "Machine learning application that forecasts Apple stock prices from historical market data using an LSTM-based deep learning model, served through an interactive Streamlit app.",
+      "title": "Apple Stock Price Prediction",
+      "description": "LSTM deep-learning forecasting pipeline built with TensorFlow and Keras, with an interactive Streamlit deployment for exploring Apple stock predictions.",
       "problem": "Forecast future Apple stock prices from historical market trends to support data-driven investment analysis.",
       "solution": "End-to-end ML pipeline covering data collection, cleaning, feature engineering and normalization, followed by LSTM model training, prediction, evaluation and an interactive Streamlit interface for exploring forecasts.",
       "technologies": [
@@ -32,44 +32,44 @@
       "interviewExplanation": "I framed this as a time-series forecasting problem: collect historical Apple prices, clean and normalize the series, engineer lag features, then train an LSTM in TensorFlow/Keras. I evaluate the model on held-out data and expose predictions through a Streamlit app so the workflow is interactive end-to-end. It's the project I use to explain deep learning for sequences and the full data-science lifecycle."
     },
     {
-      "title": "Product Recommendation System",
-      "description": "Recommendation engine that suggests relevant products from historical purchase and rating data using classical ML techniques.",
-      "problem": "Users on product catalogs struggle to discover items relevant to their preferences when catalogs are large and unfiltered.",
-      "solution": "A Python pipeline that cleans and prepares product/user data with Pandas and NumPy, then generates recommendations using Scikit-learn similarity models.",
-      "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn"],
+      "title": "Customer Churn Prediction",
+      "description": "Classification workflow analyzing 7,000+ customer records with Scikit-learn to identify churn patterns and support retention decisions.",
+      "problem": "Customer teams need a structured way to identify accounts with a higher likelihood of churn and understand the factors associated with attrition.",
+      "solution": "A Python and Scikit-learn classification pipeline covering data cleaning, feature preparation, model training, comparison, and evaluation across 7,000+ customer records.",
+      "technologies": ["Python", "Pandas", "Scikit-learn", "Classification"],
       "features": [
         "Data cleaning and preprocessing pipeline",
-        "Similarity-based recommendation logic",
-        "Top-N product suggestions per user",
-        "Reusable notebook-driven workflow"
+        "7,000+ customer records analyzed",
+        "Classification model development",
+        "Feature preparation and model evaluation"
       ],
-      "outcome": "A working recommendation prototype demonstrating the full data-science workflow from raw data to model output.",
+      "outcome": "A completed classification project demonstrating the full machine-learning workflow from raw customer records to evaluated churn predictions.",
       "github": "https://github.com/Maheshk3010/Product_Recommendation_System",
       "demo": "",
-      "resumeSummary": "Built a product recommendation prototype in Python using Pandas, NumPy and Scikit-learn similarity models.",
-      "interviewExplanation": "I framed this as a similarity problem: clean the interaction data with Pandas, vectorise the products, and compute similarity with Scikit-learn to return top-N recommendations. It's my go-to example for explaining how EDA, feature engineering and model choice fit together in a data-science project."
+      "resumeSummary": "Built a customer churn classification workflow in Python and Scikit-learn across 7,000+ customer records.",
+      "interviewExplanation": "I framed this as a classification problem: clean the customer data, prepare model features, compare classification approaches, and evaluate how reliably the model identifies churn patterns."
     },
     {
-      "title": "Job Tracker API",
-      "description": "REST API for tracking job applications end-to-end — create, update, list and delete applications with a clean Flask backend.",
-      "problem": "Job seekers lose track of applications across companies, roles and statuses without a structured system to store and query them.",
-      "solution": "A Flask-based REST API exposing CRUD endpoints for job applications, backed by a MySQL schema for durable storage and querying.",
-      "technologies": ["Python", "Flask", "REST API", "MySQL"],
+      "title": "Sales Performance Analysis (SQL)",
+      "description": "SQL analysis of 50,000+ retail transaction records using 30+ optimized queries across JOINs, CTEs, and window functions.",
+      "problem": "Retail stakeholders need clear answers about revenue, products, customers, and sales trends hidden across a large transaction dataset.",
+      "solution": "A structured SQL analysis using more than 30 optimized queries, including JOINs, CTEs, aggregations, and window functions, across 50,000+ retail records.",
+      "technologies": ["SQL", "CTEs", "Window Functions", "Data Analysis"],
       "features": [
-        "CRUD endpoints for job applications",
-        "MySQL-backed relational storage",
-        "Clean REST routing with Flask",
-        "Request validation and error handling"
+        "50,000+ retail transactions analyzed",
+        "30+ optimized business queries",
+        "JOIN, CTE, and window-function analysis",
+        "Revenue and product performance insights"
       ],
-      "outcome": "A working Python backend project demonstrating REST API design, database integration and end-to-end request handling.",
-      "github": "",
+      "outcome": "A completed SQL portfolio project that turns transaction-level retail data into structured, decision-ready performance findings.",
+      "github": "https://github.com/Maheshk3010/Ecommerce-Sales-Analytics",
       "demo": "",
-      "resumeSummary": "Built a Flask REST API with MySQL for tracking job applications, showcasing CRUD design and backend fundamentals.",
-      "interviewExplanation": "I designed a Flask app around a job-application resource: routes for create/read/update/delete, a MySQL table for persistence, and JSON request/response handling. It's the project I use to explain REST fundamentals — request lifecycle, status codes, and separating routing from data access."
+      "resumeSummary": "Analyzed 50,000+ retail transaction records with 30+ optimized SQL queries using JOINs, CTEs, and window functions.",
+      "interviewExplanation": "I organized the analysis around business questions, then used JOINs, CTEs, aggregations, and window functions to convert transaction-level retail data into clear performance findings."
     },
     {
-      "title": "Sales Dashboard",
-      "description": "Interactive Power BI dashboard summarising sales performance across products, regions and time periods for business decision-making.",
+      "title": "Sales Dashboard (Power BI)",
+      "description": "Interactive Power BI dashboard built with relational data modeling, Power Query transformations, DAX measures, and key business KPIs.",
       "problem": "Business stakeholders need a single, trustworthy view of sales KPIs instead of scattered Excel files and manual reports.",
       "solution": "A Power BI report modelled from SQL/Excel sources, with cleaned data, calculated KPIs and interactive visuals for slicing by product, region and period.",
       "technologies": ["Power BI", "Excel", "SQL"],
@@ -80,7 +80,7 @@
         "Recruiter-friendly, self-serve exploration"
       ],
       "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Analyst roles.",
-      "github": "",
+      "github": "https://github.com/Maheshk3010/Ecommerce-Sales-Analytics",
       "demo": "",
       "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
       "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Analyst workflow end-to-end."

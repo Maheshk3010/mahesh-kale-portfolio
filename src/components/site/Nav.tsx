@@ -28,12 +28,12 @@ export function Nav() {
       className="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
     >
       <nav
-        className={`glass flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500 ${
+        className={`glass flex w-full max-w-5xl items-center justify-between rounded-lg px-4 py-3 transition-all duration-500 ${
           scrolled ? "shadow-2xl" : ""
         }`}
       >
         <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground font-black">
+          <span className="grid h-8 w-8 place-items-center rounded-md bg-primary text-primary-foreground font-black">
             M
           </span>
           <span className="text-sm font-semibold tracking-tight">
@@ -54,7 +54,7 @@ export function Nav() {
         </ul>
         <a
           href="#contact"
-          className="glow-primary inline-flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+          className="glow-primary inline-flex items-center gap-1.5 rounded-md bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
         >
           Hire me
         </a>
