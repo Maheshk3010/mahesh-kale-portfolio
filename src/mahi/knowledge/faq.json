@@ -54,7 +54,7 @@
     },
     {
       "q": "What projects has Mahesh built?",
-      "a": "Four documented projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering supporting data analytics, technical automation, Data Analyst and MIS Executive work."
+      "a": "Four documented projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering reporting, analytics, APIs, and supporting technical work."
     },
     {
       "q": "Explain Apple Stock Price Prediction",

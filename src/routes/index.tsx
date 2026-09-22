@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
           "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
       },
       { property: "og:type", content: "website" },
-       { property: "og:url", content: "https://mahesh-kale-portfolio.lovable.app/" },
+      { property: "og:url", content: "https://mahesh-kale-portfolio.vercel.app/" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
           "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://mahesh-kale-portfolio.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://mahesh-kale-portfolio.vercel.app/" }],
   }),
 
   component: Index,
