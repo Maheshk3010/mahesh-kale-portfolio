@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
+import { inView, motionEase, revealLeft, revealUp, stagger } from "@/lib/motion";
 
 export function Experience() {
   const items = knowledgeBase.experience.experience;
@@ -16,24 +17,24 @@ export function Experience() {
           initial={{ scaleY: 0 }}
           whileInView={{ scaleY: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1.2, ease: motionEase }}
           className="absolute bottom-0 left-[17px] top-8 w-px origin-top bg-primary/60 sm:left-[91px]"
         />
         <div className="space-y-14">
           {items.map((exp, i) => (
             <motion.article
               key={`${exp.company}-${exp.role}`}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              variants={stagger(i * 0.06, 0.08)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={inView}
               className="relative grid gap-5 pl-12 sm:grid-cols-[64px_1fr] sm:pl-0"
             >
-              <div className="absolute left-3 top-1 h-3 w-3 border border-primary bg-background sm:left-[85px]" />
+              <motion.div variants={revealUp} className="timeline-marker absolute left-3 top-1 h-3 w-3 border border-primary bg-background sm:left-[85px]" />
               <span className="hidden font-mono text-[9px] text-primary sm:block">
                 CH / 0{i + 1}
               </span>
-              <div className="border-l border-border pl-6 sm:pl-10">
+              <motion.div variants={revealLeft} className="border-l border-border pl-6 sm:pl-10">
                 <div className="grid gap-6 border-b border-border pb-6 lg:grid-cols-[1fr_auto]">
                   <div>
                     <p className="font-mono text-[9px] uppercase tracking-[.16em] text-primary">
@@ -54,7 +55,7 @@ export function Experience() {
                     </div>
                   </div>
                 </div>
-                <div className="grid gap-8 py-6 md:grid-cols-[1.4fr_.6fr]">
+                <motion.div variants={stagger(0.05, 0.08)} className="grid gap-8 py-6 md:grid-cols-[1.4fr_.6fr]">
                   <ExperienceColumn
                     label="What I worked on"
                     items={exp.responsibilities.slice(0, 4)}
@@ -67,15 +68,15 @@ export function Experience() {
                         : ["Awaiting verified deliverables"]
                     }
                   />
-                </div>
-                <div className="flex flex-wrap gap-2">
+                </motion.div>
+                <motion.div variants={stagger(0, 0.04)} className="flex flex-wrap gap-2">
                   {exp.technologies.slice(0, 8).map((tool) => (
-                    <span key={tool} className="control-tag">
+                    <motion.span key={tool} variants={revealUp} className="control-tag">
                       {tool}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.article>
           ))}
         </div>
@@ -86,7 +87,7 @@ export function Experience() {
 
 function ExperienceColumn({ label, items }: { label: string; items: string[] }) {
   return (
-    <div>
+    <motion.div variants={revealUp}>
       <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">{label}</p>
       <ul className="mt-4 space-y-2 text-sm leading-6 text-muted-foreground">
         {items.length ? (
@@ -95,6 +96,6 @@ function ExperienceColumn({ label, items }: { label: string; items: string[] }) 
           <li>— Awaiting verified information</li>
         )}
       </ul>
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
+import { inView, revealUp, stagger } from "@/lib/motion";
 
 export function Certifications() {
   const education = knowledgeBase.education.education;
@@ -37,12 +38,12 @@ export function Certifications() {
             </motion.article>
           ))}
         </div>
-        <div className="border-t border-border">
+        <motion.div variants={stagger()} initial="hidden" whileInView="visible" viewport={inView} className="border-t border-border">
           <div className="py-5 font-mono text-[9px] uppercase tracking-[.16em] text-primary">
             Credentials
           </div>
           {certs.map((cert, i) => (
-            <div key={cert.name} className="grid grid-cols-[28px_1fr] border-t border-border py-4">
+            <motion.div variants={revealUp} key={cert.name} className="credential-row grid grid-cols-[28px_1fr] border-t border-border py-4">
               <span className="font-mono text-[8px] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -53,9 +54,9 @@ export function Certifications() {
                   {cert.verification ? "Verification link available" : "Verification link pending"}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </Section>
   );
