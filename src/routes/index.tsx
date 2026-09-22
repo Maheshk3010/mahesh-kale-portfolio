@@ -17,12 +17,12 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
       },
       {
         name: "description",
         content:
-          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
+          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
       },
       {
         name: "keywords",
@@ -32,12 +32,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:title",
         content:
-          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
       },
       {
         property: "og:description",
         content:
-          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
+          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -45,12 +45,12 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:title",
         content:
-          "Mahesh Kale — Data Analyst · Data Scientist · Python Developer · MIS Analyst",
+          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
       },
       {
         name: "twitter:description",
         content:
-          "MAHI Portfolio — Mahesh Kale is an entry-level IT professional targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. Verified skills: Python, SQL, Power BI, Machine Learning.",
+          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
