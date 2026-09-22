@@ -22,7 +22,7 @@
     },
     {
       "q": "Does Mahesh know SQL?",
-      "a": "Yes \u2014 SQL is a core skill, central to his Data Analyst and MIS Analyst focus."
+      "a": "Yes \u2014 SQL is a core skill, central to his Data Analyst and MIS Executive focus."
     },
     {
       "q": "Does Mahesh know Flask?",
@@ -34,7 +34,7 @@
     },
     {
       "q": "Does Mahesh know Power BI?",
-      "a": "Yes \u2014 Power BI is a verified skill supporting Data Analyst and MIS Analyst roles."
+      "a": "Yes \u2014 Power BI is a verified skill supporting Data Analyst and MIS Executive roles."
     },
     {
       "q": "Does Mahesh know Machine Learning?",
@@ -54,7 +54,7 @@
     },
     {
       "q": "What projects has Mahesh built?",
-      "a": "Four verified projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering Data Scientist, Python Developer, Data Analyst and MIS Analyst work."
+      "a": "Four verified projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering Data Scientist, Python Developer, Data Analyst and MIS Executive work."
     },
     {
       "q": "Explain Apple Stock Price Prediction",
@@ -286,7 +286,7 @@
     },
     {
       "q": "Explain the workflow.",
-      "a": "Every verified project has a documented workflow. Apple Stock Prediction moves from data collection → cleaning → normalization → sequence generation → LSTM training → prediction → evaluation → Streamlit deployment. The Product Recommendation System flows from loading data → cleaning → user-item matrix → similarity computation → recommendations → ranking → Streamlit display."
+      "a": "Every verified project has a documented workflow. Apple Stock Prediction moves from data collection \u2192 cleaning \u2192 normalization \u2192 sequence generation \u2192 LSTM training \u2192 prediction \u2192 evaluation \u2192 Streamlit deployment. The Product Recommendation System flows from loading data \u2192 cleaning \u2192 user-item matrix \u2192 similarity computation \u2192 recommendations \u2192 ranking \u2192 Streamlit display."
     },
     {
       "q": "How does the recommendation system work?",
