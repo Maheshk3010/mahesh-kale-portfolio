@@ -25,7 +25,7 @@ const QUICK_QUESTIONS = [
   "Does Mahesh know SQL?",
   "Does Mahesh know Power BI?",
   "Which roles suit Mahesh best?",
-  "What machine learning has Mahesh worked with?",
+  "What MIS reporting skills does Mahesh have?",
   "Show Certifications",
   "Download Resume",
   "How can I contact Mahesh?",
