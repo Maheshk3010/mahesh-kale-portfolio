@@ -1,67 +1,31 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { BarChart3, Database, Brain } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-const pillars = [
-  {
-    icon: BarChart3,
-    title: "Data analysis & visualization",
-    body: "SQL, Power BI and Advanced Excel to clean, model and present data so stakeholders can act on it quickly.",
-  },
-  {
-    icon: Brain,
-    title: "Python & machine learning",
-    body: "Pandas, NumPy and Scikit-learn for analysis, automation and predictive modeling — from stock forecasts to recommendation systems.",
-  },
-  {
-    icon: Database,
-    title: "MIS & reporting",
-    body: "MySQL, Flask and REST APIs to build repeatable reports and lightweight tools that support operations and MIS teams.",
-  },
+const capabilities = [
+  "Analyze high-volume datasets and isolate patterns that matter to the business.",
+  "Clean, transform, and validate data with Python, Pandas, SQL, and Power Query.",
+  "Build relational models, DAX measures, and executive-ready Power BI reports.",
+  "Develop and evaluate classification, recommendation, and forecasting models.",
+  "Automate repeatable reporting tasks and communicate findings to stakeholders.",
 ];
 
 export function About() {
   return (
-    <Section
-      id="about"
-      eyebrow="Executive Profile"
-      title="Turning Data into Insights and Intelligent Solutions."
-      description={
-        <>
-          Mahesh Sakharam Kale — a Computer Science graduate (B.Sc. in AI, ML & VR, Sandip University, 2022–2025) currently completing an advanced Data Science program at ExcelR Solutions.
-          <br />
-          <br />
-          Three verified internships across Data Science (ExcelR), Data Analytics (Sysslan IT Solutions) and Python Development (Codveda Technologies) — working on real datasets, dashboards, and production-style Python workflows.
-          <br />
-          <br />
-          Core stack: <strong>Python, SQL, Pandas, NumPy, Scikit-learn, Power BI, Advanced Excel, MySQL, Flask and REST APIs</strong>. Verified projects include an LSTM-based Apple Stock Price Prediction system, a Product Recommendation System, a Sales Dashboard and a Job Tracker API — covering the full flow from data preprocessing to modeling, reporting and delivery.
-          <br />
-          <br />
-          Approach: understand the business problem first, choose the simplest technique that solves it, and ship a clean, reproducible result. Open to <strong>Data Analyst, Data Scientist, Python Developer and MIS Analyst</strong> roles.
-        </>
-      }
-
-    >
-      <div className="grid gap-4 md:grid-cols-3">
-        {pillars.map((p, i) => (
-          <motion.div
-            key={p.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="glass group relative overflow-hidden rounded-3xl p-6 transition-transform hover:-translate-y-1"
-          >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/20 blur-3xl transition-opacity group-hover:opacity-100 opacity-60" />
-            <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
-              <p.icon className="h-5 w-5" />
-            </div>
-            <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {p.body}
-            </p>
-          </motion.div>
-        ))}
+    <Section id="about" eyebrow="Executive profile" title="Analysis that moves from question to action.">
+      <div className="grid gap-8 border-y border-border py-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary">Professional summary</p>
+          <p className="mt-4 text-xl leading-8 text-foreground">Computer Science graduate with hands-on experience across data analysis, machine learning, business reporting, and Python workflows.</p>
+          <p className="mt-4 text-sm leading-7 text-muted-foreground">Experience includes data-focused internships with ExcelR Solutions, Sysslan IT Solutions, and Codveda Technologies.</p>
+        </motion.div>
+        <ul className="grid gap-3">
+          {capabilities.map((capability, index) => (
+            <motion.li key={capability} initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 rounded-md border border-border bg-panel px-4 py-3.5 text-sm leading-6 text-foreground/90">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />{capability}
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </Section>
   );
