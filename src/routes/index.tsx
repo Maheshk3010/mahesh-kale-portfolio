@@ -16,8 +16,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Mahesh Kale — Data Analyst & MIS Executive",
+        title: "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         name: "description",
@@ -31,8 +30,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content:
-          "Mahesh Kale — Data Analyst & MIS Executive",
+        content: "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         property: "og:description",
@@ -41,13 +39,18 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://mahesh-kale-portfolio.vercel.app/" },
-      { property: "og:image", content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg" },
+      {
+        property: "og:image",
+        content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg" },
+      {
+        name: "twitter:image",
+        content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
+      },
       {
         name: "twitter:title",
-        content:
-          "Mahesh Kale — Data Analyst & MIS Executive",
+        content: "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         name: "twitter:description",
@@ -75,18 +78,26 @@ function Index() {
       addressRegion: "Maharashtra",
       addressCountry: "IN",
     },
-    sameAs: [
-      "https://github.com/Maheshk3010",
-      "https://www.linkedin.com/in/maheshkale3010/",
-    ],
+    sameAs: ["https://github.com/Maheshk3010", "https://www.linkedin.com/in/maheshkale3010/"],
     knowsAbout: [
-      "SQL", "Power BI", "Advanced Excel", "Python", "MIS Reporting",
-      "KPI Reporting", "Data Validation", "Business Reporting",
+      "SQL",
+      "Power BI",
+      "Advanced Excel",
+      "Python",
+      "MIS Reporting",
+      "KPI Reporting",
+      "Data Validation",
+      "Business Reporting",
     ],
   };
   return (
     <MotionConfig reducedMotion="user">
-      <a href="#main-content" className="sr-only z-[100] bg-primary px-4 py-3 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
+      <a
+        href="#main-content"
+        className="sr-only z-[100] bg-primary px-4 py-3 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to main content
+      </a>
       <main id="main-content" className="relative min-h-screen text-foreground">
         <Nav />
         <Hero />
@@ -100,7 +111,12 @@ function Index() {
         <Contact />
         <Footer />
       </main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
     </MotionConfig>
   );
 }

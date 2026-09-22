@@ -1,4 +1,5 @@
 # Current task
+
 - [x] Rebuild the portfolio as “Mahesh Kale — Analytics Control Room.”
 - [x] Align all visible positioning to Data Analyst and MIS Executive only.
 - [x] Create the cinematic workflow hero and accessible navigation.

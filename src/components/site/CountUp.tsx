@@ -1,4 +1,11 @@
-import { animate, motion, useInView, useMotionValue, useReducedMotion, useTransform } from "motion/react";
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useReducedMotion,
+  useTransform,
+} from "motion/react";
 import { useEffect, useRef } from "react";
 
 export function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {

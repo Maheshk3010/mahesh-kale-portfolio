@@ -63,12 +63,31 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-  body { min-width: 320px; overflow-x: hidden; background: var(--background); color: var(--foreground); }
-  a, button { outline-offset: 4px; }
-  :focus-visible { outline: 1px solid var(--primary); }
-  ::selection { background: color-mix(in oklab, var(--primary) 38%, transparent); color: var(--foreground); }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--background);
+    color: var(--foreground);
+  }
+  a,
+  button {
+    outline-offset: 4px;
+  }
+  :focus-visible {
+    outline: 1px solid var(--primary);
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 38%, transparent);
+    color: var(--foreground);
+  }
 }
 
 @utility control-tag {
@@ -85,17 +104,59 @@
   letter-spacing: 0.08em;
 }
 
-@utility glass { background: color-mix(in oklab, var(--surface) 90%, transparent); backdrop-filter: blur(18px); border: 1px solid var(--border); }
-@utility glass-panel { background: var(--surface); border: 1px solid var(--border); }
-@utility tech-badge { display:inline-flex; border-left:2px solid var(--primary); background:var(--panel); padding:.4rem .65rem; font-family:var(--font-mono); font-size:.65rem; font-weight:700; }
-@utility glow-primary { box-shadow: 0 0 0 1px color-mix(in oklab,var(--primary) 25%,transparent), 0 18px 50px -25px var(--primary); }
-@utility text-gradient { color: var(--primary); }
-@utility grid-bg { background-image: linear-gradient(to right,color-mix(in oklab,var(--foreground) 4%,transparent) 1px,transparent 1px),linear-gradient(to bottom,color-mix(in oklab,var(--foreground) 4%,transparent) 1px,transparent 1px); background-size:48px 48px; }
+@utility glass {
+  background: color-mix(in oklab, var(--surface) 90%, transparent);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+}
+@utility glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+@utility tech-badge {
+  display: inline-flex;
+  border-left: 2px solid var(--primary);
+  background: var(--panel);
+  padding: 0.4rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+@utility glow-primary {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
+    0 18px 50px -25px var(--primary);
+}
+@utility text-gradient {
+  color: var(--primary);
+}
+@utility grid-bg {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+}
 
 .control-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--primary) 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
 }
@@ -107,23 +168,82 @@
   width: 3px;
   height: 3px;
   background: var(--primary);
-  box-shadow: 15vw 17vh 0 color-mix(in oklab,var(--primary) 45%,transparent), 34vw 51vh 0 color-mix(in oklab,var(--primary) 35%,transparent), 61vw 26vh 0 color-mix(in oklab,var(--primary) 45%,transparent), 82vw 62vh 0 color-mix(in oklab,var(--primary) 30%,transparent), 93vw 35vh 0 color-mix(in oklab,var(--primary) 45%,transparent);
+  box-shadow:
+    15vw 17vh 0 color-mix(in oklab, var(--primary) 45%, transparent),
+    34vw 51vh 0 color-mix(in oklab, var(--primary) 35%, transparent),
+    61vw 26vh 0 color-mix(in oklab, var(--primary) 45%, transparent),
+    82vw 62vh 0 color-mix(in oklab, var(--primary) 30%, transparent),
+    93vw 35vh 0 color-mix(in oklab, var(--primary) 45%, transparent);
   animation: drift 16s linear infinite;
 }
-.data-stream::after { animation-delay:-8s; opacity:.45; }
-@keyframes drift { from { transform:translateY(-8vh); } to { transform:translateY(96vh); } }
+.data-stream::after {
+  animation-delay: -8s;
+  opacity: 0.45;
+}
+@keyframes drift {
+  from {
+    transform: translateY(-8vh);
+  }
+  to {
+    transform: translateY(96vh);
+  }
+}
 
-.control-section::after { content:""; position:absolute; inset:auto 1.25rem 0; height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); }
-.mahi-highlight { outline:1px solid var(--primary); outline-offset:6px; }
+.control-section::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.25rem 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.mahi-highlight {
+  outline: 1px solid var(--primary);
+  outline-offset: 6px;
+}
 
-#workflow { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--surface) 46%,transparent); }
-#projects { padding-top:8rem; padding-bottom:8rem; }
-#mis { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--primary) 2.5%,var(--background)); }
-#stack h3 { transition:color .2s ease,transform .2s ease; }
-#stack .group:hover h3 { transform:translateX(.3rem); }
-#experience { background-image:linear-gradient(to right,transparent 49.95%,color-mix(in oklab,var(--primary) 4%,transparent) 50%,transparent 50.05%); }
-#contact { max-width:none; padding-inline:max(1.25rem,calc((100vw - 80rem)/2)); background:color-mix(in oklab,var(--surface) 34%,transparent); }
+#workflow {
+  max-width: none;
+  padding-inline: max(1.25rem, calc((100vw - 80rem) / 2));
+  background: color-mix(in oklab, var(--surface) 46%, transparent);
+}
+#projects {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+#mis {
+  max-width: none;
+  padding-inline: max(1.25rem, calc((100vw - 80rem) / 2));
+  background: color-mix(in oklab, var(--primary) 2.5%, var(--background));
+}
+#stack h3 {
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+#stack .group:hover h3 {
+  transform: translateX(0.3rem);
+}
+#experience {
+  background-image: linear-gradient(
+    to right,
+    transparent 49.95%,
+    color-mix(in oklab, var(--primary) 4%, transparent) 50%,
+    transparent 50.05%
+  );
+}
+#contact {
+  max-width: none;
+  padding-inline: max(1.25rem, calc((100vw - 80rem) / 2));
+  background: color-mix(in oklab, var(--surface) 34%, transparent);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
