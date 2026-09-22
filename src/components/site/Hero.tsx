@@ -21,17 +21,20 @@ export function Hero() {
         <div className="relative z-10">
           <motion.div {...enter(0.05)} className="mb-8 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground"><span className="h-px w-10 bg-primary" />System 01 / Profile loaded</motion.div>
           <motion.p {...enter(0.12)} className="font-display text-xl font-bold uppercase tracking-normal text-foreground sm:text-2xl">Mahesh Kale</motion.p>
+          <motion.p {...enter(0.18)} className="mt-2 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Data Analyst <span className="text-muted-foreground">|</span> MIS Executive</motion.p>
           <motion.h1 {...enter(0.22)} className="mt-4 max-w-4xl font-display text-[clamp(3.25rem,8vw,7rem)] font-bold uppercase leading-[0.84] tracking-normal">
             Data<br/><span className="text-primary">Analyst</span>
           </motion.h1>
           <motion.p {...enter(0.32)} className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">MIS <span className="mx-2 text-primary">•</span> Reporting <span className="mx-2 text-primary">•</span> BI</motion.p>
           <motion.p {...enter(0.4)} className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">SQL, Power BI, Excel and Python for analysis, reporting, dashboards and business performance insights.</motion.p>
 
-          <motion.div {...enter(0.5)} className="mt-8 flex flex-wrap gap-3">
+          <motion.div {...enter(0.5)} className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
             <Button asChild size="lg" className="h-12 uppercase"><a href="#projects">View my work <ArrowDown /></a></Button>
             <Button variant="outline" size="lg" disabled title="Resume file awaiting verification" className="h-12 uppercase"><Download /> Resume pending</Button>
-            {github && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={github} target="_blank" rel="noopener noreferrer" aria-label="Open GitHub"><Github /></a></Button>}
-            {linkedin && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn"><Linkedin /></a></Button>}
+            <div className="flex gap-3">
+              {github && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={github} target="_blank" rel="noopener noreferrer" aria-label="Open GitHub"><Github /></a></Button>}
+              {linkedin && <Button asChild variant="ghost" size="icon" className="h-12 w-12"><a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn"><Linkedin /></a></Button>}
+            </div>
           </motion.div>
 
           <motion.div {...enter(0.58)} className="mt-12 grid grid-cols-2 border-y border-border sm:grid-cols-4">

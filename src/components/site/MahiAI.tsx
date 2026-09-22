@@ -169,22 +169,17 @@ export function MahiAI() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -3, scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
-          className="group relative flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-3 pl-3 pr-4 backdrop-blur-xl shadow-[0_10px_40px_-10px_var(--primary)]"
+          className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 py-2.5 pl-2.5 pr-3 backdrop-blur-xl"
         >
-          <span className="pointer-events-none absolute inset-0 rounded-full">
-            <span className="absolute inset-0 rounded-full bg-primary/25 blur-xl animate-[pulse_2.4s_ease-in-out_infinite]" />
-          </span>
-          <span className="pointer-events-none absolute -inset-px rounded-full bg-gradient-to-br from-primary/40 via-transparent to-accent/30 opacity-70" />
-
-          <span className="relative grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground shadow-[0_0_20px_var(--primary)]">
+          <span className="relative grid h-8 w-8 place-items-center bg-primary text-primary-foreground">
             {open ? (
               <X className="h-4 w-4" />
             ) : (
-              <span className="text-lg leading-none">🤖</span>
+              <Bot className="h-4 w-4" />
             )}
           </span>
-          <span className="relative text-sm font-semibold tracking-tight text-foreground">
-            MAHI.AI
+          <span className="relative font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground">
+            Ask MAHI
           </span>
         </motion.button>
       </div>
