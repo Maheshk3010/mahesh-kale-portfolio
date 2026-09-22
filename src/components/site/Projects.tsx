@@ -29,7 +29,7 @@ export function Projects() {
   const apple = knowledgeBase.projects.projects.find((p) => p.title.includes("Apple Stock"));
   const churn = knowledgeBase.projects.projects.find((p) => p.title.includes("Churn"));
   return (
-    <Section id="projects" eyebrow="Section 03 / Evidence register" title="Selected analytics work" description="Large-format project records organized around the business question, analytical process and verifiable evidence.">
+    <Section id="projects" eyebrow="Section 03 / Evidence register" title="Selected analytics work" description="Selected projects demonstrating data analysis, SQL, BI, reporting and business-focused problem solving.">
       <div className="space-y-20">
         {primaryProjects.map((project,index)=><motion.article key={project.title} initial={{opacity:0,y:36}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-70px"}} transition={{duration:.7}} className="border-t border-border pt-5">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
@@ -46,10 +46,15 @@ export function Projects() {
                 <div className="control-grid absolute inset-0 opacity-50" />
                 <div className="relative max-w-xs text-center"><ImageOff className="mx-auto h-7 w-7 text-primary"/><p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[.16em]">Real project screenshot required</p><p className="mt-2 text-xs leading-5 text-muted-foreground">No dashboard image is stored in the current project. This frame is reserved for verified evidence.</p></div>
               </div>
-              <div className="grid border-x border-b border-border sm:grid-cols-2"><ProjectField label="Output" value={project.output} compact/><ProjectField label="Key findings" value={project.finding} compact/><ProjectField label="Result" value={project.result} compact/><div className="border-t border-border p-5 sm:border-l"><p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">Evidence</p><p className="mt-3 flex gap-2 text-sm leading-6 text-muted-foreground"><ShieldAlert className="mt-1 h-4 w-4 shrink-0 text-primary"/>{project.evidence}</p></div></div>
+               <div className="grid border-x border-b border-border sm:grid-cols-2"><ProjectField label="Output" value={project.output} compact/><ProjectField label="Key findings" value={project.finding} compact/><ProjectField label="Result" value={project.result} compact/><div className="border-t border-border p-5 sm:border-l"><p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">Evidence</p><p className="mt-3 flex gap-2 text-sm leading-6 text-muted-foreground"><ShieldAlert className="mt-1 h-4 w-4 shrink-0 text-primary"/>{project.evidence}</p><div className="mt-5 flex flex-wrap gap-2"><Button size="sm" variant="outline" disabled>Case study pending</Button><Button size="sm" variant="outline" disabled>GitHub pending</Button></div></div></div>
             </div>
           </div>
         </motion.article>)}
+      </div>
+
+      <div className="mt-20 grid border-y border-border lg:grid-cols-[.55fr_1.45fr]">
+        <div className="border-b border-border py-6 lg:border-b-0 lg:border-r lg:pr-8"><p className="font-mono text-[10px] uppercase tracking-[.18em] text-primary">Portfolio gap / Reserved</p><h3 className="mt-5 font-display text-3xl font-bold uppercase">ETL & MIS evidence</h3></div>
+        <div className="grid sm:grid-cols-2"><EvidenceSlot title="SQL data warehouse / ETL" note="No verified project record, repository, or output exists in the current portfolio."/><EvidenceSlot title="MIS reporting project" note="No verified project record, report, or screenshot exists in the current portfolio."/></div>
       </div>
 
       <div className="mt-24 border-t border-border pt-5">
@@ -60,3 +65,7 @@ export function Projects() {
 }
 
 function ProjectField({label,value,compact=false}:{label:string;value:string;compact?:boolean}) { return <div className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}><p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">{label}</p><p className="mt-2 text-sm leading-6 text-foreground/85">{value}</p></div> }
+
+function EvidenceSlot({ title, note }: { title: string; note: string }) {
+  return <div className="border-b border-border p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"><p className="font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">Awaiting verified entry</p><h4 className="mt-4 font-display text-xl font-bold uppercase">{title}</h4><p className="mt-3 text-sm leading-6 text-muted-foreground">{note}</p></div>;
+}
