@@ -42,7 +42,8 @@ export function Contact() {
               variants={revealUp}
               className="mt-6 max-w-xl text-base leading-7 text-muted-foreground"
             >
-              <span className="font-semibold text-foreground">Data Analyst | MIS Executive</span><br />
+              <span className="font-semibold text-foreground">Data Analyst | MIS Executive</span>
+              <br />
               Open to opportunities across Data Analytics and MIS Reporting.
             </motion.p>
           </motion.div>

@@ -112,9 +112,13 @@ export function Dashboard() {
           <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
             {evidenceSlots.map((item, index) => (
               <div key={item} className="mis-proof-slot bg-background p-4">
-                <span className="font-mono text-[8px] text-primary">{String(index + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[8px] text-primary">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <p className="mt-3 text-sm font-semibold">{item}</p>
-                <p className="mt-2 font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">Evidence pending</p>
+                <p className="mt-2 font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">
+                  Evidence pending
+                </p>
               </div>
             ))}
           </div>

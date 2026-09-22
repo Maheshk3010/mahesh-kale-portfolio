@@ -156,9 +156,18 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <motion.div variants={heroEnter(0.5)} initial="hidden" animate="visible" className="mt-10 flex items-center gap-4 border-t border-border pt-4">
-            <span className="font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">Work focus</span>
-            <span className="font-mono text-[9px] font-bold uppercase tracking-[.12em] text-foreground">Analytics · MIS · Reporting · Dashboards</span>
+          <motion.div
+            variants={heroEnter(0.5)}
+            initial="hidden"
+            animate="visible"
+            className="mt-10 flex items-center gap-4 border-t border-border pt-4"
+          >
+            <span className="font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">
+              Work focus
+            </span>
+            <span className="font-mono text-[9px] font-bold uppercase tracking-[.12em] text-foreground">
+              Analytics · MIS · Reporting · Dashboards
+            </span>
           </motion.div>
         </div>
 

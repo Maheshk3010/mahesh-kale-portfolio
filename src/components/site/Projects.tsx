@@ -10,14 +10,16 @@ const primaryProjects = [
     title: "Sales Performance Analysis",
     number: "01",
     type: "SQL / Business analysis",
-    question: "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
+    question:
+      "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
     data: "50,000+ retail transaction records.",
     workflow: ["Clean", "Validate", "Query", "Compare", "Report"],
     process: "30+ business queries using joins, CTEs, aggregations and window functions.",
     tools: ["SQL", "CTEs", "Window Functions", "Data Analysis"],
     output: "Structured business-query analysis across retail transactions.",
     finding: "Awaiting verified project findings.",
-    evidence: "No matching repository, screenshot or case-study file is stored in the current portfolio.",
+    evidence:
+      "No matching repository, screenshot or case-study file is stored in the current portfolio.",
     slots: {
       Screenshot: "Pending",
       Gallery: "Pending",
@@ -35,7 +37,8 @@ const primaryProjects = [
     title: "Sales Dashboard",
     number: "02",
     type: "Power BI / Reporting",
-    question: "How can sales stakeholders review revenue, orders and growth from one reporting view?",
+    question:
+      "How can sales stakeholders review revenue, orders and growth from one reporting view?",
     data: "SQL / Excel source structure documented; source dataset size is not verified.",
     workflow: ["Prepare", "Model", "Calculate", "Visualize", "Review"],
     process: "Power Query transformation → relational model → KPI measures → interactive report.",
@@ -63,7 +66,8 @@ const primaryProjects = [
     question: "Which customer records show patterns associated with churn?",
     data: "7,000+ customer records.",
     workflow: ["Clean", "Prepare", "Compare", "Evaluate", "Explain"],
-    process: "Python classification workflow covering cleaning, feature preparation, model comparison and evaluation.",
+    process:
+      "Python classification workflow covering cleaning, feature preparation, model comparison and evaluation.",
     tools: ["Python", "Pandas", "Scikit-learn", "Classification"],
     output: "An evaluated customer-churn classification workflow.",
     finding: "Awaiting verified project findings.",
@@ -127,12 +131,16 @@ export function Projects() {
               </motion.div>
               <motion.div variants={revealScale} className={index % 2 ? "lg:order-1" : ""}>
                 <div className="case-workflow border-x border-t border-border bg-surface px-5 py-4">
-                  <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">Workflow</p>
+                  <p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">
+                    Workflow
+                  </p>
                   <div className="mt-4 flex flex-wrap items-center gap-2">
                     {project.workflow.map((step, stepIndex) => (
                       <div key={step} className="flex items-center gap-2">
                         <span className="font-mono text-[9px] font-bold uppercase">{step}</span>
-                        {stepIndex < project.workflow.length - 1 && <ArrowDown className="h-3 w-3 -rotate-90 text-primary" />}
+                        {stepIndex < project.workflow.length - 1 && (
+                          <ArrowDown className="h-3 w-3 -rotate-90 text-primary" />
+                        )}
                       </div>
                     ))}
                   </div>
@@ -149,7 +157,8 @@ export function Projects() {
                       Evidence frame reserved
                     </p>
                     <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                      No verified visual output is stored for this case study. This area will only display real project evidence.
+                      No verified visual output is stored for this case study. This area will only
+                      display real project evidence.
                     </p>
                   </div>
                 </div>
@@ -164,7 +173,9 @@ export function Projects() {
                       <ShieldAlert className="mt-1 h-4 w-4 shrink-0 text-primary" />
                       {project.evidence}
                     </p>
-                    <span className="mt-4 inline-flex font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">GitHub / Case study / Demo unavailable until verified</span>
+                    <span className="mt-4 inline-flex font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">
+                      GitHub / Case study / Demo unavailable until verified
+                    </span>
                   </div>
                   <details className="evidence-slots border-t border-border p-5 sm:col-span-2">
                     <summary className="cursor-pointer font-mono text-[8px] font-bold uppercase tracking-[.16em] text-primary">
@@ -173,7 +184,9 @@ export function Projects() {
                     <div className="mt-4 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
                       {Object.entries(project.slots).map(([label, status]) => (
                         <div key={label} className="bg-background p-3">
-                          <span className="block font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">{label}</span>
+                          <span className="block font-mono text-[7px] uppercase tracking-[.12em] text-muted-foreground">
+                            {label}
+                          </span>
                           <span className="mt-2 block text-xs text-foreground">{status}</span>
                         </div>
                       ))}
@@ -252,4 +265,3 @@ function ProjectField({
     </motion.div>
   );
 }
-

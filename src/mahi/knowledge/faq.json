@@ -14,11 +14,11 @@
     },
     {
       "q": "What skills does Mahesh have?",
-      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub \u2014 aligned to Data Analyst and MIS Executive roles."
+      "a": "Mahesh's primary portfolio stack is SQL, Power BI, Advanced Excel and Python, supported by data cleaning, validation, reconciliation, KPI reporting, dashboard development and reporting workflows."
     },
     {
       "q": "Does Mahesh know Python?",
-      "a": "Yes \u2014 Python is Mahesh's primary programming language, used across data analysis, data science and Python development work."
+      "a": "Yes \u2014 Python supports Mahesh's data preparation, analysis and reporting workflows. It is part of the portfolio stack, not a separate role target."
     },
     {
       "q": "Does Mahesh know SQL?",
@@ -50,11 +50,11 @@
     },
     {
       "q": "Why should we hire Mahesh?",
-      "a": "Mahesh combines Python, SQL and Power BI with machine-learning fundamentals \u2014 a toolkit tailored to Data Analyst and MIS Executive roles. He is immediately available and open to work."
+      "a": "Mahesh is focused on Data Analyst and MIS Executive work. The portfolio documents SQL analysis across 50,000+ retail records, 30+ business queries, customer analysis across 7,000+ records, Power BI and Excel reporting work, and three internships. Missing evidence is clearly marked rather than inferred."
     },
     {
       "q": "What projects has Mahesh built?",
-      "a": "Four documented projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit), **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn), **Job Tracker API** (Python, Flask, REST API, MySQL), and **Sales Dashboard** (Power BI, Excel, SQL) \u2014 covering reporting, analytics, APIs, and supporting technical work."
+      "a": "The portfolio documents Sales Performance Analysis, a Sales Dashboard, Customer Churn Analysis, Apple Stock Price Prediction and a Product Recommendation System. Sales, reporting and customer analytics are presented first; machine-learning work is supporting technical evidence."
     },
     {
       "q": "Explain Apple Stock Price Prediction",
@@ -70,15 +70,15 @@
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with the two featured projects: **Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series forecasting pipeline with a Streamlit interface (supporting technical analytics work), and **Product Recommendation System** \u2014 a Scikit-learn similarity engine (great overview of the core Data Science workflow). Both have verified GitHub repositories."
+      "a": "Start with Sales Performance Analysis for the documented scale of 50,000+ retail records and 30+ SQL queries, then review the Sales Dashboard and MIS & Reporting sections. Repository and visual evidence gaps are clearly marked."
     },
     {
       "q": "What is Mahesh's strongest project?",
-      "a": "**Apple Stock Price Prediction System** is Mahesh's strongest project \u2014 a complete Python + TensorFlow/Keras LSTM pipeline for time-series forecasting, deployed with an interactive Streamlit app. It's the most complete supporting demonstration of Python-based analytical capability. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+      "a": "Sales Performance Analysis carries the strongest documented analytics scale: 50,000+ retail transaction records and 30+ SQL business queries. Its repository, screenshots and findings still require verification."
     },
     {
       "q": "Show me featured projects",
-      "a": "Two featured projects: **Apple Stock Price Prediction System** (Python, TensorFlow, Keras, LSTM, Streamlit) and **Product Recommendation System** (Python, Pandas, NumPy, Scikit-learn). Both are verified on GitHub."
+      "a": "Featured case studies are Sales Performance Analysis, Sales Dashboard and Customer Churn Analysis. Apple Stock Prediction and Product Recommendation are supporting technical work."
     },
     {
       "q": "Show machine learning projects",
@@ -102,7 +102,7 @@
     },
     {
       "q": "What certifications does Mahesh have?",
-      "a": "Verified certifications: Oracle SQL Foundations, Microsoft Data Fundamentals, ExcelR Data Science Program \u2013 Certificate of Excellence, IBM Data Science Professional Certificate, and Infosys Springboard \u2013 Machine Learning."
+      "a": "The portfolio lists Oracle SQL Foundations, Microsoft Data Fundamentals, ExcelR Data Science Program \u2014 Certificate of Excellence, IBM Data Science Professional Certificate, and Infosys Springboard \u2014 Machine Learning. Completion years, credential IDs and verification links are not yet stored."
     },
     {
       "q": "What is Mahesh's education?",
@@ -134,19 +134,19 @@
     },
     {
       "q": "Why should I hire Mahesh?",
-      "a": "Mahesh brings four verified strengths: **Data-Driven Problem Solving** \u2014 turns raw data into actionable insights with Python, SQL, ML and BI tools; **Hands-on Technical Experience** \u2014 built end-to-end ML and analytics projects plus three internships in Data Science, Data Analytics and Python Development; **Continuous Learning** \u2014 keeps skills current through real-world projects, verified certifications and the ExcelR Data Science program; and a **Business-Oriented Mindset** \u2014 ships practical, scalable solutions that solve real business problems. He is open to work, immediately available, and focused only on Data Analyst and MIS Executive roles."
+      "a": "Mahesh is focused on Data Analyst and MIS Executive work. The portfolio documents SQL analysis across 50,000+ retail records, 30+ business queries, customer analysis across 7,000+ records, Power BI and Excel reporting work, and three internships. Missing evidence is clearly marked rather than inferred."
     },
     {
       "q": "What value does Mahesh bring?",
-      "a": "Mahesh's professional value proposition is built on four pillars: **Data-Driven Problem Solving** \u2014 analytical thinking that converts raw data into business decisions; **Hands-on Technical Experience** \u2014 end-to-end project delivery and three verified internships; **Continuous Learning** \u2014 ongoing skill growth through certifications, projects and structured training; and **Business-Oriented Mindset** \u2014 solutions designed for real users and real outcomes, not just academic exercises."
+      "a": "Mahesh's documented value is practical analytics and reporting: SQL business analysis, Power BI and Excel reporting, data validation, KPI reporting and Python-supported data preparation across projects and three internships."
     },
     {
       "q": "What makes Mahesh different?",
-      "a": "Mahesh combines a verified Python + SQL + Power BI toolkit with two shipped, GitHub-verified ML projects (Apple Stock Prediction with LSTM and a Scikit-learn Product Recommendation System), reinforced by internships at ExcelR, Sysslan and Codveda. His value proposition centers on data-driven problem solving, hands-on technical experience, continuous learning and a business-oriented mindset. Everything on this portfolio is verified \u2014 no invented metrics, no fabricated outcomes."
+      "a": "Mahesh's portfolio connects each tool to specific work: SQL to retail analysis, Power BI and Excel to dashboards and KPI reporting, and Python to data preparation and supporting technical projects. Evidence gaps remain visible until verified."
     },
     {
       "q": "Which project best represents Mahesh?",
-      "a": "**Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series pipeline in Python (TensorFlow/Keras) with a Streamlit interface. It represents supporting Python-based analytical work. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+      "a": "Sales Performance Analysis best represents the primary Data Analyst positioning through 50,000+ retail records and 30+ SQL business queries. Its repository, screenshots and findings still require verification."
     },
     {
       "q": "Which technologies has Mahesh used professionally?",
@@ -154,7 +154,7 @@
     },
     {
       "q": "What should I look at first?",
-      "a": "Start with the **60-second overview** at the top of the portfolio, then the two featured projects: **Apple Stock Price Prediction System** and **Product Recommendation System**. Both have verified GitHub repositories."
+      "a": "Start with the Analytics Snapshot, then review Sales Performance Analysis, the Sales Dashboard and MIS & Reporting. These sections establish the primary Data Analyst and MIS Executive fit."
     },
     {
       "q": "What are Mahesh's soft skills?",

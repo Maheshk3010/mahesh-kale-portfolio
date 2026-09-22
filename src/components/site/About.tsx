@@ -34,9 +34,17 @@ export function About() {
           transition={{ delay: 0.1 }}
           className="flex flex-col justify-center"
         >
-          <p className="font-display text-2xl font-bold leading-9 sm:text-3xl">Computer Science background applied to analytics, reporting and business intelligence.</p>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">Mahesh works across SQL analysis, Power BI reporting, Advanced Excel and Python-based data preparation. His focus is turning structured business questions into validated reporting outputs.</p>
-          <p className="mt-6 font-mono text-[9px] uppercase tracking-[.16em] text-primary">Pune, Maharashtra, India</p>
+          <p className="font-display text-2xl font-bold leading-9 sm:text-3xl">
+            Computer Science background applied to analytics, reporting and business intelligence.
+          </p>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
+            Mahesh works across SQL analysis, Power BI reporting, Advanced Excel and Python-based
+            data preparation. His focus is turning structured business questions into validated
+            reporting outputs.
+          </p>
+          <p className="mt-6 font-mono text-[9px] uppercase tracking-[.16em] text-primary">
+            Pune, Maharashtra, India
+          </p>
         </motion.div>
       </div>
     </Section>

@@ -347,7 +347,11 @@
   background: color-mix(in oklab, var(--panel) 72%, transparent);
 }
 .case-workflow {
-  background-image: linear-gradient(90deg, color-mix(in oklab, var(--primary) 4%, transparent), transparent);
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--primary) 4%, transparent),
+    transparent
+  );
 }
 .evidence-slots summary::marker {
   color: var(--primary);
@@ -361,8 +365,16 @@
 }
 .mis-console {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--primary) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 4%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--primary) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--primary) 4%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 32px 32px;
 }
 .project-case:hover {

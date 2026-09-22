@@ -3,11 +3,31 @@ import { Section } from "./Section";
 import { inView, revealLeft, stagger } from "@/lib/motion";
 
 const stack = [
-  { verb: "Analyze", tools: "SQL · Python · Pandas · NumPy", used: "Sales performance · Customer analytics" },
-  { verb: "Report", tools: "Power BI · Advanced Excel · DAX · Power Query", used: "KPI reporting · Sales dashboard" },
-  { verb: "Validate", tools: "Data Cleaning · Data Validation · Reconciliation", used: "Sysslan internship · Reporting inputs" },
-  { verb: "Visualize", tools: "Power BI · Excel · KPI Dashboards", used: "Dashboard preparation · Business reporting" },
-  { verb: "Automate", tools: "Python · Power Query · Reporting Workflows", used: "Data preparation · Repeatable reporting" },
+  {
+    verb: "Analyze",
+    tools: "SQL · Python · Pandas · NumPy",
+    used: "Sales performance · Customer analytics",
+  },
+  {
+    verb: "Report",
+    tools: "Power BI · Advanced Excel · DAX · Power Query",
+    used: "KPI reporting · Sales dashboard",
+  },
+  {
+    verb: "Validate",
+    tools: "Data Cleaning · Data Validation · Reconciliation",
+    used: "Sysslan internship · Reporting inputs",
+  },
+  {
+    verb: "Visualize",
+    tools: "Power BI · Excel · KPI Dashboards",
+    used: "Dashboard preparation · Business reporting",
+  },
+  {
+    verb: "Automate",
+    tools: "Python · Power Query · Reporting Workflows",
+    used: "Data preparation · Repeatable reporting",
+  },
 ];
 
 export function Skills() {
@@ -40,7 +60,9 @@ export function Skills() {
               {tools}
             </p>
             <p className="mt-3 border-l border-border pl-4 text-sm leading-6 text-muted-foreground md:mt-0">
-              <span className="mb-1 block font-mono text-[8px] uppercase tracking-[.14em] text-primary">Documented use</span>
+              <span className="mb-1 block font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+                Documented use
+              </span>
               {used}
             </p>
           </motion.div>

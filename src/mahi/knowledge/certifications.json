@@ -4,31 +4,36 @@
       "name": "Oracle SQL Foundations Certification",
       "organization": "Oracle",
       "year": "",
-      "verification": ""
+      "verification": "",
+      "credentialId": ""
     },
     {
       "name": "Microsoft Data Fundamentals Certification",
       "organization": "Microsoft",
       "year": "",
-      "verification": ""
+      "verification": "",
+      "credentialId": ""
     },
     {
-      "name": "ExcelR Data Science Program – Certificate of Excellence",
+      "name": "ExcelR Data Science Program \u2013 Certificate of Excellence",
       "organization": "ExcelR Solutions",
       "year": "",
-      "verification": ""
+      "verification": "",
+      "credentialId": ""
     },
     {
       "name": "IBM Data Science Professional Certificate",
       "organization": "IBM",
       "year": "",
-      "verification": ""
+      "verification": "",
+      "credentialId": ""
     },
     {
-      "name": "Infosys Springboard – Machine Learning Certification",
+      "name": "Infosys Springboard \u2013 Machine Learning Certification",
       "organization": "Infosys Springboard",
       "year": "",
-      "verification": ""
+      "verification": "",
+      "credentialId": ""
     }
   ]
 }

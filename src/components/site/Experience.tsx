@@ -74,10 +74,10 @@ export function Experience() {
                         : ["Awaiting verified deliverables"]
                     }
                   />
-                   <ExperienceColumn
-                     label="Outcomes & proof"
-                     items={["Outcome evidence pending", "Company or credential link pending"]}
-                   />
+                  <ExperienceColumn
+                    label="Outcomes & proof"
+                    items={["Outcome evidence pending", "Company or credential link pending"]}
+                  />
                 </motion.div>
                 <motion.div variants={stagger(0, 0.04)} className="flex flex-wrap gap-2">
                   {exp.technologies.slice(0, 8).map((tool) => (

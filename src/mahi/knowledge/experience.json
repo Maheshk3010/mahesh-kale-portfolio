@@ -30,7 +30,14 @@
         "VS Code",
         "Streamlit"
       ],
-      "achievements": []
+      "achievements": [],
+      "startDate": "",
+      "endDate": "",
+      "location": "Pune, Maharashtra, India",
+      "deliverables": [],
+      "outcomes": [],
+      "companyLink": "",
+      "credentialLink": ""
     },
     {
       "company": "Sysslan IT Solutions",
@@ -47,14 +54,15 @@
         "Advanced Excel",
         "Python-based Data Analysis"
       ],
-      "technologies": [
-        "Python",
-        "SQL",
-        "Power BI",
-        "Advanced Excel",
-        "MySQL"
-      ],
-      "achievements": []
+      "technologies": ["Python", "SQL", "Power BI", "Advanced Excel", "MySQL"],
+      "achievements": [],
+      "startDate": "",
+      "endDate": "",
+      "location": "",
+      "deliverables": [],
+      "outcomes": [],
+      "companyLink": "",
+      "credentialLink": ""
     },
     {
       "company": "Codveda Technologies",
@@ -73,16 +81,15 @@
         "Debugging",
         "Testing"
       ],
-      "technologies": [
-        "Python",
-        "Flask",
-        "REST API",
-        "SQLite",
-        "MySQL",
-        "Git",
-        "GitHub"
-      ],
-      "achievements": []
+      "technologies": ["Python", "Flask", "REST API", "SQLite", "MySQL", "Git", "GitHub"],
+      "achievements": [],
+      "startDate": "",
+      "endDate": "",
+      "location": "",
+      "deliverables": [],
+      "outcomes": [],
+      "companyLink": "",
+      "credentialLink": ""
     }
   ]
 }
