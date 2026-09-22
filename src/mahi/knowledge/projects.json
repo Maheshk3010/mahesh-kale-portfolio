@@ -25,7 +25,7 @@
         "Data preprocessing and normalization pipeline",
         "Prediction visualization"
       ],
-      "outcome": "A completed deep-learning project demonstrating the full time-series forecasting workflow — from raw market data to a deployed Streamlit app — aligned to Data Scientist and Python Developer roles.",
+      "outcome": "A completed deep-learning project demonstrating the full time-series forecasting workflow — from raw market data to a deployed Streamlit app as supporting technical analytics work.",
       "github": "https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM",
       "demo": "",
       "resumeSummary": "Built an LSTM-based Apple stock price prediction system in Python (TensorFlow/Keras) with a Streamlit interface for interactive forecasting.",
@@ -44,7 +44,7 @@
         "Feature preparation and model evaluation"
       ],
       "outcome": "A completed classification project demonstrating the full machine-learning workflow from raw customer records to evaluated churn predictions.",
-      "github": "https://github.com/Maheshk3010/Product_Recommendation_System",
+      "github": "",
       "demo": "",
       "resumeSummary": "Built a customer churn classification workflow in Python and Scikit-learn across 7,000+ customer records.",
       "interviewExplanation": "I framed this as a classification problem: clean the customer data, prepare model features, compare classification approaches, and evaluate how reliably the model identifies churn patterns."
@@ -62,7 +62,7 @@
         "Revenue and product performance insights"
       ],
       "outcome": "A completed SQL portfolio project that turns transaction-level retail data into structured, decision-ready performance findings.",
-      "github": "https://github.com/Maheshk3010/Ecommerce-Sales-Analytics",
+      "github": "",
       "demo": "",
       "resumeSummary": "Analyzed 50,000+ retail transaction records with 30+ optimized SQL queries using JOINs, CTEs, and window functions.",
       "interviewExplanation": "I organized the analysis around business questions, then used JOINs, CTEs, aggregations, and window functions to convert transaction-level retail data into clear performance findings."
@@ -80,7 +80,7 @@
         "Recruiter-friendly, self-serve exploration"
       ],
       "outcome": "A dashboard that turns raw sales data into a decision-ready view — the core deliverable expected of Data Analyst and MIS Analyst roles.",
-      "github": "https://github.com/Maheshk3010/Ecommerce-Sales-Analytics",
+      "github": "",
       "demo": "",
       "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
       "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Analyst workflow end-to-end."

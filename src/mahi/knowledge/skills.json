@@ -6,7 +6,7 @@
       "confidence": "verified",
       "projectsUsed": ["Apple Stock Price Prediction System", "Product Recommendation System", "Job Tracker API"],
       "years": null,
-      "description": "Primary programming language used across data analysis, data science and Python development work."
+      "description": "Primary programming language used across data analysis, reporting automation and supporting technical work."
     },
     {
       "name": "SQL",
@@ -78,7 +78,7 @@
       "confidence": "verified",
       "projectsUsed": ["Job Tracker API"],
       "years": null,
-      "description": "Lightweight Python framework for building REST APIs — used for Python Developer work."
+      "description": "Lightweight Python framework for building REST APIs — used for supporting automation work."
     },
     {
       "name": "Power BI",
@@ -134,7 +134,7 @@
       "confidence": "verified",
       "projectsUsed": ["Job Tracker API"],
       "years": null,
-      "description": "Designing and consuming RESTful HTTP APIs — Python Developer skill."
+      "description": "Designing and consuming RESTful HTTP APIs — supporting automation skill."
     },
     {
       "name": "Git",

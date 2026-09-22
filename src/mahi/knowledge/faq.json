@@ -2,7 +2,7 @@
   "faqs": [
     {
       "q": "Who is Mahesh?",
-      "a": "Mahesh Kale is a data professional based in Pune, India, targeting Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. He is currently open to work."
+      "a": "Mahesh Kale is a data professional based in Pune, India, targeting Data Analyst and MIS Executive roles. He is currently open to work."
     },
     {
       "q": "Where is Mahesh based?",
@@ -10,11 +10,11 @@
     },
     {
       "q": "What is Mahesh's current status?",
-      "a": "Open to work and immediately available for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+      "a": "Open to work and immediately available for Data Analyst and MIS Executive roles."
     },
     {
       "q": "What skills does Mahesh have?",
-      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub \u2014 aligned to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+      "a": "Verified skills from Mahesh's portfolio: Python, SQL, Flask, REST API, Power BI, Machine Learning and GitHub \u2014 aligned to Data Analyst and MIS Executive roles."
     },
     {
       "q": "Does Mahesh know Python?",
@@ -26,11 +26,11 @@
     },
     {
       "q": "Does Mahesh know Flask?",
-      "a": "Yes \u2014 Flask is listed as one of Mahesh's core skills for Python Developer work."
+      "a": "Yes \u2014 Flask is listed as one of Mahesh's core skills as supporting technical work."
     },
     {
       "q": "Does Mahesh know REST APIs?",
-      "a": "Yes \u2014 REST API design is a verified skill supporting Python Developer roles."
+      "a": "Yes \u2014 REST API design is a verified skill supporting reporting automation work."
     },
     {
       "q": "Does Mahesh know Power BI?",
@@ -38,19 +38,19 @@
     },
     {
       "q": "Does Mahesh know Machine Learning?",
-      "a": "Yes \u2014 Machine Learning fundamentals are verified, supporting Data Scientist roles."
+      "a": "Yes \u2014 Machine Learning fundamentals are verified, as supporting technical work."
     },
     {
       "q": "Which roles suit Mahesh best?",
-      "a": "Based on verified skills, Mahesh is targeting four roles only: Data Analyst, Data Scientist, Python Developer and MIS Analyst."
+      "a": "Based on verified skills, Mahesh is targeting two roles: Data Analyst and MIS Executive."
     },
     {
       "q": "What kind of positions is Mahesh looking for?",
-      "a": "Mahesh is looking exclusively for Data Analyst, Data Scientist, Python Developer or MIS Analyst positions."
+      "a": "Mahesh is looking exclusively for Data Analyst or MIS Executive positions."
     },
     {
       "q": "Why should we hire Mahesh?",
-      "a": "Mahesh combines Python, SQL and Power BI with machine-learning fundamentals \u2014 a toolkit tailored to Data Analyst, Data Scientist, Python Developer and MIS Analyst roles. He is immediately available and open to work."
+      "a": "Mahesh combines Python, SQL and Power BI with machine-learning fundamentals \u2014 a toolkit tailored to Data Analyst and MIS Executive roles. He is immediately available and open to work."
     },
     {
       "q": "What projects has Mahesh built?",
@@ -70,11 +70,11 @@
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with the two featured projects: **Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series forecasting pipeline with a Streamlit interface (best showcase of Data Scientist / Python Developer skills), and **Product Recommendation System** \u2014 a Scikit-learn similarity engine (great overview of the core Data Science workflow). Both have verified GitHub repositories."
+      "a": "Start with the two featured projects: **Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series forecasting pipeline with a Streamlit interface (supporting technical analytics work), and **Product Recommendation System** \u2014 a Scikit-learn similarity engine (great overview of the core Data Science workflow). Both have verified GitHub repositories."
     },
     {
       "q": "What is Mahesh's strongest project?",
-      "a": "**Apple Stock Price Prediction System** is Mahesh's strongest project \u2014 a complete Python + TensorFlow/Keras LSTM pipeline for time-series forecasting, deployed with an interactive Streamlit app. It's the most complete end-to-end demonstration of Data Scientist and Python Developer capability. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+      "a": "**Apple Stock Price Prediction System** is Mahesh's strongest project \u2014 a complete Python + TensorFlow/Keras LSTM pipeline for time-series forecasting, deployed with an interactive Streamlit app. It's the most complete supporting demonstration of Python-based analytical capability. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
     },
     {
       "q": "Show me featured projects",
@@ -86,7 +86,7 @@
     },
     {
       "q": "Recommend your strongest Data Science project",
-      "a": "**Apple Stock Price Prediction System** \u2014 an LSTM-based time-series forecasting pipeline built in Python with TensorFlow/Keras and a Streamlit interface. It's the strongest showcase of the end-to-end Data Scientist workflow."
+      "a": "**Apple Stock Price Prediction System** \u2014 an LSTM-based time-series forecasting pipeline built in Python with TensorFlow/Keras and a Streamlit interface. It's the supporting showcase of a technical analytics workflow."
     },
     {
       "q": "Recommend your strongest Python project",
@@ -134,7 +134,7 @@
     },
     {
       "q": "Why should I hire Mahesh?",
-      "a": "Mahesh brings four verified strengths: **Data-Driven Problem Solving** \u2014 turns raw data into actionable insights with Python, SQL, ML and BI tools; **Hands-on Technical Experience** \u2014 built end-to-end ML and analytics projects plus three internships in Data Science, Data Analytics and Python Development; **Continuous Learning** \u2014 keeps skills current through real-world projects, verified certifications and the ExcelR Data Science program; and a **Business-Oriented Mindset** \u2014 ships practical, scalable solutions that solve real business problems. He is open to work, immediately available, and focused only on Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+      "a": "Mahesh brings four verified strengths: **Data-Driven Problem Solving** \u2014 turns raw data into actionable insights with Python, SQL, ML and BI tools; **Hands-on Technical Experience** \u2014 built end-to-end ML and analytics projects plus three internships in Data Science, Data Analytics and Python Development; **Continuous Learning** \u2014 keeps skills current through real-world projects, verified certifications and the ExcelR Data Science program; and a **Business-Oriented Mindset** \u2014 ships practical, scalable solutions that solve real business problems. He is open to work, immediately available, and focused only on Data Analyst and MIS Executive roles."
     },
     {
       "q": "What value does Mahesh bring?",
@@ -146,7 +146,7 @@
     },
     {
       "q": "Which project best represents Mahesh?",
-      "a": "**Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series pipeline in Python (TensorFlow/Keras) with a Streamlit interface. It best represents his Data Scientist and Python Developer skills. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
+      "a": "**Apple Stock Price Prediction System** \u2014 an end-to-end LSTM time-series pipeline in Python (TensorFlow/Keras) with a Streamlit interface. It represents supporting Python-based analytical work. Repo: https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM"
     },
     {
       "q": "Which technologies has Mahesh used professionally?",
@@ -222,7 +222,7 @@
     },
     {
       "q": "Explain your learning experience.",
-      "a": "Mahesh's learning has been project-driven: he built ML models in Python (LSTM, recommendation systems), developed backend APIs with Flask and MySQL, and created business dashboards with Power BI and SQL. Every project focused on practical, recruiter-relevant skills for Data Analyst, Data Scientist, Python Developer and MIS Analyst roles."
+      "a": "Mahesh's learning has been project-driven: he built ML models in Python (LSTM, recommendation systems), developed backend APIs with Flask and MySQL, and created business dashboards with Power BI and SQL. Every project focused on practical, recruiter-relevant skills for Data Analyst and MIS Executive roles."
     },
     {
       "q": "Why did Mahesh use LSTM?",
