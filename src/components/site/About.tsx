@@ -1,32 +1,23 @@
 import { motion } from "motion/react";
+import { MapPin } from "lucide-react";
 import { Section } from "./Section";
-import { CheckCircle2 } from "lucide-react";
-
-const capabilities = [
-  "Analyze high-volume datasets and isolate patterns that matter to the business.",
-  "Clean, transform, and validate data with Python, Pandas, SQL, and Power Query.",
-  "Build relational models, DAX measures, and executive-ready Power BI reports.",
-  "Develop and evaluate classification, recommendation, and forecasting models.",
-  "Automate repeatable reporting tasks and communicate findings to stakeholders.",
-];
 
 export function About() {
   return (
-    <Section id="about" eyebrow="Executive profile" title="Analysis that moves from question to action.">
-      <div className="grid gap-8 border-y border-border py-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary">Professional summary</p>
-          <p className="mt-4 text-xl leading-8 text-foreground">Computer Science graduate with hands-on experience across data analysis, machine learning, business reporting, and Python workflows.</p>
-          <p className="mt-4 text-sm leading-7 text-muted-foreground">Experience includes data-focused internships with ExcelR Solutions, Sysslan IT Solutions, and Codveda Technologies.</p>
+    <Section id="about" eyebrow="Section 08 / Operator profile" title="Behind the analysis">
+      <div className="grid gap-8 border-y border-border py-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-16">
+        <motion.div initial={{opacity:0,y:18}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="relative aspect-[4/3] overflow-hidden border border-border bg-panel">
+          <img src="/maheshkale_pic.jpeg" alt="Mahesh Kale, Data Analyst and MIS Executive candidate" width={640} height={480} loading="lazy" className="h-full w-full object-cover object-top grayscale-[20%]"/>
+          <div className="absolute inset-x-0 bottom-0 border-t border-border bg-background/90 px-4 py-3 backdrop-blur"><p className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[.14em] text-muted-foreground"><MapPin className="h-3 w-3 text-primary"/>Pune, Maharashtra, India</p></div>
         </motion.div>
-        <ul className="grid gap-3">
-          {capabilities.map((capability, index) => (
-            <motion.li key={capability} initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 rounded-md border border-border bg-panel px-4 py-3.5 text-sm leading-6 text-foreground/90">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />{capability}
-            </motion.li>
-          ))}
-        </ul>
+        <motion.div initial={{opacity:0,y:18}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:.1}} className="flex flex-col justify-center">
+          <p className="font-display text-2xl font-bold leading-9 sm:text-3xl">Mahesh Kale is a Computer Science graduate focused on data analysis, MIS reporting and business intelligence.</p>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">His documented work spans SQL analysis, Power BI reporting, Advanced Excel, Python-based data preparation and three internships across data and software workflows. Supporting machine-learning projects extend that technical foundation without defining the primary role focus.</p>
+          <div className="mt-8 grid gap-px bg-border sm:grid-cols-3"><Fact label="Degree" value="B.Sc. Computer Science"/><Fact label="Field exposure" value="3 internships"/><Fact label="Primary roles" value="Data Analyst · MIS Executive"/></div>
+        </motion.div>
       </div>
     </Section>
   );
 }
+
+function Fact({label,value}:{label:string;value:string}) { return <div className="bg-background p-4"><p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">{label}</p><p className="mt-2 text-sm font-bold">{value}</p></div> }

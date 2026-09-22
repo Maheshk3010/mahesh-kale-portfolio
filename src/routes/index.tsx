@@ -3,7 +3,6 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { WhyHire } from "@/components/site/WhyHire";
 import { About } from "@/components/site/About";
-import { ValueProposition } from "@/components/site/ValueProposition";
 import { Dashboard } from "@/components/site/Dashboard";
 import { Projects } from "@/components/site/Projects";
 import { Skills } from "@/components/site/Skills";
@@ -17,27 +16,27 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
+          "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         name: "description",
         content:
-          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
+          "Mahesh Kale uses SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
       },
       {
         name: "keywords",
         content:
-          "Mahesh Kale, Data Analyst, Data Scientist, Python Developer, MIS Analyst, Python, SQL, Power BI, Pandas, NumPy, Scikit-learn, Machine Learning, MySQL, Flask, REST API, Pune",
+          "Mahesh Kale, Data Analyst, MIS Executive, SQL, Power BI, Advanced Excel, MIS Reporting, KPI Reporting, Dashboarding, Data Validation, Reporting Automation, Pune",
       },
       {
         property: "og:title",
         content:
-          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
+          "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         property: "og:description",
         content:
-          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
+          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -45,12 +44,12 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:title",
         content:
-          "Mahesh Kale — Data Analyst & Machine Learning Practitioner",
+          "Mahesh Kale — Data Analyst & MIS Executive",
       },
       {
         name: "twitter:description",
         content:
-          "Mahesh Kale transforms complex datasets into actionable business insights using Python, SQL, Power BI, and Machine Learning.",
+          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -65,13 +64,12 @@ function Index() {
       <Nav />
       <Hero />
       <WhyHire />
-      <About />
-      <ValueProposition />
-      <Dashboard />
       <Projects />
+      <Dashboard />
       <Skills />
       <Experience />
       <Certifications />
+      <About />
       <Contact />
       <Footer />
     </main>

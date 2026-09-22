@@ -176,7 +176,7 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
     if (!r.verified) return UNVERIFIED_FALLBACK;
     const items = r.matchedItems as RoleRecommendation[];
     return [
-      "Mahesh is targeting these four roles only:",
+      "Mahesh is targeting these roles:",
       "",
       ...items.map((r2) => `• **${r2.title}** — supported by: ${r2.supportedBy.join(", ")}`),
     ].join("\n");

@@ -5,16 +5,8 @@
       "supportedBy": ["SQL", "Power BI", "Python"]
     },
     {
-      "title": "Data Scientist",
-      "supportedBy": ["Python", "Machine Learning", "SQL"]
-    },
-    {
-      "title": "Python Developer",
-      "supportedBy": ["Python", "Flask", "REST API"]
-    },
-    {
-      "title": "MIS Analyst",
-      "supportedBy": ["SQL", "Power BI", "Python"]
+      "title": "MIS Executive",
+      "supportedBy": ["SQL", "Power BI", "Advanced Excel", "KPI Reporting"]
     }
   ]
 }

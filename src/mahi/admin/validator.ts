@@ -12,7 +12,7 @@ import type {
 const URL_PATTERN = /^https?:\/\/[^\s]+$/i;
 
 const TARGET_ROLES = new Set(
-  ["data analyst", "data scientist", "python developer", "mis analyst"].map((s) =>
+  ["data analyst", "mis executive"].map((s) =>
     s.toLowerCase(),
   ),
 );
@@ -350,7 +350,7 @@ function validateRoles(kb: KnowledgeBase) {
         severity: "warn",
         recordIndex: i,
         recordLabel: r.title,
-        message: `Off-target role "${r.title}" (allowed: Data Analyst, Data Scientist, Python Developer, MIS Analyst)`,
+        message: `Off-target role "${r.title}" (allowed: Data Analyst, MIS Executive)`,
       });
     }
     if (!r.supportedBy?.length)
