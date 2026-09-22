@@ -1,91 +1,15 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { Award, GraduationCap } from "lucide-react";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 
 export function Certifications() {
-  const certs = knowledgeBase.certifications.certifications;
   const education = knowledgeBase.education.education;
-
+  const certs = knowledgeBase.certifications.certifications;
   return (
-    <Section
-      id="certifications"
-      eyebrow="Education & Certifications"
-      title="Verified academic and professional credentials."
-    >
-      <div className="grid gap-8">
-        {education.length > 0 && (
-          <div className="grid gap-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Education
-            </h3>
-            <div className="grid gap-3 md:grid-cols-2">
-              {education.map((e, i) => (
-                <motion.div
-                  key={`${e.university}-${e.degree}`}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.45, delay: i * 0.06 }}
-                  className="glass-panel flex items-start gap-4 rounded-lg p-5"
-                >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
-                    <GraduationCap className="h-5 w-5" />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold leading-snug">
-                      {e.degree}
-                    </div>
-                    <div className="mt-0.5 text-xs text-primary/90">
-                      {e.university}
-                    </div>
-                    <div className="mt-1 text-xs text-muted-foreground">
-                      {e.graduationYear}
-                      {e.grade ? ` · ${e.grade}` : ""}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {certs.length > 0 && (
-          <div className="grid gap-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Certifications
-            </h3>
-            <div className="grid gap-3 md:grid-cols-2">
-              {certs.map((c, i) => (
-                <motion.div
-                  key={c.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.45, delay: i * 0.05 }}
-                  className="glass-panel flex items-start gap-4 rounded-lg p-5"
-                >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-accent/15 text-primary">
-                    <Award className="h-5 w-5" />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold leading-snug">
-                      {c.name}
-                    </div>
-                    <div className="mt-0.5 text-xs text-primary/90">
-                      {c.organization}
-                    </div>
-                    {c.year && (
-                      <div className="mt-1 text-xs text-muted-foreground">
-                        {c.year}
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
+    <Section id="education" eyebrow="Section 07 / Qualification record" title="Education & credentials">
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr]">
+        <div>{education.map((entry,i)=><motion.article key={entry.degree} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.08}} className="grid border-t border-border py-6 sm:grid-cols-[80px_1fr]"><span className="font-mono text-[9px] text-primary">ED / 0{i+1}</span><div><h3 className="font-display text-2xl font-bold uppercase">{entry.degree}</h3><p className="mt-3 text-sm text-muted-foreground">{entry.university}</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[.14em] text-foreground">{entry.graduationYear}{entry.grade ? ` · ${entry.grade}`:""}</p></div></motion.article>)}</div>
+        <div className="border-t border-border"><div className="py-5 font-mono text-[9px] uppercase tracking-[.16em] text-primary">Credentials register</div>{certs.map((cert,i)=><div key={cert.name} className="grid grid-cols-[28px_1fr] border-t border-border py-4"><span className="font-mono text-[8px] text-muted-foreground">{String(i+1).padStart(2,"0")}</span><div><h3 className="text-sm font-bold">{cert.name}</h3><p className="mt-1 text-xs text-muted-foreground">{cert.organization} · {cert.year || "Date not verified"} · {cert.verification ? "Verification available" : "Verification link pending"}</p></div></div>)}</div>
       </div>
     </Section>
   );

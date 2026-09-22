@@ -1,94 +1,63 @@
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
-import { ArrowUpRight, CheckCircle2, Github, X } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowUpRight, Github, ImageOff, ShieldAlert } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
-import type { Project } from "@/mahi/types";
 
-const proofByProject: Record<string, { value: string; label: string }[]> = {
-  "Sales Performance Analysis (SQL)": [
-    { value: "50K+", label: "Retail records" },
-    { value: "30+", label: "Optimized queries" },
-  ],
-  "Sales Dashboard (Power BI)": [
-    { value: "DAX", label: "Business measures" },
-    { value: "ETL", label: "Power Query" },
-  ],
-  "Customer Churn Prediction": [
-    { value: "7K+", label: "Customer records" },
-    { value: "ML", label: "Classification" },
-  ],
-  "Apple Stock Price Prediction": [
-    { value: "LSTM", label: "Deep learning" },
-    { value: "LIVE", label: "Streamlit app" },
-  ],
-};
+const primaryProjects = [
+  {
+    title: "Sales Dashboard (Power BI)", number: "01", type: "BI / Reporting",
+    question: "How can sales stakeholders review revenue, orders and growth from one reporting view?",
+    data: "SQL / Excel source structure documented; screenshot and source dataset await verification.",
+    process: "Power Query transformation → relational model → KPI measures → interactive report.",
+    tools: ["Power BI", "Excel", "SQL", "DAX", "Power Query"],
+    output: "Interactive sales dashboard architecture.",
+    finding: "Awaiting verified project findings.", result: "Awaiting verified business outcome.", evidence: "Repository currently does not verify the displayed Power BI project.",
+  },
+  {
+    title: "Sales Performance Analysis (SQL)", number: "02", type: "SQL / Analysis",
+    question: "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
+    data: "50,000+ retail transaction records.",
+    process: "30+ queries using joins, CTEs, aggregations and window functions.",
+    tools: ["SQL", "CTEs", "Window Functions", "Data Analysis"],
+    output: "Structured business-query analysis.",
+    finding: "Awaiting verified project findings.", result: "Awaiting verified business outcome.", evidence: "Repository currently does not verify the displayed SQL project.",
+  },
+];
 
 export function Projects() {
-  const projects = knowledgeBase.projects.projects.filter((project) => project.github);
-  const [active, setActive] = useState<Project | null>(null);
-
+  const reduced = useReducedMotion();
+  const apple = knowledgeBase.projects.projects.find((p) => p.title.includes("Apple Stock"));
+  const churn = knowledgeBase.projects.projects.find((p) => p.title.includes("Churn"));
   return (
-    <Section id="projects" eyebrow="Selected work" title="Completed projects. Measurable proof." description="Production-ready analysis, business intelligence, and machine-learning work with direct source access.">
-      <div className="grid gap-4 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <motion.article key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-70px" }} transition={{ duration: 0.5, delay: index * 0.08 }} className="glass-panel group flex min-h-[340px] flex-col rounded-lg p-6 transition-transform hover:-translate-y-1">
-            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-              <div className="min-w-0">
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">Project 0{index + 1} · Complete</p>
-                <h3 className="mt-3 font-display text-2xl font-bold leading-tight">{project.title}</h3>
+    <Section id="projects" eyebrow="Section 03 / Evidence register" title="Selected analytics work" description="Large-format project records organized around the business question, analytical process and verifiable evidence.">
+      <div className="space-y-20">
+        {primaryProjects.map((project,index)=><motion.article key={project.title} initial={reduced ? false : {opacity:0,y:36}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-70px"}} transition={{duration:.7}} className="border-t border-border pt-5">
+          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+            <div className={index % 2 ? "lg:order-2" : ""}>
+              <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em]"><span className="text-primary">Project / {project.number}</span><span className="text-muted-foreground">{project.type}</span></div>
+              <h3 className="mt-8 max-w-lg font-display text-4xl font-bold uppercase leading-[.95] sm:text-5xl">{project.title}</h3>
+              <ProjectField label="Business question" value={project.question} />
+              <ProjectField label="Data" value={project.data} />
+              <ProjectField label="Analysis" value={project.process} />
+              <div className="mt-6 flex flex-wrap gap-2">{project.tools.map((tool)=><span key={tool} className="control-tag">{tool}</span>)}</div>
+            </div>
+            <div className={index % 2 ? "lg:order-1" : ""}>
+              <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border border-border bg-panel">
+                <div className="control-grid absolute inset-0 opacity-50" />
+                <div className="relative max-w-xs text-center"><ImageOff className="mx-auto h-7 w-7 text-primary"/><p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[.16em]">Real project screenshot required</p><p className="mt-2 text-xs leading-5 text-muted-foreground">No dashboard image is stored in the current project. This frame is reserved for verified evidence.</p></div>
               </div>
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-success" aria-label="Completed project" />
+              <div className="grid border-x border-b border-border sm:grid-cols-2"><ProjectField label="Output" value={project.output} compact/><ProjectField label="Key findings" value={project.finding} compact/><ProjectField label="Result" value={project.result} compact/><div className="border-t border-border p-5 sm:border-l"><p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">Evidence</p><p className="mt-3 flex gap-2 text-sm leading-6 text-muted-foreground"><ShieldAlert className="mt-1 h-4 w-4 shrink-0 text-primary"/>{project.evidence}</p></div></div>
             </div>
-
-            <div className="mt-6 grid grid-cols-2 gap-2">
-              {(proofByProject[project.title] ?? []).map((proof) => (
-                <div key={proof.label} className="rounded-md border border-border bg-panel p-3">
-                  <p className="font-mono text-xl font-bold text-foreground">{proof.value}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{proof.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-5 text-sm leading-7 text-muted-foreground">{project.description}</p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.technologies.map((technology, badgeIndex) => (
-                <motion.span key={technology} initial={{ opacity: 0, scale: 0.94 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.05 + badgeIndex * 0.035 }} className="tech-badge">{technology}</motion.span>
-              ))}
-            </div>
-
-            <div className="mt-auto flex items-center gap-4 pt-7">
-              <button type="button" onClick={() => setActive(project)} className="text-sm font-bold text-primary transition-colors hover:text-accent">View case study</button>
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="ml-auto inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">GitHub <ArrowUpRight className="h-4 w-4" /></a>
-            </div>
-          </motion.article>
-        ))}
+          </div>
+        </motion.article>)}
       </div>
 
-      <AnimatePresence>
-        {active && <ProjectDialog project={active} onClose={() => setActive(null)} />}
-      </AnimatePresence>
+      <div className="mt-24 border-t border-border pt-5">
+        <div className="grid gap-6 lg:grid-cols-[.55fr_1.45fr]"><div><p className="font-mono text-[10px] uppercase tracking-[.18em] text-primary">Additional technical work</p><h3 className="mt-5 font-display text-3xl font-bold uppercase">Supporting analytics</h3><p className="mt-4 text-sm leading-6 text-muted-foreground">Machine-learning projects remain secondary to the reporting and BI portfolio.</p></div><div className="divide-y divide-border border-y border-border">{[apple,churn].filter(Boolean).map((project,index)=>project && <div key={project.title} className="grid gap-4 py-6 sm:grid-cols-[40px_1fr_auto] sm:items-center"><span className="font-mono text-[9px] text-primary">0{index+1}</span><div><h4 className="font-display text-xl font-bold">{project.title}</h4><p className="mt-2 text-sm text-muted-foreground">{project.description}</p></div>{index===0 && project.github ? <Button asChild variant="outline" size="sm"><a href={project.github} target="_blank" rel="noopener noreferrer"><Github/>GitHub<ArrowUpRight/></a></Button>:<span className="font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">Evidence link unavailable</span>}</div>)}</div></div>
+      </div>
     </Section>
   );
 }
 
-function ProjectDialog({ project, onClose }: { project: Project; onClose: () => void }) {
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[80] grid place-items-center bg-background/85 p-4 backdrop-blur-md" onClick={onClose} role="dialog" aria-modal="true" aria-label={`${project.title} case study`}>
-      <motion.article initial={{ opacity: 0, y: 18, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.98 }} onClick={(event) => event.stopPropagation()} className="glass-panel relative max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-lg p-6 md:p-8">
-        <button type="button" onClick={onClose} aria-label="Close case study" className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-md border border-border bg-panel text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>
-        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-success">Completed project</p>
-        <h3 className="mt-3 pr-12 font-display text-3xl font-bold">{project.title}</h3>
-        <Detail title="Business problem">{project.problem}</Detail>
-        <Detail title="Technical solution">{project.solution}</Detail>
-        <Detail title="Outcome">{project.outcome}</Detail>
-        <div className="mt-6 flex flex-wrap gap-2">{project.technologies.map((technology) => <span key={technology} className="tech-badge">{technology}</span>)}</div>
-        <a href={project.github} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-md bg-primary px-4 text-sm font-bold text-primary-foreground"><Github className="h-4 w-4" /> View source on GitHub <ArrowUpRight className="h-4 w-4" /></a>
-      </motion.article>
-    </motion.div>
-  );
-}
-
-function Detail({ title, children }: { title: string; children: React.ReactNode }) {
-  return <div className="mt-7 border-t border-border pt-5"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">{title}</p><p className="mt-2 text-sm leading-7 text-foreground/90">{children}</p></div>;
-}
+function ProjectField({label,value,compact=false}:{label:string;value:string;compact?:boolean}) { return <div className={`${compact ? "p-5" : "mt-7 border-t border-border pt-4"}`}><p className="font-mono text-[8px] uppercase tracking-[.16em] text-primary">{label}</p><p className="mt-2 text-sm leading-6 text-foreground/85">{value}</p></div> }
