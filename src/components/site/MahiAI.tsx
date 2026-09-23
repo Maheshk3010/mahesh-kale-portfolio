@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 const maheshPhotoUrl = "/maheshkale_pic.jpeg";
@@ -32,7 +32,6 @@ const WELCOME_TEXT =
   "MAHI.AI is Mahesh Kale's local portfolio assistant. Ask about projects, MIS experience, skills, resume, GitHub or contact details.";
 
 export function MahiAI() {
-  const reducedMotion = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [input, setInput] = useState("");
@@ -160,11 +159,9 @@ export function MahiAI() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Open MAHI.AI assistant"
-          initial={reducedMotion ? false : { opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={reducedMotion ? undefined : { y: -2 }}
-          whileTap={reducedMotion ? undefined : { scale: 0.97 }}
+          initial={false}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.97 }}
           className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 p-2 backdrop-blur-xl md:py-2.5 md:pl-2.5 md:pr-3"
         >
           <span className="relative grid h-8 w-8 place-items-center bg-primary text-primary-foreground">
