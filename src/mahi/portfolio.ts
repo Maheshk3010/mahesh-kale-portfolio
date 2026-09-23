@@ -33,29 +33,24 @@ export const proofMetrics = [
 
 export const capabilityGroups = [
   {
-    verb: "Analyze",
-    tools: ["SQL", "Python", "Pandas", "NumPy"],
-    context: "Sales performance · Customer analytics",
+    verb: "SQL",
+    tools: ["Joins", "CTEs", "Window Functions", "Group By", "Subqueries", "Aggregations"],
+    context: "Sales Performance Intelligence · SQL Data Warehouse · MIS Reporting",
   },
   {
-    verb: "Report",
-    tools: ["Power BI", "Advanced Excel", "DAX", "Power Query"],
-    context: "MIS · KPI reporting · Dashboards",
+    verb: "Power BI",
+    tools: ["DAX", "Power Query", "Data Modeling", "Dashboards", "KPI Visualization"],
+    context: "Sales Performance Intelligence · MIS Reporting · Customer Retention",
   },
   {
-    verb: "Validate",
-    tools: ["Data Cleaning", "Data Validation", "Data Reconciliation"],
-    context: "Reporting inputs · Operational data",
+    verb: "Advanced Excel",
+    tools: ["Pivot Tables", "XLOOKUP", "INDEX-MATCH", "SUMIFS", "COUNTIFS", "MIS Reporting", "Validation"],
+    context: "Sales Performance Intelligence · MIS Reporting",
   },
   {
-    verb: "Visualize",
-    tools: ["KPI Dashboards", "Business Reporting", "Data Visualization"],
-    context: "Management-ready decision views",
-  },
-  {
-    verb: "Automate",
-    tools: ["Reporting Automation", "Power Query", "Python", "SQL"],
-    context: "Repeatable reporting workflows",
+    verb: "Python",
+    tools: ["Pandas", "NumPy", "Data Cleaning", "EDA", "Automation"],
+    context: "Sales · ETL · Retention · Churn · Supporting technical work",
   },
 ];
 
@@ -63,7 +58,7 @@ export const misModules = [
   { title: "Daily MIS", detail: "Structured daily operating view for recurring review." },
   { title: "Weekly MIS", detail: "Consolidated weekly performance and exception view." },
   { title: "Monthly MIS", detail: "Period-level management reporting structure." },
-  { title: "KPI Tracker", detail: "Consistent calculation and monitoring of business measures." },
+  { title: "KPI Engine", detail: "Consistent calculation and monitoring of business measures." },
   { title: "Target vs Actual", detail: "Performance comparison against defined targets." },
   { title: "SLA / TAT", detail: "Operational service and turnaround-time monitoring." },
   {

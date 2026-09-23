@@ -9,6 +9,7 @@ import { Projects } from "@/components/site/Projects";
 import { Dashboard } from "@/components/site/Dashboard";
 import { Experience } from "@/components/site/Experience";
 import { Skills } from "@/components/site/Skills";
+import { TechnicalArchive } from "@/components/site/TechnicalArchive";
 import { Certifications } from "@/components/site/Certifications";
 import { About } from "@/components/site/About";
 import { Contact } from "@/components/site/Contact";
@@ -92,6 +93,7 @@ function Index() {
         <Dashboard />
         <Experience />
         <Skills />
+        <TechnicalArchive />
         <Certifications />
         <About />
         <Contact />
