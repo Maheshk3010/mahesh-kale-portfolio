@@ -62,7 +62,7 @@ export function Hero() {
             variants={heroEnter(reduced ? 0 : 0.08)}
             initial="hidden"
             animate="visible"
-            className="mt-5 max-w-4xl font-display text-[2.35rem] font-bold uppercase leading-[.92] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[4.1rem]"
+            className="mt-5 max-w-4xl font-display text-[2.35rem] font-bold uppercase leading-[.92] sm:text-[3.35rem] lg:text-[3.2rem] xl:text-[3.5rem]"
           >
             Turning business and operational data into{" "}
             <span className="text-primary">validated insights</span>, KPI reporting and

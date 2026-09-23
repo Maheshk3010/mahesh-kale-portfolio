@@ -36,6 +36,7 @@ const WELCOME_TEXT =
 export function MahiAI() {
   const [open, setOpen] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [mobileTriggerVisible, setMobileTriggerVisible] = useState(true);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [thinking, setThinking] = useState(false);
@@ -66,6 +67,27 @@ export function MahiAI() {
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [open]);
+
+  useEffect(() => {
+    const updateTrigger = () => {
+      if (window.innerWidth >= 768) {
+        setMobileTriggerVisible(true);
+        return;
+      }
+      const snapshot = document.getElementById("snapshot");
+      const proof = document.getElementById("proof");
+      const start = snapshot?.offsetTop ?? Number.POSITIVE_INFINITY;
+      const end = proof?.offsetTop ?? start;
+      setMobileTriggerVisible(window.scrollY < start - 120 || window.scrollY >= end - 120);
+    };
+    updateTrigger();
+    window.addEventListener("scroll", updateTrigger, { passive: true });
+    window.addEventListener("resize", updateTrigger);
+    return () => {
+      window.removeEventListener("scroll", updateTrigger);
+      window.removeEventListener("resize", updateTrigger);
+    };
+  }, []);
 
   const engineHistory = useMemo<EngineMessage[]>(
     () =>
@@ -173,7 +195,9 @@ export function MahiAI() {
   return (
     <>
       {/* Floating trigger */}
-      <div className="fixed bottom-5 right-3 z-[80] md:bottom-6 md:right-6">
+      <div
+        className={`fixed bottom-5 right-3 z-[80] transition-opacity md:bottom-6 md:right-6 ${mobileTriggerVisible || open ? "opacity-100" : "pointer-events-none opacity-0"}`}
+      >
         <motion.button
           ref={triggerRef}
           type="button"
