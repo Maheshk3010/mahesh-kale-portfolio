@@ -48,3 +48,13 @@
 - [x] Keep churn and machine-learning work secondary to Data Analyst and MIS projects.
 - [x] Add consistent business, workflow, KPI, output, evidence, repository, and demo slots.
 - [ ] Replace pending project evidence slots only when genuine files and links are supplied.
+
+## Analytics Operating System refinement
+
+- [x] Audit current architecture, content sources, motion, responsive behavior, resume, MAHI.AI, and SEO.
+- [ ] Consolidate portfolio content and exact project naming.
+- [ ] Implement the approved 12-stage recruiter journey.
+- [ ] Remove public unfinished-state language and integrate available GitHub evidence.
+- [ ] Strengthen MIS, experience, analytics core, credentials, methodology, and final CTA.
+- [ ] Align MAHI.AI and SEO with the production portfolio.
+- [ ] Validate links, resume, lint, build, accessibility, and four target viewports.

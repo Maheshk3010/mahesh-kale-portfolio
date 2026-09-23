@@ -3,7 +3,7 @@
     {
       "company": "ExcelR Solutions, Pune",
       "role": "Data Science Intern",
-      "duration": "Jun 2025 – Mar 2026",
+      "duration": "Jun 2025 \u2013 Mar 2026",
       "responsibilities": [
         "Prepared, analyzed and validated structured datasets",
         "Performed data cleaning, reconciliation, consistency checks and discrepancy analysis",
@@ -38,14 +38,16 @@
         "KPI dashboards",
         "Documented analytical workflows"
       ],
-      "outcomes": ["Accurate analytical and reporting outputs"],
+      "outcomes": [
+        "Accurate analytical and reporting outputs"
+      ],
       "companyLink": "",
       "credentialLink": ""
     },
     {
       "company": "Sysslan IT Solutions",
       "role": "Data Analyst Intern",
-      "duration": "Internship",
+      "duration": "May 2026 \u2013 Jun 2026",
       "responsibilities": [
         "SQL Queries",
         "Data Validation",
@@ -57,10 +59,16 @@
         "Advanced Excel",
         "Python-based Data Analysis"
       ],
-      "technologies": ["Python", "SQL", "Power BI", "Advanced Excel", "MySQL"],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Advanced Excel",
+        "MySQL"
+      ],
       "achievements": [],
-      "startDate": "",
-      "endDate": "",
+      "startDate": "May 2026",
+      "endDate": "Jun 2026",
       "location": "",
       "deliverables": [],
       "outcomes": [],
@@ -70,7 +78,7 @@
     {
       "company": "Codveda Technologies",
       "role": "Python Development Intern",
-      "duration": "Internship",
+      "duration": "Jul 2026 \u2013 Aug 2026",
       "responsibilities": [
         "Python Programming",
         "Flask",
@@ -84,10 +92,18 @@
         "Debugging",
         "Testing"
       ],
-      "technologies": ["Python", "Flask", "REST API", "SQLite", "MySQL", "Git", "GitHub"],
+      "technologies": [
+        "Python",
+        "Flask",
+        "REST API",
+        "SQLite",
+        "MySQL",
+        "Git",
+        "GitHub"
+      ],
       "achievements": [],
-      "startDate": "",
-      "endDate": "",
+      "startDate": "Jul 2026",
+      "endDate": "Aug 2026",
       "location": "",
       "deliverables": [],
       "outcomes": [],
