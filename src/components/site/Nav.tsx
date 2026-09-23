@@ -21,8 +21,10 @@ const links = [
   ["#mis", "MIS", "06"],
   ["#experience", "Experience", "07"],
   ["#stack", "Core", "08"],
-  ["#credentials", "Credentials", "09"],
-  ["#contact", "Contact", "10"],
+  ["#technical-archive", "Archive", "09"],
+  ["#credentials", "Credentials", "10"],
+  ["#method", "Method", "11"],
+  ["#contact", "Contact", "12"],
 ] as const;
 
 export function Nav() {
@@ -78,13 +80,13 @@ export function Nav() {
             </span>
           </span>
         </a>
-        <ul className="hidden items-center gap-3 xl:flex">
+        <ul className="hidden items-center gap-2 xl:flex">
           {links.map(([href, label, number]) => (
             <li key={href}>
               <a
                 href={href}
                 aria-current={active === href ? "location" : undefined}
-                className={`nav-link group relative py-2 font-mono text-[9px] font-bold uppercase tracking-[.12em] transition-colors hover:text-primary ${active === href ? "is-active text-foreground" : "text-muted-foreground"}`}
+                className={`nav-link group relative py-2 font-mono text-[8px] font-bold uppercase tracking-[.1em] transition-colors hover:text-primary ${active === href ? "is-active text-foreground" : "text-muted-foreground"}`}
               >
                 <span className="mr-1 text-border-strong">{number}</span>
                 {label}
