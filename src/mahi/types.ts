@@ -51,16 +51,43 @@ export interface SkillsData {
 
 export interface Project {
   title: string;
+  number: string;
+  tier: "featured" | "supporting";
+  status: "completed" | "in-progress" | "planned";
+  evidenceState: "available" | "pending";
+  evidenceNote: string;
+  category: string;
   description: string;
   problem: string;
   solution: string;
+  data: string;
+  workflow: string[];
   technologies: string[];
+  kpis: string[];
   features: string[];
   outcome: string;
+  keyFindings: string[];
   github: string;
   demo: string;
+  projectDate: string;
+  ownership: string;
   resumeSummary: string;
   interviewExplanation: string;
+  evidence: {
+    screenshot: string;
+    gallery: string[];
+    github: string;
+    demo: string;
+    datasetSource: string;
+    sqlArtifact: string;
+    powerBIArtifact: string;
+    excelArtifact: string;
+    keyFindings: string[];
+    businessOutcome: string;
+    projectDate: string;
+    ownership: string;
+    scale: string;
+  };
 }
 export interface ProjectsData {
   projects: Project[];

@@ -39,3 +39,12 @@
 - [x] Enable resume actions in the navigation, opening section, final contact section, and MAHI.AI.
 - [x] Sync verified ExcelR dates and work, certification years, and resume availability.
 - [ ] Add project screenshots, working files, repository links, dataset sources, and internship/certification proof when supplied.
+
+## Market-aligned project architecture
+
+- [x] Separate project delivery status from evidence availability.
+- [x] Prioritize Sales Performance, SQL/ETL, MIS Automation, and Retention/Cohort work.
+- [x] Keep incomplete work clearly marked In Progress or Planned.
+- [x] Keep churn and machine-learning work secondary to Data Analyst and MIS projects.
+- [x] Add consistent business, workflow, KPI, output, evidence, repository, and demo slots.
+- [ ] Replace pending project evidence slots only when genuine files and links are supplied.
