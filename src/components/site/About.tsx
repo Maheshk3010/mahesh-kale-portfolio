@@ -9,8 +9,9 @@ export function About() {
     <Section
       id="method"
       eyebrow="10 / Operating methodology"
-      title="Behind the analysis"
+      title="Analyst method"
       description="A disciplined path from raw source data to clear reporting and decision-ready insight."
+      className="method-scene"
     >
       <motion.ol
         variants={stagger(0.08, 0.08)}

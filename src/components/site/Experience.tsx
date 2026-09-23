@@ -7,9 +7,10 @@ export function Experience() {
   return (
     <Section
       id="experience"
-      eyebrow="07 / Work record"
-      title="Field experience"
+      eyebrow="07 / Field record"
+      title="Field log"
       description="Internship experience across data preparation, analytics, reporting and supporting Python development."
+      className="fieldlog-scene"
     >
       <div className="relative border-t border-border pt-8">
         <motion.div

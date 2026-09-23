@@ -13,9 +13,10 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="05 / Featured case studies"
-      title="Featured case studies"
-      description="Business-focused analytics projects across sales intelligence, SQL & ETL, MIS operations, customer retention and predictive analytics."
+      eyebrow="05 / Investigation archive"
+      title="Case files"
+      description="Business-focused analytical records across sales intelligence, SQL & ETL, MIS operations, customer retention and predictive analytics."
+      className="casefiles-scene"
     >
       <div className="space-y-16 md:space-y-24">
         {featured.map((project, index) => (
@@ -80,7 +81,7 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
       <div className="grid gap-10 lg:grid-cols-[.82fr_1.18fr]">
         <motion.div variants={revealLeft} className={reverse ? "lg:order-2" : ""}>
           <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[9px] uppercase tracking-[0.14em]">
-            <span className="text-primary">Case / {project.number}</span>
+            <span className="text-primary">Case {project.number}</span>
             <span className="text-muted-foreground">{project.category}</span>
           </div>
           <h3 className="mt-7 max-w-xl font-display text-4xl font-bold uppercase leading-[.98] sm:text-5xl">

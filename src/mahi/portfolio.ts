@@ -4,7 +4,7 @@ import profilePhoto from "@/assets/mahesh-kale-professional-profile.png.asset.js
 const siteUrl = "https://mahesh-kale-portfolio.lovable.app";
 
 export const site = {
-  name: "Mahesh Kale Analytics Operating System",
+  name: "Mahesh Kale Data Intelligence Lab",
   url: siteUrl,
   image: `${siteUrl}${profilePhoto.url}`,
   title: "Mahesh Kale — Data Analyst & MIS Executive",
@@ -27,7 +27,7 @@ export const specializations = [
 export const proofMetrics = [
   { label: "Data scale", value: 50, suffix: "K+", detail: "Records" },
   { label: "Customer analytics", value: 7, suffix: "K+", detail: "Customer records" },
-  { label: "Reporting", value: 15, suffix: "+", detail: "KPIs" },
+  { label: "Reporting", value: 15, suffix: "+", detail: "KPI frameworks" },
   { label: "Experience", value: 3, suffix: "", detail: "Internships" },
 ];
 
@@ -77,8 +77,8 @@ export const misModules = [
 ];
 
 export const methodology = [
-  "Raw data",
-  "Understand",
+  "Question",
+  "Data",
   "Clean",
   "Validate",
   "Transform",

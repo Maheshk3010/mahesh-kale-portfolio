@@ -5,19 +5,11 @@ import { coreTools } from "@/mahi/portfolio";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { heroEnter, motionEase, stagger } from "@/lib/motion";
 
-const boot = [
-  "Initializing analytics core",
-  "Loading data engine",
-  "Connecting reporting module",
-  "Validating KPI system",
-  "System ready",
-];
 const modules = [
-  ["Analytics core", "SQL · Python"],
-  ["KPI engine", "15+ measures"],
-  ["MIS reporting", "Daily · Weekly · Monthly"],
-  ["Data validation", "Clean · Check · Reconcile"],
-  ["Dashboard system", "Power BI · Excel"],
+  ["Data engine", "Online"],
+  ["Reporting core", "Online"],
+  ["Validation system", "Online"],
+  ["Analyst profile", "Loaded"],
 ];
 
 export function Hero() {
@@ -28,7 +20,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[92svh] overflow-hidden border-b border-border pt-16"
+      className="relative scroll-mt-16 overflow-hidden border-b border-border pt-16 lg:min-h-[calc(100svh-1px)]"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -37,36 +29,29 @@ export function Hero() {
         className="control-grid pointer-events-none absolute inset-0"
       />
       <div className="data-stream pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="mx-auto grid min-h-[calc(92svh-4rem)] max-w-7xl items-center gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.08fr_.92fr] lg:py-14">
+      <div className="mx-auto grid max-w-7xl items-center gap-7 px-5 py-8 sm:px-8 sm:py-10 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.08fr_.92fr] lg:gap-10 lg:py-12">
         <div className="relative z-10 min-w-0">
           <motion.div
-            variants={stagger(0.02, reduced ? 0 : 0.35)}
+            variants={heroEnter(0)}
             initial="hidden"
             animate="visible"
-            className="mb-7 flex flex-wrap gap-x-5 gap-y-2"
-            aria-label="System initialization status"
+            className="mb-5 flex items-center justify-between border-b border-border pb-3 font-mono text-[8px] font-bold uppercase tracking-[.14em] sm:hidden"
           >
-            {boot.map((line, index) => (
-              <motion.span
-                key={line}
-                variants={heroEnter(reduced ? 0 : index * 0.04)}
-                className={`font-mono text-[8px] font-bold uppercase tracking-[.14em] ${index === boot.length - 1 ? "text-success" : "text-muted-foreground"}`}
-              >
-                {index === boot.length - 1 && <Check className="mr-1 inline h-3 w-3" />}
-                {line}
-              </motion.span>
-            ))}
+            <span className="text-primary">Data intelligence lab</span>
+            <span className="flex items-center gap-1 text-success">
+              <Check className="h-3 w-3" /> Systems online
+            </span>
           </motion.div>
           <motion.h1
-            variants={heroEnter(reduced ? 0 : 0.15)}
+            variants={heroEnter(0)}
             initial="hidden"
             animate="visible"
-            className="font-display text-xl font-bold uppercase sm:text-2xl"
+            className="font-display text-2xl font-bold uppercase sm:text-3xl"
           >
             Mahesh Kale
           </motion.h1>
           <motion.p
-            variants={heroEnter(reduced ? 0 : 0.2)}
+            variants={heroEnter(reduced ? 0 : 0.04)}
             initial="hidden"
             animate="visible"
             className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[.16em] text-primary"
@@ -74,24 +59,26 @@ export function Hero() {
             Data Analyst <span className="text-muted-foreground">/</span> MIS Executive
           </motion.p>
           <motion.h2
-            variants={heroEnter(reduced ? 0 : 0.26)}
+            variants={heroEnter(reduced ? 0 : 0.08)}
             initial="hidden"
             animate="visible"
-            className="mt-6 max-w-4xl font-display text-[clamp(2.6rem,6.7vw,6.5rem)] font-bold uppercase leading-[.9]"
+            className="mt-5 max-w-4xl font-display text-[2.35rem] font-bold uppercase leading-[.92] sm:text-[3.35rem] lg:text-[3.2rem] xl:text-[3.5rem]"
           >
-            Turning business data into <span className="text-primary">decision-ready</span> insight.
+            Turning business and operational data into{" "}
+            <span className="text-primary">validated insights</span>, KPI reporting and
+            decision-ready dashboards.
           </motion.h2>
           <motion.p
-            variants={heroEnter(reduced ? 0 : 0.32)}
+            variants={heroEnter(reduced ? 0 : 0.12)}
             initial="hidden"
             animate="visible"
-            className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg"
+            className="mt-5 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
           >
-            Turning business and operational data into validated insights, KPI reporting and
-            decision-ready dashboards.
+            SQL, Power BI, Advanced Excel and Python applied to reporting, validation,
+            reconciliation and dashboard development.
           </motion.p>
           <motion.div
-            variants={stagger(0.35, 0.05)}
+            variants={stagger(reduced ? 0 : 0.16, 0.03)}
             initial="hidden"
             animate="visible"
             className="mt-5 flex flex-wrap gap-x-5 gap-y-2"
@@ -109,10 +96,10 @@ export function Hero() {
             ))}
           </motion.div>
           <motion.div
-            variants={heroEnter(reduced ? 0 : 0.43)}
+            variants={heroEnter(reduced ? 0 : 0.2)}
             initial="hidden"
             animate="visible"
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-7 flex flex-wrap items-center gap-3"
           >
             <Button asChild size="lg">
               <a href="#projects">
@@ -146,28 +133,29 @@ export function Hero() {
           </motion.div>
         </div>
         <motion.div
-          variants={heroEnter(reduced ? 0 : 0.28)}
+          variants={heroEnter(reduced ? 0 : 0.16)}
           initial="hidden"
           animate="visible"
-          className="workstation-panel relative min-w-0 overflow-hidden border-l border-t border-border bg-surface/75 p-5 sm:p-7"
+          className="workstation-panel relative hidden min-w-0 overflow-hidden border-l border-t border-border bg-surface/75 p-4 sm:block sm:p-6 lg:h-full lg:max-h-[540px]"
         >
           <div className="flex items-center justify-between border-b border-border pb-4 font-mono text-[9px] uppercase tracking-[.14em]">
-            <span className="text-primary">Analytics operating system</span>
-            <span className="text-success">● Online</span>
+            <span className="text-primary">Data intelligence lab</span>
+            <span className="text-muted-foreground">Initializing...</span>
           </div>
-          <div className="mt-5 space-y-2">
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
             {modules.map(([title, detail], index) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: reduced ? 0 : 0.48 + index * 0.08, ease: motionEase }}
-                className="group grid grid-cols-[38px_1fr_auto] items-center border border-border bg-panel p-4"
+                className={`group grid grid-cols-[32px_1fr_auto] items-center border border-border bg-panel p-3 ${index > 1 ? "hidden lg:grid" : "grid"}`}
               >
                 <span className="font-mono text-[8px] text-primary">0{index + 1}</span>
                 <div>
                   <p className="font-display text-base font-bold uppercase">{title}</p>
-                  <p className="mt-1 font-mono text-[8px] uppercase text-muted-foreground">
+                  <p className="mt-1 flex items-center gap-1 font-mono text-[8px] uppercase text-success">
+                    <Check className="h-3 w-3" />
                     {detail}
                   </p>
                 </div>
@@ -175,16 +163,16 @@ export function Hero() {
               </motion.div>
             ))}
           </div>
-          <div className="mt-5 grid grid-cols-3 gap-px bg-border text-center font-mono text-[8px] uppercase">
-            <div className="bg-background p-4">
+          <div className="mt-4 grid grid-cols-3 gap-px bg-border text-center font-mono text-[8px] uppercase">
+            <div className="bg-background p-3">
               <span className="text-muted-foreground">Input</span>
               <p className="mt-2 text-foreground">Raw data</p>
             </div>
-            <div className="bg-background p-4">
+            <div className="bg-background p-3">
               <span className="text-muted-foreground">Control</span>
               <p className="mt-2 text-primary">Validated</p>
             </div>
-            <div className="bg-background p-4">
+            <div className="bg-background p-3">
               <span className="text-muted-foreground">Output</span>
               <p className="mt-2 text-success">Report ready</p>
             </div>

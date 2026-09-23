@@ -13,16 +13,16 @@ import {
 } from "@/components/ui/sheet";
 
 const links = [
-  ["#top", "Home"],
-  ["#snapshot", "Profile"],
-  ["#proof", "Proof"],
-  ["#work-preview", "Work"],
-  ["#projects", "Cases"],
-  ["#mis", "MIS"],
-  ["#experience", "Experience"],
-  ["#stack", "Core"],
-  ["#credentials", "Credentials"],
-  ["#contact", "Contact"],
+  ["#top", "Home", "01"],
+  ["#snapshot", "Profile", "02"],
+  ["#proof", "Proof", "03"],
+  ["#work-preview", "Work", "04"],
+  ["#projects", "Cases", "05"],
+  ["#mis", "MIS", "06"],
+  ["#experience", "Experience", "07"],
+  ["#stack", "Core", "08"],
+  ["#credentials", "Credentials", "09"],
+  ["#contact", "Contact", "10"],
 ] as const;
 
 export function Nav() {
@@ -74,21 +74,19 @@ export function Nav() {
               Mahesh Kale
             </span>
             <span className="block font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">
-              Analytics OS
+              Data Lab
             </span>
           </span>
         </a>
         <ul className="hidden items-center gap-3 xl:flex">
-          {links.map(([href, label], index) => (
+          {links.map(([href, label, number]) => (
             <li key={href}>
               <a
                 href={href}
                 aria-current={active === href ? "location" : undefined}
                 className={`nav-link group relative py-2 font-mono text-[9px] font-bold uppercase tracking-[.12em] transition-colors hover:text-primary ${active === href ? "is-active text-foreground" : "text-muted-foreground"}`}
               >
-                <span className="mr-1 text-border-strong">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <span className="mr-1 text-border-strong">{number}</span>
                 {label}
               </a>
             </li>
@@ -115,16 +113,14 @@ export function Nav() {
               <SheetTitle className="font-display uppercase">Analytics OS</SheetTitle>
               <SheetDescription>Navigate Mahesh Kale&apos;s analytics portfolio.</SheetDescription>
               <div className="mt-10 grid gap-1">
-                {links.map(([href, label], index) => (
+                {links.map(([href, label, number]) => (
                   <SheetClose key={href} asChild>
                     <a
                       href={href}
                       aria-current={active === href ? "location" : undefined}
                       className={`grid grid-cols-[36px_1fr] items-center border-b py-3 font-display text-lg font-bold uppercase transition-colors ${active === href ? "border-primary text-primary" : "border-border"}`}
                     >
-                      <span className="font-mono text-[9px] text-primary">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      <span className="font-mono text-[9px] text-primary">{number}</span>
                       {label}
                     </a>
                   </SheetClose>

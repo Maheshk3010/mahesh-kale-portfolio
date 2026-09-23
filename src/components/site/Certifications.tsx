@@ -9,8 +9,9 @@ export function Certifications() {
     <Section
       id="credentials"
       eyebrow="09 / Qualification record"
-      title="Credential vault"
+      title="Credential archive"
       description="Formal education, professional training and documented credentials."
+      className="archive-scene"
     >
       <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div className="border-t border-border">

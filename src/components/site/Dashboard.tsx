@@ -19,9 +19,10 @@ export function Dashboard() {
   return (
     <Section
       id="mis"
-      eyebrow="06 / Reporting operations"
-      title="MIS operations center"
+      eyebrow="06 / Operations floor"
+      title="Operations floor"
       description="A controlled reporting chain for recurring MIS, KPI visibility, reconciliation and management review."
+      className="operations-scene"
     >
       <div className="border border-border bg-surface">
         <div className="mis-console border-b border-border p-6 sm:p-8">
