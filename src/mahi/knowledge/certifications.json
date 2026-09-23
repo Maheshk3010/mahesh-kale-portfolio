@@ -1,37 +1,37 @@
 {
   "certifications": [
     {
-      "name": "Oracle SQL Foundations Certification",
-      "organization": "Oracle",
-      "year": "",
-      "verification": "",
-      "credentialId": ""
-    },
-    {
-      "name": "Microsoft Data Fundamentals Certification",
+      "name": "Microsoft Data Fundamentals",
       "organization": "Microsoft",
-      "year": "",
+      "year": "2026",
       "verification": "",
       "credentialId": ""
     },
     {
-      "name": "ExcelR Data Science Program \u2013 Certificate of Excellence",
+      "name": "Oracle SQL Foundations",
+      "organization": "Oracle",
+      "year": "2026",
+      "verification": "",
+      "credentialId": ""
+    },
+    {
+      "name": "ExcelR Data Science Program",
       "organization": "ExcelR Solutions",
-      "year": "",
+      "year": "2026",
       "verification": "",
       "credentialId": ""
     },
     {
-      "name": "IBM Data Science Professional Certificate",
+      "name": "Deloitte Data Analytics Job Simulation",
+      "organization": "Deloitte",
+      "year": "2026",
+      "verification": "",
+      "credentialId": ""
+    },
+    {
+      "name": "IBM Enterprise Data Science",
       "organization": "IBM",
-      "year": "",
-      "verification": "",
-      "credentialId": ""
-    },
-    {
-      "name": "Infosys Springboard \u2013 Machine Learning Certification",
-      "organization": "Infosys Springboard",
-      "year": "",
+      "year": "2025",
       "verification": "",
       "credentialId": ""
     }
