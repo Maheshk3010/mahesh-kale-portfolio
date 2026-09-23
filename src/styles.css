@@ -568,12 +568,113 @@ article:hover > .timeline-marker {
 .operations-scene .mis-module:nth-child(8) {
   border-color: color-mix(in oklab, var(--attention) 35%, var(--border));
 }
+.operations-console {
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--success) 22%, transparent);
+}
+.operations-pipeline {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+}
+.operation-node {
+  position: relative;
+  display: grid;
+  min-height: 3.75rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  align-items: center;
+  border-left: 2px solid var(--primary);
+  background: color-mix(in oklab, var(--panel) 76%, transparent);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.operation-node.is-ready {
+  border-left-color: var(--success);
+}
+.operation-index {
+  color: var(--muted-foreground);
+  font-size: 0.5rem;
+}
+.operation-signal {
+  position: absolute;
+  left: -2px;
+  bottom: -0.55rem;
+  z-index: 2;
+  width: 2px;
+  height: 0.55rem;
+  overflow: hidden;
+  background: var(--border);
+}
+.operation-signal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  animation: operation-signal 1.7s linear infinite;
+}
+.operation-node:nth-child(3n) .operation-signal::after {
+  background: var(--success);
+  animation-delay: -0.6s;
+}
+@keyframes operation-signal {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+.mis-selector {
+  border-radius: 0;
+  transition:
+    background-color var(--motion-micro) ease,
+    box-shadow var(--motion-micro) ease;
+}
+.mis-selector:hover,
+.mis-selector.is-selected {
+  background: color-mix(in oklab, var(--primary) 7%, var(--background));
+  box-shadow: inset 2px 0 0 var(--primary);
+}
 .fieldlog-scene {
   background: linear-gradient(
     180deg,
     var(--background),
     color-mix(in oklab, var(--foreground) 2%, var(--background))
   );
+}
+.field-entry {
+  isolation: isolate;
+}
+.field-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 -1.75rem 2.15rem;
+  z-index: -1;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 2.5%, transparent), transparent 42%);
+  opacity: 0;
+  transition: opacity var(--motion-reveal) ease;
+}
+.field-entry:hover::after,
+.field-entry:focus-within::after {
+  opacity: 1;
+}
+.field-signal::after {
+  content: "";
+  position: absolute;
+  inset-inline: -1px;
+  height: 4rem;
+  background: linear-gradient(180deg, transparent, var(--success), transparent);
+  animation: field-scan 5.5s linear infinite;
+}
+@keyframes field-scan {
+  from {
+    transform: translateY(-4rem);
+  }
+  to {
+    transform: translateY(34rem);
+  }
 }
 .toolkit-scene {
   background-image: radial-gradient(
@@ -582,6 +683,40 @@ article:hover > .timeline-marker {
     transparent 34%
   );
 }
+.toolkit-network {
+  box-shadow: inset 0 0 5rem color-mix(in oklab, var(--primary) 3%, transparent);
+}
+.toolkit-node {
+  border-radius: 0;
+  transition:
+    background-color var(--motion-micro) ease,
+    box-shadow var(--motion-micro) ease;
+}
+.toolkit-node:hover,
+.toolkit-node.is-selected {
+  background: color-mix(in oklab, var(--primary) 7%, var(--background));
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+.analytics-core-node {
+  box-shadow: 0 0 0 10px var(--background), 0 0 40px color-mix(in oklab, var(--primary) 16%, transparent);
+}
+.technical-archive-scene {
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--success) 2%, transparent),
+    transparent 45%
+  );
+}
+.archive-record {
+  transition:
+    padding-inline var(--motion-micro) var(--motion-ease),
+    background-color var(--motion-micro) ease;
+}
+.archive-record:hover,
+.archive-record:focus-within {
+  padding-inline: 0.75rem;
+  background: color-mix(in oklab, var(--success) 3%, transparent);
+}
 .archive-scene {
   background: linear-gradient(
     135deg,
@@ -589,12 +724,42 @@ article:hover > .timeline-marker {
     var(--background) 52%
   );
 }
+.credential-vault {
+  box-shadow: inset 0 0 4rem color-mix(in oklab, var(--attention) 2%, transparent);
+}
+.credential-row::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  background: var(--success);
+  opacity: 0.65;
+}
 .method-scene {
   background-image: linear-gradient(
     180deg,
     color-mix(in oklab, var(--primary) 3%, transparent),
     transparent 28%
   );
+}
+.method-chain {
+  position: relative;
+}
+.method-step {
+  transition:
+    background-color var(--motion-micro) ease,
+    box-shadow var(--motion-micro) ease;
+}
+.method-step:hover,
+.method-step:focus-within {
+  background: color-mix(in oklab, var(--primary) 5%, var(--background));
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+.section-transfer {
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  background: color-mix(in oklab, var(--surface) 35%, transparent);
 }
 .shutdown-scene {
   background: linear-gradient(
@@ -814,6 +979,46 @@ article:hover > .timeline-marker {
   }
   .contact-frame {
     padding-inline: 1.25rem;
+  }
+  .archive-record:hover,
+  .archive-record:focus-within {
+    padding-inline: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .operations-pipeline {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+  .operation-node {
+    min-height: 6.5rem;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    border-left: 0;
+    border-top: 2px solid var(--primary);
+    background: var(--background);
+  }
+  .operation-node.is-ready {
+    border-top-color: var(--success);
+  }
+  .operation-signal {
+    inset: 1.9rem -1px auto auto;
+    width: 1rem;
+    height: 1px;
+    background: var(--border);
+  }
+  .operation-signal::after {
+    animation-name: operation-signal-horizontal;
+  }
+  @keyframes operation-signal-horizontal {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
   }
 }
 

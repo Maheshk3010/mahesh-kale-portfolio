@@ -18,7 +18,7 @@ const flow = [
 ];
 
 const dimensions: Record<string, string[]> = {
-  "Daily MIS": ["Volume", "Completed", "Pending", "SLA", "TAT", "Exceptions"],
+  "Daily MIS": ["Volume", "Completed", "Outstanding", "SLA", "TAT", "Exceptions"],
   "Weekly MIS": [
     "Weekly Volume",
     "Completion",
