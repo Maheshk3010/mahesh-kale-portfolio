@@ -1,20 +1,23 @@
 import { motion } from "motion/react";
 import { Award, ExternalLink, GraduationCap } from "lucide-react";
 import { Section } from "./Section";
+import { SectionTransition } from "./SectionTransition";
 import { credentials, education } from "@/mahi/portfolio";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
 export function Certifications() {
   return (
-    <Section
-      id="credentials"
-      eyebrow="09 / Qualification record"
-      title="Credential archive"
-      description="Formal education, professional training and documented credentials."
-      className="archive-scene"
-    >
-      <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
-        <div className="border-t border-border">
+    <>
+      <SectionTransition label="Professional records" />
+      <Section
+        id="credentials"
+        eyebrow="10 / Qualification vault"
+        title="Credential archive"
+        description="Formal education, professional training and documented credentials."
+        className="archive-scene"
+      >
+        <div className="credential-vault grid gap-px overflow-hidden border-y border-border bg-border lg:grid-cols-[.8fr_1.2fr]">
+          <div className="bg-background">
           {education.map((entry, index) => (
             <motion.article
               key={entry.degree}
@@ -22,7 +25,7 @@ export function Certifications() {
               whileInView="visible"
               viewport={inView}
               variants={revealUp}
-              className="border-b border-border py-6"
+              className="border-b border-border p-6"
             >
               <div className="flex items-center gap-3">
                 <GraduationCap className="h-4 w-4 text-primary" />
@@ -38,22 +41,22 @@ export function Certifications() {
               </p>
             </motion.article>
           ))}
-        </div>
+          </div>
         <motion.div
           variants={stagger(0.03, 0.06)}
           initial="hidden"
           whileInView="visible"
           viewport={inView}
-          className="grid sm:grid-cols-2"
+          className="grid bg-background sm:grid-cols-2"
         >
           {credentials.map((cert, index) => (
             <motion.article
               key={cert.name}
               variants={revealUp}
-              className="credential-row border border-border p-5"
+              className="credential-row relative border-b border-r border-border p-5"
             >
               <div className="flex items-center justify-between">
-                <Award className="h-4 w-4 text-primary" />
+                <Award className="h-4 w-4 text-success" />
                 <span className="font-mono text-[8px] text-muted-foreground">
                   CR / {String(index + 1).padStart(2, "0")}
                 </span>
@@ -74,8 +77,9 @@ export function Certifications() {
               )}
             </motion.article>
           ))}
-        </motion.div>
-      </div>
-    </Section>
+          </motion.div>
+        </div>
+      </Section>
+    </>
   );
 }

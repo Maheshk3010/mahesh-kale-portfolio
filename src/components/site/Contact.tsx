@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
+import { SectionTransition } from "./SectionTransition";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { inView, revealScale, revealUp, stagger } from "@/lib/motion";
 
@@ -17,13 +18,15 @@ export function Contact() {
     { label: "Phone", href: `tel:${contact.phone.replace(/\s/g, "")}`, icon: Phone },
   ].filter((action) => action.href);
   return (
-    <Section id="contact" className="shutdown-scene pb-32" navTitle="Contact">
+    <>
+      <SectionTransition label="Session complete" />
+      <Section id="contact" className="shutdown-scene pb-32" navTitle="Contact">
       <motion.div
         variants={revealScale}
         initial="hidden"
         whileInView="visible"
         viewport={inView}
-        className="contact-frame relative overflow-hidden border border-primary/35 bg-surface p-7 sm:p-10 md:p-14"
+        className="contact-frame relative overflow-hidden border-y border-border bg-surface p-7 sm:p-10 md:p-14"
       >
         <div className="control-grid pointer-events-none absolute inset-0 opacity-35" />
         <div className="relative grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -32,7 +35,7 @@ export function Contact() {
               variants={revealUp}
               className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-primary"
             >
-              11 / Session complete
+               12 / Session complete
             </motion.p>
             <motion.h2
               variants={revealUp}
@@ -44,13 +47,13 @@ export function Contact() {
               variants={revealUp}
               className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground"
             >
-              Ready to turn business data into decision-ready insights.
+              Mahesh Kale · Data Analyst | MIS Executive
             </motion.p>
             <motion.p
               variants={revealUp}
               className="mt-8 font-mono text-[9px] uppercase tracking-[.16em] text-success"
             >
-              Analysis complete / Report ready
+              Analysis complete / Report ready / Session complete
             </motion.p>
           </motion.div>
           <motion.div
@@ -75,7 +78,8 @@ export function Contact() {
             ))}
           </motion.div>
         </div>
-      </motion.div>
-    </Section>
+        </motion.div>
+      </Section>
+    </>
   );
 }

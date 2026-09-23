@@ -25,9 +25,7 @@ export function Experience() {
         />
         <div className="space-y-14">
           {experience.map((exp, index) => {
-            const details = exp.deliverables?.length
-              ? exp.deliverables
-              : exp.responsibilities.slice(0, 4);
+            const details = exp.responsibilities.slice(0, 6);
             return (
               <motion.article
                 key={`${exp.company}-${exp.role}`}
