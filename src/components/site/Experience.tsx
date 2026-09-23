@@ -1,24 +1,27 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
+import { SectionTransition } from "./SectionTransition";
 import { experience } from "@/mahi/portfolio";
 import { inView, motionEase, revealLeft, revealUp, stagger } from "@/lib/motion";
 
 export function Experience() {
   return (
-    <Section
-      id="experience"
-      eyebrow="07 / Field record"
-      title="Field log"
-      description="Internship experience across data preparation, analytics, reporting and supporting Python development."
-      className="fieldlog-scene"
-    >
+    <>
+      <SectionTransition label="Field records loaded" />
+      <Section
+        id="experience"
+        eyebrow="07 / Professional field records"
+        title="Field log"
+        description="Internship experience across data preparation, analytics, reporting and supporting Python development."
+        className="fieldlog-scene"
+      >
       <div className="relative border-t border-border pt-8">
         <motion.div
           initial={{ scaleY: 0 }}
           whileInView={{ scaleY: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: motionEase }}
-          className="absolute bottom-0 left-[17px] top-8 w-px origin-top bg-primary/60 sm:left-[91px]"
+          className="field-signal absolute bottom-0 left-[17px] top-8 w-px origin-top bg-primary/60 sm:left-[91px]"
         />
         <div className="space-y-14">
           {experience.map((exp, index) => {
@@ -32,19 +35,19 @@ export function Experience() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={inView}
-                className="relative grid gap-5 pl-12 sm:grid-cols-[64px_1fr] sm:pl-0"
+                className="field-entry relative grid gap-5 pl-12 sm:grid-cols-[64px_1fr] sm:pl-0"
               >
                 <motion.div
                   variants={revealUp}
                   className="timeline-marker absolute left-3 top-1 h-3 w-3 border border-primary bg-background sm:left-[85px]"
                 />
                 <span className="hidden font-mono text-[9px] text-primary sm:block">
-                  CH / 0{index + 1}
+                  ENTRY / 0{index + 1}
                 </span>
                 <motion.div variants={revealLeft} className="border-l border-border pl-6 sm:pl-10">
                   <div className="grid gap-6 border-b border-border pb-6 lg:grid-cols-[1fr_auto]">
                     <div>
-                      <p className="font-mono text-[9px] uppercase tracking-[.14em] text-primary">
+                      <p className="font-mono text-[9px] uppercase tracking-[.14em] text-success">
                         {exp.company}
                       </p>
                       <h3 className="mt-3 font-display text-3xl font-bold uppercase">{exp.role}</h3>
@@ -80,7 +83,8 @@ export function Experience() {
           })}
         </div>
       </div>
-    </Section>
+      </Section>
+    </>
   );
 }
 
