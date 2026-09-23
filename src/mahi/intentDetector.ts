@@ -221,10 +221,7 @@ function lastAssistantIntent(history: ChatMessage[]): Intent | null {
   return null;
 }
 
-export function detectIntent(
-  question: string,
-  history: ChatMessage[] = [],
-): IntentMatch {
+export function detectIntent(question: string, history: ChatMessage[] = []): IntentMatch {
   const q = normalize(question);
   if (!q) return { intent: "unknown", confidence: 0, keywords: [] };
 

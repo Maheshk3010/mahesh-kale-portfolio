@@ -4,10 +4,7 @@
       "name": "Python",
       "category": "Programming",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Primary programming language used across data analysis, reporting automation and supporting technical work."
     },
@@ -15,9 +12,7 @@
       "name": "SQL",
       "category": "Programming",
       "confidence": "verified",
-      "projectsUsed": [
-        "Sales Performance Intelligence"
-      ],
+      "projectsUsed": ["Sales Performance Intelligence"],
       "years": null,
       "description": "Querying and modelling relational data for Data Analyst and MIS Executive work."
     },
@@ -25,10 +20,7 @@
       "name": "Pandas",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Data wrangling and analysis in Python."
     },
@@ -36,10 +28,7 @@
       "name": "NumPy",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Numerical computing foundation for data science work."
     },
@@ -47,10 +36,7 @@
       "name": "Scikit-learn",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Machine-learning models, classification workflows, and evaluation."
     },
@@ -58,9 +44,7 @@
       "name": "TensorFlow",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction"],
       "years": null,
       "description": "Deep-learning framework used for LSTM time-series forecasting."
     },
@@ -68,9 +52,7 @@
       "name": "Keras",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction"],
       "years": null,
       "description": "High-level neural network API used with TensorFlow for LSTM models."
     },
@@ -78,9 +60,7 @@
       "name": "LSTM",
       "category": "Machine Learning",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction"],
       "years": null,
       "description": "Long Short-Term Memory networks for time-series forecasting."
     },
@@ -88,9 +68,7 @@
       "name": "Streamlit",
       "category": "Libraries",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction"],
       "years": null,
       "description": "Interactive Python app framework for data-science demos."
     },
@@ -106,9 +84,7 @@
       "name": "Power BI",
       "category": "Data Visualization",
       "confidence": "verified",
-      "projectsUsed": [
-        "Sales Performance Intelligence"
-      ],
+      "projectsUsed": ["Sales Performance Intelligence"],
       "years": null,
       "description": "Interactive analytics dashboards and reports for Data Analyst and MIS Executive roles."
     },
@@ -116,9 +92,7 @@
       "name": "Advanced Excel",
       "category": "Data Visualization",
       "confidence": "verified",
-      "projectsUsed": [
-        "Sales Performance Intelligence"
-      ],
+      "projectsUsed": ["Sales Performance Intelligence"],
       "years": null,
       "description": "Formulas, pivots and reporting for MIS and analytics workflows."
     },
@@ -126,10 +100,7 @@
       "name": "Machine Learning",
       "category": "Machine Learning",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Machine-learning workflows for classification, recommendation, and forecasting problems."
     },
@@ -137,9 +108,7 @@
       "name": "Time Series Forecasting",
       "category": "Machine Learning",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction"],
       "years": null,
       "description": "Sequence modelling for forecasting problems using LSTM networks."
     },
@@ -147,9 +116,7 @@
       "name": "Recommendation Systems",
       "category": "Machine Learning",
       "confidence": "verified",
-      "projectsUsed": [
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Product Recommendation System"],
       "years": null,
       "description": "Similarity-based product recommendation using Scikit-learn."
     },
@@ -181,10 +148,7 @@
       "name": "GitHub",
       "category": "Version Control",
       "confidence": "verified",
-      "projectsUsed": [
-        "Apple Stock Price Prediction",
-        "Product Recommendation System"
-      ],
+      "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
       "description": "Hosting and collaboration on GitHub."
     }

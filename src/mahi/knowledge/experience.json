@@ -38,9 +38,7 @@
         "KPI dashboards",
         "Documented analytical workflows"
       ],
-      "outcomes": [
-        "Accurate analytical and reporting outputs"
-      ],
+      "outcomes": ["Accurate analytical and reporting outputs"],
       "companyLink": "",
       "credentialLink": ""
     },
@@ -59,13 +57,7 @@
         "Advanced Excel",
         "Python-based Data Analysis"
       ],
-      "technologies": [
-        "Python",
-        "SQL",
-        "Power BI",
-        "Advanced Excel",
-        "MySQL"
-      ],
+      "technologies": ["Python", "SQL", "Power BI", "Advanced Excel", "MySQL"],
       "achievements": [],
       "startDate": "May 2026",
       "endDate": "Jun 2026",
@@ -92,15 +84,7 @@
         "Debugging",
         "Testing"
       ],
-      "technologies": [
-        "Python",
-        "Flask",
-        "REST API",
-        "SQLite",
-        "MySQL",
-        "Git",
-        "GitHub"
-      ],
+      "technologies": ["Python", "Flask", "REST API", "SQLite", "MySQL", "Git", "GitHub"],
       "achievements": [],
       "startDate": "Jul 2026",
       "endDate": "Aug 2026",

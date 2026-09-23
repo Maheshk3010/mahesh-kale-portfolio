@@ -22,35 +22,35 @@
     },
     {
       "q": "What case studies are featured?",
-      "a": "The featured sequence is Sales Performance Intelligence (Completed), SQL Data Warehouse & ETL Pipeline (Completed), MIS Reporting Automation & Management Dashboard (In Progress), and Customer Retention & Cohort Intelligence (Planned). Evidence is pending for all four. Customer Analytics / Churn is completed supporting analytical work with model evidence pending."
+      "a": "The five core case studies are Sales Performance Intelligence, SQL Data Warehouse & ETL Pipeline, MIS Reporting Automation & Operations Performance, Customer Retention & Cohort Intelligence, and Customer Churn Prediction. Each case study includes its analytical workflow and GitHub repository."
     },
     {
       "q": "Tell me about Sales Performance Analysis",
-      "a": "The verified resume documents a Sales Performance Dashboard across 50,000+ records and 15+ KPIs. It reports approximately 70% lower manual reporting effort. Repository, screenshots, source files, date and ownership evidence are still pending."
+      "a": "Sales Performance Intelligence analyzes 50,000+ sales records across 15+ KPIs using SQL, Power BI, Advanced Excel, Python, Power Query and DAX. Its GitHub repository is https://github.com/Maheshk3010/Sales-Performance-Intelligence/tree/main."
     },
     {
       "q": "Tell me about the Sales Dashboard",
-      "a": "The verified resume documents an interactive Power BI Sales Performance Dashboard using SQL, Python, Excel, Power Query and DAX across 50,000+ records and 15+ KPIs. Dashboard screenshots and source files are still pending."
+      "a": "Sales Performance Intelligence uses SQL, Power BI, Advanced Excel, Python, Power Query and DAX for KPI reporting and business insight across 50,000+ records. Its GitHub repository is https://github.com/Maheshk3010/Sales-Performance-Intelligence/tree/main."
     },
     {
       "q": "Tell me about Customer Churn Analysis",
-      "a": "The verified resume documents a churn-prediction workflow across 7,000+ customer records, comparing Logistic Regression, Decision Tree, Random Forest and XGBoost with multiple evaluation metrics. Repository, screenshots and dataset source are still pending."
+      "a": "Customer Churn Prediction documents a workflow across 7,000+ customer records using Python, Pandas and Scikit-learn for EDA, feature engineering, classification and model evaluation. Its GitHub repository is https://github.com/Maheshk3010/Customer-Churn-Prediction/tree/main."
     },
     {
       "q": "Show GitHub projects",
-      "a": "Verified repository links stored in the portfolio: Apple Stock Price Prediction \u2014 https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM and Product Recommendation System \u2014 https://github.com/Maheshk3010/Product_Recommendation_System."
+      "a": "Portfolio repositories: Sales Performance Intelligence \u2014 https://github.com/Maheshk3010/Sales-Performance-Intelligence/tree/main; SQL Data Warehouse & ETL Pipeline \u2014 https://github.com/Maheshk3010/SQL-Data-Warehouse-ETL-Pipeline/tree/main; MIS Reporting Automation & Operations Performance \u2014 https://github.com/Maheshk3010/MIS-Reporting-Automation-Operations-Performance; Customer Retention & Cohort Intelligence \u2014 https://github.com/Maheshk3010/Customer-Retention-Cohort-Intelligence/tree/main; Customer Churn Prediction \u2014 https://github.com/Maheshk3010/Customer-Churn-Prediction/tree/main; Apple Stock Price Prediction \u2014 https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM; Product Recommendation System \u2014 https://github.com/Maheshk3010/Product_Recommendation_System."
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with Sales Performance Intelligence, then review the SQL Data Warehouse & ETL Pipeline. The MIS Reporting Automation project is still In Progress, and Customer Retention & Cohort Intelligence is Planned."
+      "a": "Start with Sales Performance Intelligence, then review SQL Data Warehouse & ETL Pipeline and MIS Reporting Automation & Operations Performance for the strongest Data Analyst and MIS alignment."
     },
     {
       "q": "What MIS experience is shown?",
-      "a": "The portfolio documents MIS reporting, KPI reporting, data validation and reporting automation capabilities. MIS Reporting Automation & Management Dashboard is marked In Progress; files and output screenshots are pending."
+      "a": "The portfolio documents Daily, Weekly and Monthly MIS, KPI tracking, target vs actual, SLA/TAT, data reconciliation, exception monitoring, data validation and reporting automation through the MIS Operations Center and supporting project architecture."
     },
     {
       "q": "What experience does Mahesh have?",
-      "a": "Three internships are documented: Data Science Intern at ExcelR Solutions, Data Analyst Intern at Sysslan IT Solutions and Python Development Intern at Codveda Technologies. The verified ExcelR period is June 2025 to March 2026; dates and proof for the other internships remain pending."
+      "a": "Three internships are documented: Data Science Intern at ExcelR Solutions from June 2025 to March 2026, Data Analyst Intern at Sysslan IT Solutions from May 2026 to June 2026, and Python Development Intern at Codveda Technologies from July 2026 to August 2026."
     },
     {
       "q": "What is Mahesh's education?",
@@ -98,7 +98,7 @@
     },
     {
       "q": "What should a recruiter review first?",
-      "a": "Review the Analytics Snapshot, Sales Performance Intelligence, SQL Data Warehouse & ETL Pipeline, the clearly labeled in-progress and planned work, MIS & Reporting, Field Experience and Capability Stack in that order."
+      "a": "Review the Professional Snapshot, Proof Telemetry, Real Work Preview, Featured Case Studies, MIS Operations Center, Field Experience and Analytics Core in that order."
     }
   ]
 }

@@ -133,9 +133,7 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
     return [
       "**Verified certifications**",
       "",
-      ...items.map((c) =>
-        `• **${c.name}** — ${c.organization}${c.year ? ` (${c.year})` : ""}`,
-      ),
+      ...items.map((c) => `• **${c.name}** — ${c.organization}${c.year ? ` (${c.year})` : ""}`),
     ].join("\n");
   },
 

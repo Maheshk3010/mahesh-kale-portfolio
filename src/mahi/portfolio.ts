@@ -31,11 +31,31 @@ export const proofMetrics = [
 ];
 
 export const capabilityGroups = [
-  { verb: "Analyze", tools: ["SQL", "Python", "Pandas", "NumPy"], context: "Sales performance · Customer analytics" },
-  { verb: "Report", tools: ["Power BI", "Advanced Excel", "DAX", "Power Query"], context: "MIS · KPI reporting · Dashboards" },
-  { verb: "Validate", tools: ["Data Cleaning", "Data Validation", "Data Reconciliation"], context: "Reporting inputs · Operational data" },
-  { verb: "Visualize", tools: ["KPI Dashboards", "Business Reporting", "Data Visualization"], context: "Management-ready decision views" },
-  { verb: "Automate", tools: ["Reporting Automation", "Power Query", "Python", "SQL"], context: "Repeatable reporting workflows" },
+  {
+    verb: "Analyze",
+    tools: ["SQL", "Python", "Pandas", "NumPy"],
+    context: "Sales performance · Customer analytics",
+  },
+  {
+    verb: "Report",
+    tools: ["Power BI", "Advanced Excel", "DAX", "Power Query"],
+    context: "MIS · KPI reporting · Dashboards",
+  },
+  {
+    verb: "Validate",
+    tools: ["Data Cleaning", "Data Validation", "Data Reconciliation"],
+    context: "Reporting inputs · Operational data",
+  },
+  {
+    verb: "Visualize",
+    tools: ["KPI Dashboards", "Business Reporting", "Data Visualization"],
+    context: "Management-ready decision views",
+  },
+  {
+    verb: "Automate",
+    tools: ["Reporting Automation", "Power Query", "Python", "SQL"],
+    context: "Repeatable reporting workflows",
+  },
 ];
 
 export const misModules = [
@@ -45,12 +65,26 @@ export const misModules = [
   { title: "KPI Tracker", detail: "Consistent calculation and monitoring of business measures." },
   { title: "Target vs Actual", detail: "Performance comparison against defined targets." },
   { title: "SLA / TAT", detail: "Operational service and turnaround-time monitoring." },
-  { title: "Data Reconciliation", detail: "Cross-checks between source, transformed and reported values." },
-  { title: "Exception Monitoring", detail: "Focused review of discrepancies and reporting exceptions." },
+  {
+    title: "Data Reconciliation",
+    detail: "Cross-checks between source, transformed and reported values.",
+  },
+  {
+    title: "Exception Monitoring",
+    detail: "Focused review of discrepancies and reporting exceptions.",
+  },
 ];
 
 export const methodology = [
-  "Raw data", "Understand", "Clean", "Validate", "Transform", "Analyze", "Visualize", "Report", "Insight",
+  "Raw data",
+  "Understand",
+  "Clean",
+  "Validate",
+  "Transform",
+  "Analyze",
+  "Visualize",
+  "Report",
+  "Insight",
 ];
 
 export const profile = knowledgeBase.profile;

@@ -52,11 +52,11 @@
 ## Analytics Operating System refinement
 
 - [x] Audit current architecture, content sources, motion, responsive behavior, resume, MAHI.AI, and SEO.
-- [ ] Consolidate portfolio content and exact project naming.
-- [ ] Implement the approved 12-stage recruiter journey.
-- [ ] Remove public unfinished-state language and integrate available GitHub evidence.
-- [ ] Strengthen MIS, experience, analytics core, credentials, methodology, and final CTA.
-- [ ] Align MAHI.AI and SEO with the production portfolio.
+- [x] Consolidate portfolio content and exact project naming.
+- [x] Implement the approved 12-stage recruiter journey.
+- [x] Remove public unfinished-state language and integrate available GitHub evidence.
+- [x] Strengthen MIS, experience, analytics core, credentials, methodology, and final CTA.
+- [x] Align MAHI.AI and SEO with the production portfolio.
 - [ ] Validate links, resume, lint, build, accessibility, and four target viewports.
 
 ## Proactive final quality review
