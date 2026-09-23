@@ -71,3 +71,15 @@
 - [x] Audit 390×844 and 768×1024 composition, MAHI.AI overlap, keyboard access, reduced motion, and overflow.
 - [x] Audit SEO foundations, performance signals, every external action, resume download, and public unfinished-state language.
 - [x] Complete the five-perspective quality review and document only material external evidence needs.
+
+## Final master refinement
+
+- [ ] Make the first screen identity-first and keep Mahesh’s name, roles, tools, work, resume, LinkedIn, and GitHub immediately clear.
+- [ ] Rebuild Professional Snapshot as a concise photo-led identity panel directly after Hero.
+- [ ] Keep only supported telemetry and place Real Work Preview before the five exact featured case studies.
+- [ ] Give each featured project a distinct animated analytical workflow and its exact GitHub repository.
+- [ ] Remove every public project-status, evidence-weakness, missing-artifact, and stale-positioning message.
+- [ ] Preserve the exact 12-stage recruiter journey, role-specific MIS center, verified experience, analytics core, credentials, methodology, and System Ready actions.
+- [ ] Consolidate public portfolio facts through the shared source of truth and eliminate duplicate project definitions that can surface stale content.
+- [ ] Validate desktop, tablet, mobile, links, resume, navigation, console, build, lint, motion, accessibility, photo placement, and first-screen clarity.
+- [ ] Complete an independent recruiter, analyst, MIS, and product-design quality pass.
