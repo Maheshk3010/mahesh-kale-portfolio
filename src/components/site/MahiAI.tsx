@@ -62,53 +62,56 @@ export function MahiAI() {
     [messages],
   );
 
-  const send = useCallback(async (text: string) => {
-    const value = text.trim();
-    if (!value || thinking) return;
-    const now = Date.now();
-    const userMsg: ChatMessage = {
-      id: `u-${now}`,
-      role: "user",
-      content: value,
-      createdAt: now,
-    };
-    setMessages((m) => [...m, userMsg]);
-    setInput("");
-    setThinking(true);
-    analyticsService.trackQuestion(value);
+  const send = useCallback(
+    async (text: string) => {
+      const value = text.trim();
+      if (!value || thinking) return;
+      const now = Date.now();
+      const userMsg: ChatMessage = {
+        id: `u-${now}`,
+        role: "user",
+        content: value,
+        createdAt: now,
+      };
+      setMessages((m) => [...m, userMsg]);
+      setInput("");
+      setThinking(true);
+      analyticsService.trackQuestion(value);
 
-    try {
-      const response = await mahiEngine.ask(value, engineHistory);
-      analyticsService.trackResponse(value, response);
-      setMessages((m) => [
-        ...m,
-        {
-          id: `a-${Date.now()}`,
-          role: "assistant",
-          content: response.reply,
-          createdAt: Date.now(),
-          suggestions: response.suggestions,
-          intent: response.intent,
-          verified: response.verified,
-          unverified: !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
-        },
-      ]);
-    } catch {
-      setMessages((m) => [
-        ...m,
-        {
-          id: `a-${Date.now()}`,
-          role: "assistant",
-          content: UNVERIFIED_FALLBACK,
-          createdAt: Date.now(),
-          unverified: true,
-        },
-      ]);
-    } finally {
-      setThinking(false);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    }
-  }, [engineHistory, thinking]);
+      try {
+        const response = await mahiEngine.ask(value, engineHistory);
+        analyticsService.trackResponse(value, response);
+        setMessages((m) => [
+          ...m,
+          {
+            id: `a-${Date.now()}`,
+            role: "assistant",
+            content: response.reply,
+            createdAt: Date.now(),
+            suggestions: response.suggestions,
+            intent: response.intent,
+            verified: response.verified,
+            unverified: !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
+          },
+        ]);
+      } catch {
+        setMessages((m) => [
+          ...m,
+          {
+            id: `a-${Date.now()}`,
+            role: "assistant",
+            content: UNVERIFIED_FALLBACK,
+            createdAt: Date.now(),
+            unverified: true,
+          },
+        ]);
+      } finally {
+        setThinking(false);
+        setTimeout(() => inputRef.current?.focus(), 50);
+      }
+    },
+    [engineHistory, thinking],
+  );
 
   const sendRef = useRef(send);
   useEffect(() => {
