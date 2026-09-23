@@ -43,14 +43,14 @@ export function Dashboard() {
           initial="hidden"
           whileInView="visible"
           viewport={inView}
-          className="grid md:grid-cols-2 xl:grid-cols-4"
+           className="grid grid-cols-2 xl:grid-cols-4"
         >
           {misModules.map((module, index) => (
             <motion.article
               key={module.title}
               variants={revealUp}
               tabIndex={0}
-              className="mis-module group min-h-48 border-b border-border p-5 focus-visible:outline-none xl:border-r"
+               className="mis-module group min-h-40 border-b border-border p-4 focus-visible:outline-none sm:min-h-48 sm:p-5 xl:border-r"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[8px] text-primary">

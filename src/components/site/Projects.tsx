@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
-import { ArrowRight, ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
+import { ProjectWorkflow } from "./ProjectWorkflow";
 import { projects } from "@/mahi/portfolio";
 import type { Project } from "@/mahi/types";
 import { inView, revealLeft, revealScale, revealUp, stagger } from "@/lib/motion";
@@ -12,9 +13,9 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="05 / Case-study register"
+      eyebrow="05 / Featured case studies"
       title="Featured case studies"
-      description="Business questions translated into structured data workflows, reporting systems and analytical outputs."
+      description="Business-focused analytics projects across sales intelligence, SQL & ETL, MIS operations, customer retention and predictive analytics."
     >
       <div className="space-y-16 md:space-y-24">
         {featured.map((project, index) => (
@@ -65,12 +66,8 @@ export function Projects() {
 
 function ProjectCase({ project, reverse }: { project: Project; reverse: boolean }) {
   const fields = [
-    ["Business problem", project.problem],
-    ["Approach", project.solution],
+    ["Business question", project.problem],
     ["Data", project.data],
-    ["Output", project.output],
-    ["Key insights", project.keyFindings.join(" · ")],
-    ["Business outcome", project.outcome],
   ].filter(([, value]) => value);
   return (
     <motion.article
@@ -94,12 +91,15 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
               <ProjectField key={label} label={label} value={value} />
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6">
+            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">Tech stack</p>
+            <div className="mt-3 flex flex-wrap gap-2">
             {project.technologies.map((tool) => (
               <span key={tool} className="control-tag">
                 {tool}
               </span>
             ))}
+            </div>
           </div>
           {project.github && (
             <div className="mt-7">
@@ -113,55 +113,13 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
         </motion.div>
         <motion.div variants={revealScale} className={reverse ? "lg:order-1" : ""}>
           <div className="case-workflow border-x border-t border-border bg-surface px-5 py-4">
-            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
-              Analytical workflow
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              {project.workflow.map((step, index) => (
-                <span
-                  key={step}
-                  className="flex items-center gap-2 font-mono text-[9px] font-bold uppercase"
-                >
-                  {step}
-                  {index < project.workflow.length - 1 && (
-                    <ArrowRight className="h-3 w-3 text-primary" />
-                  )}
-                </span>
-              ))}
-            </div>
+            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">Analytical workflow</p>
           </div>
-          <div className="evidence-frame relative min-h-[250px] overflow-hidden border border-border bg-panel p-5 sm:min-h-[310px] sm:p-8">
-            <div className="control-grid pointer-events-none absolute inset-0 opacity-50" />
-            <div
-              className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary"
-              aria-hidden="true"
-            />
-            <div className="relative flex h-full min-h-[210px] flex-col justify-between sm:min-h-[250px]">
-              <div>
-                <p className="font-mono text-[9px] uppercase tracking-[.14em] text-primary">
-                  System architecture
-                </p>
-                <h4 className="mt-4 max-w-lg font-display text-2xl font-bold uppercase">
-                  {project.output || project.description}
-                </h4>
-              </div>
-              <div className="grid gap-px bg-border sm:grid-cols-2">
-                {project.workflow.slice(0, 4).map((step, index) => (
-                  <div key={step} className="bg-background/90 p-4">
-                    <span className="font-mono text-[8px] text-primary">0{index + 1}</span>
-                    <p className="mt-2 text-sm font-bold uppercase">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <ProjectWorkflow project={project} />
+          <div className="grid border-x border-b border-border sm:grid-cols-2">
+            <ProjectField label="Key output" value={project.output || project.description} compact />
+            <ProjectField label="Insight focus" value={project.keyFindings.join(" · ") || project.features.join(" · ")} compact />
           </div>
-          {fields.slice(3).length > 0 && (
-            <div className="grid border-x border-b border-border sm:grid-cols-2">
-              {fields.slice(3).map(([label, value]) => (
-                <ProjectField key={label} label={label} value={value} compact />
-              ))}
-            </div>
-          )}
         </motion.div>
       </div>
     </motion.article>
