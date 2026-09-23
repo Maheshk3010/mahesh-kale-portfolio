@@ -650,3 +650,19 @@ article:hover > .timeline-marker {
     animation: none !important;
   }
 }
+
+:focus-visible {
+  outline-width: 2px;
+}
+
+@media (max-width: 767px) {
+  .mis-console .pipeline-node {
+    padding-block: 1rem;
+  }
+  .mis-console .pipeline-marker {
+    display: none;
+  }
+  .project-case h3 {
+    text-wrap: balance;
+  }
+}

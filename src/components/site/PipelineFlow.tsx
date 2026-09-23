@@ -61,7 +61,9 @@ export function PipelineFlow({
                 />
               )}
             </div>
-            <h3 className={`${compact ? "mt-3 text-sm" : "mt-5 text-lg"} font-display font-bold uppercase`}>
+            <h3
+              className={`${compact ? "mt-3 text-sm" : "mt-5 text-lg"} font-display font-bold uppercase`}
+            >
               {step.label}
             </h3>
             {step.detail && (

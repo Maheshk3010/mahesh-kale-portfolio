@@ -28,7 +28,6 @@ const QUICK_QUESTIONS = [
   "How can I contact Mahesh?",
 ];
 
-
 const WELCOME_TEXT =
   "MAHI.AI is Mahesh Kale's local portfolio assistant. Ask about projects, MIS experience, skills, resume, GitHub or contact details.";
 
@@ -92,8 +91,7 @@ export function MahiAI() {
           suggestions: response.suggestions,
           intent: response.intent,
           verified: response.verified,
-          unverified:
-            !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
+          unverified: !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
         },
       ]);
     } catch {
@@ -170,11 +168,7 @@ export function MahiAI() {
           className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 p-2 backdrop-blur-xl md:py-2.5 md:pl-2.5 md:pr-3"
         >
           <span className="relative grid h-8 w-8 place-items-center bg-primary text-primary-foreground">
-            {open ? (
-              <X className="h-4 w-4" />
-            ) : (
-              <Bot className="h-4 w-4" />
-            )}
+            {open ? <X className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
           </span>
           <span className="relative hidden font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground md:inline">
             Ask MAHI
@@ -245,17 +239,11 @@ export function MahiAI() {
             </div>
 
             <AnimatePresence>
-              {showAnalytics && (
-                <AnalyticsPanel onClose={() => setShowAnalytics(false)} />
-              )}
+              {showAnalytics && <AnalyticsPanel onClose={() => setShowAnalytics(false)} />}
             </AnimatePresence>
 
-
             {/* Messages */}
-            <div
-              ref={scrollRef}
-              className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3"
-            >
+            <div ref={scrollRef} className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3">
               {showWelcome ? (
                 <>
                   <MessageBubble
@@ -289,13 +277,7 @@ export function MahiAI() {
                   </div>
                 </>
               ) : (
-                messages.map((m) => (
-                  <MessageBubble
-                    key={m.id}
-                    message={m}
-                    onSuggestion={send}
-                  />
-                ))
+                messages.map((m) => <MessageBubble key={m.id} message={m} onSuggestion={send} />)
               )}
 
               {thinking && <TypingIndicator />}
@@ -316,9 +298,7 @@ export function MahiAI() {
                     className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
                   >
                     {voice.error ? (
-                      <span className="text-destructive-foreground/90">
-                        {voice.error}
-                      </span>
+                      <span className="text-destructive-foreground/90">{voice.error}</span>
                     ) : voice.state === "listening" ? (
                       <span className="flex items-center gap-2">
                         <span className="flex items-end gap-0.5">
@@ -336,9 +316,7 @@ export function MahiAI() {
                             />
                           ))}
                         </span>
-                        <span className="font-medium text-primary">
-                          Listening…
-                        </span>
+                        <span className="font-medium text-primary">Listening…</span>
                       </span>
                     ) : (
                       <span className="flex items-center gap-2 text-muted-foreground">
@@ -374,9 +352,7 @@ export function MahiAI() {
                     onClick={voice.toggle}
                     disabled={thinking}
                     aria-label={
-                      voice.state === "listening"
-                        ? "Stop voice input"
-                        : "Start voice input"
+                      voice.state === "listening" ? "Stop voice input" : "Start voice input"
                     }
                     aria-pressed={voice.state === "listening"}
                     title="Voice input (Alt+M)"
@@ -506,9 +482,7 @@ function TypingIndicator() {
         🤖
       </div>
       <div className="flex items-center gap-2 rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5">
-        <span className="text-xs text-muted-foreground">
-          MAHI.AI is thinking
-        </span>
+        <span className="text-xs text-muted-foreground">MAHI.AI is thinking</span>
         <span className="flex items-center gap-1">
           {[0, 1, 2].map((i) => (
             <motion.span
