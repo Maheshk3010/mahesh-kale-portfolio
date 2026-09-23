@@ -63,3 +63,11 @@
 
 - [ ] Review the finished portfolio as a senior analyst, MIS professional, recruiter, hiring manager, and premium product designer.
 - [ ] Improve any material weakness in hierarchy, evidence, composition, navigation, motion, or mobile presentation without inventing claims.
+
+## Deep recruiter audit and cinematic refinement
+
+- [ ] Run 5-second and 20-second recruiter tests on the rendered site.
+- [ ] Audit and refine project differentiation, evidence storytelling, MIS specificity, typography, spacing, and cinematic transitions.
+- [ ] Audit 390×844 and 768×1024 composition, MAHI.AI overlap, keyboard access, reduced motion, and overflow.
+- [ ] Audit SEO foundations, performance signals, every external action, resume download, and public unfinished-state language.
+- [ ] Complete the five-perspective quality review and document only material external evidence needs.
