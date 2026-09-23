@@ -83,8 +83,6 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
       ...items.map((p) =>
         [
           `**${p.title}**`,
-          `**Status:** ${p.status === "in-progress" ? "In Progress" : p.status.charAt(0).toUpperCase() + p.status.slice(1)}`,
-          `**Evidence:** ${p.evidenceState === "available" ? "Available" : "Pending"}`,
           p.description,
           `**Tech:** ${p.technologies.join(", ")}`,
           p.outcome ? `**Outcome:** ${p.outcome}` : "",
@@ -135,9 +133,7 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
     return [
       "**Verified certifications**",
       "",
-      ...items.map((c) =>
-        `• **${c.name}** — ${c.organization}${c.year ? ` (${c.year})` : ""}`,
-      ),
+      ...items.map((c) => `• **${c.name}** — ${c.organization}${c.year ? ` (${c.year})` : ""}`),
     ].join("\n");
   },
 

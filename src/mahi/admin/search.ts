@@ -15,7 +15,10 @@ function stringify(v: unknown): string {
   if (typeof v === "string") return v;
   if (typeof v === "number" || typeof v === "boolean") return String(v);
   if (Array.isArray(v)) return v.map(stringify).join(" ");
-  if (typeof v === "object") return Object.values(v as object).map(stringify).join(" ");
+  if (typeof v === "object")
+    return Object.values(v as object)
+      .map(stringify)
+      .join(" ");
   return "";
 }
 
@@ -26,9 +29,7 @@ function buildIndex(kb: KnowledgeBase): Indexable[] {
     category: "profile",
     recordIndex: 0,
     label: kb.profile.fullName || "Profile",
-    fields: Object.fromEntries(
-      Object.entries(kb.profile).map(([k, v]) => [k, stringify(v)]),
-    ),
+    fields: Object.fromEntries(Object.entries(kb.profile).map(([k, v]) => [k, stringify(v)])),
   });
 
   kb.skills.skills.forEach((s, i) =>
@@ -109,9 +110,7 @@ function buildIndex(kb: KnowledgeBase): Indexable[] {
     category: "contact",
     recordIndex: 0,
     label: "Contact",
-    fields: Object.fromEntries(
-      Object.entries(kb.contact).map(([k, v]) => [k, stringify(v)]),
-    ),
+    fields: Object.fromEntries(Object.entries(kb.contact).map(([k, v]) => [k, stringify(v)])),
   });
 
   kb.social.links.forEach((l, i) =>
@@ -127,9 +126,7 @@ function buildIndex(kb: KnowledgeBase): Indexable[] {
     category: "resume",
     recordIndex: 0,
     label: kb.resume.filename || "Resume",
-    fields: Object.fromEntries(
-      Object.entries(kb.resume).map(([k, v]) => [k, stringify(v)]),
-    ),
+    fields: Object.fromEntries(Object.entries(kb.resume).map(([k, v]) => [k, stringify(v)])),
   });
 
   kb.roles.roles.forEach((r, i) =>

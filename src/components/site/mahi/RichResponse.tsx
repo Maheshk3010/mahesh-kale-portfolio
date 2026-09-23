@@ -10,17 +10,10 @@ import {
   Target,
   ArrowDown,
   Github,
-
-
 } from "lucide-react";
 import { analyticsService, knowledgeBase, navigationService, UNVERIFIED_FALLBACK } from "@/mahi";
 import type { ChatEngineResponse, Intent } from "@/mahi";
-import {
-  ContactCard as ContactActionCard,
-  GitHubCard,
-  LinkedInCard,
-  ResumeCard,
-} from "./cards";
+import { ContactCard as ContactActionCard, GitHubCard, LinkedInCard, ResumeCard } from "./cards";
 
 /**
  * Subscribes to the NavigationService so action buttons appear/hide
@@ -140,9 +133,7 @@ function CardShell({
               {icon}
             </span>
           )}
-          <h4 className="text-[13px] font-semibold tracking-tight text-foreground">
-            {title}
-          </h4>
+          <h4 className="text-[13px] font-semibold tracking-tight text-foreground">{title}</h4>
         </div>
       )}
       {children}
@@ -215,9 +206,7 @@ function InfoCard({ title, message }: { title: string; message: string }) {
           <div className="text-[11px] font-semibold uppercase tracking-widest text-primary">
             {title}
           </div>
-          <p className="mt-1 text-sm leading-relaxed text-foreground/90">
-            {message}
-          </p>
+          <p className="mt-1 text-sm leading-relaxed text-foreground/90">{message}</p>
         </div>
       </div>
     </div>
@@ -284,20 +273,8 @@ function ProjectsCard({
       )}
       {projects.map((p) => (
         <CardShell key={p.title} icon={<Sparkles className="h-3.5 w-3.5" />} title={p.title}>
-          <div className="mb-2 flex flex-wrap gap-1.5">
-            <SubtleBadge>
-              {p.status === "in-progress"
-                ? "In Progress"
-                : p.status.charAt(0).toUpperCase() + p.status.slice(1)}
-            </SubtleBadge>
-            <SubtleBadge>
-              Evidence {p.evidenceState === "available" ? "Available" : "Pending"}
-            </SubtleBadge>
-          </div>
           {p.description && (
-            <p className="mb-2 text-[12px] leading-relaxed text-foreground/80">
-              {p.description}
-            </p>
+            <p className="mb-2 text-[12px] leading-relaxed text-foreground/80">{p.description}</p>
           )}
           {p.technologies?.length > 0 && (
             <div className="mb-2 flex flex-wrap gap-1.5">
@@ -430,11 +407,7 @@ function CertificationsCard({ reply, onNavigate }: { reply: string; onNavigate?:
         </div>
       )}
       {items.map((c) => (
-        <CardShell
-          key={c.name}
-          icon={<Award className="h-3.5 w-3.5" />}
-          title={c.name}
-        >
+        <CardShell key={c.name} icon={<Award className="h-3.5 w-3.5" />} title={c.name}>
           <div className="flex flex-wrap items-center gap-2 text-[12px] text-foreground/80">
             <span>{c.organization}</span>
             {c.year && <SubtleBadge>{c.year}</SubtleBadge>}
@@ -450,7 +423,6 @@ function CertificationsCard({ reply, onNavigate }: { reply: string; onNavigate?:
   );
 }
 
-
 function RolesCard({ reply, onNavigate }: { reply: string; onNavigate?: () => void }) {
   const roles = knowledgeBase.roles.roles;
   if (!roles.length) {
@@ -464,11 +436,7 @@ function RolesCard({ reply, onNavigate }: { reply: string; onNavigate?: () => vo
         </div>
       )}
       {roles.map((r) => (
-        <CardShell
-          key={r.title}
-          icon={<Target className="h-3.5 w-3.5" />}
-          title={r.title}
-        >
+        <CardShell key={r.title} icon={<Target className="h-3.5 w-3.5" />} title={r.title}>
           {r.supportedBy?.length > 0 && (
             <>
               <div className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">

@@ -12,9 +12,7 @@ import { lazy, Suspense, useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const MahiAI = lazy(() =>
-  import("../components/site/MahiAI").then((m) => ({ default: m.MahiAI })),
-);
+const MahiAI = lazy(() => import("../components/site/MahiAI").then((m) => ({ default: m.MahiAI })));
 const AdminOverlay = lazy(() =>
   import("../components/site/mahi/AdminOverlay").then((m) => ({
     default: m.AdminOverlay,
@@ -99,12 +97,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
       },
-      { property: "og:site_name", content: "MAHI Portfolio" },
+      { property: "og:site_name", content: "Mahesh Kale Analytics Operating System" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
       { name: "twitter:title", content: "Mahesh Kale — Data Analyst & MIS Executive" },
-      { name: "twitter:description", content: "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation." },
+      {
+        name: "twitter:description",
+        content:
+          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
+      },
     ],
     links: [
       {

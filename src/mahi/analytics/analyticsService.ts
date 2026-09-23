@@ -206,8 +206,10 @@ export class AnalyticsService {
     const topRoles = this.topEntries(c.roles, 2).map((e) => e.key);
 
     if (topSkills.length) parts.push(`explored ${joinList(topSkills)} skills`);
-    if (topProjects.length) parts.push(`viewed ${joinList(topProjects)} project${topProjects.length > 1 ? "s" : ""}`);
-    if (topRoles.length) parts.push(`considered ${joinList(topRoles)} role${topRoles.length > 1 ? "s" : ""}`);
+    if (topProjects.length)
+      parts.push(`viewed ${joinList(topProjects)} project${topProjects.length > 1 ? "s" : ""}`);
+    if (topRoles.length)
+      parts.push(`considered ${joinList(topRoles)} role${topRoles.length > 1 ? "s" : ""}`);
     if (c.actions.github_open) parts.push("opened GitHub");
     if (c.actions.linkedin_open) parts.push("opened LinkedIn");
     if (c.actions.resume_download) parts.push("downloaded the resume");

@@ -83,7 +83,9 @@ export function searchKnowledge(intent: Intent, query: string): SearchResult {
     contact: () => ({
       intent,
       data: kb.contact,
-      verified: Boolean(kb.contact.email || kb.contact.phone || kb.contact.linkedin || kb.contact.github),
+      verified: Boolean(
+        kb.contact.email || kb.contact.phone || kb.contact.linkedin || kb.contact.github,
+      ),
     }),
 
     github: () => {

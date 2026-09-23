@@ -65,9 +65,8 @@ const INTENT_KEYWORDS: Record<Exclude<Intent, "unknown">, Keyword[]> = {
     { phrase: "portfolio work", weight: 3 },
     { phrase: "case study", weight: 3 },
     { phrase: "built", weight: 2 },
-    { phrase: "job tracker", weight: 5 },
     { phrase: "recommendation", weight: 5 },
-    { phrase: "sales dashboard", weight: 5 },
+    { phrase: "sales performance intelligence", weight: 5 },
   ],
   experience: [
     { phrase: "internships", weight: 5 },
@@ -222,10 +221,7 @@ function lastAssistantIntent(history: ChatMessage[]): Intent | null {
   return null;
 }
 
-export function detectIntent(
-  question: string,
-  history: ChatMessage[] = [],
-): IntentMatch {
+export function detectIntent(question: string, history: ChatMessage[] = []): IntentMatch {
   const q = normalize(question);
   if (!q) return { intent: "unknown", confidence: 0, keywords: [] };
 

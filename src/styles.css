@@ -576,3 +576,93 @@ article:hover > .timeline-marker {
     transform: none;
   }
 }
+
+/* Analytics Operating System refinements */
+.work-preview::after,
+.case-workflow::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: evidence-scan 5s var(--motion-ease) infinite;
+}
+.work-preview {
+  position: relative;
+}
+.case-workflow {
+  position: relative;
+  overflow: hidden;
+}
+.mis-module,
+.credential-row {
+  transition:
+    border-color var(--motion-micro) ease,
+    background-color var(--motion-micro) ease;
+}
+.mis-module:hover,
+.mis-module:focus-visible,
+.credential-row:hover,
+.credential-row:focus-within {
+  border-color: color-mix(in oklab, var(--primary) 58%, var(--border));
+  background: color-mix(in oklab, var(--primary) 4%, var(--background));
+}
+.analysis-sequence li::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  transform: scaleY(0);
+  transform-origin: top;
+  background: var(--primary);
+  transition: transform var(--motion-reveal) var(--motion-ease);
+}
+.analysis-sequence li:hover::before,
+.analysis-sequence li:focus-within::before {
+  transform: scaleY(1);
+}
+
+@media (max-width: 767px) {
+  .control-section {
+    padding-block: 4.5rem;
+  }
+  #projects {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+  .workstation-panel {
+    min-height: auto;
+  }
+  .analysis-sequence li {
+    min-height: 7.5rem;
+  }
+  .contact-frame {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-preview::after,
+  .case-workflow::after,
+  .workstation-panel::before,
+  .control-grid {
+    animation: none !important;
+  }
+}
+
+:focus-visible {
+  outline-width: 2px;
+}
+
+@media (max-width: 767px) {
+  .mis-console .pipeline-node {
+    padding-block: 1rem;
+  }
+  .mis-console .pipeline-marker {
+    display: none;
+  }
+  .project-case h3 {
+    text-wrap: balance;
+  }
+}

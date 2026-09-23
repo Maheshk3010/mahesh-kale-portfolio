@@ -36,14 +36,18 @@ export function PipelineFlow({
         aria-hidden="true"
       />
       <div
-        className="grid gap-px bg-border md:grid-cols-[repeat(var(--pipeline-columns),minmax(0,1fr))]"
+        className={
+          compact
+            ? "flex flex-wrap gap-px bg-border"
+            : "grid gap-px bg-border md:grid-cols-[repeat(var(--pipeline-columns),minmax(0,1fr))]"
+        }
         style={{ "--pipeline-columns": steps.length } as CSSProperties}
       >
         {steps.map((step, index) => (
           <motion.div
             key={step.label}
             variants={revealUp}
-            className="pipeline-node group relative bg-background px-4 py-6"
+            className={`pipeline-node group relative bg-background px-4 py-6 ${compact ? "min-w-[130px] flex-1" : ""}`}
           >
             <span className="pipeline-marker absolute -top-1.5 left-4 h-3 w-3 border border-primary bg-background transition-colors group-hover:bg-primary" />
             <div className="flex items-center justify-between">
@@ -57,7 +61,11 @@ export function PipelineFlow({
                 />
               )}
             </div>
-            <h3 className="mt-5 font-display text-lg font-bold uppercase">{step.label}</h3>
+            <h3
+              className={`${compact ? "mt-3 text-sm" : "mt-5 text-lg"} font-display font-bold uppercase`}
+            >
+              {step.label}
+            </h3>
             {step.detail && (
               <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.detail}</p>
             )}

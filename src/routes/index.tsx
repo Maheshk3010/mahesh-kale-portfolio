@@ -2,95 +2,77 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MotionConfig } from "motion/react";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { ProfessionalSnapshot } from "@/components/site/ProfessionalSnapshot";
 import { AnalyticsSnapshot } from "@/components/site/AnalyticsSnapshot";
-import { About } from "@/components/site/About";
-import { Dashboard } from "@/components/site/Dashboard";
+import { RealWorkPreview } from "@/components/site/RealWorkPreview";
 import { Projects } from "@/components/site/Projects";
-import { Skills } from "@/components/site/Skills";
+import { Dashboard } from "@/components/site/Dashboard";
 import { Experience } from "@/components/site/Experience";
+import { Skills } from "@/components/site/Skills";
 import { Certifications } from "@/components/site/Certifications";
+import { About } from "@/components/site/About";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { ScrollSignal } from "@/components/site/ScrollSignal";
+import { site } from "@/mahi/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title: "Mahesh Kale — Data Analyst & MIS Executive",
-      },
-      {
-        name: "description",
-        content:
-          "Mahesh Kale uses SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and reporting automation.",
-      },
+      { title: site.title },
+      { name: "description", content: site.description },
       {
         name: "keywords",
         content:
-          "Mahesh Kale, Data Analyst, MIS Executive, SQL, Power BI, Advanced Excel, MIS Reporting, KPI Reporting, Dashboarding, Data Validation, Reporting Automation, Pune",
+          "Mahesh Kale, Data Analyst, MIS Executive, Reporting Analyst, BI Analyst, SQL, Power BI, Advanced Excel, MIS Reporting, KPI Reporting, Pune",
       },
-      {
-        property: "og:title",
-        content: "Mahesh Kale — Data Analyst & MIS Executive",
-      },
-      {
-        property: "og:description",
-        content:
-          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
-      },
+      { property: "og:title", content: site.title },
+      { property: "og:description", content: site.description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://mahesh-kale-portfolio.vercel.app/" },
-      {
-        property: "og:image",
-        content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
-      },
+      { property: "og:url", content: `${site.url}/` },
+      { property: "og:image", content: site.image },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: site.title },
+      { name: "twitter:description", content: site.description },
+      { name: "twitter:image", content: site.image },
+    ],
+    links: [{ rel: "canonical", href: `${site.url}/` }],
+    scripts: [
       {
-        name: "twitter:image",
-        content: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
-      },
-      {
-        name: "twitter:title",
-        content: "Mahesh Kale — Data Analyst & MIS Executive",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "SQL, Power BI, Advanced Excel and Python for analysis, MIS reporting, KPI dashboards and business reporting.",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Mahesh Sakharam Kale",
+          url: `${site.url}/`,
+          image: site.image,
+          jobTitle: ["Data Analyst", "MIS Executive"],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Pune",
+            addressRegion: "Maharashtra",
+            addressCountry: "IN",
+          },
+          sameAs: ["https://github.com/Maheshk3010", "https://www.linkedin.com/in/maheshkale3010/"],
+          knowsAbout: [
+            "SQL",
+            "Power BI",
+            "Advanced Excel",
+            "Python",
+            "MIS Reporting",
+            "KPI Reporting",
+            "Data Validation",
+            "Data Reconciliation",
+            "Business Reporting",
+          ],
+        }),
       },
     ],
-    links: [{ rel: "canonical", href: "https://mahesh-kale-portfolio.vercel.app/" }],
   }),
-
   component: Index,
 });
 
 function Index() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Mahesh Sakharam Kale",
-    url: "https://mahesh-kale-portfolio.vercel.app/",
-    image: "https://mahesh-kale-portfolio.vercel.app/maheshkale_pic.jpeg",
-    jobTitle: ["Data Analyst", "MIS Executive"],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pune",
-      addressRegion: "Maharashtra",
-      addressCountry: "IN",
-    },
-    sameAs: ["https://github.com/Maheshk3010", "https://www.linkedin.com/in/maheshkale3010/"],
-    knowsAbout: [
-      "SQL",
-      "Power BI",
-      "Advanced Excel",
-      "Python",
-      "MIS Reporting",
-      "KPI Reporting",
-      "Data Validation",
-      "Business Reporting",
-    ],
-  };
   return (
     <MotionConfig reducedMotion="user">
       <a
@@ -103,7 +85,9 @@ function Index() {
         <ScrollSignal />
         <Nav />
         <Hero />
+        <ProfessionalSnapshot />
         <AnalyticsSnapshot />
+        <RealWorkPreview />
         <Projects />
         <Dashboard />
         <Experience />
@@ -113,12 +97,6 @@ function Index() {
         <Contact />
         <Footer />
       </main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
-        }}
-      />
     </MotionConfig>
   );
 }

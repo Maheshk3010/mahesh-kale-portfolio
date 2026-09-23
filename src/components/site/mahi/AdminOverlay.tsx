@@ -17,11 +17,7 @@ export function AdminOverlay() {
     window.addEventListener("storage", onStorage);
 
     const onKey = (e: KeyboardEvent) => {
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        e.shiftKey &&
-        (e.key === "K" || e.key === "k")
-      ) {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === "K" || e.key === "k")) {
         if (isAdminEnabled()) {
           e.preventDefault();
           setOpen((v) => !v);
@@ -52,9 +48,7 @@ export function AdminOverlay() {
           <span className="text-sm">🛡</span>
         </button>
       )}
-      <AnimatePresence>
-        {open && <AdminPanel onClose={() => setOpen(false)} />}
-      </AnimatePresence>
+      <AnimatePresence>{open && <AdminPanel onClose={() => setOpen(false)} />}</AnimatePresence>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 const maheshPhotoUrl = "/maheshkale_pic.jpeg";
 import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
@@ -20,20 +20,16 @@ type ChatMessage = {
 };
 
 const QUICK_QUESTIONS = [
-  "What skills does Mahesh have?",
-  "Does Mahesh know Python?",
-  "Does Mahesh know SQL?",
-  "Does Mahesh know Power BI?",
-  "Which roles suit Mahesh best?",
-  "What MIS reporting skills does Mahesh have?",
-  "Show Certifications",
+  "Show projects",
+  "Show MIS experience",
+  "Show skills",
   "Download Resume",
+  "Open GitHub",
   "How can I contact Mahesh?",
 ];
 
-
 const WELCOME_TEXT =
-  "Hello 👋\n\nI'm MAHI.AI — Mahesh Kale's Professional AI Career Assistant.\n\nI can answer questions about:\n• Skills\n• Projects\n• Experience\n• Resume\n• Certifications\n• Contact Information\n• GitHub\n• LinkedIn";
+  "MAHI.AI is Mahesh Kale's local portfolio assistant. Ask about projects, MIS experience, skills, resume, GitHub or contact details.";
 
 export function MahiAI() {
   const [open, setOpen] = useState(false);
@@ -66,54 +62,56 @@ export function MahiAI() {
     [messages],
   );
 
-  const send = async (text: string) => {
-    const value = text.trim();
-    if (!value || thinking) return;
-    const now = Date.now();
-    const userMsg: ChatMessage = {
-      id: `u-${now}`,
-      role: "user",
-      content: value,
-      createdAt: now,
-    };
-    setMessages((m) => [...m, userMsg]);
-    setInput("");
-    setThinking(true);
-    analyticsService.trackQuestion(value);
+  const send = useCallback(
+    async (text: string) => {
+      const value = text.trim();
+      if (!value || thinking) return;
+      const now = Date.now();
+      const userMsg: ChatMessage = {
+        id: `u-${now}`,
+        role: "user",
+        content: value,
+        createdAt: now,
+      };
+      setMessages((m) => [...m, userMsg]);
+      setInput("");
+      setThinking(true);
+      analyticsService.trackQuestion(value);
 
-    try {
-      const response = await mahiEngine.ask(value, engineHistory);
-      analyticsService.trackResponse(value, response);
-      setMessages((m) => [
-        ...m,
-        {
-          id: `a-${Date.now()}`,
-          role: "assistant",
-          content: response.reply,
-          createdAt: Date.now(),
-          suggestions: response.suggestions,
-          intent: response.intent,
-          verified: response.verified,
-          unverified:
-            !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
-        },
-      ]);
-    } catch {
-      setMessages((m) => [
-        ...m,
-        {
-          id: `a-${Date.now()}`,
-          role: "assistant",
-          content: UNVERIFIED_FALLBACK,
-          createdAt: Date.now(),
-          unverified: true,
-        },
-      ]);
-    } finally {
-      setThinking(false);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    }
-  };
+      try {
+        const response = await mahiEngine.ask(value, engineHistory);
+        analyticsService.trackResponse(value, response);
+        setMessages((m) => [
+          ...m,
+          {
+            id: `a-${Date.now()}`,
+            role: "assistant",
+            content: response.reply,
+            createdAt: Date.now(),
+            suggestions: response.suggestions,
+            intent: response.intent,
+            verified: response.verified,
+            unverified: !response.verified || response.reply.trim() === UNVERIFIED_FALLBACK,
+          },
+        ]);
+      } catch {
+        setMessages((m) => [
+          ...m,
+          {
+            id: `a-${Date.now()}`,
+            role: "assistant",
+            content: UNVERIFIED_FALLBACK,
+            createdAt: Date.now(),
+            unverified: true,
+          },
+        ]);
+      } finally {
+        setThinking(false);
+        setTimeout(() => inputRef.current?.focus(), 50);
+      }
+    },
+    [engineHistory, thinking],
+  );
 
   const sendRef = useRef(send);
   useEffect(() => {
@@ -164,21 +162,15 @@ export function MahiAI() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Open MAHI.AI assistant"
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ y: -3, scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
-          className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 py-2.5 pl-2.5 pr-3 backdrop-blur-xl"
+          initial={false}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 p-2 backdrop-blur-xl md:py-2.5 md:pl-2.5 md:pr-3"
         >
           <span className="relative grid h-8 w-8 place-items-center bg-primary text-primary-foreground">
-            {open ? (
-              <X className="h-4 w-4" />
-            ) : (
-              <Bot className="h-4 w-4" />
-            )}
+            {open ? <X className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
           </span>
-          <span className="relative font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground">
+          <span className="relative hidden font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground md:inline">
             Ask MAHI
           </span>
         </motion.button>
@@ -195,13 +187,10 @@ export function MahiAI() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             role="dialog"
             aria-label="MAHI.AI chat"
-            className="fixed z-[70] flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--background)]/85 shadow-[0_30px_80px_-20px_rgba(6,182,212,0.35)] backdrop-blur-2xl
+            className="fixed z-[70] flex flex-col overflow-hidden border border-border bg-background/96 shadow-2xl backdrop-blur-2xl
               bottom-24 right-3 left-3 max-h-[78vh]
               md:bottom-24 md:right-6 md:left-auto md:w-[380px] md:max-h-[600px]"
           >
-            <div className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
-
             {/* Header */}
             <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
               <div className="relative shrink-0">
@@ -250,17 +239,11 @@ export function MahiAI() {
             </div>
 
             <AnimatePresence>
-              {showAnalytics && (
-                <AnalyticsPanel onClose={() => setShowAnalytics(false)} />
-              )}
+              {showAnalytics && <AnalyticsPanel onClose={() => setShowAnalytics(false)} />}
             </AnimatePresence>
 
-
             {/* Messages */}
-            <div
-              ref={scrollRef}
-              className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3"
-            >
+            <div ref={scrollRef} className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3">
               {showWelcome ? (
                 <>
                   <MessageBubble
@@ -294,13 +277,7 @@ export function MahiAI() {
                   </div>
                 </>
               ) : (
-                messages.map((m) => (
-                  <MessageBubble
-                    key={m.id}
-                    message={m}
-                    onSuggestion={send}
-                  />
-                ))
+                messages.map((m) => <MessageBubble key={m.id} message={m} onSuggestion={send} />)
               )}
 
               {thinking && <TypingIndicator />}
@@ -321,9 +298,7 @@ export function MahiAI() {
                     className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
                   >
                     {voice.error ? (
-                      <span className="text-destructive-foreground/90">
-                        {voice.error}
-                      </span>
+                      <span className="text-destructive-foreground/90">{voice.error}</span>
                     ) : voice.state === "listening" ? (
                       <span className="flex items-center gap-2">
                         <span className="flex items-end gap-0.5">
@@ -341,9 +316,7 @@ export function MahiAI() {
                             />
                           ))}
                         </span>
-                        <span className="font-medium text-primary">
-                          Listening…
-                        </span>
+                        <span className="font-medium text-primary">Listening…</span>
                       </span>
                     ) : (
                       <span className="flex items-center gap-2 text-muted-foreground">
@@ -379,9 +352,7 @@ export function MahiAI() {
                     onClick={voice.toggle}
                     disabled={thinking}
                     aria-label={
-                      voice.state === "listening"
-                        ? "Stop voice input"
-                        : "Start voice input"
+                      voice.state === "listening" ? "Stop voice input" : "Start voice input"
                     }
                     aria-pressed={voice.state === "listening"}
                     title="Voice input (Alt+M)"
@@ -511,9 +482,7 @@ function TypingIndicator() {
         🤖
       </div>
       <div className="flex items-center gap-2 rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2.5">
-        <span className="text-xs text-muted-foreground">
-          MAHI.AI is thinking
-        </span>
+        <span className="text-xs text-muted-foreground">MAHI.AI is thinking</span>
         <span className="flex items-center gap-1">
           {[0, 1, 2].map((i) => (
             <motion.span

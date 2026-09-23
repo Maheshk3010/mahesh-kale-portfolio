@@ -93,7 +93,9 @@ export function AnalyticsPanel({ onClose }: { onClose: () => void }) {
           <h3 className="text-sm font-semibold tracking-tight text-foreground">
             Recruiter Analytics
           </h3>
-          <p className="text-[11px] text-muted-foreground">Session-only · never leaves this browser</p>
+          <p className="text-[11px] text-muted-foreground">
+            Session-only · never leaves this browser
+          </p>
         </div>
         <button
           type="button"
@@ -158,12 +160,18 @@ export function AnalyticsPanel({ onClose }: { onClose: () => void }) {
         )}
 
         {topCerts.length > 0 && (
-          <AnalyticsCard title="Most requested certifications" icon={<Sparkles className="h-3.5 w-3.5" />}>
+          <AnalyticsCard
+            title="Most requested certifications"
+            icon={<Sparkles className="h-3.5 w-3.5" />}
+          >
             <BarList items={topCerts} />
           </AnalyticsCard>
         )}
 
-        <AnalyticsCard title="Actions performed" icon={<MousePointerClick className="h-3.5 w-3.5" />}>
+        <AnalyticsCard
+          title="Actions performed"
+          icon={<MousePointerClick className="h-3.5 w-3.5" />}
+        >
           {actions.length === 0 ? (
             <EmptyRow>No actions performed yet.</EmptyRow>
           ) : (
@@ -224,15 +232,7 @@ function SessionSummaryCard({
   );
 }
 
-function StatCard({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: number;
-}) {
+function StatCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: number }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
       <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -296,7 +296,5 @@ function BarList({ items }: { items: Array<{ key: string; value: number }> }) {
 }
 
 function EmptyRow({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[12px] italic text-muted-foreground">{children}</p>
-  );
+  return <p className="text-[12px] italic text-muted-foreground">{children}</p>;
 }

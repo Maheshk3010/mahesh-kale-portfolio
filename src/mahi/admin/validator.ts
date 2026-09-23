@@ -11,11 +11,7 @@ import type {
 
 const URL_PATTERN = /^https?:\/\/[^\s]+$/i;
 
-const TARGET_ROLES = new Set(
-  ["data analyst", "mis executive"].map((s) =>
-    s.toLowerCase(),
-  ),
-);
+const TARGET_ROLES = new Set(["data analyst", "mis executive"].map((s) => s.toLowerCase()));
 
 const KNOWN_SKILL_CATEGORIES = new Set([
   "language",
@@ -110,7 +106,12 @@ function validateSkills(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((s, i) => {
     if (!isNonEmptyString(s.name)) {
-      issues.push({ severity: "error", recordIndex: i, field: "name", message: "Missing skill name" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "name",
+        message: "Missing skill name",
+      });
     }
     if (!isNonEmptyString(s.category)) {
       issues.push({
@@ -146,7 +147,12 @@ function validateProjects(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((p, i) => {
     if (!isNonEmptyString(p.title)) {
-      issues.push({ severity: "error", recordIndex: i, field: "title", message: "Missing project title" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "title",
+        message: "Missing project title",
+      });
     }
     if (!isNonEmptyString(p.description)) {
       issues.push({
@@ -210,11 +216,21 @@ function validateExperience(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((e, i) => {
     if (!isNonEmptyString(e.company))
-      issues.push({ severity: "error", recordIndex: i, field: "company", message: "Missing company" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "company",
+        message: "Missing company",
+      });
     if (!isNonEmptyString(e.role))
       issues.push({ severity: "warn", recordIndex: i, field: "role", message: "Missing role" });
     if (!isNonEmptyString(e.duration))
-      issues.push({ severity: "warn", recordIndex: i, field: "duration", message: "Missing duration" });
+      issues.push({
+        severity: "warn",
+        recordIndex: i,
+        field: "duration",
+        message: "Missing duration",
+      });
   });
   return { count: items.length, issues };
 }
@@ -224,7 +240,12 @@ function validateEducation(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((e, i) => {
     if (!isNonEmptyString(e.degree))
-      issues.push({ severity: "error", recordIndex: i, field: "degree", message: "Missing degree" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "degree",
+        message: "Missing degree",
+      });
     if (!isNonEmptyString(e.university))
       issues.push({
         severity: "warn",
@@ -250,7 +271,12 @@ function validateCertifications(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((c, i) => {
     if (!isNonEmptyString(c.name))
-      issues.push({ severity: "error", recordIndex: i, field: "name", message: "Missing certification name" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "name",
+        message: "Missing certification name",
+      });
     if (!isNonEmptyString(c.organization))
       issues.push({
         severity: "warn",
@@ -303,7 +329,12 @@ function validateSocial(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((l, i) => {
     if (!isNonEmptyString(l.platform))
-      issues.push({ severity: "warn", recordIndex: i, field: "platform", message: "Missing platform" });
+      issues.push({
+        severity: "warn",
+        recordIndex: i,
+        field: "platform",
+        message: "Missing platform",
+      });
     if (!isValidUrl(l.url))
       issues.push({
         severity: "warn",
@@ -342,7 +373,12 @@ function validateRoles(kb: KnowledgeBase) {
   const issues: ValidationIssue[] = [];
   items.forEach((r, i) => {
     if (!isNonEmptyString(r.title)) {
-      issues.push({ severity: "error", recordIndex: i, field: "title", message: "Missing role title" });
+      issues.push({
+        severity: "error",
+        recordIndex: i,
+        field: "title",
+        message: "Missing role title",
+      });
       return;
     }
     if (!TARGET_ROLES.has(r.title.toLowerCase().trim())) {
