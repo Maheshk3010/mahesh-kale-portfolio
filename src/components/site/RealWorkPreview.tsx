@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
-import { ArrowRight, Database, Gauge, GitBranch, LineChart } from "lucide-react";
+import { Database, Gauge, GitBranch, LineChart } from "lucide-react";
 import { Section } from "./Section";
-import { projects } from "@/mahi/portfolio";
 import { inView, revealScale, revealUp, stagger } from "@/lib/motion";
 
 const signals = [
@@ -12,7 +11,6 @@ const signals = [
 ];
 
 export function RealWorkPreview() {
-  const primary = projects.slice(0, 4);
   return (
     <Section
       id="work-preview"
@@ -49,27 +47,19 @@ export function RealWorkPreview() {
             </motion.div>
           ))}
         </motion.div>
-        <div className="relative grid gap-px bg-border lg:grid-cols-2">
-          {primary.map((project) => (
-            <article key={project.title} className="bg-background p-5 sm:p-6">
-              <p className="font-mono text-[8px] uppercase tracking-[0.14em] text-primary">
-                System / {project.number}
+        <div className="relative grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["Repository proof", "Seven project repositories linked directly to source work."],
+            ["Scale proof", "50K+ sales records, 7K+ customer records and 15+ KPIs."],
+            ["Process proof", "Cleaning, validation, reconciliation and reporting workflows."],
+            ["Role proof", "Analytics, MIS, KPI reporting and dashboard development."],
+          ].map(([label, value], index) => (
+            <div key={label} className="bg-background p-5">
+              <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+                Evidence / {String(index + 1).padStart(2, "0")}
               </p>
-              <h3 className="mt-3 font-display text-xl font-bold uppercase">{project.title}</h3>
-              <div className="mt-5 flex flex-wrap items-center gap-2">
-                {project.workflow.slice(0, 5).map((step, index) => (
-                  <span
-                    key={step}
-                    className="flex items-center gap-2 font-mono text-[8px] font-bold uppercase text-muted-foreground"
-                  >
-                    {step}
-                    {index < Math.min(project.workflow.length, 5) - 1 && (
-                      <ArrowRight className="h-3 w-3 text-primary" />
-                    )}
-                  </span>
-                ))}
-              </div>
-            </article>
+              <p className="mt-4 text-sm leading-6 text-muted-foreground">{value}</p>
+            </div>
           ))}
         </div>
       </motion.div>

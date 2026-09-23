@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 const maheshPhotoUrl = "/maheshkale_pic.jpeg";
@@ -20,22 +20,20 @@ type ChatMessage = {
 };
 
 const QUICK_QUESTIONS = [
-  "What skills does Mahesh have?",
-  "Does Mahesh know Python?",
-  "Does Mahesh know SQL?",
-  "Does Mahesh know Power BI?",
-  "Which roles suit Mahesh best?",
-  "What MIS reporting skills does Mahesh have?",
-  "Show Certifications",
+  "Show projects",
+  "Show MIS experience",
+  "Show skills",
   "Download Resume",
+  "Open GitHub",
   "How can I contact Mahesh?",
 ];
 
 
 const WELCOME_TEXT =
-  "Hello 👋\n\nI'm MAHI.AI — Mahesh Kale's Professional AI Career Assistant.\n\nI can answer questions about:\n• Skills\n• Projects\n• Experience\n• Resume\n• Certifications\n• Contact Information\n• GitHub\n• LinkedIn";
+  "MAHI.AI is Mahesh Kale's local portfolio assistant. Ask about projects, MIS experience, skills, resume, GitHub or contact details.";
 
 export function MahiAI() {
+  const reducedMotion = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [input, setInput] = useState("");
@@ -164,12 +162,12 @@ export function MahiAI() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Open MAHI.AI assistant"
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          initial={reducedMotion ? false : { opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ y: -3, scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
-          className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 py-2.5 pl-2.5 pr-3 backdrop-blur-xl"
+          whileHover={reducedMotion ? undefined : { y: -2 }}
+          whileTap={reducedMotion ? undefined : { scale: 0.97 }}
+          className="group relative flex items-center gap-2 border border-primary/40 bg-background/95 p-2 backdrop-blur-xl md:py-2.5 md:pl-2.5 md:pr-3"
         >
           <span className="relative grid h-8 w-8 place-items-center bg-primary text-primary-foreground">
             {open ? (
@@ -178,7 +176,7 @@ export function MahiAI() {
               <Bot className="h-4 w-4" />
             )}
           </span>
-          <span className="relative font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground">
+          <span className="relative hidden font-mono text-[10px] font-bold uppercase tracking-[.12em] text-foreground md:inline">
             Ask MAHI
           </span>
         </motion.button>
@@ -195,13 +193,10 @@ export function MahiAI() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             role="dialog"
             aria-label="MAHI.AI chat"
-            className="fixed z-[70] flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--background)]/85 shadow-[0_30px_80px_-20px_rgba(6,182,212,0.35)] backdrop-blur-2xl
+            className="fixed z-[70] flex flex-col overflow-hidden border border-border bg-background/96 shadow-2xl backdrop-blur-2xl
               bottom-24 right-3 left-3 max-h-[78vh]
               md:bottom-24 md:right-6 md:left-auto md:w-[380px] md:max-h-[600px]"
           >
-            <div className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
-
             {/* Header */}
             <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
               <div className="relative shrink-0">

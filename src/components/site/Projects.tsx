@@ -16,12 +16,12 @@ export function Projects() {
       title="Featured case studies"
       description="Business questions translated into structured data workflows, reporting systems and analytical outputs."
     >
-      <div className="space-y-24">
+      <div className="space-y-16 md:space-y-24">
         {featured.map((project, index) => (
           <ProjectCase key={project.title} project={project} reverse={index % 2 === 1} />
         ))}
       </div>
-      <div className="mt-24 grid gap-8 border-t border-border pt-6 lg:grid-cols-[.55fr_1.45fr]">
+      <div className="mt-16 grid gap-8 border-t border-border pt-6 md:mt-24 lg:grid-cols-[.55fr_1.45fr]">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[.16em] text-primary">
             Supporting technical work
@@ -78,7 +78,7 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
       whileInView="visible"
       viewport={inView}
       variants={stagger(0.04, 0.08)}
-      className="project-case border-t border-border pt-5"
+      className="project-case scroll-mt-20 border-t border-border pt-5"
     >
       <div className="grid gap-10 lg:grid-cols-[.82fr_1.18fr]">
         <motion.div variants={revealLeft} className={reverse ? "lg:order-2" : ""}>
@@ -130,13 +130,13 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
               ))}
             </div>
           </div>
-          <div className="evidence-frame relative min-h-[310px] overflow-hidden border border-border bg-panel p-6 sm:p-8">
+          <div className="evidence-frame relative min-h-[250px] overflow-hidden border border-border bg-panel p-5 sm:min-h-[310px] sm:p-8">
             <div className="control-grid pointer-events-none absolute inset-0 opacity-50" />
             <div
               className="evidence-scan absolute inset-x-0 top-0 h-px bg-primary"
               aria-hidden="true"
             />
-            <div className="relative flex h-full min-h-[250px] flex-col justify-between">
+            <div className="relative flex h-full min-h-[210px] flex-col justify-between sm:min-h-[250px]">
               <div>
                 <p className="font-mono text-[9px] uppercase tracking-[.14em] text-primary">
                   System architecture
