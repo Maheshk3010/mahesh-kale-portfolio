@@ -42,23 +42,17 @@ const CATEGORY_LABELS: Record<KnowledgeCategory, string> = {
 
 function StatusDot({ status }: { status: ValidationSeverity }) {
   const cls =
-    status === "error"
-      ? "bg-red-400"
-      : status === "warn"
-        ? "bg-amber-400"
-        : "bg-emerald-400";
+    status === "error" ? "bg-red-400" : status === "warn" ? "bg-amber-400" : "bg-emerald-400";
   return <span className={`inline-block h-2 w-2 rounded-full ${cls}`} />;
 }
 
 function StatusIcon({ status }: { status: ValidationSeverity }) {
-  if (status === "ok")
-    return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />;
+  if (status === "ok") return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />;
   return <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />;
 }
 
 function HealthBar({ score }: { score: number }) {
-  const color =
-    score >= 90 ? "bg-emerald-400" : score >= 70 ? "bg-amber-400" : "bg-red-400";
+  const color = score >= 90 ? "bg-emerald-400" : score >= 70 ? "bg-amber-400" : "bg-red-400";
   return (
     <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
       <motion.div
@@ -73,17 +67,12 @@ function HealthBar({ score }: { score: number }) {
 
 export function AdminPanel({ onClose }: { onClose: () => void }) {
   const [tab, setTab] = useState<Tab>("overview");
-  const [health, setHealth] = useState<KnowledgeHealthReport>(() =>
-    KnowledgeCenter.health(),
-  );
-  const [selectedCategory, setSelectedCategory] =
-    useState<KnowledgeCategory>("profile");
+  const [health, setHealth] = useState<KnowledgeHealthReport>(() => KnowledgeCenter.health());
+  const [selectedCategory, setSelectedCategory] = useState<KnowledgeCategory>("profile");
   const [query, setQuery] = useState("");
   const [hits, setHits] = useState<SearchHit[]>([]);
   const [importText, setImportText] = useState("");
-  const [importResult, setImportResult] = useState<ImportValidationResult | null>(
-    null,
-  );
+  const [importResult, setImportResult] = useState<ImportValidationResult | null>(null);
   const [importing, setImporting] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -143,9 +132,7 @@ export function AdminPanel({ onClose }: { onClose: () => void }) {
             <Shield className="h-4 w-4" />
           </div>
           <div className="min-w-0 flex-1">
-            <h2 className="text-sm font-semibold text-foreground">
-              MAHI.AI Knowledge Center
-            </h2>
+            <h2 className="text-sm font-semibold text-foreground">MAHI.AI Knowledge Center</h2>
             <p className="text-[11px] text-muted-foreground">
               Verified data maintenance · Admin mode · Local-only
             </p>
@@ -213,10 +200,13 @@ export function AdminPanel({ onClose }: { onClose: () => void }) {
         {/* Body */}
         <div className="flex-1 overflow-y-auto p-5">
           {tab === "overview" && (
-            <OverviewTab health={health} onOpenCategory={(c) => {
-              setSelectedCategory(c);
-              setTab("categories");
-            }} />
+            <OverviewTab
+              health={health}
+              onOpenCategory={(c) => {
+                setSelectedCategory(c);
+                setTab("categories");
+              }}
+            />
           )}
           {tab === "categories" && (
             <CategoriesTab
@@ -284,9 +274,7 @@ function OverviewTab({
       </div>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-        <h3 className="mb-3 text-[13px] font-semibold text-foreground">
-          Knowledge Health
-        </h3>
+        <h3 className="mb-3 text-[13px] font-semibold text-foreground">Knowledge Health</h3>
         <div className="space-y-2.5">
           {health.perCategory.map((r) => (
             <button
@@ -320,26 +308,14 @@ function OverviewTab({
   );
 }
 
-function StatCard({
-  label,
-  value,
-  accent,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) {
+function StatCard({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
     <div
       className={`rounded-xl border p-4 ${
-        accent
-          ? "border-primary/30 bg-primary/10"
-          : "border-white/10 bg-white/[0.02]"
+        accent ? "border-primary/30 bg-primary/10" : "border-white/10 bg-white/[0.02]"
       }`}
     >
-      <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-        {label}
-      </p>
+      <p className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</p>
       <p
         className={`mt-1 text-2xl font-semibold tabular-nums ${
           accent ? "text-primary" : "text-foreground"
@@ -380,9 +356,7 @@ function CategoriesTab({
           >
             <StatusDot status={r.status} />
             <span className="flex-1 truncate">{CATEGORY_LABELS[r.category]}</span>
-            <span className="text-[10px] tabular-nums text-muted-foreground">
-              {r.recordCount}
-            </span>
+            <span className="text-[10px] tabular-nums text-muted-foreground">{r.recordCount}</span>
           </button>
         ))}
       </aside>
@@ -429,9 +403,7 @@ function CategoriesTab({
                           : issue.field
                             ? issue.field
                             : "category-level"}
-                        {typeof issue.recordIndex === "number"
-                          ? ` · #${issue.recordIndex}`
-                          : ""}
+                        {typeof issue.recordIndex === "number" ? ` · #${issue.recordIndex}` : ""}
                       </p>
                     </div>
                   </li>
@@ -477,18 +449,16 @@ function SearchTab({
       {!query.trim() ? (
         <div className="flex flex-wrap gap-1.5 text-[11px] text-muted-foreground">
           Try:
-          {["Python", "SQL", "Power BI", "Flask", "Recommendation System"].map(
-            (s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => onQueryChange(s)}
-                className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-foreground/85 hover:border-primary/40 hover:text-primary"
-              >
-                {s}
-              </button>
-            ),
-          )}
+          {["Python", "SQL", "Power BI", "Flask", "Recommendation System"].map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => onQueryChange(s)}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-foreground/85 hover:border-primary/40 hover:text-primary"
+            >
+              {s}
+            </button>
+          ))}
         </div>
       ) : hits.length === 0 ? (
         <p className="text-[12px] text-muted-foreground">
@@ -510,13 +480,9 @@ function SearchTab({
                   {CATEGORY_LABELS[h.category]}
                 </button>
                 <span className="truncate text-foreground/90">{h.label}</span>
-                <span className="ml-auto text-muted-foreground">
-                  {h.matchedField}
-                </span>
+                <span className="ml-auto text-muted-foreground">{h.matchedField}</span>
               </div>
-              <p className="mt-1 text-[12px] leading-relaxed text-foreground/80">
-                {h.snippet}
-              </p>
+              <p className="mt-1 text-[12px] leading-relaxed text-foreground/80">{h.snippet}</p>
             </li>
           ))}
         </ul>
@@ -621,8 +587,8 @@ function IoTab({
           <Upload className="h-4 w-4 text-primary" /> Import
         </h3>
         <p className="mb-3 text-[11.5px] text-muted-foreground">
-          Validated in-browser. Invalid structures are rejected. Import applies to
-          the current session only.
+          Validated in-browser. Invalid structures are rejected. Import applies to the current
+          session only.
         </p>
         <div className="mb-2 flex flex-wrap gap-2">
           <input
@@ -685,9 +651,7 @@ function IoTab({
               }`}
             >
               <p className="mb-1 font-semibold">
-                {importResult.valid
-                  ? "Imported for this session"
-                  : "Import rejected"}
+                {importResult.valid ? "Imported for this session" : "Import rejected"}
               </p>
               {importResult.issues.length === 0 ? (
                 <p className="text-foreground/70">No issues.</p>
@@ -695,19 +659,11 @@ function IoTab({
                 <ul className="max-h-40 space-y-0.5 overflow-y-auto">
                   {importResult.issues.map((i, idx) => (
                     <li key={idx} className="text-[11px]">
-                      <span
-                        className={
-                          i.severity === "error"
-                            ? "text-red-300"
-                            : "text-amber-300"
-                        }
-                      >
+                      <span className={i.severity === "error" ? "text-red-300" : "text-amber-300"}>
                         {i.severity === "error" ? "✗" : "⚠"}
                       </span>{" "}
                       <span className="text-foreground/80">{i.message}</span>
-                      {i.field && (
-                        <span className="text-muted-foreground"> · {i.field}</span>
-                      )}
+                      {i.field && <span className="text-muted-foreground"> · {i.field}</span>}
                     </li>
                   ))}
                 </ul>

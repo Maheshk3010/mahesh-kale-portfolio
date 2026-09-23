@@ -64,10 +64,7 @@ function refineSuggestions(
 }
 
 export class ConversationService {
-  async respond(
-    question: string,
-    history: ChatMessage[] = [],
-  ): Promise<ChatEngineResponse> {
+  async respond(question: string, history: ChatMessage[] = []): Promise<ChatEngineResponse> {
     const match = detectIntent(question, history);
     const result = searchKnowledge(match.intent, question);
     const response = generateResponse(result);

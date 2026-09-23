@@ -1,6 +1,10 @@
 {
   "links": [
-    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/maheshkale3010/", "handle": "maheshkale3010" },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/maheshkale3010/",
+      "handle": "maheshkale3010"
+    },
     { "platform": "GitHub", "url": "https://github.com/Maheshk3010", "handle": "Maheshk3010" },
     { "platform": "Portfolio", "url": "", "handle": "" }
   ]

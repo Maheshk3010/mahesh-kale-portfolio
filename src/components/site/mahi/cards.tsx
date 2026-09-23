@@ -97,7 +97,9 @@ export function CopyButton({
   const [copied, setCopied] = useState(false);
   return (
     <ActionButton
-      icon={copied ? <Check className="h-3 w-3 text-primary" /> : (icon ?? <Copy className="h-3 w-3" />)}
+      icon={
+        copied ? <Check className="h-3 w-3 text-primary" /> : (icon ?? <Copy className="h-3 w-3" />)
+      }
       analyticsAction={analyticsAction}
       onClick={async () => {
         try {
@@ -132,13 +134,9 @@ function CardShell({
           {icon}
         </span>
         <div className="min-w-0 flex-1">
-          <h4 className="text-[13px] font-semibold tracking-tight text-foreground">
-            {title}
-          </h4>
+          <h4 className="text-[13px] font-semibold tracking-tight text-foreground">{title}</h4>
           {subtitle && (
-            <p className="mt-0.5 truncate text-[11px] text-muted-foreground">
-              {subtitle}
-            </p>
+            <p className="mt-0.5 truncate text-[11px] text-muted-foreground">{subtitle}</p>
           )}
         </div>
       </div>
@@ -179,14 +177,10 @@ export function ResumeCard({ reply }: { reply?: string }) {
       subtitle={r.updated ? `Last updated · ${r.updated}` : "Professional resume"}
     >
       {reply && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">
-          {firstLine(reply)}
-        </p>
+        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">{firstLine(reply)}</p>
       )}
       {r.summary && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/75">
-          {r.summary}
-        </p>
+        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/75">{r.summary}</p>
       )}
       <div className="flex flex-wrap gap-1.5">
         <ActionButton
@@ -213,13 +207,7 @@ export function ResumeCard({ reply }: { reply?: string }) {
 
 /* -------------------------------- GitHub -------------------------------- */
 
-export function GitHubCard({
-  reply,
-  onAsk,
-}: {
-  reply?: string;
-  onAsk?: (q: string) => void;
-}) {
+export function GitHubCard({ reply, onAsk }: { reply?: string; onAsk?: (q: string) => void }) {
   const link =
     knowledgeBase.social.links.find((l) => l.platform.toLowerCase() === "github") ??
     (knowledgeBase.contact.github
@@ -227,9 +215,7 @@ export function GitHubCard({
       : null);
 
   if (!link?.url) {
-    return (
-      <UnverifiedCard message="I don't have a verified GitHub profile available." />
-    );
+    return <UnverifiedCard message="I don't have a verified GitHub profile available." />;
   }
 
   const repoCount = knowledgeBase.projects.projects.length;
@@ -242,9 +228,7 @@ export function GitHubCard({
       subtitle={handle ? `@${handle.replace(/^@/, "")}` : link.url}
     >
       {reply && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">
-          {firstLine(reply)}
-        </p>
+        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">{firstLine(reply)}</p>
       )}
       {repoCount > 0 && (
         <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-foreground/80">
@@ -285,9 +269,7 @@ export function LinkedInCard({ reply }: { reply?: string }) {
       : null);
 
   if (!link?.url) {
-    return (
-      <UnverifiedCard message="I don't have a verified LinkedIn profile available." />
-    );
+    return <UnverifiedCard message="I don't have a verified LinkedIn profile available." />;
   }
 
   const handle =
@@ -301,9 +283,7 @@ export function LinkedInCard({ reply }: { reply?: string }) {
       subtitle={handle ? `linkedin.com/in/${handle}` : link.url}
     >
       {reply && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">
-          {firstLine(reply)}
-        </p>
+        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">{firstLine(reply)}</p>
       )}
       <div className="flex flex-wrap gap-1.5">
         <ActionButton
@@ -336,9 +316,7 @@ export function ContactCard({ reply }: { reply?: string }) {
       subtitle={c.availability || undefined}
     >
       {reply && (
-        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">
-          {firstLine(reply)}
-        </p>
+        <p className="mb-2.5 text-[12px] leading-relaxed text-foreground/80">{firstLine(reply)}</p>
       )}
       <div className="mb-2.5 space-y-1.5 text-[12px] text-foreground/85">
         {c.email && (
