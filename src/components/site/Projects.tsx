@@ -92,13 +92,15 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
             ))}
           </div>
           <div className="mt-6">
-            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">Tech stack</p>
+            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+              Tech stack
+            </p>
             <div className="mt-3 flex flex-wrap gap-2">
-            {project.technologies.map((tool) => (
-              <span key={tool} className="control-tag">
-                {tool}
-              </span>
-            ))}
+              {project.technologies.map((tool) => (
+                <span key={tool} className="control-tag">
+                  {tool}
+                </span>
+              ))}
             </div>
           </div>
           {project.github && (
@@ -113,12 +115,22 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
         </motion.div>
         <motion.div variants={revealScale} className={reverse ? "lg:order-1" : ""}>
           <div className="case-workflow border-x border-t border-border bg-surface px-5 py-4">
-            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">Analytical workflow</p>
+            <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+              Analytical workflow
+            </p>
           </div>
           <ProjectWorkflow project={project} />
           <div className="grid border-x border-b border-border sm:grid-cols-2">
-            <ProjectField label="Key output" value={project.output || project.description} compact />
-            <ProjectField label="Insight focus" value={project.keyFindings.join(" · ") || project.features.join(" · ")} compact />
+            <ProjectField
+              label="Key output"
+              value={project.output || project.description}
+              compact
+            />
+            <ProjectField
+              label="Insight focus"
+              value={project.keyFindings.join(" · ") || project.features.join(" · ")}
+              compact
+            />
           </div>
         </motion.div>
       </div>

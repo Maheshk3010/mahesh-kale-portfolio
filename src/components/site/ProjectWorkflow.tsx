@@ -5,7 +5,13 @@ import { inView, revealUp, stagger } from "@/lib/motion";
 
 const icons = [Database, ScanSearch, Layers3, Network, BarChart3];
 
-export function ProjectWorkflow({ project, compact = false }: { project: Project; compact?: boolean }) {
+export function ProjectWorkflow({
+  project,
+  compact = false,
+}: {
+  project: Project;
+  compact?: boolean;
+}) {
   const isWarehouse = project.number === "02";
   const steps = project.workflow;
 
@@ -67,9 +73,14 @@ function WorkflowRail({ steps, compact }: { steps: string[]; compact: boolean })
               </span>
               <Icon className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
             </div>
-            <p className="mt-5 font-display text-sm font-bold uppercase leading-5 sm:text-base">{step}</p>
+            <p className="mt-5 font-display text-sm font-bold uppercase leading-5 sm:text-base">
+              {step}
+            </p>
             {index < steps.length - 1 && (
-              <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 text-primary" aria-hidden="true" />
+              <ArrowRight
+                className="absolute bottom-3 right-3 h-3.5 w-3.5 text-primary"
+                aria-hidden="true"
+              />
             )}
           </motion.li>
         );
