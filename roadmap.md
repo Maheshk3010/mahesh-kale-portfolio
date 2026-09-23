@@ -58,3 +58,8 @@
 - [ ] Strengthen MIS, experience, analytics core, credentials, methodology, and final CTA.
 - [ ] Align MAHI.AI and SEO with the production portfolio.
 - [ ] Validate links, resume, lint, build, accessibility, and four target viewports.
+
+## Proactive final quality review
+
+- [ ] Review the finished portfolio as a senior analyst, MIS professional, recruiter, hiring manager, and premium product designer.
+- [ ] Improve any material weakness in hierarchy, evidence, composition, navigation, motion, or mobile presentation without inventing claims.
