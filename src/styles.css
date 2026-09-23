@@ -904,6 +904,35 @@ article:hover > .timeline-marker {
   background: color-mix(in oklab, var(--primary) 4%, var(--background));
   transform: translateY(-2px);
 }
+.workflow-01 .workflow-rail {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.workflow-03 .workflow-rail {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.workflow-03 .workflow-step:last-child {
+  grid-column: span 2;
+  border-bottom: 2px solid var(--success);
+}
+.workflow-04 .workflow-rail {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.workflow-04 .workflow-step:nth-child(4),
+.workflow-04 .workflow-step:nth-child(5) {
+  border-top: 2px solid var(--attention);
+}
+.workflow-04 .workflow-step:nth-child(6),
+.workflow-04 .workflow-step:nth-child(7) {
+  border-top: 2px solid var(--success);
+}
+.workflow-05 .workflow-rail {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.workflow-05 .workflow-step:nth-child(4),
+.workflow-05 .workflow-step:nth-child(5),
+.workflow-05 .workflow-step:nth-child(6) {
+  border-top: 2px solid var(--success);
+}
 @keyframes identity-edge {
   from {
     opacity: 0;
@@ -1052,5 +1081,14 @@ article:hover > .timeline-marker {
   }
   .project-case h3 {
     text-wrap: balance;
+  }
+  .workflow-01 .workflow-rail,
+  .workflow-03 .workflow-rail,
+  .workflow-04 .workflow-rail,
+  .workflow-05 .workflow-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .workflow-03 .workflow-step:last-child {
+    grid-column: auto;
   }
 }

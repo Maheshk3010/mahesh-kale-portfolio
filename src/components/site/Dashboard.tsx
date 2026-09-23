@@ -7,15 +7,7 @@ import { SectionTransition } from "./SectionTransition";
 import { misModules } from "@/mahi/portfolio";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
-const flow = [
-  "Source data",
-  "Clean",
-  "Validate",
-  "Reconcile",
-  "KPI engine",
-  "Report",
-  "Management",
-];
+const flow = ["Source", "Clean", "Validate", "Reconcile", "KPI", "Reporting", "Management"];
 
 const dimensions: Record<string, string[]> = {
   "Daily MIS": ["Volume", "Completed", "Outstanding", "SLA", "TAT", "Exceptions"],
@@ -31,8 +23,8 @@ const dimensions: Record<string, string[]> = {
   "KPI Engine": ["KPI Definition", "Calculation", "Threshold", "Trend", "Reporting View"],
   "Target vs Actual": ["Target", "Actual", "Variance", "Achievement %"],
   "SLA / TAT": ["SLA Met", "SLA Breached", "Average TAT", "Aging"],
-  "Data Reconciliation": ["Source A", "Source B", "Matched", "Mismatched", "Exceptions"],
-  "Exception Monitoring": ["Exception Type", "Source", "Priority", "Owner", "Resolution"],
+  Reconciliation: ["Source A", "Source B", "Matched", "Mismatched", "Exceptions"],
+  Exceptions: ["Exception Type", "Source", "Priority", "Owner", "Resolution"],
 };
 
 export function Dashboard() {
@@ -52,7 +44,7 @@ export function Dashboard() {
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border px-5 py-4 font-mono text-[8px] font-bold uppercase tracking-[.14em] sm:px-7">
             <span className="text-primary">OP_FLOOR / REPORTING CONTROL</span>
             <span className="flex shrink-0 items-center gap-2 text-success">
-              <CheckCircle2 className="h-3.5 w-3.5" /> Sync active
+              <CheckCircle2 className="h-3.5 w-3.5" /> Reporting control
             </span>
           </div>
           <div className="mis-console px-5 py-7 sm:px-7">

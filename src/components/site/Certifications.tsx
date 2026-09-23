@@ -11,7 +11,7 @@ export function Certifications() {
       <SectionTransition label="Professional records" />
       <Section
         id="credentials"
-        eyebrow="10 / Qualification vault"
+        eyebrow="10 / Credential archive"
         title="Credential archive"
         description="Formal education, professional training and documented credentials."
         className="archive-scene"

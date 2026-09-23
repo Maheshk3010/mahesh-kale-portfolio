@@ -6,10 +6,10 @@ import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { heroEnter, motionEase, stagger } from "@/lib/motion";
 
 const modules = [
-  ["Data engine", "Online"],
-  ["Reporting core", "Online"],
-  ["Validation system", "Online"],
-  ["Analyst profile", "Loaded"],
+  ["Data engine", "SQL / Python"],
+  ["Reporting core", "Power BI / Excel"],
+  ["Validation system", "Check / Reconcile"],
+  ["Analyst profile", "Data / MIS"],
 ];
 
 export function Hero() {
@@ -39,7 +39,7 @@ export function Hero() {
           >
             <span className="text-primary">Data intelligence lab</span>
             <span className="flex items-center gap-1 text-success">
-              <Check className="h-3 w-3" /> Systems online
+              <Check className="h-3 w-3" /> Profile identified
             </span>
           </motion.div>
           <motion.h1
@@ -112,14 +112,14 @@ export function Hero() {
               </a>
             </Button>
             {github && (
-              <Button asChild variant="ghost" size="icon">
+              <Button asChild variant="ghost" size="icon" className="min-h-11 min-w-11">
                 <a href={github} target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">
                   <Github />
                 </a>
               </Button>
             )}
             {linkedin && (
-              <Button asChild variant="ghost" size="icon">
+              <Button asChild variant="ghost" size="icon" className="min-h-11 min-w-11">
                 <a
                   href={linkedin}
                   target="_blank"
@@ -140,7 +140,7 @@ export function Hero() {
         >
           <div className="flex items-center justify-between border-b border-border pb-4 font-mono text-[9px] uppercase tracking-[.14em]">
             <span className="text-primary">Data intelligence lab</span>
-            <span className="text-muted-foreground">Initializing...</span>
+            <span className="text-muted-foreground">Analyst identified</span>
           </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
             {modules.map(([title, detail], index) => (

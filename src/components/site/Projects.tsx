@@ -9,7 +9,6 @@ import { inView, revealLeft, revealScale, revealUp, stagger } from "@/lib/motion
 
 export function Projects() {
   const featured = projects.filter((project) => project.tier === "featured");
-  const supporting = projects.filter((project) => project.tier === "supporting");
   return (
     <Section
       id="projects"
@@ -22,44 +21,6 @@ export function Projects() {
         {featured.map((project, index) => (
           <ProjectCase key={project.title} project={project} reverse={index % 2 === 1} />
         ))}
-      </div>
-      <div className="mt-16 grid gap-8 border-t border-border pt-6 md:mt-24 lg:grid-cols-[.55fr_1.45fr]">
-        <div>
-          <p className="font-mono text-[10px] uppercase tracking-[.16em] text-primary">
-            Supporting technical work
-          </p>
-          <h3 className="mt-5 font-display text-3xl font-bold uppercase">Technical depth</h3>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
-            Focused machine-learning implementations that remain secondary to the analytics and MIS
-            portfolio.
-          </p>
-        </div>
-        <div className="divide-y divide-border border-y border-border">
-          {supporting.map((project) => (
-            <article
-              key={project.title}
-              className="grid gap-5 py-6 sm:grid-cols-[48px_1fr_auto] sm:items-center"
-            >
-              <span className="font-mono text-[9px] text-primary">{project.number}</span>
-              <div>
-                <h4 className="font-display text-xl font-bold uppercase">{project.title}</h4>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {project.description}
-                </p>
-                <p className="mt-3 font-mono text-[8px] uppercase tracking-[.1em] text-muted-foreground">
-                  {project.technologies.join(" · ")}
-                </p>
-              </div>
-              {project.github && (
-                <Button asChild variant="outline" size="sm">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github /> GitHub <ArrowUpRight />
-                  </a>
-                </Button>
-              )}
-            </article>
-          ))}
-        </div>
       </div>
     </Section>
   );

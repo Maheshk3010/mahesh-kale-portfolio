@@ -22,10 +22,13 @@ export function Section({
 }) {
   const registrationTitle = navTitle ?? (typeof title === "string" ? title : (eyebrow ?? id ?? ""));
   const ref = useSectionRegistration<HTMLElement>(id, registrationTitle);
+  const headingId = id && title ? `${id}-title` : undefined;
   return (
     <motion.section
       ref={ref}
       id={id}
+      aria-labelledby={headingId}
+      aria-label={!headingId && registrationTitle ? registrationTitle : undefined}
       initial="hidden"
       whileInView="visible"
       viewport={inView}
@@ -42,7 +45,10 @@ export function Section({
           </div>
           <div className="max-w-4xl">
             {title && (
-              <h2 className="font-display text-4xl font-bold leading-[1.02] sm:text-5xl md:text-6xl">
+              <h2
+                id={headingId}
+                className="font-display text-4xl font-bold leading-[1.02] sm:text-5xl md:text-6xl"
+              >
                 {title}
               </h2>
             )}

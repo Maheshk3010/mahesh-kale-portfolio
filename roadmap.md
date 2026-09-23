@@ -113,3 +113,11 @@
 - [x] Add the secondary Technical Archive with the supplied Kaggle and GitHub records.
 - [x] Restage credentials, methodology, transitions, and the final contact scene.
 - [x] Validate lower-half interactions, links, responsive layouts, accessibility, and visual quality at all four target viewports.
+
+## Final full-site quality pass
+
+- [ ] Keep the five core Case Files primary and move all supporting technical work to the Technical Archive only.
+- [ ] Differentiate all five analytical workflow diagrams without adding unsupported facts.
+- [ ] Align the Operations Floor to the seven-stage reporting pipeline and eight MIS modules.
+- [ ] Tighten section labels, navigation density, assistant controls, landmarks, focus behavior, and mobile touch targets.
+- [ ] Verify identity, portrait, resume, external links, source wording, reduced motion, and all four target viewports.
