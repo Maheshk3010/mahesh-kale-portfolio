@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 const maheshPhotoUrl = "/maheshkale_pic.jpeg";
 import { analyticsService, mahiEngine, UNVERIFIED_FALLBACK } from "@/mahi";
@@ -63,7 +63,7 @@ export function MahiAI() {
     [messages],
   );
 
-  const send = async (text: string) => {
+  const send = useCallback(async (text: string) => {
     const value = text.trim();
     if (!value || thinking) return;
     const now = Date.now();
@@ -109,7 +109,7 @@ export function MahiAI() {
       setThinking(false);
       setTimeout(() => inputRef.current?.focus(), 50);
     }
-  };
+  }, [engineHistory, thinking]);
 
   const sendRef = useRef(send);
   useEffect(() => {
