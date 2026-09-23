@@ -22,7 +22,7 @@
     },
     {
       "q": "What case studies are featured?",
-      "a": "Sales Performance Dashboard, SQL Data Warehouse & ETL Pipeline and Customer Churn Prediction are the three primary resume-verified case studies. Apple Stock Price Prediction and Product Recommendation are supporting technical work."
+      "a": "The featured sequence is Sales Performance Intelligence (Completed), SQL Data Warehouse & ETL Pipeline (Completed), MIS Reporting Automation & Management Dashboard (In Progress), and Customer Retention & Cohort Intelligence (Planned). Evidence is pending for all four. Customer Analytics / Churn is completed supporting analytical work with model evidence pending."
     },
     {
       "q": "Tell me about Sales Performance Analysis",
@@ -42,11 +42,11 @@
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with the Sales Performance Dashboard for its verified scale and reporting outcome, then review the SQL Data Warehouse & ETL Pipeline and MIS & Reporting sections."
+      "a": "Start with Sales Performance Intelligence, then review the SQL Data Warehouse & ETL Pipeline. The MIS Reporting Automation project is still In Progress, and Customer Retention & Cohort Intelligence is Planned."
     },
     {
       "q": "What MIS experience is shown?",
-      "a": "The portfolio documents MIS reporting, KPI reporting, data validation and reporting automation capabilities, plus a source-to-management reporting pipeline. Actual MIS files and output screenshots are still pending."
+      "a": "The portfolio documents MIS reporting, KPI reporting, data validation and reporting automation capabilities. MIS Reporting Automation & Management Dashboard is marked In Progress; files and output screenshots are pending."
     },
     {
       "q": "What experience does Mahesh have?",
@@ -98,7 +98,7 @@
     },
     {
       "q": "What should a recruiter review first?",
-      "a": "Review the Analytics Snapshot, the three selected case studies, MIS & Reporting, Field Experience and Capability Stack in that order."
+      "a": "Review the Analytics Snapshot, Sales Performance Intelligence, SQL Data Warehouse & ETL Pipeline, the clearly labeled in-progress and planned work, MIS & Reporting, Field Experience and Capability Stack in that order."
     }
   ]
 }
