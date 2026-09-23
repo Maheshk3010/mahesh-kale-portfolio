@@ -83,3 +83,4 @@
 - [ ] Consolidate public portfolio facts through the shared source of truth and eliminate duplicate project definitions that can surface stale content.
 - [ ] Validate desktop, tablet, mobile, links, resume, navigation, console, build, lint, motion, accessibility, photo placement, and first-screen clarity.
 - [ ] Complete an independent recruiter, analyst, MIS, and product-design quality pass.
+- [ ] Use the newly uploaded professional portrait as the sole profile image in Professional Snapshot and verify a natural, face-visible crop at every target viewport.
