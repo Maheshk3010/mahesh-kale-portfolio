@@ -1,47 +1,89 @@
 import { motion } from "motion/react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
+import { SectionTransition } from "./SectionTransition";
 import { capabilityGroups } from "@/mahi/portfolio";
-import { inView, revealLeft, stagger } from "@/lib/motion";
+import { inView, revealUp, stagger } from "@/lib/motion";
 
 export function Skills() {
+  const [activeSkill, setActiveSkill] = useState(capabilityGroups[0]?.verb ?? "SQL");
+  const active =
+    capabilityGroups.find((group) => group.verb === activeSkill) ?? capabilityGroups[0];
+  if (!active) return null;
   return (
-    <Section
-      id="stack"
-      eyebrow="08 / Capability system"
-      title="Analyst toolkit"
-      description="Capabilities connected to the tools and reporting contexts used across the portfolio."
-      className="toolkit-scene"
-    >
-      <motion.div
-        variants={stagger(0.04, 0.08)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        className="analytics-core relative border-y border-border"
+    <>
+      <SectionTransition label="Capability map initialized" />
+      <Section
+        id="stack"
+        eyebrow="08 / Applied capability network"
+        title="Analyst toolkit"
+        description="Core analytical tools connected to working methods and portfolio applications."
+        className="toolkit-scene"
       >
-        {capabilityGroups.map(({ verb, tools, context }, index) => (
-          <motion.article
-            key={verb}
-            variants={revealLeft}
-            tabIndex={0}
-            className="stack-row group grid border-b border-border py-7 focus-visible:outline-none md:grid-cols-[64px_180px_1fr_1fr] md:items-center md:gap-6"
+        <div className="toolkit-network grid overflow-hidden border-y border-border lg:grid-cols-[.78fr_1.22fr]">
+          <motion.div
+            variants={stagger(0.04, 0.06)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={inView}
+            className="relative grid grid-cols-2 gap-px bg-border p-px"
           >
-            <span className="font-mono text-[10px] text-primary">0{index + 1}</span>
-            <h3 className="mt-2 font-display text-2xl font-bold uppercase group-hover:text-primary group-focus-visible:text-primary md:mt-0">
-              {verb}
-            </h3>
-            <p className="mt-3 font-mono text-xs uppercase leading-6 text-muted-foreground md:mt-0">
-              {tools.join(" · ")}
+            <div className="analytics-core-node pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center border border-primary bg-background text-center font-mono text-[9px] font-bold uppercase text-primary sm:grid">
+              Analytics
+              <br />
+              Core
+            </div>
+            {capabilityGroups.map(({ verb }, index) => (
+              <motion.div key={verb} variants={revealUp}>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  onClick={() => setActiveSkill(verb)}
+                  aria-pressed={activeSkill === verb}
+                  className={`toolkit-node h-32 w-full justify-start bg-background p-4 text-left sm:h-44 ${activeSkill === verb ? "is-selected" : ""}`}
+                >
+                  <span>
+                    <span className="block font-mono text-[8px] text-muted-foreground">
+                      CORE / 0{index + 1}
+                    </span>
+                    <span className="mt-3 block whitespace-normal font-display text-lg font-bold uppercase text-foreground">
+                      {verb}
+                    </span>
+                  </span>
+                </Button>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div
+            key={active.verb}
+            initial={{ opacity: 0, x: 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="bg-surface p-5 sm:p-8 lg:border-l"
+          >
+            <p className="font-mono text-[8px] font-bold uppercase tracking-[.14em] text-success">
+              Active capability
             </p>
-            <p className="mt-3 border-l border-border pl-4 text-sm leading-6 text-muted-foreground md:mt-0">
-              <span className="mb-1 block font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+            <h3 className="mt-3 font-display text-3xl font-bold uppercase">{active.verb}</h3>
+            <div className="mt-7 grid grid-cols-2 gap-px bg-border">
+              {active.tools.map((tool) => (
+                <div
+                  key={tool}
+                  className="min-h-16 bg-background p-3 font-mono text-[9px] font-bold uppercase"
+                >
+                  {tool}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 border-l-2 border-success pl-5">
+              <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
                 Applied to
-              </span>
-              {context}
-            </p>
-          </motion.article>
-        ))}
-      </motion.div>
-    </Section>
+              </p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{active.context}</p>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+    </>
   );
 }

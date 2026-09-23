@@ -104,3 +104,12 @@
 - [x] Give each case file a distinct data-flow visualization while preserving factual data and supplied GitHub links.
 - [x] Reduce repeated boxes, pills, borders, and uniform grids in favor of larger continuous scenes and environmental transitions.
 - [x] Preserve accessibility, reduced motion, responsive order, performance, and recruiter readability across the full site.
+
+## Lower-half intelligence environments
+
+- [x] Build the interactive Operations Floor pipeline and eight MIS reporting modules without fabricated values.
+- [x] Restage verified internships as sequential Field Log records.
+- [x] Build the applied Analyst Toolkit network for SQL, Power BI, Advanced Excel, and Python.
+- [x] Add the secondary Technical Archive with the supplied Kaggle and GitHub records.
+- [x] Restage credentials, methodology, transitions, and the final contact scene.
+- [x] Validate lower-half interactions, links, responsive layouts, accessibility, and visual quality at all four target viewports.
