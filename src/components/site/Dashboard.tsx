@@ -7,15 +7,7 @@ import { SectionTransition } from "./SectionTransition";
 import { misModules } from "@/mahi/portfolio";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
-const flow = [
-  "Source",
-  "Clean",
-  "Validate",
-  "Reconcile",
-  "KPI",
-  "Reporting",
-  "Management",
-];
+const flow = ["Source", "Clean", "Validate", "Reconcile", "KPI", "Reporting", "Management"];
 
 const dimensions: Record<string, string[]> = {
   "Daily MIS": ["Volume", "Completed", "Outstanding", "SLA", "TAT", "Exceptions"],
