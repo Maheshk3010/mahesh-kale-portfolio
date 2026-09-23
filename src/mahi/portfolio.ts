@@ -24,6 +24,18 @@ export const specializations = [
   "Business Reporting",
 ];
 
+export const supportingCapabilities = [
+  "Power Query",
+  "DAX",
+  "Pandas",
+  "NumPy",
+  "Data Validation",
+  "Data Reconciliation",
+  "KPI Reporting",
+  "Dashboard Development",
+  "Reporting Automation",
+];
+
 export const proofMetrics = [
   { label: "Data scale", value: 50, suffix: "K+", detail: "Records" },
   { label: "Customer analytics", value: 7, suffix: "K+", detail: "Customer records" },
@@ -70,11 +82,11 @@ export const misModules = [
   { title: "Target vs Actual", detail: "Performance comparison against defined targets." },
   { title: "SLA / TAT", detail: "Operational service and turnaround-time monitoring." },
   {
-    title: "Data Reconciliation",
+    title: "Reconciliation",
     detail: "Cross-checks between source, transformed and reported values.",
   },
   {
-    title: "Exception Monitoring",
+    title: "Exceptions",
     detail: "Focused review of discrepancies and reporting exceptions.",
   },
 ];

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import { SectionTransition } from "./SectionTransition";
-import { capabilityGroups } from "@/mahi/portfolio";
+import { capabilityGroups, supportingCapabilities } from "@/mahi/portfolio";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
 export function Skills() {
@@ -82,6 +82,22 @@ export function Skills() {
               <p className="mt-3 text-sm leading-7 text-muted-foreground">{active.context}</p>
             </div>
           </motion.div>
+        </div>
+        <div className="mt-8 grid gap-4 border-y border-border py-5 sm:grid-cols-[180px_1fr] sm:items-start">
+          <p className="font-mono text-[9px] font-bold uppercase tracking-[.14em] text-success">
+            Supporting capabilities
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-3">
+            {supportingCapabilities.map((capability) => (
+              <span
+                key={capability}
+                className="font-mono text-[9px] font-bold uppercase text-foreground"
+              >
+                <span className="mr-2 text-primary">+</span>
+                {capability}
+              </span>
+            ))}
+          </div>
         </div>
       </Section>
     </>

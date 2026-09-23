@@ -14,7 +14,7 @@ const records = [
     tools: ["Python", "Pandas", "Matplotlib", "Kaggle"],
     highlights: [
       "Data quality checks",
-      "Missing-value and duplicate handling",
+      "Null-value and duplicate handling",
       "Date conversion and time features",
       "Category and regional analysis",
       "Product and customer-segment analysis",

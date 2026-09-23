@@ -15,15 +15,12 @@ import {
 const links = [
   ["#top", "Home", "01"],
   ["#snapshot", "Profile", "02"],
-  ["#proof", "Proof", "03"],
   ["#work-preview", "Work", "04"],
   ["#projects", "Cases", "05"],
   ["#mis", "MIS", "06"],
   ["#experience", "Experience", "07"],
-  ["#stack", "Core", "08"],
-  ["#technical-archive", "Archive", "09"],
+  ["#stack", "Toolkit", "08"],
   ["#credentials", "Credentials", "10"],
-  ["#method", "Method", "11"],
   ["#contact", "Contact", "12"],
 ] as const;
 
@@ -105,7 +102,7 @@ export function Nav() {
               <Button
                 variant="outline"
                 size="icon"
-                className="xl:hidden"
+                className="min-h-11 min-w-11 xl:hidden"
                 aria-label="Open navigation menu"
               >
                 <Menu />
