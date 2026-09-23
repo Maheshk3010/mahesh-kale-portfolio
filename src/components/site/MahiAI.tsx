@@ -41,6 +41,7 @@ export function MahiAI() {
   const [thinking, setThinking] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -51,6 +52,19 @@ export function MahiAI() {
 
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 250);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setShowAnalytics(false);
+      setOpen(false);
+      window.setTimeout(() => triggerRef.current?.focus(), 0);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
   }, [open]);
 
   const engineHistory = useMemo<EngineMessage[]>(
@@ -161,6 +175,7 @@ export function MahiAI() {
       {/* Floating trigger */}
       <div className="fixed bottom-3 right-3 z-[60] md:bottom-6 md:right-6">
         <motion.button
+          ref={triggerRef}
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Open MAHI.AI assistant"
