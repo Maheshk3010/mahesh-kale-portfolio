@@ -78,15 +78,19 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
     const items = (r.matchedItems as Project[]) ?? [];
     if (!items.length) return UNVERIFIED_FALLBACK;
     return [
-      "**Verified projects**",
+      "**Project portfolio**",
       "",
       ...items.map((p) =>
         [
           `**${p.title}**`,
+          `**Status:** ${p.status === "in-progress" ? "In Progress" : p.status.charAt(0).toUpperCase() + p.status.slice(1)}`,
+          `**Evidence:** ${p.evidenceState === "available" ? "Available" : "Pending"}`,
           p.description,
           `**Tech:** ${p.technologies.join(", ")}`,
-          `**Outcome:** ${p.outcome}`,
-        ].join("\n"),
+          p.outcome ? `**Outcome:** ${p.outcome}` : "",
+        ]
+          .filter(Boolean)
+          .join("\n"),
       ),
     ].join("\n\n");
   },
