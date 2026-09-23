@@ -124,7 +124,8 @@ export function TechnicalArchive() {
                     rel="noopener noreferrer"
                     className="mt-5 inline-flex items-center gap-2 font-mono text-[9px] font-bold uppercase tracking-[.12em] text-primary hover:text-foreground"
                   >
-                    <Icon className="h-3.5 w-3.5" /> {record.action} <ArrowUpRight className="h-3.5 w-3.5" />
+                    <Icon className="h-3.5 w-3.5" /> {record.action}{" "}
+                    <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
                 </div>
               </motion.article>

@@ -68,7 +68,9 @@ export function Dashboard() {
                 >
                   <span className="operation-index">{String(index + 1).padStart(2, "0")}</span>
                   <span>{label}</span>
-                  {index < flow.length - 1 && <span className="operation-signal" aria-hidden="true" />}
+                  {index < flow.length - 1 && (
+                    <span className="operation-signal" aria-hidden="true" />
+                  )}
                 </motion.li>
               ))}
             </ol>

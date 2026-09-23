@@ -652,7 +652,11 @@ article:hover > .timeline-marker {
   position: absolute;
   inset: 0 0 -1.75rem 2.15rem;
   z-index: -1;
-  background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 2.5%, transparent), transparent 42%);
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--primary) 2.5%, transparent),
+    transparent 42%
+  );
   opacity: 0;
   transition: opacity var(--motion-reveal) ease;
 }
@@ -698,7 +702,9 @@ article:hover > .timeline-marker {
   box-shadow: inset 0 2px 0 var(--primary);
 }
 .analytics-core-node {
-  box-shadow: 0 0 0 10px var(--background), 0 0 40px color-mix(in oklab, var(--primary) 16%, transparent);
+  box-shadow:
+    0 0 0 10px var(--background),
+    0 0 40px color-mix(in oklab, var(--primary) 16%, transparent);
 }
 .technical-archive-scene {
   background-image: linear-gradient(

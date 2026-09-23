@@ -44,7 +44,15 @@ export const capabilityGroups = [
   },
   {
     verb: "Advanced Excel",
-    tools: ["Pivot Tables", "XLOOKUP", "INDEX-MATCH", "SUMIFS", "COUNTIFS", "MIS Reporting", "Validation"],
+    tools: [
+      "Pivot Tables",
+      "XLOOKUP",
+      "INDEX-MATCH",
+      "SUMIFS",
+      "COUNTIFS",
+      "MIS Reporting",
+      "Validation",
+    ],
     context: "Sales Performance Intelligence · MIS Reporting",
   },
   {

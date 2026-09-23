@@ -16,27 +16,31 @@ export function About() {
         description="A disciplined path from a business question to decision-ready insight."
         className="method-scene"
       >
-      <motion.ol
-        variants={stagger(0.08, 0.08)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        className="analysis-sequence method-chain grid gap-px bg-border sm:grid-cols-3 lg:grid-cols-9"
-      >
-        {methodology.map((step, index) => (
-            <motion.li key={step} variants={revealUp} className="method-step relative min-h-32 bg-background p-4">
-            <span className="font-mono text-[8px] text-success">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <p className="mt-7 font-display text-lg font-bold uppercase">{step}</p>
-            {index < methodology.length - 1 && (
-              <ArrowDown
-                className="absolute bottom-3 right-3 h-4 w-4 -rotate-90 text-primary lg:rotate-0"
-                aria-hidden="true"
-              />
-            )}
-          </motion.li>
-        ))}
+        <motion.ol
+          variants={stagger(0.08, 0.08)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={inView}
+          className="analysis-sequence method-chain grid gap-px bg-border sm:grid-cols-3 lg:grid-cols-9"
+        >
+          {methodology.map((step, index) => (
+            <motion.li
+              key={step}
+              variants={revealUp}
+              className="method-step relative min-h-32 bg-background p-4"
+            >
+              <span className="font-mono text-[8px] text-success">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="mt-7 font-display text-lg font-bold uppercase">{step}</p>
+              {index < methodology.length - 1 && (
+                <ArrowDown
+                  className="absolute bottom-3 right-3 h-4 w-4 -rotate-90 text-primary lg:rotate-0"
+                  aria-hidden="true"
+                />
+              )}
+            </motion.li>
+          ))}
         </motion.ol>
       </Section>
     </>
