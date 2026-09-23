@@ -132,7 +132,7 @@ function ProjectField({
   compact = false,
 }: {
   label: string;
-  value: string;
+  value: string | string[];
   compact?: boolean;
 }) {
   return (

@@ -30,7 +30,7 @@
       "confidence": "verified",
       "projectsUsed": ["Apple Stock Price Prediction", "Product Recommendation System"],
       "years": null,
-      "description": "Numerical computing foundation for data science work."
+      "description": "Numerical computing foundation for analytical work."
     },
     {
       "name": "Scikit-learn",

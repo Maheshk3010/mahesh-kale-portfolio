@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 import { profile, coreTools, specializations } from "@/mahi/portfolio";
+import profilePhoto from "@/assets/mahesh-kale-professional-profile.png.asset.json";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
 export function ProfessionalSnapshot() {
@@ -29,15 +30,15 @@ export function ProfessionalSnapshot() {
           </h2>
         </motion.div>
         <div className="mt-10 grid overflow-hidden border border-border bg-background lg:grid-cols-[.72fr_1.28fr]">
-          <motion.figure variants={revealUp} className="identity-frame relative min-h-[370px] overflow-hidden border-b border-border lg:min-h-[520px] lg:border-b-0 lg:border-r">
+          <motion.figure variants={revealUp} className="identity-frame relative aspect-square min-h-[360px] overflow-hidden border-b border-primary/35 shadow-[0_24px_70px_-45px_var(--primary)] sm:min-h-[440px] lg:aspect-auto lg:min-h-[520px] lg:border-b-0 lg:border-r">
             <img
-              src="/maheshkale_pic.jpeg"
+              src={profilePhoto.url}
               alt="Mahesh Kale, Data Analyst and MIS Executive"
               width="760"
               height="960"
               loading="eager"
               decoding="async"
-              className="h-full w-full object-cover object-top grayscale-[18%]"
+              className="identity-image h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 grid grid-cols-2 gap-px bg-border p-px font-mono text-[8px] uppercase">

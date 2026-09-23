@@ -49,7 +49,6 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
       p.professionalSummary,
       "",
       roles ? `**Target roles:** ${roles}` : "",
-      `**Status:** ${p.currentStatus}`,
       `**Availability:** ${p.availability}`,
     ]
       .filter(Boolean)
