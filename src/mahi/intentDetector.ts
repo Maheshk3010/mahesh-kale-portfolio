@@ -65,9 +65,8 @@ const INTENT_KEYWORDS: Record<Exclude<Intent, "unknown">, Keyword[]> = {
     { phrase: "portfolio work", weight: 3 },
     { phrase: "case study", weight: 3 },
     { phrase: "built", weight: 2 },
-    { phrase: "job tracker", weight: 5 },
     { phrase: "recommendation", weight: 5 },
-    { phrase: "sales dashboard", weight: 5 },
+    { phrase: "sales performance intelligence", weight: 5 },
   ],
   experience: [
     { phrase: "internships", weight: 5 },

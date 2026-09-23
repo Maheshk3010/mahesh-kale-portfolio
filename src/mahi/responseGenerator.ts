@@ -83,8 +83,6 @@ const formatters: Record<Intent, (r: SearchResult) => string> = {
       ...items.map((p) =>
         [
           `**${p.title}**`,
-          `**Status:** ${p.status === "in-progress" ? "In Progress" : p.status.charAt(0).toUpperCase() + p.status.slice(1)}`,
-          `**Evidence:** ${p.evidenceState === "available" ? "Available" : "Pending"}`,
           p.description,
           `**Tech:** ${p.technologies.join(", ")}`,
           p.outcome ? `**Outcome:** ${p.outcome}` : "",

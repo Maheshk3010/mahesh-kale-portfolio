@@ -284,16 +284,6 @@ function ProjectsCard({
       )}
       {projects.map((p) => (
         <CardShell key={p.title} icon={<Sparkles className="h-3.5 w-3.5" />} title={p.title}>
-          <div className="mb-2 flex flex-wrap gap-1.5">
-            <SubtleBadge>
-              {p.status === "in-progress"
-                ? "In Progress"
-                : p.status.charAt(0).toUpperCase() + p.status.slice(1)}
-            </SubtleBadge>
-            <SubtleBadge>
-              Evidence {p.evidenceState === "available" ? "Available" : "Pending"}
-            </SubtleBadge>
-          </div>
           {p.description && (
             <p className="mb-2 text-[12px] leading-relaxed text-foreground/80">
               {p.description}
