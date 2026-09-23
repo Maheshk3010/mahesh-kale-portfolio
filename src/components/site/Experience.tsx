@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { ExternalLink } from "lucide-react";
 import { Section } from "./Section";
 import { experience } from "@/mahi/portfolio";
 import { inView, motionEase, revealLeft, revealUp, stagger } from "@/lib/motion";
@@ -25,7 +24,6 @@ export function Experience() {
             const details = exp.deliverables?.length
               ? exp.deliverables
               : exp.responsibilities.slice(0, 4);
-            const link = exp.credentialLink || exp.companyLink;
             return (
               <motion.article
                 key={`${exp.company}-${exp.role}`}
@@ -73,16 +71,6 @@ export function Experience() {
                           </span>
                         ))}
                       </div>
-                      {link && (
-                        <a
-                          href={link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-5 inline-flex items-center gap-2 font-mono text-[9px] uppercase text-primary"
-                        >
-                          View evidence <ExternalLink className="h-3 w-3" />
-                        </a>
-                      )}
                     </div>
                   </div>
                 </motion.div>

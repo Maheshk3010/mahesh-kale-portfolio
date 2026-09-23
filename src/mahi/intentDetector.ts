@@ -148,8 +148,8 @@ const INTENT_KEYWORDS: Record<Exclude<Intent, "unknown">, Keyword[]> = {
     { phrase: "role fit", weight: 4 },
     { phrase: "position", weight: 3 },
     { phrase: "data analyst", weight: 3 },
-    { phrase: "data scientist", weight: 3 },
-    { phrase: "python developer", weight: 3 },
+    { phrase: "reporting analyst", weight: 3 },
+    { phrase: "bi analyst", weight: 3 },
     { phrase: "mis analyst", weight: 3 },
   ],
   interview: [
@@ -161,7 +161,6 @@ const INTENT_KEYWORDS: Record<Exclude<Intent, "unknown">, Keyword[]> = {
     { phrase: "approach", weight: 2 },
   ],
   general: [
-    { phrase: "why hire mahesh", weight: 5 },
     { phrase: "why should i hire", weight: 5 },
     { phrase: "why hire", weight: 4 },
     { phrase: "hire mahesh", weight: 4 },

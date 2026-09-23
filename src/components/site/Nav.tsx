@@ -15,6 +15,8 @@ import {
 const links = [
   ["#top", "Home"],
   ["#snapshot", "Profile"],
+  ["#proof", "Proof"],
+  ["#work-preview", "Work"],
   ["#projects", "Cases"],
   ["#mis", "MIS"],
   ["#experience", "Experience"],

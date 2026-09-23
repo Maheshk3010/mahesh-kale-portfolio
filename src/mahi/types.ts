@@ -53,9 +53,6 @@ export interface Project {
   title: string;
   number: string;
   tier: "featured" | "supporting";
-  status: "completed" | "in-progress" | "planned";
-  evidenceState: "available" | "pending";
-  evidenceNote: string;
   category: string;
   description: string;
   problem: string;

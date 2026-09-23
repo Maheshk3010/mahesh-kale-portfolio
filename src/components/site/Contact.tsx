@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import { knowledgeBase } from "@/mahi/knowledgeBase";
@@ -14,6 +14,7 @@ export function Contact() {
     { label: "LinkedIn", href: linkedin, icon: Linkedin },
     { label: "GitHub", href: github, icon: Github },
     { label: "Email", href: `mailto:${contact.email}`, icon: Mail },
+    { label: "Phone", href: `tel:${contact.phone.replace(/\s/g, "")}`, icon: Phone },
   ].filter((action) => action.href);
   return (
     <Section id="contact" className="pb-32" navTitle="Contact">

@@ -74,12 +74,13 @@
 
 ## Final master refinement
 
-- [ ] Make the first screen identity-first and keep Mahesh’s name, roles, tools, work, resume, LinkedIn, and GitHub immediately clear.
-- [ ] Rebuild Professional Snapshot as a concise photo-led identity panel directly after Hero.
-- [ ] Keep only supported telemetry and place Real Work Preview before the five exact featured case studies.
-- [ ] Give each featured project a distinct animated analytical workflow and its exact GitHub repository.
-- [ ] Remove every public project-status, evidence-weakness, missing-artifact, and stale-positioning message.
-- [ ] Preserve the exact 12-stage recruiter journey, role-specific MIS center, verified experience, analytics core, credentials, methodology, and System Ready actions.
-- [ ] Consolidate public portfolio facts through the shared source of truth and eliminate duplicate project definitions that can surface stale content.
-- [ ] Validate desktop, tablet, mobile, links, resume, navigation, console, build, lint, motion, accessibility, photo placement, and first-screen clarity.
-- [ ] Complete an independent recruiter, analyst, MIS, and product-design quality pass.
+- [x] Make the first screen identity-first and keep Mahesh’s name, roles, tools, work, resume, LinkedIn, and GitHub immediately clear.
+- [x] Rebuild Professional Snapshot as a concise photo-led identity panel directly after Hero.
+- [x] Keep only supported telemetry and place Real Work Preview before the five exact featured case studies.
+- [x] Give each featured project a distinct animated analytical workflow and its exact GitHub repository.
+- [x] Remove every public project-status, evidence-weakness, missing-artifact, and stale-positioning message.
+- [x] Preserve the exact 12-stage recruiter journey, role-specific MIS center, verified experience, analytics core, credentials, methodology, and System Ready actions.
+- [x] Consolidate public portfolio facts through the shared source of truth and eliminate duplicate project definitions that can surface stale content.
+- [x] Validate desktop, tablet, mobile, links, resume, navigation, console, build, lint, motion, accessibility, photo placement, and first-screen clarity.
+- [x] Complete an independent recruiter, analyst, MIS, and product-design quality pass.
+- [x] Use the newly uploaded professional portrait as the sole profile image in Professional Snapshot and verify a natural, face-visible crop at every target viewport.

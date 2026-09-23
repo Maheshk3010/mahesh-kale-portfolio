@@ -23,11 +23,11 @@ export function AnalyticsSnapshot() {
               id="proof-title"
               className="mt-2 font-display text-3xl font-bold uppercase sm:text-4xl"
             >
-              Documented scale
+              Proven scope
             </h2>
           </div>
           <span className="hidden font-mono text-[9px] uppercase tracking-[.14em] text-success sm:block">
-            Signal verified from resume
+            Resume-backed signals
           </span>
         </div>
         <motion.div

@@ -57,14 +57,14 @@ export function Hero() {
               </motion.span>
             ))}
           </motion.div>
-          <motion.p
+          <motion.h1
             variants={heroEnter(reduced ? 0 : 0.15)}
             initial="hidden"
             animate="visible"
             className="font-display text-xl font-bold uppercase sm:text-2xl"
           >
             Mahesh Kale
-          </motion.p>
+          </motion.h1>
           <motion.p
             variants={heroEnter(reduced ? 0 : 0.2)}
             initial="hidden"
@@ -73,14 +73,14 @@ export function Hero() {
           >
             Data Analyst <span className="text-muted-foreground">/</span> MIS Executive
           </motion.p>
-          <motion.h1
+          <motion.h2
             variants={heroEnter(reduced ? 0 : 0.26)}
             initial="hidden"
             animate="visible"
             className="mt-6 max-w-4xl font-display text-[clamp(2.6rem,6.7vw,6.5rem)] font-bold uppercase leading-[.9]"
           >
             Turning business data into <span className="text-primary">decision-ready</span> insight.
-          </motion.h1>
+          </motion.h2>
           <motion.p
             variants={heroEnter(reduced ? 0 : 0.32)}
             initial="hidden"
