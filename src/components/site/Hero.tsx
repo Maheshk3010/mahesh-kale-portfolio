@@ -31,6 +31,17 @@ export function Hero() {
       <div className="data-stream pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl items-center gap-7 px-5 py-8 sm:px-8 sm:py-10 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.08fr_.92fr] lg:gap-10 lg:py-12">
         <div className="relative z-10 min-w-0">
+          <motion.div
+            variants={heroEnter(0)}
+            initial="hidden"
+            animate="visible"
+            className="mb-5 flex items-center justify-between border-b border-border pb-3 font-mono text-[8px] font-bold uppercase tracking-[.14em] sm:hidden"
+          >
+            <span className="text-primary">Data intelligence lab</span>
+            <span className="flex items-center gap-1 text-success">
+              <Check className="h-3 w-3" /> Systems online
+            </span>
+          </motion.div>
           <motion.h1
             variants={heroEnter(0)}
             initial="hidden"
@@ -51,7 +62,7 @@ export function Hero() {
             variants={heroEnter(reduced ? 0 : 0.08)}
             initial="hidden"
             animate="visible"
-            className="mt-5 max-w-4xl font-display text-[clamp(2.35rem,5.4vw,5.4rem)] font-bold uppercase leading-[.92]"
+            className="mt-5 max-w-4xl font-display text-[2.35rem] font-bold uppercase leading-[.92] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[4.1rem]"
           >
             Turning business and operational data into{" "}
             <span className="text-primary">validated insights</span>, KPI reporting and
@@ -125,7 +136,7 @@ export function Hero() {
           variants={heroEnter(reduced ? 0 : 0.16)}
           initial="hidden"
           animate="visible"
-          className="workstation-panel relative min-w-0 overflow-hidden border-l border-t border-border bg-surface/75 p-4 sm:p-6 lg:h-full lg:max-h-[610px]"
+          className="workstation-panel relative hidden min-w-0 overflow-hidden border-l border-t border-border bg-surface/75 p-4 sm:block sm:p-6 lg:h-full lg:max-h-[540px]"
         >
           <div className="flex items-center justify-between border-b border-border pb-4 font-mono text-[9px] uppercase tracking-[.14em]">
             <span className="text-primary">Data intelligence lab</span>

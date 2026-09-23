@@ -74,7 +74,7 @@ export function Nav() {
               Mahesh Kale
             </span>
             <span className="block font-mono text-[8px] uppercase tracking-[.16em] text-muted-foreground">
-              Analytics OS
+              Data Lab
             </span>
           </span>
         </a>
