@@ -7,9 +7,10 @@ export function Skills() {
   return (
     <Section
       id="stack"
-      eyebrow="08 / Capability network"
-      title="Analytics core"
+      eyebrow="08 / Capability system"
+      title="Analyst toolkit"
       description="Capabilities connected to the tools and reporting contexts used across the portfolio."
+      className="toolkit-scene"
     >
       <motion.div
         variants={stagger(0.04, 0.08)}

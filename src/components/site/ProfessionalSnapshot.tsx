@@ -20,7 +20,7 @@ export function ProfessionalSnapshot() {
     <section
       id="snapshot"
       aria-labelledby="snapshot-title"
-      className="border-b border-border bg-surface"
+      className="dossier-scene border-b border-border bg-surface"
     >
       <motion.div
         variants={stagger(0.02, 0.05)}
@@ -34,10 +34,10 @@ export function ProfessionalSnapshot() {
           className="grid gap-5 border-t border-border pt-5 lg:grid-cols-[180px_1fr]"
         >
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-            02 / Professional snapshot
+            02 / Analyst dossier
           </p>
           <h2 id="snapshot-title" className="font-display text-4xl font-bold uppercase sm:text-5xl">
-            Professional snapshot
+            Analyst dossier
           </h2>
         </motion.div>
         <div className="mt-8 grid overflow-hidden border border-border bg-background lg:grid-cols-[.78fr_1.22fr]">

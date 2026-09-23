@@ -17,7 +17,7 @@ export function Contact() {
     { label: "Phone", href: `tel:${contact.phone.replace(/\s/g, "")}`, icon: Phone },
   ].filter((action) => action.href);
   return (
-    <Section id="contact" className="pb-32" navTitle="Contact">
+    <Section id="contact" className="shutdown-scene pb-32" navTitle="Contact">
       <motion.div
         variants={revealScale}
         initial="hidden"
@@ -32,13 +32,13 @@ export function Contact() {
               variants={revealUp}
               className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-primary"
             >
-              11 / System ready
+              11 / Session complete
             </motion.p>
             <motion.h2
               variants={revealUp}
               className="mt-6 max-w-4xl font-display text-5xl font-bold uppercase leading-[.95] sm:text-7xl"
             >
-              System <span className="text-primary">ready.</span>
+              Session <span className="text-primary">complete.</span>
             </motion.h2>
             <motion.p
               variants={revealUp}
@@ -50,7 +50,7 @@ export function Contact() {
               variants={revealUp}
               className="mt-8 font-mono text-[9px] uppercase tracking-[.16em] text-success"
             >
-              Analytics core / Session complete
+              Analysis complete / Report ready
             </motion.p>
           </motion.div>
           <motion.div

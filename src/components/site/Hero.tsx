@@ -6,11 +6,10 @@ import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { heroEnter, motionEase, stagger } from "@/lib/motion";
 
 const modules = [
-  ["Analytics core", "SQL · Python"],
-  ["KPI engine", "15+ measures"],
-  ["MIS reporting", "Daily · Weekly · Monthly"],
-  ["Data validation", "Clean · Check · Reconcile"],
-  ["Dashboard system", "Power BI · Excel"],
+  ["Data engine", "Online"],
+  ["Reporting core", "Online"],
+  ["Validation system", "Online"],
+  ["Analyst profile", "Loaded"],
 ];
 
 export function Hero() {
@@ -126,8 +125,8 @@ export function Hero() {
           className="workstation-panel relative min-w-0 overflow-hidden border-l border-t border-border bg-surface/75 p-4 sm:p-6 lg:h-full lg:max-h-[610px]"
         >
           <div className="flex items-center justify-between border-b border-border pb-4 font-mono text-[9px] uppercase tracking-[.14em]">
-            <span className="text-primary">Analytics operating system</span>
-            <span className="flex items-center gap-1 text-success"><Check className="h-3 w-3" /> System online</span>
+            <span className="text-primary">Data intelligence lab</span>
+            <span className="text-muted-foreground">Initializing...</span>
           </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
             {modules.map(([title, detail], index) => (
@@ -141,7 +140,8 @@ export function Hero() {
                 <span className="font-mono text-[8px] text-primary">0{index + 1}</span>
                 <div>
                   <p className="font-display text-base font-bold uppercase">{title}</p>
-                  <p className="mt-1 font-mono text-[8px] uppercase text-muted-foreground">
+                  <p className="mt-1 flex items-center gap-1 font-mono text-[8px] uppercase text-success">
+                    <Check className="h-3 w-3" />
                     {detail}
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export function Hero() {
               </motion.div>
             ))}
           </div>
-          <div className="mt-5 grid grid-cols-3 gap-px bg-border text-center font-mono text-[8px] uppercase">
+          <div className="mt-4 grid grid-cols-3 gap-px bg-border text-center font-mono text-[8px] uppercase">
             <div className="bg-background p-3">
               <span className="text-muted-foreground">Input</span>
               <p className="mt-2 text-foreground">Raw data</p>

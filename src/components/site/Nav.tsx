@@ -14,12 +14,15 @@ import {
 
 const links = [
   ["#top", "Home", "01"],
+  ["#snapshot", "Profile", "02"],
+  ["#proof", "Proof", "03"],
+  ["#work-preview", "Work", "04"],
   ["#projects", "Cases", "05"],
-  ["#mis", "MIS / Reporting", "06"],
+  ["#mis", "MIS", "06"],
   ["#experience", "Experience", "07"],
-  ["#stack", "Capabilities", "08"],
+  ["#stack", "Core", "08"],
   ["#credentials", "Credentials", "09"],
-  ["#contact", "Contact", "11"],
+  ["#contact", "Contact", "10"],
 ] as const;
 
 export function Nav() {

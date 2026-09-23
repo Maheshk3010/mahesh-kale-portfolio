@@ -11,19 +11,19 @@ export function AnalyticsSnapshot() {
     <section
       id="proof"
       aria-labelledby="proof-title"
-      className="snapshot-section relative border-b border-border"
+      className="diagnostics-scene snapshot-section relative border-b border-border"
     >
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 md:py-16">
         <div className="mb-7 flex items-end justify-between gap-6 border-b border-border pb-4">
           <div>
             <p className="font-mono text-[10px] font-bold uppercase tracking-[.16em] text-primary">
-              03 / Proof telemetry
+              03 / Live diagnostics
             </p>
             <h2
               id="proof-title"
               className="mt-2 font-display text-3xl font-bold uppercase sm:text-4xl"
             >
-              Proof telemetry
+              Live analytics diagnostics
             </h2>
           </div>
           <span className="hidden font-mono text-[9px] uppercase tracking-[.14em] text-success sm:block">
