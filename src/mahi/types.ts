@@ -65,6 +65,7 @@ export interface Project {
   technologies: string[];
   kpis: string[];
   features: string[];
+  output: string;
   outcome: string;
   keyFindings: string[];
   github: string;

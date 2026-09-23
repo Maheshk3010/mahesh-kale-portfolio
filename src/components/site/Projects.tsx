@@ -167,7 +167,7 @@ function ProjectCase({ project, reverse }: { project: Project; reverse: boolean 
           </div>
           <div className="grid border-x border-b border-border sm:grid-cols-2">
             <ProjectField label="KPIs" value={project.kpis.join(" · ")} compact />
-            <ProjectField label="Output" value={project.description} compact />
+            <ProjectField label="Output" value={project.output} compact />
             <ProjectField label="Key findings" value={project.keyFindings.join(" · ")} compact />
             <ProjectField label="Business outcome" value={project.outcome} compact />
             <div className="border-t border-border p-5 sm:col-span-2">
