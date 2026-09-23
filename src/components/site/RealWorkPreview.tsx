@@ -25,7 +25,9 @@ export function RealWorkPreview() {
             ["Output", "Management dashboard"],
           ].map(([label, value]) => (
             <div key={label} className="bg-background p-5">
-              <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">{label}</p>
+              <p className="font-mono text-[8px] uppercase tracking-[.14em] text-primary">
+                {label}
+              </p>
               <p className="mt-3 text-sm font-bold uppercase leading-6">{value}</p>
             </div>
           ))}

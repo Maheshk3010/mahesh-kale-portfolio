@@ -197,230 +197,230 @@ export function MahiAI() {
       <AnimatePresence>
         {open && (
           <>
-          <motion.div
-            key="mahi-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 z-[65] bg-background/70 backdrop-blur-sm md:hidden"
-            aria-hidden="true"
-          />
-          <motion.div
-            key="mahi-panel"
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.98 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            role="dialog"
-            aria-label="MAHI.AI chat"
-            className="fixed z-[70] flex flex-col overflow-hidden border border-border bg-background/96 shadow-2xl backdrop-blur-2xl
+            <motion.div
+              key="mahi-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 z-[65] bg-background/70 backdrop-blur-sm md:hidden"
+              aria-hidden="true"
+            />
+            <motion.div
+              key="mahi-panel"
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              role="dialog"
+              aria-label="MAHI.AI chat"
+              className="fixed z-[70] flex flex-col overflow-hidden border border-border bg-background/96 shadow-2xl backdrop-blur-2xl
               bottom-24 right-3 left-3 max-h-[78vh]
               md:bottom-24 md:right-6 md:left-auto md:w-[380px] md:max-h-[600px]"
-          >
-            {/* Header */}
-            <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
-              <div className="relative shrink-0">
-                <img
-                  src={maheshPhotoUrl}
-                  alt="Mahesh Kale"
-                  className="h-11 w-11 rounded-full border border-white/15 object-cover shadow-[0_0_20px_-4px_var(--primary)]"
-                />
-                <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-background bg-[color:var(--success)] shadow-[0_0_10px_var(--success)]" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-base">🤖</span>
-                  <h3 className="truncate text-sm font-semibold tracking-tight text-foreground">
-                    MAHI.AI
-                  </h3>
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--success)] shadow-[0_0_8px_var(--success)]" />
-                    Online
-                  </span>
-                </div>
-                <p className="mt-0.5 text-[11px] font-medium text-primary">
-                  Professional Career Assistant
-                </p>
-                <p className="mt-0.5 truncate text-[11px] text-muted-foreground">
-                  Helping recruiters understand Mahesh faster.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setShowAnalytics(true)}
-                aria-label="Open recruiter analytics"
-                title="Recruiter analytics"
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
-              >
-                <BarChart3 className="h-3.5 w-3.5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="Close chat"
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
-              >
-                <X className="h-3.5 w-3.5" />
-              </button>
-            </div>
-
-            <AnimatePresence>
-              {showAnalytics && <AnalyticsPanel onClose={() => setShowAnalytics(false)} />}
-            </AnimatePresence>
-
-            {/* Messages */}
-            <div ref={scrollRef} className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3">
-              {showWelcome ? (
-                <>
-                  <MessageBubble
-                    message={{
-                      id: "welcome",
-                      role: "assistant",
-                      content: WELCOME_TEXT,
-                      createdAt: 0,
-                    }}
-                  />
-                  <div className="pt-1">
-                    <div className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-muted-foreground">
-                      <Sparkles className="h-3 w-3 text-primary" />
-                      Quick questions
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {QUICK_QUESTIONS.map((q) => (
-                        <button
-                          key={q}
-                          type="button"
-                          onClick={() => {
-                            analyticsService.trackAction("quick_question", q);
-                            send(q);
-                          }}
-                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
-                        >
-                          {q}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              ) : (
-                messages.map((m) => <MessageBubble key={m.id} message={m} onSuggestion={send} />)
-              )}
-
-              {thinking && <TypingIndicator />}
-            </div>
-
-            {/* Composer */}
-            <form
-              onSubmit={handleSubmit}
-              className="relative border-t border-white/10 bg-white/[0.03] p-3"
             >
-              <AnimatePresence>
-                {(voice.state !== "idle" || voice.error) && (
-                  <motion.div
-                    key="voice-status"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 6 }}
-                    className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
-                  >
-                    {voice.error ? (
-                      <span className="text-destructive-foreground/90">{voice.error}</span>
-                    ) : voice.state === "listening" ? (
-                      <span className="flex items-center gap-2">
-                        <span className="flex items-end gap-0.5">
-                          {[0, 1, 2, 3, 4].map((i) => (
-                            <motion.span
-                              key={i}
-                              className="w-0.5 rounded-full bg-primary"
-                              animate={{ height: [4, 12, 4] }}
-                              transition={{
-                                duration: 0.8,
-                                repeat: Infinity,
-                                delay: i * 0.1,
-                                ease: "easeInOut",
-                              }}
-                            />
-                          ))}
-                        </span>
-                        <span className="font-medium text-primary">Listening…</span>
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2 text-muted-foreground">
-                        <Loader2 className="h-3 w-3 animate-spin text-primary" />
-                        Processing…
-                      </span>
-                    )}
-                    {voice.state === "listening" && (
-                      <button
-                        type="button"
-                        onClick={voice.stop}
-                        className="text-[10px] font-medium text-primary hover:underline"
-                      >
-                        Stop
-                      </button>
-                    )}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
-                <textarea
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  rows={1}
-                  placeholder="Ask MAHI.AI anything..."
-                  className="min-w-0 flex-1 resize-none bg-transparent py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none max-h-28"
-                />
-                {voice.supported && (
-                  <motion.button
-                    type="button"
-                    onClick={voice.toggle}
-                    disabled={thinking}
-                    aria-label={
-                      voice.state === "listening" ? "Stop voice input" : "Start voice input"
-                    }
-                    aria-pressed={voice.state === "listening"}
-                    title="Voice input (Alt+M)"
-                    whileTap={{ scale: 0.92 }}
-                    className={`relative grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
-                      voice.state === "listening"
-                        ? "border-primary/60 bg-primary/20 text-primary shadow-[0_0_16px_-2px_var(--primary)]"
-                        : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary"
-                    }`}
-                  >
-                    {voice.state === "processing" ? (
-                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                    ) : (
-                      <Mic className="h-3.5 w-3.5" />
-                    )}
-                    {voice.state === "listening" && (
-                      <span className="pointer-events-none absolute inline-flex h-8 w-8 rounded-xl bg-primary/40 opacity-60 animate-ping" />
-                    )}
-                  </motion.button>
-                )}
+              {/* Header */}
+              <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
+                <div className="relative shrink-0">
+                  <img
+                    src={maheshPhotoUrl}
+                    alt="Mahesh Kale"
+                    className="h-11 w-11 rounded-full border border-white/15 object-cover shadow-[0_0_20px_-4px_var(--primary)]"
+                  />
+                  <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-background bg-[color:var(--success)] shadow-[0_0_10px_var(--success)]" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-base">🤖</span>
+                    <h3 className="truncate text-sm font-semibold tracking-tight text-foreground">
+                      MAHI.AI
+                    </h3>
+                    <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--success)] shadow-[0_0_8px_var(--success)]" />
+                      Online
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-[11px] font-medium text-primary">
+                    Professional Career Assistant
+                  </p>
+                  <p className="mt-0.5 truncate text-[11px] text-muted-foreground">
+                    Helping recruiters understand Mahesh faster.
+                  </p>
+                </div>
                 <button
-                  type="submit"
-                  disabled={!input.trim() || thinking}
-                  aria-label="Send message"
-                  className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_0_16px_-2px_var(--primary)] transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+                  type="button"
+                  onClick={() => setShowAnalytics(true)}
+                  aria-label="Open recruiter analytics"
+                  title="Recruiter analytics"
+                  className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
                 >
-                  <Send className="h-3.5 w-3.5" />
+                  <BarChart3 className="h-3.5 w-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close chat"
+                  className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
+                >
+                  <X className="h-3.5 w-3.5" />
                 </button>
               </div>
-              <p className="mt-2 flex items-center justify-center gap-1 text-[10px] text-muted-foreground">
-                <Bot className="h-3 w-3 text-primary" />
-                Powered by MAHI.AI · Local Engine
-                {voice.supported && (
+
+              <AnimatePresence>
+                {showAnalytics && <AnalyticsPanel onClose={() => setShowAnalytics(false)} />}
+              </AnimatePresence>
+
+              {/* Messages */}
+              <div ref={scrollRef} className="relative flex-1 overflow-y-auto px-4 py-4 space-y-3">
+                {showWelcome ? (
                   <>
-                    <span className="mx-1 opacity-40">·</span>
-                    <span>Alt+M to speak</span>
+                    <MessageBubble
+                      message={{
+                        id: "welcome",
+                        role: "assistant",
+                        content: WELCOME_TEXT,
+                        createdAt: 0,
+                      }}
+                    />
+                    <div className="pt-1">
+                      <div className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-muted-foreground">
+                        <Sparkles className="h-3 w-3 text-primary" />
+                        Quick questions
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {QUICK_QUESTIONS.map((q) => (
+                          <button
+                            key={q}
+                            type="button"
+                            onClick={() => {
+                              analyticsService.trackAction("quick_question", q);
+                              send(q);
+                            }}
+                            className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
+                          >
+                            {q}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </>
+                ) : (
+                  messages.map((m) => <MessageBubble key={m.id} message={m} onSuggestion={send} />)
                 )}
-              </p>
-            </form>
-          </motion.div>
+
+                {thinking && <TypingIndicator />}
+              </div>
+
+              {/* Composer */}
+              <form
+                onSubmit={handleSubmit}
+                className="relative border-t border-white/10 bg-white/[0.03] p-3"
+              >
+                <AnimatePresence>
+                  {(voice.state !== "idle" || voice.error) && (
+                    <motion.div
+                      key="voice-status"
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
+                    >
+                      {voice.error ? (
+                        <span className="text-destructive-foreground/90">{voice.error}</span>
+                      ) : voice.state === "listening" ? (
+                        <span className="flex items-center gap-2">
+                          <span className="flex items-end gap-0.5">
+                            {[0, 1, 2, 3, 4].map((i) => (
+                              <motion.span
+                                key={i}
+                                className="w-0.5 rounded-full bg-primary"
+                                animate={{ height: [4, 12, 4] }}
+                                transition={{
+                                  duration: 0.8,
+                                  repeat: Infinity,
+                                  delay: i * 0.1,
+                                  ease: "easeInOut",
+                                }}
+                              />
+                            ))}
+                          </span>
+                          <span className="font-medium text-primary">Listening…</span>
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2 text-muted-foreground">
+                          <Loader2 className="h-3 w-3 animate-spin text-primary" />
+                          Processing…
+                        </span>
+                      )}
+                      {voice.state === "listening" && (
+                        <button
+                          type="button"
+                          onClick={voice.stop}
+                          className="text-[10px] font-medium text-primary hover:underline"
+                        >
+                          Stop
+                        </button>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
+                  <textarea
+                    ref={inputRef}
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    rows={1}
+                    placeholder="Ask MAHI.AI anything..."
+                    className="min-w-0 flex-1 resize-none bg-transparent py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none max-h-28"
+                  />
+                  {voice.supported && (
+                    <motion.button
+                      type="button"
+                      onClick={voice.toggle}
+                      disabled={thinking}
+                      aria-label={
+                        voice.state === "listening" ? "Stop voice input" : "Start voice input"
+                      }
+                      aria-pressed={voice.state === "listening"}
+                      title="Voice input (Alt+M)"
+                      whileTap={{ scale: 0.92 }}
+                      className={`relative grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                        voice.state === "listening"
+                          ? "border-primary/60 bg-primary/20 text-primary shadow-[0_0_16px_-2px_var(--primary)]"
+                          : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary"
+                      }`}
+                    >
+                      {voice.state === "processing" ? (
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                      ) : (
+                        <Mic className="h-3.5 w-3.5" />
+                      )}
+                      {voice.state === "listening" && (
+                        <span className="pointer-events-none absolute inline-flex h-8 w-8 rounded-xl bg-primary/40 opacity-60 animate-ping" />
+                      )}
+                    </motion.button>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={!input.trim() || thinking}
+                    aria-label="Send message"
+                    className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_0_16px_-2px_var(--primary)] transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+                  >
+                    <Send className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+                <p className="mt-2 flex items-center justify-center gap-1 text-[10px] text-muted-foreground">
+                  <Bot className="h-3 w-3 text-primary" />
+                  Powered by MAHI.AI · Local Engine
+                  {voice.supported && (
+                    <>
+                      <span className="mx-1 opacity-40">·</span>
+                      <span>Alt+M to speak</span>
+                    </>
+                  )}
+                </p>
+              </form>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

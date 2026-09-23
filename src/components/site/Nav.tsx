@@ -86,9 +86,7 @@ export function Nav() {
                 aria-current={active === href ? "location" : undefined}
                 className={`nav-link group relative py-2 font-mono text-[9px] font-bold uppercase tracking-[.12em] transition-colors hover:text-primary ${active === href ? "is-active text-foreground" : "text-muted-foreground"}`}
               >
-                <span className="mr-1 text-border-strong">
-                  {number}
-                </span>
+                <span className="mr-1 text-border-strong">{number}</span>
                 {label}
               </a>
             </li>
@@ -122,9 +120,7 @@ export function Nav() {
                       aria-current={active === href ? "location" : undefined}
                       className={`grid grid-cols-[36px_1fr] items-center border-b py-3 font-display text-lg font-bold uppercase transition-colors ${active === href ? "border-primary text-primary" : "border-border"}`}
                     >
-                      <span className="font-mono text-[9px] text-primary">
-                        {number}
-                      </span>
+                      <span className="font-mono text-[9px] text-primary">{number}</span>
                       {label}
                     </a>
                   </SheetClose>

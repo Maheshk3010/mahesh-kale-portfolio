@@ -53,7 +53,9 @@ export function Hero() {
             animate="visible"
             className="mt-5 max-w-4xl font-display text-[clamp(2.35rem,5.4vw,5.4rem)] font-bold uppercase leading-[.92]"
           >
-            Turning business and operational data into <span className="text-primary">validated insights</span>, KPI reporting and decision-ready dashboards.
+            Turning business and operational data into{" "}
+            <span className="text-primary">validated insights</span>, KPI reporting and
+            decision-ready dashboards.
           </motion.h2>
           <motion.p
             variants={heroEnter(reduced ? 0 : 0.12)}
@@ -61,7 +63,8 @@ export function Hero() {
             animate="visible"
             className="mt-5 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
           >
-            SQL, Power BI, Advanced Excel and Python applied to reporting, validation, reconciliation and dashboard development.
+            SQL, Power BI, Advanced Excel and Python applied to reporting, validation,
+            reconciliation and dashboard development.
           </motion.p>
           <motion.div
             variants={stagger(reduced ? 0 : 0.16, 0.03)}
