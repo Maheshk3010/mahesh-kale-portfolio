@@ -10,6 +10,7 @@ import resume from "./knowledge/resume.json";
 import faq from "./knowledge/faq.json";
 import roles from "./knowledge/roles.json";
 import interview from "./knowledge/interview.json";
+import resumeAsset from "@/assets/Mahesh_Kale_Data_Analyst_Master_Resume.pdf.asset.json";
 import type {
   KnowledgeBase,
   Profile,
@@ -35,7 +36,7 @@ export const knowledgeBase: KnowledgeBase = {
   certifications: certifications as CertificationsData,
   contact: contact as Contact,
   social: social as SocialData,
-  resume: resume as Resume,
+  resume: { ...(resume as Resume), url: resumeAsset.url },
   faq: faq as FaqData,
   roles: roles as RolesData,
   interview: interview as InterviewData,

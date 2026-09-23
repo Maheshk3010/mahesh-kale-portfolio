@@ -48,21 +48,22 @@
     },
     {
       "title": "Customer Churn Prediction",
-      "description": "Classification workflow analyzing 7,000+ customer records with Scikit-learn to identify churn patterns and support retention decisions.",
+      "description": "Customer churn analysis across 7,000+ records using cleaning, EDA, feature engineering and comparative model evaluation.",
       "problem": "Customer teams need a structured way to identify accounts with a higher likelihood of churn and understand the factors associated with attrition.",
-      "solution": "A Python and Scikit-learn classification pipeline covering data cleaning, feature preparation, model training, comparison, and evaluation across 7,000+ customer records.",
-      "technologies": ["Python", "Pandas", "Scikit-learn", "Classification"],
+      "solution": "Cleaned and explored the data, engineered features, and evaluated Logistic Regression, Decision Tree, Random Forest and XGBoost using Accuracy, Precision, Recall, F1, ROC-AUC and a confusion matrix.",
+      "technologies": ["Python", "Pandas", "Scikit-learn", "XGBoost"],
       "features": [
-        "Data cleaning and preprocessing pipeline",
-        "7,000+ customer records analyzed",
-        "Classification model development",
-        "Feature preparation and model evaluation"
+        "7,000+ customer records",
+        "Data cleaning and EDA",
+        "Feature engineering",
+        "Four classification approaches",
+        "Multi-metric model evaluation"
       ],
-      "outcome": "A completed classification project demonstrating the full machine-learning workflow from raw customer records to evaluated churn predictions.",
+      "outcome": "A completed comparative classification workflow for identifying behavioral patterns associated with churn.",
       "github": "",
       "demo": "",
-      "resumeSummary": "Built a customer churn classification workflow in Python and Scikit-learn across 7,000+ customer records.",
-      "interviewExplanation": "I framed this as a classification problem: clean the customer data, prepare model features, compare classification approaches, and evaluate how reliably the model identifies churn patterns.",
+      "resumeSummary": "Analyzed 7,000+ customer records and compared four churn-classification approaches using multiple evaluation metrics.",
+      "interviewExplanation": "I cleaned and explored more than 7,000 customer records, engineered model features, then compared Logistic Regression, Decision Tree, Random Forest and XGBoost using Accuracy, Precision, Recall, F1, ROC-AUC and a confusion matrix.",
       "evidence": {
         "screenshot": "",
         "gallery": [],
@@ -80,22 +81,22 @@
       }
     },
     {
-      "title": "Sales Performance Analysis (SQL)",
-      "description": "SQL analysis of 50,000+ retail transaction records using 30+ optimized queries across JOINs, CTEs, and window functions.",
-      "problem": "Retail stakeholders need clear answers about revenue, products, customers, and sales trends hidden across a large transaction dataset.",
-      "solution": "A structured SQL analysis using more than 30 optimized queries, including JOINs, CTEs, aggregations, and window functions, across 50,000+ retail records.",
-      "technologies": ["SQL", "CTEs", "Window Functions", "Data Analysis"],
+      "title": "SQL Data Warehouse & ETL Pipeline",
+      "description": "SQL and Python ETL workflow centralizing four operational sources across 12 normalized tables for consistent reporting.",
+      "problem": "Centralize fragmented business data for consistent reporting and analysis across multiple operational sources.",
+      "solution": "Designed an ETL workflow using SQL, MySQL, Python and Pandas to extract, cleanse, transform, validate and reconcile data from four sources across 12 normalized tables.",
+      "technologies": ["SQL", "MySQL", "Python", "Pandas", "Power BI"],
       "features": [
-        "50,000+ retail transactions analyzed",
-        "30+ optimized business queries",
-        "JOIN, CTE, and window-function analysis",
-        "Revenue and product performance insights"
+        "Four operational data sources",
+        "12 normalized tables",
+        "Data validation and reconciliation",
+        "Power BI reporting connection"
       ],
-      "outcome": "A completed SQL portfolio project that turns transaction-level retail data into structured, decision-ready performance findings.",
+      "outcome": "A reporting-ready warehouse that the verified resume reports reduced manual data-preparation effort by approximately 60%.",
       "github": "",
       "demo": "",
-      "resumeSummary": "Analyzed 50,000+ retail transaction records with 30+ optimized SQL queries using JOINs, CTEs, and window functions.",
-      "interviewExplanation": "I organized the analysis around business questions, then used JOINs, CTEs, aggregations, and window functions to convert transaction-level retail data into clear performance findings.",
+      "resumeSummary": "Built a SQL and Python ETL pipeline across four operational sources and 12 normalized tables.",
+      "interviewExplanation": "I centralized four fragmented operational sources into a normalized warehouse, then used Python, Pandas and SQL for cleansing, transformation, validation and reconciliation before connecting the outputs to Power BI.",
       "evidence": {
         "screenshot": "",
         "gallery": [],
@@ -105,30 +106,32 @@
         "sqlArtifact": "",
         "powerBIArtifact": "",
         "excelArtifact": "",
-        "keyFindings": [],
-        "businessOutcome": "",
+        "keyFindings": [
+          "Approximately 60% lower manual data-preparation effort reported in the verified resume"
+        ],
+        "businessOutcome": "Improved reporting efficiency",
         "projectDate": "",
         "ownership": "",
-        "scale": "50,000+ retail transaction records; 30+ SQL queries"
+        "scale": "4 operational sources; 12 normalized tables"
       }
     },
     {
-      "title": "Sales Dashboard (Power BI)",
-      "description": "Interactive Power BI dashboard built with relational data modeling, Power Query transformations, DAX measures, and key business KPIs.",
-      "problem": "Business stakeholders need a single, trustworthy view of sales KPIs instead of scattered Excel files and manual reports.",
-      "solution": "A Power BI report modelled from SQL/Excel sources, with cleaned data, calculated KPIs and interactive visuals for slicing by product, region and period.",
-      "technologies": ["Power BI", "Excel", "SQL"],
+      "title": "Sales Performance Dashboard",
+      "description": "Interactive sales-performance dashboard centralizing 15+ KPIs across 50,000+ sales records.",
+      "problem": "Centralize KPI monitoring and provide clear visibility into business performance.",
+      "solution": "Prepared data with Power Query, created DAX measures for Revenue, Profit, Profit Margin, AOV and YoY Sales Growth, and added KPI cards, filters, slicers, drill-throughs and trend views.",
+      "technologies": ["Power BI", "SQL", "Python", "Excel", "Power Query", "DAX"],
       "features": [
-        "KPI cards for revenue, orders and growth",
-        "Interactive slicers by region, product and period",
-        "SQL-sourced data model with cleaned inputs",
-        "Recruiter-friendly, self-serve exploration"
+        "50,000+ sales records",
+        "15+ KPIs",
+        "KPI cards, filters and slicers",
+        "Drill-through and trend views"
       ],
-      "outcome": "A dashboard that turns raw sales data into a decision-ready view \u2014 the core deliverable expected of Data Analyst and MIS Executive roles.",
+      "outcome": "A recurring reporting solution that the verified resume reports reduced manual reporting effort by approximately 70% and improved KPI visibility.",
       "github": "",
       "demo": "",
-      "resumeSummary": "Built a Power BI sales dashboard on SQL/Excel sources with KPI cards and interactive slicers for business reporting.",
-      "interviewExplanation": "I treated this like a real reporting request: understand the KPIs stakeholders care about, model the data in Power BI from SQL/Excel sources, and design visuals that answer questions in one click. It's the project I use to talk through the Data Analyst / MIS Executive workflow end-to-end.",
+      "resumeSummary": "Built an interactive Power BI sales-performance dashboard across 50,000+ records and 15+ KPIs.",
+      "interviewExplanation": "I prepared and transformed the sales data with Power Query, created DAX measures for core KPIs, and built an interactive reporting view with filters, slicers, drill-throughs and trend analysis.",
       "evidence": {
         "screenshot": "",
         "gallery": [],
@@ -138,11 +141,13 @@
         "sqlArtifact": "",
         "powerBIArtifact": "",
         "excelArtifact": "",
-        "keyFindings": [],
-        "businessOutcome": "",
+        "keyFindings": [
+          "Approximately 70% lower manual reporting effort reported in the verified resume"
+        ],
+        "businessOutcome": "Improved KPI visibility and recurring management reporting",
         "projectDate": "",
         "ownership": "",
-        "scale": ""
+        "scale": "50,000+ sales records; 15+ KPIs"
       }
     },
     {

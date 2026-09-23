@@ -3,17 +3,13 @@
     {
       "company": "ExcelR Solutions, Pune",
       "role": "Data Science Intern",
-      "duration": "Internship",
+      "duration": "Jun 2025 – Mar 2026",
       "responsibilities": [
-        "Data Cleaning",
-        "Data Preprocessing",
-        "Exploratory Data Analysis (EDA)",
-        "Feature Engineering",
-        "Machine Learning",
-        "Recommendation Systems",
-        "Time Series Forecasting",
-        "SQL",
-        "Power BI Dashboards"
+        "Prepared, analyzed and validated structured datasets",
+        "Performed data cleaning, reconciliation, consistency checks and discrepancy analysis",
+        "Performed statistical analysis and pattern identification",
+        "Developed KPI dashboards using Power Query and DAX",
+        "Documented data-preparation steps, validation logic and analytical workflows"
       ],
       "technologies": [
         "Python",
@@ -30,12 +26,19 @@
         "VS Code",
         "Streamlit"
       ],
-      "achievements": [],
-      "startDate": "",
-      "endDate": "",
+      "achievements": [
+        "KPI dashboards developed with Power Query and DAX",
+        "Reproducible project workflows documented in Git and GitHub"
+      ],
+      "startDate": "Jun 2025",
+      "endDate": "Mar 2026",
       "location": "Pune, Maharashtra, India",
-      "deliverables": [],
-      "outcomes": [],
+      "deliverables": [
+        "Validated analytical datasets",
+        "KPI dashboards",
+        "Documented analytical workflows"
+      ],
+      "outcomes": ["Accurate analytical and reporting outputs"],
       "companyLink": "",
       "credentialLink": ""
     },

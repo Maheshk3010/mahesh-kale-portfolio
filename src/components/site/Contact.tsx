@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Section } from "./Section";
 import social from "@/mahi/knowledge/social.json";
 import contact from "@/mahi/knowledge/contact.json";
+import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { inView, revealScale, revealUp, stagger } from "@/lib/motion";
 
 export function Contact() {
@@ -55,14 +56,11 @@ export function Contact() {
             className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
           >
             <motion.div variants={revealUp} className="[&>*]:w-full">
-              <Button
-                variant="outline"
-                size="lg"
-                disabled
-                title="Resume file awaiting verification"
-              >
-                <Download />
-                Download resume
+              <Button asChild variant="outline" size="lg">
+                <a href={knowledgeBase.resume.url} download={knowledgeBase.resume.filename}>
+                  <Download />
+                  Download resume
+                </a>
               </Button>
             </motion.div>
             <motion.div variants={revealUp} className="[&>*]:w-full">

@@ -63,7 +63,10 @@ export function Certifications() {
                 <p className="mt-1 text-xs text-muted-foreground">
                   Issuer: {cert.organization} · {cert.year || "Year pending"} ·{" "}
                   {cert.verification ? "Verification link available" : "Verification link pending"}{" "}
-                  · Credential ID pending
+                  ·{" "}
+                  {cert.credentialId
+                    ? `Credential ID: ${cert.credentialId}`
+                    : "Credential ID pending"}
                 </p>
               </div>
             </motion.div>

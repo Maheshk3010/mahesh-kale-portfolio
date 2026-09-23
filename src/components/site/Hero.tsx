@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import social from "@/mahi/knowledge/social.json";
+import { knowledgeBase } from "@/mahi/knowledgeBase";
 import { heroEnter, motionEase, stagger } from "@/lib/motion";
 
 const pipeline = ["Raw data", "Validate", "Analyze", "KPI", "Dashboard", "Report"];
@@ -119,14 +120,10 @@ export function Hero() {
                 View my work <ArrowDown />
               </a>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              disabled
-              title="Resume file awaiting verification"
-              className="h-12 uppercase"
-            >
-              <Download /> Download resume
+            <Button asChild variant="outline" size="lg" className="h-12 uppercase">
+              <a href={knowledgeBase.resume.url} download={knowledgeBase.resume.filename}>
+                <Download /> Download resume
+              </a>
             </Button>
             <div className="flex gap-3">
               {github && (

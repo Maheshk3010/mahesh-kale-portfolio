@@ -7,17 +7,18 @@ import { inView, revealLeft, revealScale, revealUp, stagger } from "@/lib/motion
 
 const primaryProjects = [
   {
-    title: "Sales Performance Analysis",
+    title: "Sales Performance Dashboard",
     number: "01",
-    type: "SQL / Business analysis",
-    question:
-      "Which revenue, product, customer and sales patterns can be isolated from retail transactions?",
-    data: "50,000+ retail transaction records.",
-    workflow: ["Clean", "Validate", "Query", "Compare", "Report"],
-    process: "30+ business queries using joins, CTEs, aggregations and window functions.",
-    tools: ["SQL", "CTEs", "Window Functions", "Data Analysis"],
-    output: "Structured business-query analysis across retail transactions.",
-    finding: "Awaiting verified project findings.",
+    type: "Power BI / Business reporting",
+    question: "How can sales stakeholders monitor performance from one recurring reporting view?",
+    data: "50,000+ sales records with 15+ KPIs.",
+    workflow: ["Prepare", "Model", "Calculate", "Visualize", "Review"],
+    process:
+      "Power Query transformation, DAX measures, KPI cards, filters, slicers, drill-throughs and trend views.",
+    tools: ["Power BI", "SQL", "Python", "Excel", "Power Query", "DAX"],
+    output: "Interactive sales-performance dashboard for recurring management review.",
+    finding:
+      "Resume reports approximately 70% lower manual reporting effort and improved KPI visibility.",
     evidence:
       "No matching repository, screenshot or case-study file is stored in the current portfolio.",
     slots: {
@@ -34,43 +35,47 @@ const primaryProjects = [
     },
   },
   {
-    title: "Sales Dashboard",
+    title: "SQL Data Warehouse & ETL Pipeline",
     number: "02",
-    type: "Power BI / Reporting",
+    type: "SQL / ETL / Reporting",
     question:
-      "How can sales stakeholders review revenue, orders and growth from one reporting view?",
-    data: "SQL / Excel source structure documented; source dataset size is not verified.",
-    workflow: ["Prepare", "Model", "Calculate", "Visualize", "Review"],
-    process: "Power Query transformation → relational model → KPI measures → interactive report.",
-    tools: ["Power BI", "Excel", "SQL", "DAX", "Power Query"],
-    output: "Interactive sales dashboard architecture with KPI cards and slicers.",
-    finding: "Awaiting verified project findings.",
-    evidence: "No matching repository or dashboard screenshot is stored in the current portfolio.",
+      "How can fragmented operational data be centralized for consistent reporting and analysis?",
+    data: "Four operational sources organized across 12 normalized tables.",
+    workflow: ["Extract", "Clean", "Transform", "Validate", "Report"],
+    process:
+      "SQL, MySQL, Python and Pandas ETL workflow with validation and reconciliation before Power BI reporting.",
+    tools: ["SQL", "MySQL", "Python", "Pandas", "Power BI"],
+    output: "A structured warehouse and validated reporting layer connected to Power BI.",
+    finding: "Resume reports approximately 60% lower manual data-preparation effort.",
+    evidence:
+      "No matching repository, source files or screenshot is stored in the current portfolio.",
     slots: {
       Screenshot: "Pending",
       Gallery: "Pending",
       GitHub: "Requires verification",
       Demo: "Pending",
-      "Dataset source": "Pending",
+      "Dataset source": "4 operational sources; source links pending",
       "SQL artifact": "Pending",
       "Power BI artifact": "Pending",
-      "Excel artifact": "Pending",
+      "Excel artifact": "Not specified",
       "Project date": "Pending",
       Ownership: "Pending",
     },
   },
   {
-    title: "Customer Churn Analysis",
+    title: "Customer Churn Prediction",
     number: "03",
     type: "Customer analytics / Supporting ML",
     question: "Which customer records show patterns associated with churn?",
     data: "7,000+ customer records.",
     workflow: ["Clean", "Prepare", "Compare", "Evaluate", "Explain"],
     process:
-      "Python classification workflow covering cleaning, feature preparation, model comparison and evaluation.",
-    tools: ["Python", "Pandas", "Scikit-learn", "Classification"],
-    output: "An evaluated customer-churn classification workflow.",
-    finding: "Awaiting verified project findings.",
+      "Data cleaning, EDA and feature engineering followed by Logistic Regression, Decision Tree, Random Forest and XGBoost evaluation.",
+    tools: ["Python", "Pandas", "Scikit-learn", "XGBoost"],
+    output:
+      "A churn-prediction comparison evaluated with Accuracy, Precision, Recall, F1, ROC-AUC and confusion matrix.",
+    finding:
+      "Behavioral patterns associated with customer churn were analyzed; model results remain pending as evidence.",
     evidence: "The current portfolio has no verified matching repository, screenshot or live demo.",
     slots: {
       Screenshot: "Pending",

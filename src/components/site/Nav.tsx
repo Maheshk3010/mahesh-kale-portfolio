@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Download, Menu, Radio } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { knowledgeBase } from "@/mahi/knowledgeBase";
 import {
   Sheet,
   SheetClose,
@@ -90,15 +91,11 @@ export function Nav() {
           ))}
         </ul>
         <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled
-            title="Resume file awaiting verification"
-            className="hidden xl:inline-flex"
-          >
-            <Download />
-            Resume
+          <Button asChild variant="outline" size="sm" className="hidden xl:inline-flex">
+            <a href={knowledgeBase.resume.url} download={knowledgeBase.resume.filename}>
+              <Download />
+              Resume
+            </a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
