@@ -43,7 +43,9 @@ export function ProjectWorkflow({
   }
 
   return (
-    <div className="workflow-visual relative overflow-hidden border border-border bg-panel p-5 sm:p-7">
+    <div
+      className={`workflow-visual workflow-${project.number} relative overflow-hidden border border-border bg-panel p-5 sm:p-7`}
+    >
       <div className="control-grid pointer-events-none absolute inset-0 opacity-45" />
       <WorkflowRail steps={steps} compact={compact} />
     </div>
@@ -57,7 +59,7 @@ function WorkflowRail({ steps, compact }: { steps: string[]; compact: boolean })
       initial="hidden"
       whileInView="visible"
       viewport={inView}
-      className={`relative grid gap-px bg-border ${compact ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-3"}`}
+      className={`workflow-rail relative grid gap-px bg-border ${compact ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-3"}`}
     >
       {steps.map((step, index) => {
         const Icon = icons[index % icons.length];

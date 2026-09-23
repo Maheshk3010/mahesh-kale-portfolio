@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Bot, Send, X, Sparkles, Mic, Loader2, BarChart3 } from "lucide-react";
 import profilePhoto from "@/assets/mahesh-kale-professional-profile.png.asset.json";
@@ -43,6 +43,8 @@ export function MahiAI() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -57,16 +59,34 @@ export function MahiAI() {
 
   useEffect(() => {
     if (!open) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return;
-      event.preventDefault();
-      setShowAnalytics(false);
-      setOpen(false);
-      window.setTimeout(() => triggerRef.current?.focus(), 0);
+    const manageDialogKeyboard = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setShowAnalytics(false);
+        setOpen(false);
+        window.setTimeout(() => triggerRef.current?.focus(), reducedMotion ? 0 : 320);
+        return;
+      }
+      if (event.key !== "Tab" || !panelRef.current) return;
+      const focusable = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (!first || !last) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, [open]);
+    window.addEventListener("keydown", manageDialogKeyboard);
+    return () => window.removeEventListener("keydown", manageDialogKeyboard);
+  }, [open, reducedMotion]);
 
   useEffect(() => {
     const updateTrigger = () => {
@@ -232,33 +252,39 @@ export function MahiAI() {
             />
             <motion.div
               key="mahi-panel"
+              ref={panelRef}
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               role="dialog"
+              aria-modal="true"
               aria-label="MAHI.AI chat"
               className="fixed z-[70] flex flex-col overflow-hidden border border-border bg-background/96 shadow-2xl backdrop-blur-2xl
               bottom-24 right-3 left-3 max-h-[78vh]
               md:bottom-24 md:right-6 md:left-auto md:w-[380px] md:max-h-[600px]"
             >
               {/* Header */}
-              <div className="relative flex items-start gap-3 border-b border-white/10 bg-white/[0.03] p-4">
+              <div className="relative flex items-start gap-3 border-b border-border bg-surface p-4">
                 <div className="relative shrink-0">
                   <img
                     src={maheshPhotoUrl}
                     alt="Mahesh Kale"
-                    className="h-11 w-11 rounded-full border border-white/15 object-cover shadow-[0_0_20px_-4px_var(--primary)]"
+                    width={44}
+                    height={44}
+                    className="h-11 w-11 border border-primary/40 object-cover"
                   />
                   <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-background bg-[color:var(--success)] shadow-[0_0_10px_var(--success)]" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-base">🤖</span>
+                    <span className="text-base" aria-hidden="true">
+                      🤖
+                    </span>
                     <h3 className="truncate text-sm font-semibold tracking-tight text-foreground">
                       MAHI.AI
                     </h3>
-                    <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                    <span className="ml-auto inline-flex items-center gap-1 border border-border bg-background px-2 py-1 text-[10px] font-medium text-muted-foreground">
                       <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--success)] shadow-[0_0_8px_var(--success)]" />
                       Online
                     </span>
@@ -275,7 +301,7 @@ export function MahiAI() {
                   onClick={() => setShowAnalytics(true)}
                   aria-label="Open recruiter analytics"
                   title="Recruiter analytics"
-                  className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+                  className="grid h-11 w-11 shrink-0 place-items-center border border-border bg-background text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
                 >
                   <BarChart3 className="h-3.5 w-3.5" />
                 </button>
@@ -283,7 +309,7 @@ export function MahiAI() {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Close chat"
-                  className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
+                  className="grid h-11 w-11 shrink-0 place-items-center border border-border bg-background text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
@@ -319,7 +345,7 @@ export function MahiAI() {
                               analyticsService.trackAction("quick_question", q);
                               send(q);
                             }}
-                            className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_18px_-6px_var(--primary)]"
+                            className="min-h-11 border border-border bg-surface px-3 py-2 text-xs font-medium text-foreground/90 transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
                           >
                             {q}
                           </button>
@@ -346,7 +372,7 @@ export function MahiAI() {
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
-                      className="mb-2 flex items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-1.5 text-[11px] text-foreground/90"
+                      className="mb-2 flex items-center justify-between gap-2 border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] text-foreground/90"
                     >
                       {voice.error ? (
                         <span className="text-destructive-foreground/90">{voice.error}</span>
@@ -357,7 +383,7 @@ export function MahiAI() {
                               <motion.span
                                 key={i}
                                 className="w-0.5 rounded-full bg-primary"
-                                animate={{ height: [4, 12, 4] }}
+                                animate={reducedMotion ? { height: 8 } : { height: [4, 12, 4] }}
                                 transition={{
                                   duration: 0.8,
                                   repeat: Infinity,
@@ -387,7 +413,7 @@ export function MahiAI() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-                <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 focus-within:border-primary/50 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_15%,transparent)] transition-all">
+                <div className="flex items-end gap-2 border border-border bg-surface px-3 py-1.5 transition-all focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-ring">
                   <textarea
                     ref={inputRef}
                     value={input}
@@ -408,10 +434,10 @@ export function MahiAI() {
                       aria-pressed={voice.state === "listening"}
                       title="Voice input (Alt+M)"
                       whileTap={{ scale: 0.92 }}
-                      className={`relative grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                      className={`relative grid h-11 w-11 shrink-0 place-items-center border transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
                         voice.state === "listening"
                           ? "border-primary/60 bg-primary/20 text-primary shadow-[0_0_16px_-2px_var(--primary)]"
-                          : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary"
+                          : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-primary"
                       }`}
                     >
                       {voice.state === "processing" ? (
@@ -420,7 +446,7 @@ export function MahiAI() {
                         <Mic className="h-3.5 w-3.5" />
                       )}
                       {voice.state === "listening" && (
-                        <span className="pointer-events-none absolute inline-flex h-8 w-8 rounded-xl bg-primary/40 opacity-60 animate-ping" />
+                        <span className="pointer-events-none absolute inline-flex h-9 w-9 bg-primary/40 opacity-60 animate-ping" />
                       )}
                     </motion.button>
                   )}
@@ -428,7 +454,7 @@ export function MahiAI() {
                     type="submit"
                     disabled={!input.trim() || thinking}
                     aria-label="Send message"
-                    className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_0_16px_-2px_var(--primary)] transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+                    className="grid h-11 w-11 shrink-0 place-items-center bg-primary text-primary-foreground transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <Send className="h-3.5 w-3.5" />
                   </button>
