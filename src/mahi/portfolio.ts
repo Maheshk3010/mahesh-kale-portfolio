@@ -12,22 +12,20 @@ export const site = {
 export const coreTools = ["SQL", "Power BI", "Advanced Excel", "Python"];
 
 export const specializations = [
-  "Data Analysis",
   "MIS Reporting",
   "KPI Reporting",
-  "Dashboard Development",
-  "Data Cleaning",
   "Data Validation",
   "Data Reconciliation",
+  "Dashboard Development",
   "Reporting Automation",
   "Business Reporting",
 ];
 
 export const proofMetrics = [
-  { label: "Sales data", value: 50, suffix: "K+", detail: "records analyzed" },
-  { label: "Customer analytics", value: 7, suffix: "K+", detail: "customer records" },
-  { label: "Reporting", value: 15, suffix: "+", detail: "dashboard KPIs" },
-  { label: "Experience", value: 3, suffix: "", detail: "internships" },
+  { label: "Data scale", value: 50, suffix: "K+", detail: "Records" },
+  { label: "Customer analytics", value: 7, suffix: "K+", detail: "Customer records" },
+  { label: "Reporting", value: 15, suffix: "+", detail: "KPIs" },
+  { label: "Experience", value: 3, suffix: "", detail: "Internships" },
 ];
 
 export const capabilityGroups = [
