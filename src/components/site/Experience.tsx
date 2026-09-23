@@ -56,9 +56,7 @@ export function Experience() {
                     </div>
                     <div>
                       <span className="block text-primary">Location</span>
-                      <span className="mt-2 block">
-                        {exp.location || "Awaiting verification"}
-                      </span>
+                      <span className="mt-2 block">{exp.location || "Awaiting verification"}</span>
                     </div>
                   </div>
                 </div>

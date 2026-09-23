@@ -10,14 +10,15 @@ const primaryProjects = [
     title: "Sales Performance Dashboard",
     number: "01",
     type: "Power BI / Business reporting",
-    question:
-      "How can sales stakeholders monitor performance from one recurring reporting view?",
+    question: "How can sales stakeholders monitor performance from one recurring reporting view?",
     data: "50,000+ sales records with 15+ KPIs.",
     workflow: ["Prepare", "Model", "Calculate", "Visualize", "Review"],
-    process: "Power Query transformation, DAX measures, KPI cards, filters, slicers, drill-throughs and trend views.",
+    process:
+      "Power Query transformation, DAX measures, KPI cards, filters, slicers, drill-throughs and trend views.",
     tools: ["Power BI", "SQL", "Python", "Excel", "Power Query", "DAX"],
     output: "Interactive sales-performance dashboard for recurring management review.",
-    finding: "Resume reports approximately 70% lower manual reporting effort and improved KPI visibility.",
+    finding:
+      "Resume reports approximately 70% lower manual reporting effort and improved KPI visibility.",
     evidence:
       "No matching repository, screenshot or case-study file is stored in the current portfolio.",
     slots: {
@@ -41,11 +42,13 @@ const primaryProjects = [
       "How can fragmented operational data be centralized for consistent reporting and analysis?",
     data: "Four operational sources organized across 12 normalized tables.",
     workflow: ["Extract", "Clean", "Transform", "Validate", "Report"],
-    process: "SQL, MySQL, Python and Pandas ETL workflow with validation and reconciliation before Power BI reporting.",
+    process:
+      "SQL, MySQL, Python and Pandas ETL workflow with validation and reconciliation before Power BI reporting.",
     tools: ["SQL", "MySQL", "Python", "Pandas", "Power BI"],
     output: "A structured warehouse and validated reporting layer connected to Power BI.",
     finding: "Resume reports approximately 60% lower manual data-preparation effort.",
-    evidence: "No matching repository, source files or screenshot is stored in the current portfolio.",
+    evidence:
+      "No matching repository, source files or screenshot is stored in the current portfolio.",
     slots: {
       Screenshot: "Pending",
       Gallery: "Pending",
@@ -69,8 +72,10 @@ const primaryProjects = [
     process:
       "Data cleaning, EDA and feature engineering followed by Logistic Regression, Decision Tree, Random Forest and XGBoost evaluation.",
     tools: ["Python", "Pandas", "Scikit-learn", "XGBoost"],
-    output: "A churn-prediction comparison evaluated with Accuracy, Precision, Recall, F1, ROC-AUC and confusion matrix.",
-    finding: "Behavioral patterns associated with customer churn were analyzed; model results remain pending as evidence.",
+    output:
+      "A churn-prediction comparison evaluated with Accuracy, Precision, Recall, F1, ROC-AUC and confusion matrix.",
+    finding:
+      "Behavioral patterns associated with customer churn were analyzed; model results remain pending as evidence.",
     evidence: "The current portfolio has no verified matching repository, screenshot or live demo.",
     slots: {
       Screenshot: "Pending",

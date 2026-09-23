@@ -206,5 +206,4 @@ export interface ChatEngine {
   ask(question: string, history?: ChatMessage[]): Promise<ChatEngineResponse>;
 }
 
-export const UNVERIFIED_FALLBACK =
-  "I don't have verified information regarding that topic.";
+export const UNVERIFIED_FALLBACK = "I don't have verified information regarding that topic.";

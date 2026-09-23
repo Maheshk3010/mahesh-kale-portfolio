@@ -18,23 +18,23 @@
     },
     {
       "q": "What verified scale is shown?",
-      "a": "The portfolio documents 50,000+ retail transaction records, 30+ SQL business queries, 7,000+ customer records and three internships."
+      "a": "The verified resume documents 50,000+ sales records, 15+ dashboard KPIs, four operational sources, 12 normalized warehouse tables, 7,000+ customer records and three internships."
     },
     {
       "q": "What case studies are featured?",
-      "a": "Sales Performance Analysis, Sales Dashboard and Customer Churn Analysis are the three primary case studies. Apple Stock Price Prediction and Product Recommendation are supporting technical work."
+      "a": "Sales Performance Dashboard, SQL Data Warehouse & ETL Pipeline and Customer Churn Prediction are the three primary resume-verified case studies. Apple Stock Price Prediction and Product Recommendation are supporting technical work."
     },
     {
       "q": "Tell me about Sales Performance Analysis",
-      "a": "It documents analysis across 50,000+ retail transaction records using 30+ SQL business queries. Repository, screenshots, dataset source, findings, date and ownership evidence are still pending."
+      "a": "The verified resume documents a Sales Performance Dashboard across 50,000+ records and 15+ KPIs. It reports approximately 70% lower manual reporting effort. Repository, screenshots, source files, date and ownership evidence are still pending."
     },
     {
       "q": "Tell me about the Sales Dashboard",
-      "a": "It documents a Power BI reporting workflow using SQL, Excel, DAX and Power Query. Dashboard screenshots, source files, repository, findings, date and ownership evidence are still pending."
+      "a": "The verified resume documents an interactive Power BI Sales Performance Dashboard using SQL, Python, Excel, Power Query and DAX across 50,000+ records and 15+ KPIs. Dashboard screenshots and source files are still pending."
     },
     {
       "q": "Tell me about Customer Churn Analysis",
-      "a": "It documents a Python classification workflow across 7,000+ customer records. A matching repository, screenshots, dataset source, findings, date and ownership evidence are still pending."
+      "a": "The verified resume documents a churn-prediction workflow across 7,000+ customer records, comparing Logistic Regression, Decision Tree, Random Forest and XGBoost with multiple evaluation metrics. Repository, screenshots and dataset source are still pending."
     },
     {
       "q": "Show GitHub projects",
@@ -42,7 +42,7 @@
     },
     {
       "q": "Which project should I look at first?",
-      "a": "Start with Sales Performance Analysis for its documented scale, then review the Sales Dashboard and MIS & Reporting sections. Evidence gaps are clearly marked."
+      "a": "Start with the Sales Performance Dashboard for its verified scale and reporting outcome, then review the SQL Data Warehouse & ETL Pipeline and MIS & Reporting sections."
     },
     {
       "q": "What MIS experience is shown?",
