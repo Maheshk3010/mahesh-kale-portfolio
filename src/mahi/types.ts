@@ -73,6 +73,13 @@ export interface ExperienceItem {
   responsibilities: string[];
   technologies: string[];
   achievements: string[];
+  startDate?: string;
+  endDate?: string;
+  location?: string;
+  deliverables?: string[];
+  outcomes?: string[];
+  companyLink?: string;
+  credentialLink?: string;
 }
 export interface ExperienceData {
   experience: ExperienceItem[];
@@ -93,6 +100,7 @@ export interface Certification {
   organization: string;
   year: string;
   verification: string;
+  credentialId?: string;
 }
 export interface CertificationsData {
   certifications: Certification[];

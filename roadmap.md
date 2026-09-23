@@ -32,3 +32,10 @@
 - [x] Validate recruiter tests, responsive layouts, accessibility, reduced motion, links, and preview health.
 - [x] Add structured project, MIS, experience, credential, and resume proof slots for missing evidence.
 - [x] Deliver the detailed final information/proof report and publication-readiness checklist.
+
+## Verified resume integration
+
+- [x] Add the uploaded master resume as the official portfolio download.
+- [x] Enable resume actions in the navigation, opening section, final contact section, and MAHI.AI.
+- [x] Sync verified ExcelR dates and work, certification years, and resume availability.
+- [ ] Add project screenshots, working files, repository links, dataset sources, and internship/certification proof when supplied.

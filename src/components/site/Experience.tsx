@@ -48,12 +48,16 @@ export function Experience() {
                   <div className="grid grid-cols-2 gap-5 font-mono text-[9px] uppercase text-muted-foreground lg:text-right">
                     <div>
                       <span className="block text-primary">Dates</span>
-                      <span className="mt-2 block">Awaiting verification</span>
+                      <span className="mt-2 block">
+                        {exp.startDate && exp.endDate
+                          ? `${exp.startDate} – ${exp.endDate}`
+                          : "Awaiting verification"}
+                      </span>
                     </div>
                     <div>
                       <span className="block text-primary">Location</span>
                       <span className="mt-2 block">
-                        {exp.company.includes("Pune") ? "Pune" : "Awaiting verification"}
+                        {exp.location || "Awaiting verification"}
                       </span>
                     </div>
                   </div>
@@ -69,14 +73,18 @@ export function Experience() {
                   <ExperienceColumn
                     label="Documented deliverables"
                     items={
-                      exp.achievements.length
-                        ? exp.achievements
+                      exp.deliverables?.length
+                        ? exp.deliverables
                         : ["Awaiting verified deliverables"]
                     }
                   />
                   <ExperienceColumn
                     label="Outcomes & proof"
-                    items={["Outcome evidence pending", "Company or credential link pending"]}
+                    items={
+                      exp.outcomes?.length
+                        ? exp.outcomes
+                        : ["Outcome evidence pending", "Company or credential link pending"]
+                    }
                   />
                 </motion.div>
                 <motion.div variants={stagger(0, 0.04)} className="flex flex-wrap gap-2">
