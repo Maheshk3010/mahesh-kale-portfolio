@@ -93,14 +93,14 @@
 - [x] Make Proof Telemetry and Real Work Preview more compact, specific, and visually continuous with the identity section.
 - [x] Simplify primary navigation to recruiter destinations and correct every public section label and number.
 - [x] Remove stale role/project/unfinished-state language from all public surfaces while preserving supporting ML context.
-- [ ] Validate the first-page story, portrait, actions, assistant placement, motion, accessibility, overflow, and errors at all four target viewports.
+- [x] Validate the first-page story, portrait, actions, assistant placement, motion, accessibility, overflow, and errors at all four target viewports.
 
 ## Cinematic Data Intelligence Lab
 
-- [ ] Evolve the existing interface from repeated cyan HUD cards into distinct lab environments using meaningful blue, green, and amber signals.
-- [ ] Turn the Hero into a compact intelligence console with a short non-blocking initialization sequence and immediate recruiter identity.
-- [ ] Rename and restage the journey as Analyst Dossier, Live Analytics Diagnostics, Real Workspace, Case Files, Operations Floor, Field Log, Analyst Toolkit, Credential Archive, Analyst Method, and Session Complete.
-- [ ] Verify the uploaded portrait asset loads from its CDN pointer and never exposes a broken-image state.
-- [ ] Give each case file a distinct data-flow visualization while preserving factual data and supplied GitHub links.
-- [ ] Reduce repeated boxes, pills, borders, and uniform grids in favor of larger continuous scenes and environmental transitions.
-- [ ] Preserve accessibility, reduced motion, responsive order, performance, and recruiter readability across the full site.
+- [x] Evolve the existing interface from repeated cyan HUD cards into distinct lab environments using meaningful blue, green, and amber signals.
+- [x] Turn the Hero into a compact intelligence console with a short non-blocking initialization sequence and immediate recruiter identity.
+- [x] Rename and restage the journey as Analyst Dossier, Live Analytics Diagnostics, Real Workspace, Case Files, Operations Floor, Field Log, Analyst Toolkit, Credential Archive, Analyst Method, and Session Complete.
+- [x] Verify the uploaded portrait asset loads from its CDN pointer and never exposes a broken-image state.
+- [x] Give each case file a distinct data-flow visualization while preserving factual data and supplied GitHub links.
+- [x] Reduce repeated boxes, pills, borders, and uniform grids in favor of larger continuous scenes and environmental transitions.
+- [x] Preserve accessibility, reduced motion, responsive order, performance, and recruiter readability across the full site.
