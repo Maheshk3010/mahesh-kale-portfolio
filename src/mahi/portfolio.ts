@@ -1,9 +1,12 @@
 import { knowledgeBase } from "./knowledgeBase";
+import profilePhoto from "@/assets/mahesh-kale-professional-profile.png.asset.json";
+
+const siteUrl = "https://mahesh-kale-portfolio.lovable.app";
 
 export const site = {
   name: "Mahesh Kale Analytics Operating System",
-  url: "https://mahesh-kale-portfolio.lovable.app",
-  image: "https://mahesh-kale-portfolio.lovable.app/maheshkale_pic.jpeg",
+  url: siteUrl,
+  image: `${siteUrl}${profilePhoto.url}`,
   title: "Mahesh Kale — Data Analyst & MIS Executive",
   description:
     "Mahesh Kale is a Data Analyst and MIS Executive using SQL, Power BI, Advanced Excel and Python for analysis, KPI reporting, dashboards and reporting automation.",

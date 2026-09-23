@@ -244,7 +244,7 @@
         "Interactive Streamlit interface"
       ],
       "output": "An LSTM forecasting workflow with an interactive Streamlit interface.",
-      "outcome": "A completed deep-learning workflow from historical data to an interactive interface.",
+      "outcome": "A deep-learning workflow from historical data to an interactive interface.",
       "keyFindings": [],
       "github": "https://github.com/Maheshk3010/Apple_Stock_Prediction_LSTM",
       "demo": "",
