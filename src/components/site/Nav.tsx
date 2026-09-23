@@ -13,16 +13,13 @@ import {
 } from "@/components/ui/sheet";
 
 const links = [
-  ["#top", "Home"],
-  ["#snapshot", "Profile"],
-  ["#proof", "Proof"],
-  ["#work-preview", "Work"],
-  ["#projects", "Cases"],
-  ["#mis", "MIS"],
-  ["#experience", "Experience"],
-  ["#stack", "Core"],
-  ["#credentials", "Credentials"],
-  ["#contact", "Contact"],
+  ["#top", "Home", "01"],
+  ["#projects", "Cases", "05"],
+  ["#mis", "MIS / Reporting", "06"],
+  ["#experience", "Experience", "07"],
+  ["#stack", "Capabilities", "08"],
+  ["#credentials", "Credentials", "09"],
+  ["#contact", "Contact", "11"],
 ] as const;
 
 export function Nav() {
@@ -79,7 +76,7 @@ export function Nav() {
           </span>
         </a>
         <ul className="hidden items-center gap-3 xl:flex">
-          {links.map(([href, label], index) => (
+          {links.map(([href, label, number]) => (
             <li key={href}>
               <a
                 href={href}
@@ -87,7 +84,7 @@ export function Nav() {
                 className={`nav-link group relative py-2 font-mono text-[9px] font-bold uppercase tracking-[.12em] transition-colors hover:text-primary ${active === href ? "is-active text-foreground" : "text-muted-foreground"}`}
               >
                 <span className="mr-1 text-border-strong">
-                  {String(index + 1).padStart(2, "0")}
+                  {number}
                 </span>
                 {label}
               </a>
@@ -115,7 +112,7 @@ export function Nav() {
               <SheetTitle className="font-display uppercase">Analytics OS</SheetTitle>
               <SheetDescription>Navigate Mahesh Kale&apos;s analytics portfolio.</SheetDescription>
               <div className="mt-10 grid gap-1">
-                {links.map(([href, label], index) => (
+                {links.map(([href, label, number]) => (
                   <SheetClose key={href} asChild>
                     <a
                       href={href}
@@ -123,7 +120,7 @@ export function Nav() {
                       className={`grid grid-cols-[36px_1fr] items-center border-b py-3 font-display text-lg font-bold uppercase transition-colors ${active === href ? "border-primary text-primary" : "border-border"}`}
                     >
                       <span className="font-mono text-[9px] text-primary">
-                        {String(index + 1).padStart(2, "0")}
+                        {number}
                       </span>
                       {label}
                     </a>

@@ -23,11 +23,11 @@ export function AnalyticsSnapshot() {
               id="proof-title"
               className="mt-2 font-display text-3xl font-bold uppercase sm:text-4xl"
             >
-              Proven scope
+              Proof telemetry
             </h2>
           </div>
           <span className="hidden font-mono text-[9px] uppercase tracking-[.14em] text-success sm:block">
-            Resume-backed signals
+            Verified scope
           </span>
         </div>
         <motion.div
@@ -43,7 +43,7 @@ export function AnalyticsSnapshot() {
               <motion.article
                 key={label}
                 variants={revealUp}
-                className="snapshot-cell relative border-b border-border p-5 sm:p-6"
+                className="snapshot-cell relative border-b border-border p-4 sm:p-6"
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[8px] uppercase tracking-[.14em] text-muted-foreground">
@@ -51,7 +51,7 @@ export function AnalyticsSnapshot() {
                   </span>
                   <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
                 </div>
-                <div className="mt-8 font-display text-5xl font-bold leading-none sm:text-6xl">
+                <div className="mt-6 font-display text-4xl font-bold leading-none sm:mt-8 sm:text-6xl">
                   <CountUp value={value} suffix={suffix} />
                 </div>
                 <p className="mt-3 font-mono text-[10px] uppercase tracking-[.14em] text-primary">

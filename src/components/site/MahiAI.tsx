@@ -173,7 +173,7 @@ export function MahiAI() {
   return (
     <>
       {/* Floating trigger */}
-      <div className="fixed bottom-3 right-3 z-[60] md:bottom-6 md:right-6">
+      <div className="fixed bottom-5 right-3 z-[80] md:bottom-6 md:right-6">
         <motion.button
           ref={triggerRef}
           type="button"
@@ -196,6 +196,16 @@ export function MahiAI() {
       {/* Chat panel */}
       <AnimatePresence>
         {open && (
+          <>
+          <motion.div
+            key="mahi-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[65] bg-background/70 backdrop-blur-sm md:hidden"
+            aria-hidden="true"
+          />
           <motion.div
             key="mahi-panel"
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
@@ -411,6 +421,7 @@ export function MahiAI() {
               </p>
             </form>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

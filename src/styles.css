@@ -74,6 +74,7 @@
     scroll-behavior: smooth;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    scroll-padding-top: 4rem;
   }
   body {
     min-width: 320px;
@@ -503,6 +504,12 @@ article:hover > .timeline-marker {
   inset: auto 1.25rem 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.control-section,
+#snapshot,
+#proof,
+#top {
+  scroll-margin-top: 4rem;
 }
 .mahi-highlight {
   outline: 1px solid var(--primary);

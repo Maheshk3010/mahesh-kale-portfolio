@@ -87,10 +87,10 @@
 
 ## First-page recruiter polish
 
-- [ ] Tighten the Hero so identity, roles, tools, actions, and system context appear immediately without a long reveal.
-- [ ] Preserve the exact Hero → Professional Snapshot → Proof Telemetry → Real Work Preview order.
-- [ ] Refine the uploaded portrait frame, short staggered reveal, capability map, and mobile photo-first composition.
-- [ ] Make Proof Telemetry and Real Work Preview more compact, specific, and visually continuous with the identity section.
-- [ ] Simplify primary navigation to recruiter destinations and correct every public section label and number.
-- [ ] Remove stale role/project/unfinished-state language from all public surfaces while preserving supporting ML context.
+- [x] Tighten the Hero so identity, roles, tools, actions, and system context appear immediately without a long reveal.
+- [x] Preserve the exact Hero → Professional Snapshot → Proof Telemetry → Real Work Preview order.
+- [x] Refine the uploaded portrait frame, short staggered reveal, capability map, and mobile photo-first composition.
+- [x] Make Proof Telemetry and Real Work Preview more compact, specific, and visually continuous with the identity section.
+- [x] Simplify primary navigation to recruiter destinations and correct every public section label and number.
+- [x] Remove stale role/project/unfinished-state language from all public surfaces while preserving supporting ML context.
 - [ ] Validate the first-page story, portrait, actions, assistant placement, motion, accessibility, overflow, and errors at all four target viewports.

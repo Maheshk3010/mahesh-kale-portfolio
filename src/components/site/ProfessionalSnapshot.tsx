@@ -4,6 +4,17 @@ import { profile, coreTools, specializations } from "@/mahi/portfolio";
 import profilePhoto from "@/assets/mahesh-kale-professional-profile.png.asset.json";
 import { inView, revealUp, stagger } from "@/lib/motion";
 
+const workFocus = specializations.filter((item) =>
+  [
+    "MIS Reporting",
+    "KPI Reporting",
+    "Data Validation",
+    "Data Reconciliation",
+    "Dashboard Development",
+    "Reporting Automation",
+  ].includes(item),
+);
+
 export function ProfessionalSnapshot() {
   return (
     <section
@@ -12,7 +23,7 @@ export function ProfessionalSnapshot() {
       className="border-b border-border bg-surface"
     >
       <motion.div
-        variants={stagger(0.04, 0.06)}
+        variants={stagger(0.02, 0.05)}
         initial="hidden"
         whileInView="visible"
         viewport={inView}
@@ -23,22 +34,22 @@ export function ProfessionalSnapshot() {
           className="grid gap-5 border-t border-border pt-5 lg:grid-cols-[180px_1fr]"
         >
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-            02 / System profile
+            02 / Professional snapshot
           </p>
           <h2 id="snapshot-title" className="font-display text-4xl font-bold uppercase sm:text-5xl">
             Professional snapshot
           </h2>
         </motion.div>
-        <div className="mt-10 grid overflow-hidden border border-border bg-background lg:grid-cols-[.72fr_1.28fr]">
+        <div className="mt-8 grid overflow-hidden border border-border bg-background lg:grid-cols-[.78fr_1.22fr]">
           <motion.figure
             variants={revealUp}
-            className="identity-frame relative aspect-square min-h-[360px] overflow-hidden border-b border-primary/35 shadow-[0_24px_70px_-45px_var(--primary)] sm:min-h-[440px] lg:aspect-auto lg:min-h-[520px] lg:border-b-0 lg:border-r"
+            className="identity-frame relative aspect-square min-h-[340px] overflow-hidden border-b border-primary/35 shadow-[0_24px_70px_-45px_var(--primary)] sm:min-h-[440px] lg:aspect-auto lg:min-h-[520px] lg:border-b-0 lg:border-r"
           >
             <img
               src={profilePhoto.url}
               alt="Mahesh Kale, Data Analyst and MIS Executive"
-              width="760"
-              height="960"
+              width="1254"
+              height="1254"
               loading="eager"
               decoding="async"
               className="identity-image h-full w-full object-cover object-center"
@@ -99,7 +110,7 @@ export function ProfessionalSnapshot() {
                 Work focus
               </p>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {specializations.map((item) => (
+                {workFocus.map((item) => (
                   <span
                     key={item}
                     className="font-mono text-[9px] font-bold uppercase text-foreground"
